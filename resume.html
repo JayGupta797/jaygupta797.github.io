@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Some meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Custom Styles and Scripts-->
+    <link rel="stylesheet" href="styles.css"> 
+    <script src="./script.js" defer></script> 
+
+    <!-- Load Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Your Website Title</title>
+</head>
+
+<!-- Define Some Re-Usable Svg Elements -->
+<!-- Figure this out at some point, right now I just modify the origin -->
+<!-- See: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use -->
+
+<svg class="symbol" width="20px" height="20px" viewBox="0 0 20 20" fill="var(--primary-color)" xmlns="http://www.w3.org/2000/svg">
+    <path id="tablet" d="M8 7.00003H4M8 12H4M8 17H4M12 3V21M9.2 21H16.8C17.9201 21 18.4802 21 18.908 20.782C19.2843 20.5903 19.5903 20.2843 19.782 19.908C20 19.4802 20 18.9201 20 17.8V6.20003C20 5.07993 20 4.51987 19.782 4.09205C19.5903 3.71573 19.2843 3.40977 18.908 3.21802C18.4802 3.00003 17.9201 3.00003 16.8 3.00003H9.2C8.07989 3.00003 7.51984 3.00003 7.09202 3.21802C6.71569 3.40977 6.40973 3.71573 6.21799 4.09205C6 4.51987 6 5.07993 6 6.20003V17.8C6 18.9201 6 19.4802 6.21799 19.908C6.40973 20.2843 6.71569 20.5903 7.09202 20.782C7.51984 21 8.07989 21 9.2 21Z" stroke="var(--secondary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+<body>
+    <!-- see: https://stackoverflow.com/a/45762747 -->
+    <div class="everything">
+    <div class="masthead">
+    <div class="masthead__inner-wrap">
+        <div class="masthead__menu">
+            <nav class="greedy-nav">
+                <a class="site-title" href="./index.html">Jay Gupta</a>
+                <ul class="visible-links">
+                <li class="masthead__menu-item"><a href="./posts.html">Posts</a></li>
+                <li class="masthead__menu-item"><a href="./photos.html">Photos</a></li>
+                <li class="masthead__menu-item"><a href="./resume.html">Resume</a></li>
+                </ul>
+                <div class="dark_toggle" onclick="toggleDark()">
+                    <svg height=35px width=35px>
+                    <circle cx="50%" cy="50%" r="10px" fill="white" id="moon" />
+                    <circle cx="50%" cy="50%" r="15px" fill="none" stroke="white" stroke-width="2px" id="ring" />
+                    </svg>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </div>
+
+    <div class="initial-content">
+        <div id="main" role="main">
+
+            <section class="experience-section">
+            <h2 class="resume-section-title">Work Experience</h2>
+            <div class="resume-section-content">
+                <div class="resume-timeline">
+
+                    <div class="resume-timeline-item-header">
+                        <div class="resume-item-names">
+                            <h3 class="resume-position-name">Data Analyst</h3>
+                            <div class="resume-company-name">Department of Vetern Affairs</div>
+                        </div><!--//row-->
+                        <div class="resume-position-time">2023 - Present</div>
+                    </div><!--//resume-timeline-item-header-->
+
+                    <div class="resume-timeline-item-desc">
+                        <p>The Department of Veteran Affair's Program Evaluation and Resource Center (PERC) provides program evaluation and technical assistance for mental health quality improvement efforts across the Veteran's Health Administration. For this internship, our objective was to develop an approach for categorizing narrative content about mental health concepts into operationally relevant categories.</p>
+                        <ul>
+                            <li>Extracted snippets from Text Integrated Utility (TIU) Notes</li>
+                            <li>Developed a custom tokenization procedure with built-in text repair processes</li>
+                            <li>FineTuned BioClinicalBERT weights</li>
+                            <li>Aggressively tested and validated model predictions</li>
+                        </ul>
+                        <h4 class="resume-timeline-item-desc-heading">Technologies:</h4>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><span class="badge">Azure Data Studio</span></li>
+                            <li class="list-inline-item"><span class="badge">SQL</span></li>
+                            <li class="list-inline-item"><span class="badge">Python</span></li>
+                            <li class="list-inline-item"><span class="badge">PyTorch</span></li>
+                            <li class="list-inline-item"><span class="badge">HuggingFace</span></li>
+                        </ul>
+                    </div><!--//resume-timeline-item-desc-->
+
+                    <div class="resume-timeline-item-header">
+                        <div class="resume-item-names">
+                            <h3 class="resume-position-name">Appointment Tutor</h3>
+                            <div class="resume-company-name">Stanford CTL</div>
+                        </div><!--//row-->
+                        <div class="resume-position-time">2023 - Present</div>
+                    </div><!--//resume-timeline-item-header-->
+
+                    <div class="resume-timeline-item-desc">
+                        <p>CTL provides free subject tutoring with peers who are specially trained to help you develop the skills you need to be successful in your classes. As a tutor, I work with student peers to help them master the skills needed to succeed on their own by coaching rather than providing answers.</p>
+                    </div><!--//resume-timeline-item-desc-->
+
+                    <div class="resume-timeline-item-header">
+                        <div class="resume-item-names">
+                            <h3 class="resume-position-name">SUMO Tutor</h3>
+                            <div class="resume-company-name">Stanford SUMO</div>
+                        </div><!--//row-->
+                        <div class="resume-position-time">2022 - 2023</div>
+                    </div><!--//resume-timeline-item-header-->
+
+                    <div class="resume-timeline-item-desc">
+                        <p>SUMO works with the Stanford math department to provide peer tutoring services for a number of introductory math classes, specifically MATH 19, 20, 21, 51, 52, 53, and 104. As a peer tutor, I was available to answer any questions students had about the material and homework in these classes.</p>
+                    </div><!--//resume-timeline-item-desc-->
+
+                </div>
+            </div>
+
+            <h2 class="resume-section-title">Projects</h2>
+
+                <div class="resume-item-names">
+                    <h3 class="resume-project-name">Lyte Lectures</h3>
+                    <div class="resume-project-link"><a href="https://www.youtube.com/@lytelectures1206" target="_blank">Channel Homepage</a></div>
+                </div><!--//row-->
+                <div class="resume-position-time">2020 - Present</div>
+                <div class="resume-project-item-desc">
+                        <p>Lyte Lectures is a YouTube channel that seeks to communicate complex ideas with an accessible and artful approach. Animations are programmatically generated using 3B1B's open source project <a href="https://www.manim.community/" target="_blank">Manim</a>. The channel currently boasts 1.36K subscribers.</p>
+                </div><!--//resume-project-item-desc-->
+
+                <div class="resume-item-names">
+                    <h3 class="resume-project-name">MH-BiTS</h3>
+                    <div class="resume-project-link"><a href="https://jaygupta797.github.io/mh-bits/" target="_blank">Project Description</a></div>
+                </div><!--//row-->
+                <div class="resume-position-time">2020 - 2022</div>
+                <div class="resume-project-item-desc">
+                        <p>MH-BiTS (Mental Health Bill Tracking System) is an interactive tool for exploring and visualizing the topical, temporal, and geospatial breakdown of mental health bills from 2010 to 2020. Data was taken from <a href="https://legiscan.com/" target="_blank">LegiScan</a>, an impartial legislative data web-service.</p>
+                </div><!--//resume-project-item-desc-->
+
+            </section>
+
+            <section class="skills-section">
+                <h2 class="resume-section-title">Education</h2>
+                <div class="resume-education">
+                    <h3>B.S. Computer Science</h3>
+                    <p>Stanford University</p>
+                    <div class="resume-position-time">Expected 2026</div>
+                    <h3>Coursework</h3>
+                    <ul>
+                        <li class="custom-bullet">
+                        <span class="svg-icon"><svg><use href="#tablet" x="-2.5" y="-2" fill="var(--primary-color)" stroke="var(--secondary-color)"/></svg></span>
+                        <p><a href="http://web.stanford.edu/class/math51/" target="_blank">Math 51:</a> Linear Algebra<p>
+                        </li>
+
+                        <li class="custom-bullet">
+                        <span class="svg-icon"><svg><use href="#tablet" x="-2.5" y="-2" fill="var(--primary-color)" stroke="var(--secondary-color)"/></svg></span>
+                        <p><a href="https://explorecourses.stanford.edu/search?q=MATH52/" target="_blank">Math 52:</a> Multivariable Calculus<p>
+                        </li>
+
+                        <li class="custom-bullet">
+                        <span class="svg-icon"><svg><use href="#tablet" x="-2.5" y="-2" fill="var(--primary-color)" stroke="var(--secondary-color)"/></svg></span>
+                        <p><a href="https://web.stanford.edu/class/cs106b/" target="_blank">CS 106B:</a> Programming Abstractions<p>
+                        </li>
+
+                        <li class="custom-bullet">
+                        <span class="svg-icon"><svg><use href="#tablet" x="-2.5" y="-2" fill="var(--primary-color)" stroke="var(--secondary-color)"/></svg></span>
+                        <p><a href="https://web.stanford.edu/class/cs109/" target="_blank">CS 109:</a> Probability<p>
+                        </li>
+
+                        <li class="custom-bullet">
+                        <span class="svg-icon"><svg><use href="#tablet" x="-2.5" y="-2" fill="var(--primary-color)" stroke="var(--secondary-color)"/></svg></span>
+                        <p><a href="http://web.stanford.edu/class/cs103/" target="_blank">CS 103:</a> Discrete Math<p>
+                        </li>
+                    </ul>
+                </div>
+
+                <h2 class="resume-section-title">Awards</h2>
+                <div class="resume-awards">
+                    <ul>
+                        <li class="custom-bullet">
+                        <span class="svg-icon">
+                            <svg class="trophy" data-fa-transform="shrink-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trophy" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="" style="transform-origin: 0.5625em 0.5em;"><g transform="translate(288 256)"><g transform="translate(0, 0)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="var(--regular)" d="M400 0H176c-26.5 0-48.1 21.8-47.1 48.2c.2 5.3 .4 10.6 .7 15.8H24C10.7 64 0 74.7 0 88c0 92.6 33.5 157 78.5 200.7c44.3 43.1 98.3 64.8 138.1 75.8c23.4 6.5 39.4 26 39.4 45.6c0 20.9-17 37.9-37.9 37.9H192c-17.7 0-32 14.3-32 32s14.3 32 32 32H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H357.9C337 448 320 431 320 410.1c0-19.6 15.9-39.2 39.4-45.6c39.9-11 93.9-32.7 138.2-75.8C542.5 245 576 180.6 576 88c0-13.3-10.7-24-24-24H446.4c.3-5.2 .5-10.4 .7-15.8C448.1 21.8 426.5 0 400 0zM48.9 112h84.4c9.1 90.1 29.2 150.3 51.9 190.6c-24.9-11-50.8-26.5-73.2-48.3c-32-31.1-58-76-63-142.3zM464.1 254.3c-22.4 21.8-48.3 37.3-73.2 48.3c22.7-40.3 42.8-100.5 51.9-190.6h84.4c-5.1 66.3-31.1 111.2-63 142.3z" transform="translate(-288 -256)"></path></g></g>
+                            </svg></span>
+                        <h3>CS 109 Challenge Winner</h3>
+                        </li>
+                        <p>The challenge involves creating a probability driven project of ones choosing that highlights concepts from the class and does something interesting. My project discusses the Hilbert Space of Random Variables.</p>
+
+                        <li class="custom-bullet">
+                        <span class="svg-icon">
+                            <svg class="trophy" data-fa-transform="shrink-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trophy" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="" style="transform-origin: 0.5625em 0.5em;"><g transform="translate(288 256)"><g transform="translate(0, 0)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="var(--regular)" d="M400 0H176c-26.5 0-48.1 21.8-47.1 48.2c.2 5.3 .4 10.6 .7 15.8H24C10.7 64 0 74.7 0 88c0 92.6 33.5 157 78.5 200.7c44.3 43.1 98.3 64.8 138.1 75.8c23.4 6.5 39.4 26 39.4 45.6c0 20.9-17 37.9-37.9 37.9H192c-17.7 0-32 14.3-32 32s14.3 32 32 32H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H357.9C337 448 320 431 320 410.1c0-19.6 15.9-39.2 39.4-45.6c39.9-11 93.9-32.7 138.2-75.8C542.5 245 576 180.6 576 88c0-13.3-10.7-24-24-24H446.4c.3-5.2 .5-10.4 .7-15.8C448.1 21.8 426.5 0 400 0zM48.9 112h84.4c9.1 90.1 29.2 150.3 51.9 190.6c-24.9-11-50.8-26.5-73.2-48.3c-32-31.1-58-76-63-142.3zM464.1 254.3c-22.4 21.8-48.3 37.3-73.2 48.3c22.7-40.3 42.8-100.5 51.9-190.6h84.4c-5.1 66.3-31.1 111.2-63 142.3z" transform="translate(-288 -256)"></path></g></g>
+                            </svg>
+                        </span>
+                        <h3>PVSA Gold</h3>
+                        </li>
+                        <p>This award honors individuals whose service positively impacts communities in every corner of the nation and inspires those around them to take action, too.</p>
+                    </ul>
+                </div>
+
+                <div class="resume-skills">
+                    <h2 class="resume-section-title">Skills</h2>
+                    <ul class="list-inline">
+                            <li class="list-inline-item"><span class="badge">C++</span></li>
+                            <li class="list-inline-item"><span class="badge">Python</span></li>
+                            <li class="list-inline-item"><span class="badge">NumPy</span></li>
+                            <li class="list-inline-item"><span class="badge">Pandas</span></li>
+                            <li class="list-inline-item"><span class="badge">SciPy</span></li>
+                            <li class="list-inline-item"><span class="badge">MatPlotLib</span></li>
+                            <li class="list-inline-item"><span class="badge">PyTorch</span></li>
+                            <li class="list-inline-item"><span class="badge">TensorFlow</span></li>
+                            <li class="list-inline-item"><span class="badge">SQL</span></li>
+                            <li class="list-inline-item"><span class="badge">R</span></li>
+                            <li class="list-inline-item"><span class="badge">HTML</span></li>
+                            <li class="list-inline-item"><span class="badge">CSS</span></li>
+                            <li class="list-inline-item"><span class="badge">D3.js</span></li>
+                            <li class="list-inline-item"><span class="badge">Manim</span></li>
+                    </ul>
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+    <main></main>
+
+    <footer>
+        <div class="mastfoot">
+            <p>&copy; 2023 Jay Gupta. Powered by vanilla HTML, CSS, and JS.</p>
+        </div>
+    </footer>
+
+</body>

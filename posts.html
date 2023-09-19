@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Some meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Custom Styles and Scripts-->
+    <link rel="stylesheet" href="styles.css"> 
+    <script src="./script.js" defer></script> 
+    <script src="./table.js" defer></script>
+
+    <!-- Load Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Your Website Title</title>
+</head>
+
+<body>
+    <!-- see: https://stackoverflow.com/a/45762747 -->
+    <div class="everything">
+    <div class="masthead">
+    <div class="masthead__inner-wrap">
+        <div class="masthead__menu">
+            <nav class="greedy-nav">
+                <a class="site-title" href="./index.html">Jay Gupta</a>
+                <ul class="visible-links">
+                <li class="masthead__menu-item"><a href="./posts.html">Posts</a></li>
+                <li class="masthead__menu-item"><a href="./photos.html">Photos</a></li>
+                <li class="masthead__menu-item"><a href="./resume.html">Resume</a></li>
+                </ul>
+                <div class="dark_toggle" onclick="toggleDark()">
+                    <svg height=35px width=35px>
+                    <circle cx="50%" cy="50%" r="10px" fill="white" id="moon" />
+                    <circle cx="50%" cy="50%" r="15px" fill="none" stroke="white" stroke-width="2px" id="ring" />
+                    </svg>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </div>
+
+    <div class="initial-content">
+        <div id="main" role="main">
+        <div class="sidebar">
+            <table id="headerTable">
+                <th>
+                    <svg class="toc" width="25px" height="25px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 7.00003H4M8 12H4M8 17H4M12 3V21M9.2 21H16.8C17.9201 21 18.4802 21 18.908 20.782C19.2843 20.5903 19.5903 20.2843 19.782 19.908C20 19.4802 20 18.9201 20 17.8V6.20003C20 5.07993 20 4.51987 19.782 4.09205C19.5903 3.71573 19.2843 3.40977 18.908 3.21802C18.4802 3.00003 17.9201 3.00003 16.8 3.00003H9.2C8.07989 3.00003 7.51984 3.00003 7.09202 3.21802C6.71569 3.40977 6.40973 3.71573 6.21799 4.09205C6 4.51987 6 5.07993 6 6.20003V17.8C6 18.9201 6 19.4802 6.21799 19.908C6.40973 20.2843 6.71569 20.5903 7.09202 20.782C7.51984 21 8.07989 21 9.2 21Z" stroke="#252a34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    On This Page
+                </th>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mainbar" id="headerContainer">
+            <h>Posts By Year</h>
+            <p>Welcome to my blog! My name is Jay Gupta and I am a sophomore at Stanford working towards a Bachelors of Computer Science.</p>
+            <h>2023</h>
+            <hr>
+            <h2><a href="./barcode.html">Movie Barcode</a></h2>
+            <span class="custom-bullet">
+                <span class="svg-icon">
+                    <svg class="calendar" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 9H21M7 3V5M17 3V5M6 13H8M6 17H8M11 13H13M11 17H13M16 13H18M16 17H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="var(--regular)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                September 15 2023
+            </span>
+            <p>Recently, I stumbled upon a fascinating and visually captivating concept that lives at the intersection of film and cinematography: movie barcodes.</p>
+            <!-- <br>
+            <h2>Hacking Word Hunt</h2>
+            <span class="custom-bullet">
+                <span class="svg-icon">
+                    <svg class="calendar" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 9H21M7 3V5M17 3V5M6 13H8M6 17H8M11 13H13M11 17H13M16 13H18M16 17H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="var(--regular)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                September 15 2023
+            </span>
+            <p>I recently completed another summer internship at Meta.</p>
+            <hr>
+            <br> -->
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <main></main>
+
+    <footer>
+        <div class="mastfoot">
+            <p>&copy; 2023 Jay Gupta. Powered by vanilla HTML, CSS, and JS.</p>
+        </div>
+    </footer>
+
+</body>

@@ -1,0 +1,823 @@
+
+/* Set Scroll Behavior */
+/* see: https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Default values for document root */
+:root {
+  --primary-color: white;
+  --secondary-color: #252a34;
+  --bright-accent: #70777C;
+  --dull-accent: #6F777D;
+  --dark-accent: #F2F3F3;
+  --bright-red: #fe4747;
+
+  --regular: #3E4144;
+  --github: #171516;
+  --linkedin: #3579B1;
+  --twitter: #6BAAE8;
+}
+
+/* Default values for dark-theme */
+.dark-theme {
+  --primary-color: #252a34;
+  --secondary-color: #eaeaea;
+  --bright-accent: #00adb5;
+  --dull-accent: #bbb;
+  --dark-accent: #1B1D23;
+  --bright-red: #fe4747;
+
+  --regular: #eaeaea;
+  --github: #eaeaea;
+  --linkedin: #3579B1;
+  --twitter: #6BAAE8;
+}
+
+.dark_toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    /* Useful Debug */
+    /* border: 1px solid var(--secondary-color); */
+}
+
+
+/* Don't display svg symbols */
+.symbol { display: none; }
+
+/* Set Page Background Color */
+
+body {
+  background: var(--primary-color);
+}
+
+/* Some Defaults for text */
+
+h {
+    font-family: Fira Sans, sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: var(--secondary-color);
+}
+
+h2 {
+    font-family: Fira Sans, sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--secondary-color);
+}
+
+p {
+    font-family: Fira Sans, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--secondary-color);
+}
+
+li {
+    font-family: Fira Sans, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--secondary-color);
+}
+
+a {
+    color: var(--bright-accent);
+    text-decoration: none;
+}
+
+/* see: https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-offset */
+a:hover{
+    text-underline-offset: 3px;
+    text-decoration: underline;
+}
+
+/* Style masthead */
+
+.masthead {
+    position: relative;
+    border-bottom: 1px solid var(--dull-accent); 
+    z-index: 20
+}
+
+.masthead__inner-wrap {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    max-width: 100%;
+    display: flex;
+    font-family: Fira Sans, sans-serif;
+}
+
+.masthead__inner-wrap::after {
+    clear: both;
+    content: "";
+    display: table
+}
+
+@media (min-width: 80em) {
+    .masthead__inner-wrap {
+        max-width:1280px
+    }
+}
+
+.site-title {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.masthead__menu {
+    clear: both;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+
+.masthead__menu ul {
+    clear: both;
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+
+.masthead__menu-item {
+    display: block;
+    list-style-type: none;
+    white-space: nowrap
+}
+
+.greedy-nav {
+    display: flex;
+    align-items: center;
+    min-height: 2em;
+}
+
+.greedy-nav a {
+    margin: 0 1rem;
+    color: var(--secondary-color);
+    text-decoration: none
+}
+
+.greedy-nav a:hover {
+    color: var(--dull-accent)
+}
+
+.greedy-nav a.site-title {
+    margin-left: 0
+}
+
+/* Light Dark Toggle in masthead */
+
+#moon {
+  fill: var(--secondary-color);
+  transition:all 250ms linear;
+}
+
+#moon.night{
+  fill: var(--secondary-color);
+  cx: 65%;
+}
+
+#ring {
+  stroke: var(--secondary-color);
+  transition:all 250ms linear;
+}
+
+.greedy-nav .visible-links {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    overflow: hidden;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.greedy-nav .visible-links a {
+    position: relative
+}
+
+.greedy-nav .visible-links a:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1.5px;
+    background: var(--bright-accent);
+    width: 100%;
+    transition: transform 0.25s ease-out;
+    transform-origin: bottom right; 
+    transform: scaleX(0);
+}
+
+.greedy-nav .visible-links a:hover:before {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+/* Page Content */
+
+.initial-content {
+    flex: 1 0 auto;
+    /* Useful Debug */
+    /* border: 1px solid var(--secondary-color); */
+}
+
+#main {
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    max-width: 100%;
+    justify-content: space-between;
+    display: flex;
+    /* Useful Debug */
+    /* border: 1px solid var(--secondary-color); */
+}
+
+@media (min-width: 80em) {
+    #main {
+        max-width:1280px
+    }
+}
+
+.sidebar {
+  float: left;
+  width: 30%;
+  padding: 1em;
+  opacity: 0.75;
+  color: var(--secondary-color);
+  /* Useful Debug */
+  /* border: 1px solid var(--secondary-color); */
+}
+
+.sidebar:hover {
+    opacity: 1;
+    transition:all 250ms linear;
+}
+
+.author__avatar {
+/*    display: block;*/
+    width: auto;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.author__avatar img {
+    border-radius: 50%;
+    padding: 0;
+    opacity: 1;
+    border: 1px solid var(--secondary-color);
+}
+
+.author__urls-wrapper a{
+    color: inherit;
+    text-decoration: none;
+}
+
+/* see: https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-offset */
+.author__urls-wrapper a:hover{
+    color: var(--bright-accent);
+    text-underline-offset: 3px;
+    text-decoration: underline;
+}
+
+/* Reset default list styles */
+
+.author__urls-icons {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.author__urls-icons li {
+    padding-left: 0;
+    margin-bottom: 10px;
+}
+
+/* Define the custom bullets */
+
+.custom-bullet {
+    display: flex;
+    /* Useful Debug */
+    /* border: 1px solid var(--secondary-color); */
+}
+
+.custom-bullet .svg-icon {
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    /* Useful Debug */
+    /* border: 1px solid red; */
+}
+
+.custom-bullet .svg-icon svg {
+    height: 20px;
+    width: 20px;
+    /* Useful Debug */
+    /* border: 1px solid blue; */
+}
+
+.mainbar {
+  float: right;
+  width: 70%;
+  padding: 1em;
+  color: var(--secondary-color);
+  font-family: Fira Sans, sans-serif;
+  /* Useful Debug */
+  /* border: 1px solid var(--secondary-color); */
+}
+
+.mainbar h {
+    /*font-weight: 600;
+    font-size: 36px;*/
+    margin: 5px 5px 0px 0px;
+}
+
+.mainbar h2 {
+    /*font-weight: 600;
+    font-size: 28px;*/
+    margin: 20px 5px 0px 0px;
+}
+
+/* We'll reset the default paragraph text style for the mainbar */
+.mainbar p {
+    margin: 5px 5px 20px 0px;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.mainbar span {
+    margin: 0;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.mainbar figure {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+}
+
+.mainbar figcaption {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.mainbar img {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+footer {
+    bottom:0;
+    background-color: var(--dark-accent);
+    max-width: 100%;
+    z-index: 20;
+    /* Useful Debug */
+    /* border: 1px solid var(--dull-accent); */
+}
+
+@media (min-width: 80em) {
+    .mastfoot {
+        max-width:1280px
+    }
+}
+
+.mastfoot {
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    font-family: Fira Sans, sans-serif;
+    color: var(--secondary-color);
+    /* Useful Debug */
+    /* border: 1px solid var(--dull-accent); */
+}
+
+.mastfoot::after {
+    clear: both;
+    content: "";
+    display: table
+}
+
+.everything {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Table of Contents */
+/* heavily inspired by https://unused-css.com/blog/css-rounded-table-corners/ */
+
+table {
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color);
+    overflow: hidden;
+    font-family: Fira Sans, sans-serif;
+    width: 100%;
+}
+
+table th {
+  background: var(--bright-accent);
+  font-weight: 400;
+  font-size: 20px;
+  text-align: left;
+  padding: 5px; 
+  display: flex;
+}
+
+table th .toc {
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
+    /* Useful Debug */
+    /* border: 1px solid var(--secondary-color); */
+}
+
+table tr {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+table td {
+    padding: 5px; 
+}
+
+table td.hd {
+    font-weight: 400;
+}
+
+table td.sb {
+    text-indent: 30px;
+}
+
+table td a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* see: https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-offset */
+table td a:hover{
+  text-underline-offset: 3px;
+  text-decoration: underline;
+}
+
+/* Apply a border to the right of all but the last column */
+table th:not(:last-child),
+table td:not(:last-child) {
+    border-right: 1px solid var(--secondary-color);
+}
+
+/* Apply a border to the bottom of all but the last row */
+table>thead>tr:not(:last-child)>th,
+table>thead>tr:not(:last-child)>td,
+table>tbody>tr:not(:last-child)>th,
+table>tbody>tr:not(:last-child)>td,
+table>tfoot>tr:not(:last-child)>th,
+table>tfoot>tr:not(:last-child)>td,
+table>tr:not(:last-child)>td,
+table>tr:not(:last-child)>th,
+table>thead:not(:last-child),
+table>tbody:not(:last-child),
+table>tfoot:not(:last-child) {
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+/* Block Quotes*/
+
+blockquote {
+    border-radius: 10px;
+    border: 2px solid var(--bright-accent);
+    border-left: 10px solid var(--bright-accent);
+    padding: 10px;
+    margin: 20px 0;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+/* Style for paragraph text within the blockquote */
+/* If we said blockquote p, the css would override with the (more specific) mainbar p styles */
+.mainbar blockquote p {
+    margin: 0;
+}
+
+/* Prism.js Styles */
+
+/* Add rounded corners to the pre element (code block container) */
+pre {
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    overflow: auto;
+}
+
+/* Add rounded corners to the code element (the code itself) */
+pre code {
+    border-radius: 10px; /* Same value as pre element for consistency */
+}
+
+/* From Prism */
+
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+    white-space: pre-wrap;
+}
+
+pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em; /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 1px solid #999;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+.line-numbers-rows > span {
+    pointer-events: none;
+    display: block;
+    counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: #999;
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+}
+
+/* General Setup for Resume */
+
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline-item {
+  display: inline-block;
+}
+
+.list-inline-item:not(:last-child) {
+  margin-right: 7px;
+  margin-bottom: 7px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 5px;
+  color: var(--primary-color);
+  background: var(--bright-accent);
+}
+
+/* The resume has two primary sections */
+
+.experience-section {
+  float: left;
+  width: 70%;
+  padding: 0em 1em 0em 1em;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  font-family: Fira Sans, sans-serif;
+}
+
+.skills-section {
+  float: right;
+  width: 30%;
+  padding: 0em 1em 0em 1em;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color); 
+  font-family: Fira Sans, sans-serif;
+}
+
+/* These will be shared across many sub-sections */
+
+.resume-section-title {
+  margin: 25px 0px 25px 0px;
+  font-size: 36px;
+  position: relative;
+  color: var(--secondary-color)
+}
+
+.resume-section-title:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--secondary-color);
+}
+
+.resume-section-content {
+  border-left: solid 5px var(--bright-red);
+}
+
+.resume-item-names {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    /* Useful Debug */
+    /* border: 1px solid var(--secondary-color); */
+}
+
+
+/* Resume TimeLine */
+
+.resume-timeline {
+  margin: 0px;
+  padding: 0px 0px 0px 25px;
+}
+
+.resume-timeline-item-header h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  position: relative;
+}
+
+.resume-timeline-item-header h3::before {
+  content: "";
+  position: absolute;
+  left: calc(-25px - 12.5px);
+  background-color: var(--bright-red);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  transform: translate(-2.5px, calc(12px - 12.5px));
+}
+
+.resume-timeline-item-header h3::after {
+  content: "";
+  position: absolute;
+  left: calc(-25px - 7.5px);
+  background-color: var(--primary-color);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  transform: translate(-2.5px, calc(12px - 7.5px));
+}
+
+.resume-timeline-item-header {
+    /* Useful Debug */
+    /* border: 1px solid var(--secondary-color); */
+}
+
+.resume-position-name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.resume-company-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.resume-position-time {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--dull-accent);
+}
+
+.resume-timeline-item-desc {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--dull-accent);
+}
+
+.resume-timeline-item-desc-heading {
+  margin: 0px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+/* Resume Projects */
+
+.resume-project-name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.resume-project-link {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.resume-project-item-desc {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--dull-accent);
+}
+
+/* Resume Education */
+
+.resume-education h3 {
+    margin: 25px 0px 5px 0px;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.resume-education ul {
+    margin: 0;
+    padding: 0;
+}
+
+.resume-education p {
+    margin: 0px 0px 5px 0px;
+}
+
+
+/* Resume Awards */
+
+.resume-awards h3 {
+    margin: 0px 0px 0px 0px;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.resume-awards ul {
+    margin: 0;
+    padding: 0;
+}
+
+.resume-awards p {
+    margin: 0px 0px 15px 0px;
+}
+
+@media (max-width: 767.98px) {
+  .resume-wrapper {
+    padding-top: 0;
+  }
+  .resume-header {
+    height: auto;
+  }
+  .resume-header .picture {
+    width: 120px;
+    border-radius: 4px;
+  }
+}
+
+/* Photo Page (powered by Fotorama and uploadcare.com) */
+
+.landscape {
+    margin: auto;
+    width: 50%;
+}
