@@ -57,7 +57,21 @@ body {
 
 /* Some Defaults for text */
 
+#signature {
+    font-family:Qwitcher Grypen, 
+    sans-serif; font-size:72px; 
+    font-weight: 400; 
+    margin: 0px
+}
+
 h {
+    font-family: Fira Sans, sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: var(--secondary-color);
+}
+
+h1 {
     font-family: Fira Sans, sans-serif;
     font-weight: 600;
     font-size: 36px;
@@ -260,8 +274,15 @@ a:hover{
     transition:all 250ms linear;
 }
 
+.sidebar h1 {
+    font-family: Fira Sans, sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
 .author__avatar {
-/*    display: block;*/
     width: auto;
     height: auto;
     margin-bottom: 5px;
@@ -332,21 +353,21 @@ a:hover{
   /* border: 1px solid var(--secondary-color); */
 }
 
-.mainbar h {
+.mainbar h1 {
     /*font-weight: 600;
     font-size: 36px;*/
-    margin: 5px 5px 0px 0px;
+    margin: 0px 0px 5px 0px;
 }
 
 .mainbar h2 {
     /*font-weight: 600;
     font-size: 28px;*/
-    margin: 20px 5px 0px 0px;
+    margin: 20px 0px 0px 0px;
 }
 
 /* We'll reset the default paragraph text style for the mainbar */
 .mainbar p {
-    margin: 5px 5px 20px 0px;
+    margin: 5px 0px 20px 0px;
     font-weight: 300;
     font-size: 24px;
 }
@@ -819,5 +840,5 @@ pre[class*="language-"].line-numbers > code {
 
 .landscape {
     margin: auto;
-    width: 50%;
+    width: 70%;
 }
