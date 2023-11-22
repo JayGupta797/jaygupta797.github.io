@@ -347,6 +347,7 @@ a:hover{
   float: right;
   width: 70%;
   padding: 1em;
+  margin-right: 10%;
   color: var(--secondary-color);
   font-family: Fira Sans, sans-serif;
   /* Useful Debug */
