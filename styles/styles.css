@@ -160,6 +160,7 @@ a:hover{
 }
 
 .masthead__menu-item {
+    font-size: 20px;
     display: block;
     list-style-type: none;
     white-space: nowrap
