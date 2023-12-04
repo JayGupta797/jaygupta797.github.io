@@ -374,6 +374,13 @@ a:hover{
     font-size: 24px;
 }
 
+/* We'll reset the default list text style for the mainbar */
+.mainbar ol li {
+    margin: 5px 0px 0px 0px;
+    font-weight: 300;
+    font-size: 24px;
+}
+
 .mainbar span {
     margin: 0;
     font-weight: 300;
