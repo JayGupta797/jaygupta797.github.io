@@ -275,6 +275,12 @@ a:hover{
     transition:all 250ms linear;
 }
 
+.sidebar {
+    align-self: flex-start;
+    position: sticky;
+    top: 0px;
+}
+
 .sidebar h1 {
     font-family: Fira Sans, sans-serif;
     font-weight: 600;
