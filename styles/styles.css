@@ -186,23 +186,6 @@ a:hover{
     margin-left: 0
 }
 
-/* Light Dark Toggle in masthead */
-
-#moon {
-  fill: var(--secondary-color);
-  transition:all 250ms linear;
-}
-
-#moon.night{
-  fill: var(--secondary-color);
-  cx: 65%;
-}
-
-#ring {
-  stroke: var(--secondary-color);
-  transition:all 250ms linear;
-}
-
 .greedy-nav .visible-links {
     display: flex;
     justify-content: flex-end;
@@ -232,6 +215,23 @@ a:hover{
 .greedy-nav .visible-links a:hover:before {
     transform-origin: bottom left;
     transform: scaleX(1);
+}
+
+/* Light Dark Toggle in masthead */
+
+#moon {
+  fill: var(--secondary-color);
+  transition:all 250ms linear;
+}
+
+#moon.night{
+  fill: var(--secondary-color);
+  cx: 65%;
+}
+
+#ring {
+  stroke: var(--secondary-color);
+  transition:all 250ms linear;
 }
 
 /* Page Content */
@@ -299,7 +299,7 @@ a:hover{
     border-radius: 50%;
     padding: 0;
     opacity: 1;
-    border: 1px solid var(--secondary-color);
+    border: 1.5px solid var(--secondary-color);
 }
 
 .author__urls-wrapper a{
@@ -558,6 +558,14 @@ blockquote {
 /* If we said blockquote p, the css would override with the (more specific) mainbar p styles */
 .mainbar blockquote p {
     margin: 0;
+}
+
+/* Proof Block Style */
+.proof {
+  border: 2px solid var(--secondary-color);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
 }
 
 /* Prism.js Styles */

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Some meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay Gupta - Modular Mltiplication Graphs Post</title>
+
+    <!-- Custom Styles and Scripts-->
+    <link rel="stylesheet" href="../styles/styles.css"> 
+    <script src="../scripts/theme.js" defer></script> 
+    <script src="../scripts/table.js" defer></script>
+
+    <!-- Load Prism.js for code blocks -->
+    <link id="prism-theme" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-python.min.js" integrity="sha512-3qtI9+9JXi658yli19POddU1RouYtkTEhTHo6X5ilOvMiDfNvo6GIS6k2Ukrsx8MyaKSXeVrnIWeyH8G5EOyIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-QTYXYEniHb1m0ZKtSyfpmw40uH9vPfV07vxsv/plIRMEiON4yOp2qoZiv/FTqFIOym4bdQ4+p9RtHaCMC0ApRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Load MathJax for LaTex -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+
+    <!-- Load Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- see: https://stackoverflow.com/a/45762747 -->
+    <div class="everything">
+    <div class="masthead">
+    <div class="masthead__inner-wrap">
+        <div class="masthead__menu">
+            <nav class="greedy-nav">
+                <a class="site-title" href="../index.html">Jay Gupta</a>
+                <ul class="visible-links">
+                <li class="masthead__menu-item"><a href="../posts.html">Posts</a></li>
+                <li class="masthead__menu-item"><a href="../photos.html">Photos</a></li>
+                <li class="masthead__menu-item"><a href="../resume.html">Resume</a></li>
+                </ul>
+                <div class="dark_toggle" onclick="toggleDark()">
+                    <svg height=35px width=35px>
+                    <circle cx="50%" cy="50%" r="10px" fill="white" id="moon" />
+                    <circle cx="50%" cy="50%" r="15px" fill="none" stroke="white" stroke-width="2px" id="ring" />
+                    </svg>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </div>
+
+    <div class="initial-content">
+        <div id="main" role="main">
+        <div class="sidebar">
+            <table id="headerTable">
+                <th>
+                    <svg class="toc" width="25px" height="25px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 7.00003H4M8 12H4M8 17H4M12 3V21M9.2 21H16.8C17.9201 21 18.4802 21 18.908 20.782C19.2843 20.5903 19.5903 20.2843 19.782 19.908C20 19.4802 20 18.9201 20 17.8V6.20003C20 5.07993 20 4.51987 19.782 4.09205C19.5903 3.71573 19.2843 3.40977 18.908 3.21802C18.4802 3.00003 17.9201 3.00003 16.8 3.00003H9.2C8.07989 3.00003 7.51984 3.00003 7.09202 3.21802C6.71569 3.40977 6.40973 3.71573 6.21799 4.09205C6 4.51987 6 5.07993 6 6.20003V17.8C6 18.9201 6 19.4802 6.21799 19.908C6.40973 20.2843 6.71569 20.5903 7.09202 20.782C7.51984 21 8.07989 21 9.2 21Z" stroke="#252a34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    On This Page
+                </th>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mainbar" id="headerContainer">
+            <h>Introduction</h>
+            <p>
+                MathOverflow is a Q&A website, which serves as an online community of mathematicians. While wandering through MathOverflow posts, I 
+                <a href="https://mathoverflow.net/q/315469" target="_blank">stumbled upon</a> 
+                a rather peculiar result discovered by Simon Plouffe between 1974 and 1979. I'll borrow the statement verbatim.
+            </p>
+            <blockquote>
+                <p>Let the multiplication graph \( \frac{n}{m} \) be the graph with \( m \) points distributed evenly on a circle and a line between two points \( a, b \) when \( a \cdot n \equiv b \mod m \). These graphs look random but by carefully choosing 𝑛 and 𝑚 one finds intricate patterns.</p>
+            </blockquote>
+            <p>So what are those so-called intricate patterns? Well, defying all expectation, it turns out that these graphs trace out cardiods!</p>
+            <h>Creating a Multiplication Graph</h>
+            <p>Once you get all the graphical boiler-plate taken care of, we can draw up a Modular Arithmetic Graph using the following psuedo-code!</p>
+            <pre class="line-numbers"><code class="language-python">
+# These uniquely define the graph
+N = 40
+M = 139
+
+# Let's start off with some lables
+labels = [f'{number}' for number in range(M)]
+
+# Add lines
+for sym1 in labels:
+    for sym2 in labels:
+        num1 = int(sym1)
+        num2 = int(sym2)
+        if (num1 * N) % M == (num2) % M: draw(sym1, sym2)
+        else: continue
+            </code></pre>
+            <p></p>
+            <p>Running through that workflow, I managed to re-create some Modular Multiplication Graphs featuring cardiods!</p>
+            <figure>
+              <object type="image/svg+xml" data="../assets/modular-images/group-optimized.svg" width="100%" height="auto">
+                Your browser does not support SVG
+              </object>
+              <figcaption>Grid of Modular Multiplication Graphs</figcaption>
+            </figure>
+            <h>Resources and References</h>
+            <p>
+                If you're interested in the math underlying these Modular Multiplication Graphs, I would definitely recommend checking out this fun
+                <a href="https://youtu.be/qhbuKbxJsk8?si=GVCxId4n-VvqI7yf" target="_blank">Mathologer video</a>.
+                From there, you can work your way up to Simon Plouffe's 
+                <a href="http://xahlee.info/SpecialPlaneCurves_dir/Cardioid_dir/_p/LightsRaysReflections.pdf" target="_blank">original paper</a> along with his 
+                <a href="http://plouffe.fr" target="_blank">other</a> 
+                works.
+            </p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <main></main>
+
+    <footer>
+        <div class="mastfoot">
+            <p>&copy; 2023 Jay Gupta. Powered by vanilla HTML, CSS, and JS.</p>
+        </div>
+    </footer>
+
+</body>
