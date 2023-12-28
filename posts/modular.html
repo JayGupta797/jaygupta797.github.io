@@ -89,13 +89,11 @@ N = 40
 M = 139
 
 # Let's start off with some lables
-labels = [f'{number}' for number in range(M)]
+labels = range(M)
 
 # Add lines
-for sym1 in labels:
-    for sym2 in labels:
-        num1 = int(sym1)
-        num2 = int(sym2)
+for num1 in labels:
+    for num2 in labels:
         if (num1 * N) % M == (num2) % M: draw(sym1, sym2)
         else: continue
             </code></pre>
