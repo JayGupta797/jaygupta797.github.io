@@ -93,7 +93,7 @@
                 <figcaption>Regular Polygon with Inradius in White</figcaption>
             </figure>
             <p>
-                Our task is to compute the <a href="https://mathworld.wolfram.com/Inradius.html" target="_blank">inradius</a> of a \( k \)-regular polygon. To do so, we'll notice that the radial line is a perpendicular bisector of the corresponding side. This property ensures the incenter is equidistant from each side of the polygon. To formalize this observation, we'll express the first two vertices in polar coordinates.
+                Our task is to compute the <a href="https://mathworld.wolfram.com/Inradius.html" target="_blank">inradius</a> of a \( k \)-regular polygon. To do so, we'll notice that the radial line is a perpendicular bisector of the corresponding side. This property ensures the <a href="https://mathworld.wolfram.com/Incenter.html" target="_blank">incenter</a> is equidistant from each side of the polygon. To formalize this observation, we'll express the first two vertices in rectangula coordinates.
                 \[ v_{\textcolor{var(--bright-accent)}{0}} = \left ( r \cos \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{0} \cdot 2\pi}{k} \right ), \hspace{0.5em} r \sin \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{0} \cdot 2\pi}{k} \right ) \right ) \]
                 \[ v_{\color{var(--bright-accent)}{1}} = \left ( r \cos \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{1} \cdot 2\pi}{k} \right ), \hspace{0.5em} r \sin \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{1} \cdot 2\pi}{k} \right ) \right ) \]
                 We now compute the midpoint.
@@ -102,7 +102,7 @@
                     \left ( \frac{r \cos \left ( \frac{\pi}{2} \right ) + r \cos \left ( \frac{\pi}{2} + \frac{2\pi}{k} \right )}{2},
                     \frac{r \sin \left ( \frac{\pi}{2} \right ) + r \sin \left ( \frac{\pi}{2} + \frac{2\pi}{k} \right )}{2} \right )
                 \]
-                Notice that by construction the incenter is the origin. In effect, overloading the notation for vectors and points, we find \( r_{\text{inner}} = \Vert v_{\text{mid}} \Vert_{2} \) or the \( 2 \)-norm. Working through that computation (using the Pythagorean and Periodicity Identities among other tools), we arrive at the following:
+                Notice that by construction the incenter is the origin. In effect, overloading the notation for vectors and points, we find \( r_{\text{inner}} = \Vert v_{\text{mid}} \Vert_{2} \) or its \( 2 \)-norm. Working through that computation (using the Pythagorean and Periodicity Identities among other tools), we arrive at the following:
                 \[
                     \Vert v_{\text{mid}} \Vert_{2} = 
                     \sqrt{\frac{r^{2} \left ( 1 + \cos \left ( \frac{2\pi}{k} \right ) \right )}{2} } = 
@@ -116,7 +116,7 @@
             </p>
             <h>Construction</h>
             <p>To get a visual feel for what is going on here, we can whip up two helper functions to find get an inscribed Ngram and polygon.</p>
-            <p>For get_inscribed_Ngram(), we sample evenly spaced points on the circle.</p>
+            <p>To get an inscribed Ngram, we sample evenly spaced points on the circle.</p>
                 <pre class="line-numbers"><code class="language-python">
 def get_inscribed_Ngram(circle, n):
 
@@ -138,7 +138,7 @@ def get_inscribed_Ngram(circle, n):
     return polygon
             </code></pre>
 
-            <p>For get_inscribed_circle(), we can compute the radius using the formula derived above and center at the origin.</p>
+            <p>To get an inscribed circle, we can compute the radius using the formula derived above and center at the origin.</p>
 
             <pre class="line-numbers"><code class="language-python">
 def get_inscribed_circle(polygon):
