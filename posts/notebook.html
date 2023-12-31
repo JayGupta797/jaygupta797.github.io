@@ -143,7 +143,7 @@
                 At this point, our task is to find \( \Delta \) such that \( q \left ( -\frac{b}{2a} \pm \Delta  \right ) = 0 \). Since this seems a bit cumbersome to compute directly, we'll take another look at the Vertex Form. Upon further inspection, we arrive at the following expansion: \( q(x) = ax^{2} - 2ahx + ah^{2} + k \). Comparing terms from Standard Form, we notice that \( b = -2ah \) and \( c = ah^{2} + k \) allowing us to arbitrarily tune both coefficients by changing the position of the vertex. In other words, \( b \) and \( c \) only influence the position of the vertex and not the overall shape of the graph! We now reason that moving \( \Delta \) units to the left or right of the vertex has the effect of moving up or down \( a \Delta^{2} \) units!
                 \[
                     a \Delta^{2} + \left ( c - \frac{b^{2}}{4a} \right ) = 0
-                    \implies
+                    \hspace{0.5em} \text{which implies} \hspace{0.5em}
                     \Delta = \frac{\sqrt{b^2 - 4ac}}{2a}
                 \]
                 Adding back the \( x \)-coordinate of the vertex and simplifying everything, we arrive at the quadratic formula.
@@ -223,7 +223,9 @@
             <p>
                 The question, of course, is why the \( \sqrt{a} \) pops up here. As it so happens, this isn't too difficult to explain. From Thale's Theorem, we know \( \measuredangle ABC \) is a right angle. From here we determine that the two triangle created by dropping the altitude are similiar to each other since they share the same angles. Letting \( h \) stand for the altitude, we establish the following relation:
                 \[
-                    \frac{h}{a} = \frac{1}{h} \implies h = \sqrt{a}
+                    \frac{h}{a} = \frac{1}{h} 
+                    \hspace{0.5em} \text{which implies} \hspace{0.5em} 
+                    h = \sqrt{a}
                 \]
                 I suppose the second question that comes to mind is why Thale's Theorem holds. One approach that immediately surfaces is to apply the more general <a href="https://en.wikipedia.org/wiki/Inscribed_angle" target="_blank">Inscribed Angle Theorem</a> to a chord that happens to also be a diameter. Another approach, that I personally find interesting, is to consider the set of points such that the lines connecting \( (-r, 0) \) to \( (x, y) \) and \( (x, y) \) to \( (r, 0) \) are perpendicular to each other. Using point-slope form and enforcing that the slopes are perpendicular (negative reciprocals), we arrive at the following equations.
                 \[
@@ -234,7 +236,7 @@
                 Solving for \( m \) we rewrite this system.
                 \[
                     m = \frac{y}{x + r} = - \frac{x - r}{y} 
-                    \implies
+                    \hspace{0.5em} \text{which implies} \hspace{0.5em}
                     x^{2} + y^{2} = r^{2}
                 \]
                 Amazingly, it turns out that the only set of points that ensure the two lines are perpendicular are those belonging to a circle!
