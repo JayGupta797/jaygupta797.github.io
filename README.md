@@ -6,14 +6,14 @@ If I were to describe my interests, you might say they're a bit all over the map
 
 With that nugget of motivation out of the way, this website is intended to act as a sort of digital diary---a record of my projects and interests over the years to come. I hope you enjoy reading as much as I enjoy writing!
 
-To end things off, here is some quick Q&A
+To end things off, here is some quick Q&A:
 
 - 🔭 I’m currently working on a web application to investigate course-prerequisite networks
 - 🌱 I’m currently learning machine learning with an emphasis on natural language
 - 👯 I’m looking to collaborate on open source projects, particularly in the education and/or healthcare space
 - 🤔 I’m looking for help with advice on navigating the tech landscape
 - 💬 Ask me about niche math
-- 📫 How to reach me: Email me at jgupta26@stanford.edu
+- 📫 How to reach me: jgupta26@stanford.edu
 - 😄 Pronouns: He/Him
 - ⚡ Fun fact: I am the youngest person in my extended family!
 
