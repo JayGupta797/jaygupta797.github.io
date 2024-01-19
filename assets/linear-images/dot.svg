@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 221.347 183.863">
+	<script type="text/ecmascript">
+	    // change color based on local storage
+	    function changeColor(theme) {
+	      // Update CSS variable values based on the theme
+	      const root = document.documentElement;
+	      root.style.setProperty('--primary-color', theme === 'light' ? 'white' : '#252a34');
+	      root.style.setProperty('--secondary-color', theme === 'light' ? '#252a34' : '#eaeaea');
+	    }
+
+	    // Initially update color
+	    let data = localStorage.getItem('theme');
+	    changeColor(data);
+
+	    // Check for changes in the theme when the storage event occurs
+	    window.addEventListener('storage', function(event) {
+	      if (event.key === 'theme') {
+	        changeColor(event.newValue);
+	      }
+	    });
+  	</script>
+	<path transform="matrix(1,0,0,-1,100.413,122.17801)" d="M.00041 52.78519-85.027 14.67169-.00041-52.78519 85.027-14.67169ZM-.00041-52.78519" fill="#929292" fill-opacity=".3"/>
+	<path transform="matrix(1,0,0,-1,100.413,122.17801)" stroke-width="1.19553" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="var(--secondary-color)" d="M-42.51328 33.72844 42.51328-33.72844"/>
+	<text xml:space="preserve" transform="matrix(1 0 -0 1 0 183.863)" font-size="9.9626" font-family="CMMI10" font-style="italic"><tspan y="-17.121" x="140.788" fill="var(--secondary-color)">b</tspan></text>
+	<path transform="matrix(1,0,0,-1,100.413,122.17801)" stroke-width="1.19553" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="var(--secondary-color)" d="M42.5137 19.05673-42.5137-19.05673"/>
+	<text xml:space="preserve" transform="matrix(1 0 -0 1 0 183.863)" font-size="9.9626" font-family="CMMI10" font-style="italic"><tspan y="-40.484" x="45.234" fill="var(--secondary-color)">m</tspan></text>
+	<path transform="matrix(1,0,0,-1,100.413,122.17801)" stroke-width="1.19553" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="var(--secondary-color)" d="M0 0 35.26385 62.85564"/>
+	<path transform="matrix(.48927,-.87209,-.87209,-.48927,135.67685,59.322389)" d="M3.18808 0-1.91284 2.55046 0 0-1.91284-2.55046" fill="var(--secondary-color)"/>
+	<text xml:space="preserve" transform="matrix(1 0 -0 1 0 183.863)" font-size="9.9626" font-family="CMMI10" font-style="italic"><tspan y="-126.144" x="141.154" fill="var(--secondary-color)">Y</tspan></text>
+	<path transform="matrix(1,0,0,-1,100.413,122.17801)" stroke-width=".3985" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="var(--secondary-color)" d="M0 0 90.08868-13.46187"/>
+	<path transform="matrix(.98897,.14777,.14777,-.98897,190.50168,135.63986)" d="M1.99252 0-1.19551 1.59401 0 0-1.19551-1.59401" fill="var(--secondary-color)"/>
+	<text xml:space="preserve" transform="matrix(1 0 -0 1 0 183.863)" font-size="9.9626" font-family="CMMI10" font-style="italic"><tspan y="-43.721" x="203.432" fill="var(--secondary-color)">x</tspan></text>
+	<path transform="matrix(1,0,0,-1,100.413,122.17801)" stroke-width=".3985" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="var(--secondary-color)" d="M0 0-72.59216-32.5411"/>
+	<path transform="matrix(-.91249,.40903,.40903,.91249,27.820839,154.71912)" d="M1.99252 0-1.19551 1.59401 0 0-1.19551-1.59401" fill="var(--secondary-color)"/>
+	<text xml:space="preserve" transform="matrix(1 0 -0 1 .0000009536743 183.863)" font-size="9.9626" font-family="CMMI10" font-style="italic"><tspan y="-22.15" x="12.221" fill="var(--secondary-color)">y</tspan></text>
+	<path transform="matrix(1,0,0,-1,100.413,122.17801)" stroke-width=".3985" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="var(--secondary-color)" d="M0 0V100.68604"/>
+	<path transform="matrix(0,-1,-1,-0,100.413,21.491967)" d="M1.99252 0-1.19551 1.59401 0 0-1.19551-1.59401" fill="var(--secondary-color)"/>
+	<text xml:space="preserve" transform="matrix(1 0 -0 1 0 183.863)" font-size="9.9626" font-family="CMMI10" font-style="italic"><tspan y="-167.352" x="97.877" fill="var(--secondary-color)">z</tspan></text>
+</svg>

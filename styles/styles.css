@@ -552,6 +552,11 @@ table>tfoot:not(:last-child) {
     border-bottom: 1px solid var(--secondary-color);
 }
 
+/* In-Text Table */
+.textTable th {
+  display: table-cell;
+}
+
 /* Block Quotes*/
 
 blockquote {

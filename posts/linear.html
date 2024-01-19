@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Some meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay Gupta - Linear Algebra Post</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+    <!-- Custom Styles and Scripts-->
+    <link rel="stylesheet" href="../styles/styles.css"> 
+    <script src="../scripts/theme.js" defer></script> 
+    <script src="../scripts/table.js" defer></script>
+
+    <!-- Load Prism.js for code blocks -->
+    <link id="prism-theme" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-python.min.js" integrity="sha512-3qtI9+9JXi658yli19POddU1RouYtkTEhTHo6X5ilOvMiDfNvo6GIS6k2Ukrsx8MyaKSXeVrnIWeyH8G5EOyIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-QTYXYEniHb1m0ZKtSyfpmw40uH9vPfV07vxsv/plIRMEiON4yOp2qoZiv/FTqFIOym4bdQ4+p9RtHaCMC0ApRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Load MathJax for LaTex -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+
+    <!-- Load Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- see: https://stackoverflow.com/a/45762747 -->
+    <div class="everything">
+    <div class="masthead">
+    <div class="masthead__inner-wrap">
+        <div class="masthead__menu">
+            <nav class="greedy-nav">
+                <a class="site-title" href="../index.html">Jay Gupta</a>
+                <ul class="visible-links">
+                <li class="masthead__menu-item"><a href="../posts.html">Posts</a></li>
+                <li class="masthead__menu-item"><a href="../photos.html">Photos</a></li>
+                <li class="masthead__menu-item"><a href="../resume.html">Resume</a></li>
+                </ul>
+                <div class="dark_toggle" onclick="toggleDark()">
+                    <svg height=35px width=35px>
+                    <circle cx="50%" cy="50%" r="10px" fill="white" id="moon" />
+                    <circle cx="50%" cy="50%" r="15px" fill="none" stroke="white" stroke-width="2px" id="ring" />
+                    </svg>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </div>
+
+    <div class="initial-content">
+        <div id="main" role="main">
+        <div class="sidebar">
+            <table id="headerTable">
+                <th>
+                    <svg class="toc" width="25px" height="25px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 7.00003H4M8 12H4M8 17H4M12 3V21M9.2 21H16.8C17.9201 21 18.4802 21 18.908 20.782C19.2843 20.5903 19.5903 20.2843 19.782 19.908C20 19.4802 20 18.9201 20 17.8V6.20003C20 5.07993 20 4.51987 19.782 4.09205C19.5903 3.71573 19.2843 3.40977 18.908 3.21802C18.4802 3.00003 17.9201 3.00003 16.8 3.00003H9.2C8.07989 3.00003 7.51984 3.00003 7.09202 3.21802C6.71569 3.40977 6.40973 3.71573 6.21799 4.09205C6 4.51987 6 5.07993 6 6.20003V17.8C6 18.9201 6 19.4802 6.21799 19.908C6.40973 20.2843 6.71569 20.5903 7.09202 20.782C7.51984 21 8.07989 21 9.2 21Z" stroke="#252a34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    On This Page
+                </th>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mainbar" id="headerContainer">
+            <h>Introduction</h>
+            <p>
+                This blog offers a compendium of key results in Linear Algebra. Much of the content is drawn from Math 51, CS 229, and online resources. Citations are provided where applicable.
+            </p>
+            <h>Vectors</h>
+            <p>
+                We'll open our discussion of with vectors. While we are primarily interested in the Euclidean Vector Space, we introduce vectors more broadly in the context of sets.
+            </p>
+            <h2>Vector Space</h2>
+                <p>
+                    A <i>Vector Space</i> over a field \( F \) is a non-empty set \( V \) together with a binary operation and a binary function that satisfy the eight axioms listed below. In this context, the elements of \( V \) are commonly called vectors, and the elements of \( F \) are called scalars.
+                </p>
+
+                <p>
+                    A Vector Space must satisfy the following axioms for all choices \(\mathbf{u}, \mathbf{v}, \mathbf{w} \in \mathrm{V} \) and \( a, b \in F \):
+                </p>
+                <figure>
+                    <table class="textTable">
+                        <tr>
+                            <th>Axiom</th>
+                            <th>Meaning</th>
+                        </tr>
+                        <tr>
+                            <td>Associativity of vector addition</td>
+                            <td>\( \mathbf{u} + (\mathbf{v} + \mathbf{w}) = (\mathbf{u} + \mathbf{v}) + \mathbf{w} \)</td>
+                        </tr>
+                        <tr>
+                            <td>Commutativity of vector addition</td>
+                            <td>\( \mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u} \)</td>
+                        </tr>
+                        <tr>
+                            <td>Identity element of vector addition</td>
+                            <td>There exists an element \( \mathbf{0} \in V \), called the zero vector, such that \( \mathbf{v} + \mathbf{0} = \mathbf{v} \) for all \( \mathbf{v} \in V \).</td>
+                        </tr>
+                        <tr>
+                            <td>Inverse elements of vector addition</td>
+                            <td>For every \( \mathbf{v} \in V \), there exists an element \( -\mathbf{v} \in V \), called the additive inverse of \( \mathbf{v} \), such that \( \mathbf{v} + (-\mathbf{v}) = \mathbf{0} \).</td>
+                        </tr>
+                        <tr>
+                            <td>Compatibility of scalar multiplication with field multiplication</td>
+                            <td>\( a(b\mathbf{v}) = (ab)\mathbf{v} \)</td>
+                        </tr>
+                        <tr>
+                            <td>Identity element of scalar multiplication</td>
+                            <td>\( 1\mathbf{v} = \mathbf{v} \), where \( 1 \) denotes the multiplicative identity in \( F \).</td>
+                        </tr>
+                        <tr>
+                            <td>Distributivity of scalar multiplication with respect to vector addition</td>
+                            <td>\( a(\mathbf{u} + \mathbf{v}) = a\mathbf{u} + a\mathbf{v} \)</td>
+                        </tr>
+                        <tr>
+                            <td>Distributivity of scalar multiplication with respect to field addition</td>
+                            <td>\( (a + b)\mathbf{v} = a\mathbf{v} + b\mathbf{v} \)</td>
+                        </tr>
+                    </table>
+                    <figcaption>Table of Axioms (Taken from Wikepedia)</figcaption>
+                </figure>
+                <p>
+                    An <i>Inner Product Space</i> is a vector space \( V \) endowed with a map :
+                    \[ \langle \cdot ,\cdot \rangle :V \times V \to F \]
+                    This map must satisfy the following axioms for all choices \(\mathbf{x}, \mathbf{y} \in \mathrm{V} \) and \( a, b \in F \):
+                </p>
+                <figure>
+                    <table class="textTable">
+                        <tr>
+                            <th>Axiom</th>
+                            <th>Meaning</th>
+                        </tr>
+                        <tr>
+                            <td>Symmetry</td>
+                            <td>\( \langle \mathbf{x}, \mathbf{y} \rangle = \langle \mathbf{y}, \mathbf{x} \rangle \)</td>
+                        </tr>
+                        <tr>
+                            <td>Linearity</td>
+                            <td>\( \langle a\mathbf{x} + b\mathbf{y}, \mathbf{z} \rangle = a \langle \mathbf{x}, z \rangle + b \langle \mathbf{y}, \mathbf{z} \rangle \)</td>
+                        </tr>
+                        <tr>
+                            <td>Positive Semi-Definiteness</td>
+                            <td>\( \langle \mathbf{x}, \mathbf{x} \rangle \ge 0 \)</td>
+                        </tr>
+                    </table>
+                    <figcaption>Table of Axioms (Taken from Wikepedia)</figcaption>
+                </figure>
+                <p>
+                    The inner product map jointly defines the norm map which is always defined by positive semi-definiteness.
+                    \[ \|\mathbf {x} \|  = \sqrt{ \langle \mathbf{x}, \mathbf{x} \rangle } \] 
+                </p>
+                <p>
+                    These axioms allow us to impose geometric insights into objects that have no real sense of geometry attached to them. Take, for example, the Cauchy-Schwartz Inequality.
+                </p>
+                <div class="proof">
+                    <p><b>Theorem 1<b></p>
+                    <p>For all vectors \( \mathbf{u} \) and \( \mathbf{v} \) in an inner product space \( V \) the following inequality is satisfied: \( \left|\langle \mathbf {u} ,\mathbf {v} \rangle \right|^{2}\leq \langle \mathbf {u} ,\mathbf {u} \rangle \cdot \langle \mathbf {v} ,\mathbf {v} \rangle \) </p>
+                    <p><b>Proof<b></p>
+                    <p>The plan of attack is introduce a vector \( \mathbf{z} \) without justification and massage that definition into the desired inequality.</p>
+                    <p>
+                    \[
+                        \begin{align*}
+                        &\mathbf {z} :=\mathbf {u} -{\frac {\langle \mathbf {u} ,\mathbf {v} \rangle }{\langle \mathbf {v} ,\mathbf {v} \rangle }}\mathbf {v} && \text{Definition} \\
+
+                        &\mathbf {u} ={\frac {\langle \mathbf {u} ,\mathbf {v} \rangle }{\langle \mathbf {v} ,\mathbf {v} \rangle }}\mathbf {v} +\mathbf {z} && \text{Rearrange} \\
+
+                        &\|\mathbf {u} \|^{2} = \left|{\frac {\langle \mathbf {u} ,\mathbf {v} \rangle }{\langle \mathbf {v} ,\mathbf {v} \rangle }}\right|^{2}\|\mathbf {v} \|^{2} + \|\mathbf {z} \|^{2} && \text{Square} \\
+
+                        &\|\mathbf {u} \|^{2} = {\frac {|\langle \mathbf {u} ,\mathbf {v} \rangle |^{2}}{\|\mathbf {v} \|^{2}}} + \|\mathbf {z} \|^{2} && \text{Simplify} \\
+
+                        &\|\mathbf {u} \|^{2} \|\mathbf {v} \|^{2} = |\langle \mathbf {u} ,\mathbf {v} \rangle |^{2} + \|\mathbf {z} \|^{2} && \text{Simplify} \\
+
+                        &\|\mathbf {u} \|^{2} \|\mathbf {v} \|^{2} \geq{|\langle \mathbf {u} ,\mathbf {v} \rangle |^{2}} && \text{Inequality}
+                        \end{align*} 
+                    \]
+                    </p>
+                    <p>
+                        There are a couple of steps worth clarifying. First, this proof pre-supposes that \( v \ne \mathbf{0} \). Since that case is trivially true, we omit delving into it. Second, the squaring step is simplified by observing that \( \langle \mathbf {z} ,\mathbf {v} \rangle = \langle \mathbf {u} ,\mathbf {v} \rangle - \langle \mathbf {v} ,\mathbf {u} \rangle = 0 \). When the inner product of two vectors is \( 0 \), we say those vectors are orthogonal.
+                    </p>
+                </div>
+                <p>
+                    Amazingly, just by meticulously applying the axioms above, we discovered a result that applies to <i>every</i> inner product space! As it so happens, this particular result can be applied in the context of Random Variables to show that the variances add. I have a <a href="https://youtu.be/oV6Ug__Hcic?feature=shared">video</a> and <a href="https://inst.eecs.berkeley.edu/~ee126/sp18/projection.pdf">paper</a> on the topic if you're curious!
+                </p>
+            <h2>The Euclidean Inner Product Space</h2>
+                <p>
+                    For this blog, we are primarily interested in the the Euclidean Vector Space. Under this regime, vectors are nothing more than lists of numbers. We refer to each element in a vector as a component \( c_{i} \) for the \( i \)-th element. Per convention, we work with column vectors.
+                    \[
+                        \mathbf{u} = \left [ \begin{matrix} u_{1} \\ u_{2} \\ u_{3} \end{matrix} \right ]
+                        \hspace{0.5em}
+                        \text{and}
+                        \hspace{0.5em}
+                        \mathbf{v}^{\top} = \left [ \begin{matrix} v_{1} \hspace{0.5em} v_{2} \hspace{0.5em} v_{3} \end{matrix} \right ]
+                    \]
+                    We can add and scale vectors as follows:
+                    \[
+                        \mathbf{u} + \mathbf{v} = \left [ \begin{matrix} u_{1} + v_{1} \\ u_{2} + v_{2} \\ u_{3} + v_{3} \end{matrix} \right ]
+                        \hspace{0.5em}
+                        \text{and}
+                        \hspace{0.5em}
+                        \mathrm{k} \mathbf{u} = \left [ \begin{matrix} \mathrm{k} u_{1} \\ \mathrm{k} u_{2} \\ \mathrm{k} u_{3} \end{matrix} \right ]
+                    \]
+                    The inner product and norm maps are defined as follows:
+                    \[
+                        \langle u, v \rangle := \sum_{i = 1}^{n} u_{i} v_{i}
+                        \hspace{0.5em}
+                        \text{and}
+                        \hspace{0.5em}
+                        \|\mathbf {u} \| := \sqrt{\sum_{i = 1}^{n} u_{i}^{2}}
+                    \]
+                    We may visualize vectors in \( \mathbb{R}^{n} \) as arrows in space. Vector Addition naturally shifts vectors from tip to tail. The norm map coincides with the length of the vector by the Pythagorean Theorem.
+                </p>
+                <figure>
+                    <object type="image/svg+xml" data="../assets/linear-images/vector.svg" width="100%" height="auto">
+                    Your browser does not support SVG
+                    </object>
+                    <figcaption>Visual Interpretation of Vector Operations in \( \mathbb{R}^{2} \)</figcaption>
+                </figure>
+            <h2>Projections</h2>
+                <p>
+                    Our next minor topic involve projections. At the heart of projections lies the following identity.
+                </p>
+                <div class="proof">
+                    <p><b>Theorem 2<b></p>
+                    <p>For two non-zero vectors \( \mathbf{u} \) and \( \mathbf{v} \) in \( \mathbb{R}^{n} \) with angle \( \theta \) between them, the inner product is given by \( \mathbf{v} \cdot \mathbf{u} = \|\mathbf {u} \| \|\mathbf {v} \| \cos(\theta) \).</p>
+                    <p><b>Proof<b></p>
+                    <p>The plan of attack is to translate the Law of Cosines into the language of vectors and simplify.</p>
+                    <p>
+                    \[
+                        \begin{align*}
+                        &c^{2} = a^{2} + b^{2} - 2ab \cos(\theta) && \text{Law of Cosines} \\
+                        \end{align*} 
+                    \]
+
+                    Let \( \mathbf{u} \) and \( \mathbf{v} \) represent the sides of a triangle. In this context, we notice that \( c =  \|\mathbf {v - u} \| \) and rewrite the Law of Cosines.
+
+                    \[ \|\mathbf {v - u} \|^{2} = \|\mathbf {v} \|^{2} + \|\mathbf {u} \|^{2} - 2\|\mathbf {u} \| \|\mathbf {v} \| \cos(\theta) \]
+
+                    We simplify the LHS.
+
+                    \[
+                        \|\mathbf {v - u} \|^{2} = 
+                        \|\mathbf {v} \|^{2} - 2 \left ( \mathbf{u} \cdot \mathbf{v} \right ) + \|\mathbf {u} \|^{2}
+                    \] 
+
+                    Setting both sides equal to each other and cancelling common terms, we arrive at the desired relation.
+
+                    \[
+                        \mathbf{u} \cdot \mathbf{v} = \|\mathbf {u} \| \|\mathbf {v} \| \cos(\theta)
+                    \]
+                    </p>
+                </div>
+                <p>
+                    Now, computing the projection amounts to properly scaling a unit vector (i.e., a vector of length \( 1 \)) that points in the desired direction.
+                </p>
+                <figure>
+                    <object type="image/svg+xml" data="../assets/linear-images/projection.svg" width="100%" height="auto">
+                    Your browser does not support SVG
+                    </object>
+                    <figcaption>Vector Projection in \( \mathbb{R}^{2} \)</figcaption>
+                </figure>
+                <p>
+                    Alternatively, using the identity presented above, we may express the projection as follows:
+                    \[
+                        \mathrm{proj}_{\mathbf{u}} \mathbf{v} = \left ( \frac{\mathbf{u} \cdot \mathbf{v}}{\mathbf{u} \cdot \mathbf{u}} \right ) \mathbf{v}
+                    \]
+                    We may generalize this procedure over a subspace \( U \) by demanding that the difference between the original vector and its projection is orthogonal to the subspace. In particular, we'll represent \( U \) as a linear combination of \( n \) orthogonal vectors \( u_{i} \) which may be produced via the Gram-Schmidt Procedure. Since the projection must lie on the subspace, it may be represented as linear combination of the \( u_{i} \) for some choices of coefficients \( c_{i} \) as shown.
+                    \[
+                        \mathrm{proj}_{\mathbf{U}} \mathbf{v} = \sum_{i = 0}^{n} c_{i} \mathbf{u}_{i}
+                    \]
+                    We now apply the constraint by forcing the projection and each \( u_{i} \) to be orthogonal to each other. Notice that because the \( u_{i} \)'s form an orthogonal basis, we can vastly simplify the expression.
+                    \[ 
+                        \left ( \mathbf{v} - \sum_{i = 0}^{n} c_{i} \mathbf{u}_{i} \right ) \cdot \mathbf{u}_{j} =
+                        \left ( \mathbf{v} \cdot \mathbf{u}_{j} \right ) - c_{j} \left ( \mathbf{u}_{j} \cdot \mathbf{u}_{j} \right ) = 0
+                    \]
+                    We now solve for the coefficient \( c_{j} \)
+                    \[
+                        c_{j} = \frac{\mathbf{v} \cdot \mathbf{u}_{j}}{\mathbf{u}_{j} \cdot \mathbf{u}_{j}}
+                    \]
+                    As expected, this aligns with the formula presented above.
+                </p>
+            <h>Linear Regression</h>
+            <p>
+                Linear regression is a statistical method used to model the relationship between a dependent variable and one or more independent variables by fitting a linear equation to observed data.
+            </p>
+            <h2>Probabilistic Interpretation</h2>
+                <p>For this section, we'll use the following notation taken from CS229</p>
+                <blockquote>
+                    <p>To establish notation for future use, we'll use \(x^{(i)}\) to denote the "input" variables, also called input features, and \(y^{(i)}\) to denote the "output" or target variable that we are trying to predict (price). A pair \((x^{(i)}, y^{(i)})\) is called a training example, and the dataset that we'll be using to learn is a list of \(n\) training examples \(\{(x^{(i)}, y^{(i)}); i = 1, \ldots, n\}\) called a training set. Note that the superscript "(i)" in the notation is simply an index into the training set, and has nothing to do with exponentiation. We will also use \(X\) denote the space of input values, and \(Y\) the space of output values. In this example, \(X = Y = \mathbb{R}\).</p>
+                </blockquote>
+                <p>
+                    In this context, we assume the input and target variables are related by the following equation:
+                    \[ 
+                        y^{(i)} = \theta^T x^{(i)} + \varepsilon^{(i)} 
+                        \hspace{0.5em} \text{for} \hspace{0.5em} 
+                        \varepsilon^{(i)} \sim \mathcal{N}(0, \sigma^{2})
+                    \]
+                    In plain English, we are assuming that the data is adequately modelled by a linear relation plus some Gaussian Noise sampled from IID \( \varepsilon^{(i)} \). Now, our task is to recover \( \theta \) from the training data. We start by computing the probability of observing \( y^{(i)} \) given \( x^{(i)} \) parametrized by \( \theta \) by noting that \( \varepsilon^{(i)} = y^{(i)} - \theta^T x^{(i)} \).
+                    \[
+                        p(y^{(i)} \mid x^{(i)}; \theta) = 
+                        \frac{1}{\sqrt{2\pi\sigma}} \exp \left( -\frac{(y^{(i)} - \theta^T x^{(i)})^2}{2\sigma^2} \right)
+                    \]
+                    With independence satisfied, we may express the probability of observing the labels given the data and parameters.
+                    \[
+                        p(y \mid X; \theta) = 
+                        \prod_{i = 1}^{N} \frac{1}{\sqrt{2\pi\sigma}} \exp \left( -\frac{(y^{(i)} - \theta^T x^{(i)})^2}{2\sigma^2} \right)
+                    \]
+                    Our task is find the choice of parameters \( \theta \) which maximizes the <i>likelihood</i> of observing the labels. As typical, in maximum likelihood estimation, we will notice that taking the natural log preserves the \( \mathrm{argmax} \) and simplifies the relevant calculus.
+                    \[
+                        L(\theta) = 
+                        \sum_{i = 1}^{N} \left [ \ln \left ( \frac{1}{\sqrt{2\pi\sigma}} \right ) + \left( -\frac{(y^{(i)} - \theta^T x^{(i)})^2}{2\sigma^2} \right) \right ]
+                    \]
+                    It is clear that the <i>log-likelihood</i> is maximized precisely when \( \sum_{i=1}^{N} \frac{(y^{(i)} - \theta^T x^{(i)})^2}{2} \) or the sum of square residuals is minimized.
+                </p>
+            <h2>Computation</h2>
+                <p>
+                    For those who are interested, we derive closed form expressions for the coefficients \( \beta_{1} \) and \( \beta_{0} \). We start off by declaring the loss.
+                    \[
+                        L(\beta_1, \beta_0) = \sum_{i=1}^{n} {(\beta_1x_i + \beta_0 - y_i)}^2
+                    \]
+
+                    We proceed by taking the partial derivatives with respect to \( \beta_{1} \) and \( \beta_{0} \).
+                    \[
+                        \begin{align*}
+                        &\frac{\partial SSE}{\partial \beta_0} = \sum_{i=1}^{n} 2(\beta_1x_i + \beta_0 - y_i) = 0 \\
+                        &\frac{\partial SSE}{\partial \beta_1} = \sum_{i=1}^{n} 2x_i(\beta_1x_i + \beta_0 - y_i) = 0
+                        \end{align*}
+                    \]
+
+                    <!-- Equation 5 -->
+                    Upon setting the partial derivatives to \( 0 \), we find the optimal choices of \( \beta_{1} \) and \( \beta_{0} \). Note that \( r \) is Pearson's Correlation Coefficient.
+                    \[
+                        \beta_0 = \bar{y} - \beta_1\bar{x} \hspace{0.5em} \text{and} \hspace{0.5em} \beta_1 = r\frac{S_{y}}{S_{x}}
+                    \]
+                </p>
+            <h2>Intuition</h2>
+            <p>
+                The key insight here is that linear regression can be framed as minimizing the length (or expectation) of the difference between \( Y \) and \( b + mX \) for some choices of \( b \) and  \( m \). To find the shortest distance, we simply take the projection of \( Y \) onto a basis of the \( b + mX \) plane. One convenient choice of basis is \( \langle 1, X \rangle \). 
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/linear-images/dot.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Finding \( m \) and \( b \) via projections</figcaption>
+            </figure>
+            <p>
+                Upon applying the Gram-Schmidt Procedure to find an orthogonal basis and using Fourier's Formula to project the data, we find that our choices of \( m \) and \( b \) align with the computation shown above. Curiously, it turns out that \( r = \cos(\theta) \) where \( \theta \) is the angle between \( \mathbf{X} \) an \( \mathbf{Y} \). Using this insight and the fact that \( S_{x} = \|\mathbf {X} \| \) and \( S_{y} = \|\mathbf {Y} \| \), can we show that \( \beta_1 = r \left ( \frac{S_{y}}{S_{x}} \right ) \) more clearly?
+            </p>
+            <h>The Gradient</h>
+            <p>Insert Text Here</p>
+            <h>Matrices</h>
+            <p>Insert Text Here</p>
+            <h2>Operations</h2>
+            <p>Insert Text Here</p>
+            <h2>Key Properties</h2>
+            <p>Insert Text Here</p>
+            <h2>Transformations of Space</h2>
+            <p>Insert Text Here</p>
+            <h2>Eigenvalues</h2>
+            <p>Insert Text Here</p>
+            <h2>Trace</h2>
+            <p>Insert Text Here</p>
+            <h2>Determinant</h2>
+            <p>Insert Text Here</p>
+            <h2>Decompositions</h2>
+            <p>Insert Text Here</p>
+            <h2>Column and Null Space</h2>
+            <p>Insert Text Here</p>
+            <h2>Invertability</h2>
+            <p>Insert Text Here</p>
+            <h2>PSD and NSD</h2>
+            <p>Insert Text Here</p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <main></main>
+
+    <footer>
+        <div class="mastfoot">
+            <p>&copy; 2023 Jay Gupta. Powered by vanilla HTML, CSS, and JS.</p>
+        </div>
+    </footer>
+
+</body>

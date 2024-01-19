@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 857 483" version="1.1">
+<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"> -->
+  <script type="text/ecmascript">
+    // change color based on local storage
+    function changeColor(theme) {
+      // Update CSS variable values based on the theme
+      const root = document.documentElement;
+      root.style.setProperty('--primary-color', theme === 'light' ? 'white' : '#252a34');
+      root.style.setProperty('--secondary-color', theme === 'light' ? '#252a34' : '#eaeaea');
+    }
+
+    // Initially update color
+    let data = localStorage.getItem('theme');
+    changeColor(data);
+
+    // Check for changes in the theme when the storage event occurs
+    window.addEventListener('storage', function(event) {
+      if (event.key === 'theme') {
+        changeColor(event.newValue);
+      }
+    });
+  </script>
+  <g>
+  <g transform="scale(2)">
+      <path fill="none" stroke="var(--secondary-color)" class="dcg-svg-axis-line" paint-order="fill stroke markers" d="M200 0v400" stroke-opacity=".9" stroke-miterlimit="10" stroke-width="1.5"/>
+  </g>
+  <g transform="scale(2)">
+      <path fill="none" stroke="var(--secondary-color)" class="dcg-svg-axis-line" paint-order="fill stroke markers" d="M0 200h400" stroke-opacity=".9" stroke-miterlimit="10" stroke-width="1.5"/>
+  </g>
+  <g transform="scale(2)">
+      <path fill="none" stroke="var(--secondary-color)" class="dcg-svg-curve" paint-order="fill stroke markers" d="M18.182 200h0l.177 8.033.391 6.33.586 6.09.781 6.005.977 5.952 1.172 5.909 1.367 5.868 1.66 6.165 1.855 6.041 2.051 5.936 2.344 6.082 2.539 5.947 2.832 6.021 3.125 6.052 3.418 6.047 3.711 6.012 4.004 5.952 4.394 5.997 4.688 5.875 4.883 5.628 4.98 5.291 5.176 5.077 5.371 4.864 5.469 4.573 5.664 4.37 5.762 4.095 5.859 3.833 5.957 3.578 6.152 3.38 6.25 3.128 6.348 2.877 6.445 2.63 6.543 2.38 6.543 2.103 6.64 1.86 6.74 1.613 6.737 1.345 6.836 1.098 6.836.832 6.836.571 6.836.313 6.836.055 6.836-.202 6.836-.46 6.836-.72 6.836-.984 6.738-1.23 6.738-1.497 6.641-1.74 6.64-2.013 6.544-2.26 6.445-2.503 6.348-2.748 6.25-2.993 6.152-3.24 6.055-3.492 5.957-3.75 5.761-3.944 5.664-4.207 5.47-4.4 5.37-4.678 5.176-4.877 5.078-5.178 4.883-5.394 4.688-5.615 4.492-5.846 4.297-6.09 4.003-6.198 3.614-6.113 3.32-6.15 3.027-6.158 2.735-6.13 2.441-6.055 2.149-5.924 1.953-6.032 1.758-6.156 1.464-5.889 1.27-5.944 1.074-6.008.88-6.096.683-6.25.39-5.006.293-6.248.08-5.39M18.182 200h0l.177-8.033.391-6.33.586-6.09.781-6.005.977-5.952 1.172-5.909 1.367-5.868 1.66-6.165 1.855-6.041 2.051-5.936 2.344-6.082 2.539-5.947 2.832-6.021 3.125-6.052 3.418-6.047 3.711-6.012 4.004-5.952 4.394-5.997 4.688-5.875 4.883-5.628 4.98-5.291 5.176-5.077 5.371-4.864 5.469-4.573 5.664-4.37 5.762-4.095 5.859-3.833 5.957-3.578 6.152-3.38 6.25-3.128 6.348-2.877 6.445-2.63 6.543-2.38 6.543-2.103 6.64-1.86 6.74-1.613 6.737-1.345 6.836-1.098 6.836-.832 6.836-.571 6.836-.313 6.836-.055 6.836.202 6.836.46 6.836.72 6.836.984 6.738 1.23 6.738 1.497 6.641 1.74 6.64 2.013 6.544 2.26 6.445 2.503 6.348 2.748 6.25 2.993 6.152 3.24 6.055 3.492 5.957 3.75 5.761 3.944 5.664 4.207 5.47 4.4 5.37 4.678 5.176 4.877 5.078 5.178 4.883 5.394 4.688 5.615 4.492 5.846 4.297 6.09 4.003 6.198 3.614 6.113 3.32 6.15 3.027 6.158 2.735 6.13 2.441 6.055 2.149 5.924 1.953 6.032 1.758 6.156 1.464 5.889 1.27 5.944 1.074 6.008.88 6.096.683 6.25.39 5.006.293 6.248.08 5.39" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+  </g>
+  <g transform="scale(2)">
+      <path fill="none" stroke="var(--secondary-color)" class="dcg-svg-curve" paint-order="fill stroke markers" d="M18.182 200h0L328.565 71.435 381.818 200H18.182" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5" stroke-opacity=".9"/>
+      <path fill="none" stroke="var(--secondary-color)" class="dcg-svg-point" paint-order="fill stroke markers" d="M18.082 199.9v.2h.2v-.2M328.465 71.335v.2h.2v-.2M381.718 199.9v.2h.2v-.2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="8.333"/>
+      <path fill="none" stroke="var(--secondary-color)" class="dcg-svg-point" paint-order="fill stroke markers" d="M18.082 199.9v.2h.2v-.2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="8.333"/>
+  </g>
+  <g transform="scale(2)">
+      <path fill="none" stroke="var(--secondary-color)" class="dcg-svg-curve" paint-order="fill stroke markers" d="M328.565 200h0V71.435" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5" stroke-opacity=".9"/>
+      <path fill="none" stroke="var(--secondary-color)" class="dcg-svg-point" paint-order="fill stroke markers" d="M328.465 199.9v.2h.2v-.2M328.465 71.335v.2h.2v-.2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="8.333"/>
+  </g>
+  <g transform="scale(2)">
+      <path fill="none" stroke="#c74440" class="dcg-svg-point" paint-order="fill stroke markers" d="M18.082 199.9v.2h.2v-.2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="8.333"/>
+  </g>
+  <g transform="scale(2)">
+      <path fill="none" stroke="#c74440" class="dcg-svg-point" paint-order="fill stroke markers" d="M328.465 71.335v.2h.2v-.2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="8.333"/>
+  </g>
+  <g transform="scale(2)">
+      <path fill="none" stroke="#c74440" class="dcg-svg-point" paint-order="fill stroke markers" d="M381.718 199.9v.2h.2v-.2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="8.333"/>
+  </g>
+  <g class="dcg-svg-label">
+      <text fill="none" stroke="#FFF" font-family="arial, sans-serif" font-size="23.1" font-weight="400" text-decoration="normal" y="20.733" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" stroke-width="3" transform="matrix(2 0 0 2 333 409)">a</text>
+      <text font-family="arial, sans-serif" font-size="23.1" font-weight="400" text-decoration="normal" y="20.733" transform="matrix(2 0 0 2 333 409)">a</text>
+  </g>
+  <g class="dcg-svg-label">
+      <text fill="none" stroke="#FFF" font-family="arial, sans-serif" font-size="23.1" font-weight="400" text-decoration="normal" y="20.733" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" stroke-width="3" transform="matrix(2 0 0 2 697 409)">1</text>
+      <text font-family="arial, sans-serif" font-size="23.1" font-weight="400" text-decoration="normal" y="20.733" transform="matrix(2 0 0 2 697 409)">1</text>
+  </g>
+  <g class="dcg-svg-label">
+      <text fill="none" stroke="#FFF" font-family="Symbola, &quot;Times New Roman&quot;, serif" font-size="26.565" font-weight="400" text-decoration="normal" y="20.943" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" stroke-width="3" transform="matrix(2 0 0 2 -1451 -1763)">StartRoot, &quot;a&quot; , EndRoot</text>
+      <path fill="none" stroke="#FFF" paint-order="fill stroke markers" d="m553 274.352 11.04-5.336 8.674 17.789h.789L600.314 245h3.155l-29.966 48.031h-3.154l-10.252-20.458-7.097 1.78Z" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="6"/>
+      <path fill="none" stroke="#FFF" paint-order="fill stroke markers" d="M600.813 245H646v2h-45.188Z" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="6"/>
+      <text fill="none" stroke="#FFF" font-family="&quot;Times New Roman&quot;, Symbola, serif" font-size="26.565" font-style="italic" font-weight="400" text-decoration="normal" y="23.943" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" stroke-width="3" transform="matrix(2 0 0 2 608.781 241)">a</text>
+      <text font-family="Symbola, &quot;Times New Roman&quot;, serif" font-size="26.565" font-weight="400" text-decoration="normal" y="20.943" transform="matrix(2 0 0 2 -1451 -1763)">StartRoot, &quot;a&quot; , EndRoot</text>
+      <path paint-order="stroke fill markers" d="m553 274.352 11.04-5.336 8.674 17.789h.789L600.314 245h3.155l-29.966 48.031h-3.154l-10.252-20.458-7.097 1.78Z"/>
+      <path paint-order="stroke fill markers" d="M600.813 245H646v2h-45.188Z"/>
+      <text font-family="&quot;Times New Roman&quot;, Symbola, serif" font-size="26.565" font-style="italic" font-weight="400" text-decoration="normal" y="23.943" transform="matrix(2 0 0 2 608.781 241)">a</text>
+  </g>
+  <g class="dcg-svg-label">
+      <text fill="none" stroke="#FFF" font-family="arial, sans-serif" font-size="23.1" font-weight="400" text-decoration="normal" y="20.733" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" stroke-width="3" transform="matrix(2 0 0 2 52 416)">A</text>
+      <text fill="#C74440" font-family="arial, sans-serif" font-size="23.1" font-weight="400" text-decoration="normal" y="20.733" transform="matrix(2 0 0 2 52 416)">A</text>
+  </g>
+  <g class="dcg-svg-label">
+      <text fill="none" stroke="#FFF" font-family="arial, sans-serif" font-size="23.1" font-weight="400" text-decoration="normal" y="20.733" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" stroke-width="3" transform="matrix(2 0 0 2 642.5 65.778)">B</text>
+      <text fill="#C74440" font-family="arial, sans-serif" font-size="23.1" font-weight="400" text-decoration="normal" y="20.733" transform="matrix(2 0 0 2 642.5 65.778)">B</text>
+  </g>
+  <g class="dcg-svg-label">
+      <text fill="none" stroke="#FFF" font-family="arial, sans-serif" font-size="23.1" font-weight="400" text-decoration="normal" y="20.733" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" stroke-width="3" transform="matrix(2 0 0 2 715 330)">C</text>
+      <text fill="#C74440" font-family="arial, sans-serif" font-size="23.1" font-weight="400" text-decoration="normal" y="20.733" transform="matrix(2 0 0 2 715 330)">C</text>
+  </g>
+  </g>
+</svg>
+
