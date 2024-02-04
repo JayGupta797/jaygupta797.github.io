@@ -38,7 +38,8 @@ function toggleDark() {
     applyTheme();
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
+// window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('storage', function(event) {
     // Check localStorage for stored theme
     let storedTheme = localStorage.getItem('theme');
     
