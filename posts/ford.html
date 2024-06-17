@@ -165,7 +165,7 @@
             <h>Creating An Apollonian Gasket</h>
             <p>
                 Taking inspiration from this 
-                <a href="https://codegolf.stackexchange.com/q/38450" target="_blank">Code Gold</a>
+                <a href="https://codegolf.stackexchange.com/q/38450" target="_blank">Code Golf</a>
                 we can whipp up some pseudo-code that draws an
                 <a href="https://en.wikipedia.org/wiki/Apollonian_gasket" target="_blank">Apollonian Gasket</a>
                 associated with the Ford Circles.
@@ -215,7 +215,7 @@ def drawApollonianCircle(parents):
                         & b = k_{1}k_{2}\left(x_{1}y_{2}+x_{2}y_{1}\right)+k_{2}k_{3}\left(x_{2}y_{3}+x_{3}y_{2}\right)+k_{1}k_{3}\left(x_{1}y_{3}+x_{3}y_{1}\right)
                     \end{align*}
                 \]
-                At the moment, the radical makes it difficult to split \( z_{4} \) into real and imaginary parts. Ideally, we'd get rid of the radical by writing the expression \( a + ib \) as \( (u + iv)^{2} \) for some choices of \( u \) and \( v \). Assuming that such choices exist, it follows \( a = u^{2} - v^{2} \) and \( b = 2uv \). Writing \( v \) in terms of \( u \), we are left with \( a = u^{2} - \left ( \frac{b}{2u} \right )^2 \) which is quadratic in \( u^{2} \). Applying the quadratic formula, we find \( u \) and \( v \).
+                At the moment, the radical makes it difficult to split \( z_{4} \) into real and imaginary parts. Ideally, we'd get rid of the radical by writing the expression \( a + ib \) as \( (u + iv)^{2} \) for some choices of \( u \) and \( v \). Assuming that such choices exist, it follows \( a = u^{2} - v^{2} \) and \( b = 2uv \). Writing \( v \) in terms of \( u \), we are left with \( a = u^{2} - \left ( \frac{b}{2u} \right )^2 \) which, conveniently, is quadratic in \( u^{2} \). Applying the quadratic formula, we find \( u \) and \( v \).
                 \[
                     |u| = \sqrt{\frac{4a \pm \sqrt{16a^{2}+16b^{2}}}{8}}
                     \hspace{0.5em}
