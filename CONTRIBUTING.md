@@ -1,12 +1,12 @@
 # Contributing Guidelines
 
-Thank you for your interest in contributing to my personal blog! Your contributions are greatly appreciated and help enrich the content for our readers.
+Thank you for your interest in contributing to my blog! Your contributions are greatly appreciated.
 
 ## Ways to Contribute
 
 There are several ways you can contribute to my blog:
 
-1. **Guest Posts:** Share your expertise and insights by writing a guest post for the blog. Contact me with your topic ideas, and if it aligns with the theme and audience of the blog, we can discuss publishing it.
+1. **Guest Posts:** Share your expertise and insights by writing as a guest. Contact me with your topic ideas, and if it aligns with the theme and audience of the blog, we can discuss publishing it.
 
 2. **Feedback and Suggestions:** Provide feedback on existing blog posts or suggest topics for future posts. Your input helps me improve the quality and relevance of the content.
 
@@ -20,7 +20,7 @@ If you're interested in submitting a guest post, please follow these guidelines:
 
 2. **Original Content:** Submit only original content that has not been published elsewhere. Plagiarism will not be tolerated.
 
-3. **Length:** Aim for a post length of 800-1500 words, although this can vary depending on the topic and depth of coverage.
+3. **Length:** Aim for a post length of 200-600 words, although this can vary depending on the topic and depth of coverage.
 
 4. **Formatting:** Use markdown formatting for your post and include any relevant images or media files. Ensure that your post is well-structured with headings, subheadings, and bullet points where appropriate.
 
