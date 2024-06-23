@@ -1,24 +1,5 @@
 <svg fill="none" stroke-linecap="square" stroke-miterlimit="10" version="1.1" viewBox="0 0 925.3 595.18" xmlns="http://www.w3.org/2000/svg">
-    <script type="text/ecmascript">
-        // change color based on local storage
-        function changeColor(theme) {
-          // Update CSS variable values based on the theme
-          const root = document.documentElement;
-          root.style.setProperty('--primary-color', theme === 'light' ? 'white' : '#252a34');
-          root.style.setProperty('--secondary-color', theme === 'light' ? '#252a34' : '#eaeaea');
-        }
-
-        // Initially update color
-        let data = localStorage.getItem('theme');
-        changeColor(data);
-
-        // Check for changes in the theme when the storage event occurs
-        window.addEventListener('storage', function(event) {
-          if (event.key === 'theme') {
-            changeColor(event.newValue);
-          }
-        });
-    </script>
+    <script type="text/ecmascript" href="../../scripts/color.js"/>
     <clipPath id="a">
     <path d="m0 0h925.3v595.18h-925.3v-595.18z"/>
     </clipPath>

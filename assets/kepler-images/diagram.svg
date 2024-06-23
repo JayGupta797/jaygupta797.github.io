@@ -1,24 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 428 360">
-    <script type="text/ecmascript">
-        // change color based on local storage
-        function changeColor(theme) {
-          // Update CSS variable values based on the theme
-          const root = document.documentElement;
-          root.style.setProperty('--primary-color', theme === 'light' ? 'white' : '#252a34');
-          root.style.setProperty('--secondary-color', theme === 'light' ? '#252a34' : '#eaeaea');
-        }
-
-        // Initially update color
-        let data = localStorage.getItem('theme');
-        changeColor(data);
-
-        // Check for changes in the theme when the storage event occurs
-        window.addEventListener('storage', function(event) {
-          if (event.key === 'theme') {
-            changeColor(event.newValue);
-          }
-        });
-    </script>
+    <script type="text/ecmascript" href="../../scripts/color.js"/>
     <path style="fill:none;stroke-width:.06;stroke-linecap:butt;stroke-linejoin:miter;stroke:var(--secondary-color);stroke-opacity:1;stroke-miterlimit:10" d="M2.625-.295c0 .687-.283 1.37-.769 1.856A2.657 2.657 0 0 1 0 2.33c-.687 0-1.37-.283-1.856-.77a2.657 2.657 0 0 1-.769-1.855c0-.687.283-1.37.769-1.856A2.657 2.657 0 0 1 0-2.921c.687 0 1.37.284 1.856.77.486.486.769 1.169.769 1.856Zm0 0" transform="matrix(59.93093 0 0 -59.92744 214 176.5)"/>
     <path style="fill:none;stroke-width:.04;stroke-linecap:butt;stroke-linejoin:miter;stroke:#58c4dd;stroke-opacity:1;stroke-miterlimit:10" d="m0 2.33-2.273-3.938h4.546L0 2.33Zm0 0" transform="matrix(59.93093 0 0 -59.92744 214 176.5)"/>
     <path style="fill:none;stroke-width:.04;stroke-linecap:butt;stroke-linejoin:miter;stroke:var(--secondary-color);stroke-opacity:1;stroke-miterlimit:10" d="M0-.295-1.137.36" transform="matrix(59.93093 0 0 -59.92744 214 176.5)"/>

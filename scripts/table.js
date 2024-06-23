@@ -1,4 +1,3 @@
-
 // Function to populate the table from headers
 function populateTable() {
     const headerContainer = document.getElementById("headerContainer");

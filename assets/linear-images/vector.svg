@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 857 483" version="1.1">
-  <script type="text/ecmascript">
-    // change color based on local storage
-    function changeColor(theme) {
-      // Update CSS variable values based on the theme
-      const root = document.documentElement;
-      root.style.setProperty('--primary-color', theme === 'light' ? 'white' : '#252a34');
-      root.style.setProperty('--secondary-color', theme === 'light' ? '#252a34' : '#eaeaea');
-    }
-
-    // Initially update color
-    let data = localStorage.getItem('theme');
-    changeColor(data);
-
-    // Check for changes in the theme when the storage event occurs
-    window.addEventListener('storage', function(event) {
-      if (event.key === 'theme') {
-        changeColor(event.newValue);
-      }
-    });
-  </script>
+  <script type="text/ecmascript" href="../../scripts/color.js"/>
   <g id="surface2">
   <path style="fill:none;stroke-width:0.04;stroke-linecap:butt;stroke-linejoin:miter;stroke:var(--secondary-color);stroke-opacity:1;stroke-miterlimit:10;" d="M 7.111131 4 C 2.370355 4 -2.370355 4 -7.111131 4 C -7.111131 1.333333 -7.111131 -1.333333 -7.111131 -4 C -2.370355 -4 2.370355 -4 7.111131 -4 C 7.111131 -1.333333 7.111131 1.333333 7.111131 4 Z M 7.111131 4 " transform="matrix(60.046711,0,0,-60,428.5,241.5)"/>
   <path style="fill:none;stroke-width:0.02;stroke-linecap:butt;stroke-linejoin:miter;stroke:var(--secondary-color);stroke-opacity:1;stroke-miterlimit:10;" d="M -7.111131 0 C -4.561098 0 -2.01113 0 0.538903 0 " transform="matrix(60.046711,0,0,-60,428.5,241.5)"/>

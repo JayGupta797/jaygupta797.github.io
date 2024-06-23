@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 857 483" version="1.1">
 <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"> -->
-  <script type="text/ecmascript">
-    // change color based on local storage
-    function changeColor(theme) {
-      // Update CSS variable values based on the theme
-      const root = document.documentElement;
-      root.style.setProperty('--primary-color', theme === 'light' ? 'white' : '#252a34');
-      root.style.setProperty('--secondary-color', theme === 'light' ? '#252a34' : '#eaeaea');
-    }
-
-    // Initially update color
-    let data = localStorage.getItem('theme');
-    changeColor(data);
-
-    // Check for changes in the theme when the storage event occurs
-    window.addEventListener('storage', function(event) {
-      if (event.key === 'theme') {
-        changeColor(event.newValue);
-      }
-    });
-  </script>
+  <script type="text/ecmascript" href="../../scripts/color.js"/>
   <g>
   <g transform="scale(2)">
       <path fill="none" stroke="var(--secondary-color)" class="dcg-svg-axis-line" paint-order="fill stroke markers" d="M200 0v400" stroke-opacity=".9" stroke-miterlimit="10" stroke-width="1.5"/>
