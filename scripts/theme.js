@@ -19,6 +19,18 @@ function applyTheme() {
         prismElement.setAttribute('href', prismHref);
     }
 
+    // Toggle Comments
+    // Reference: https://github.com/utterance/utterances/issues/549#issuecomment-907606127
+    let appearance = theme === 'dark' ? 'photon-dark' : 'github-light';
+    if (document.querySelector('.utterances-frame')) {
+        let message = {
+        type: 'set-theme',
+        theme: appearance
+        };
+        const iframe = document.querySelector('.utterances-frame');
+        iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+}
 applyTheme();
 localStorage.setItem('theme', theme);
 
