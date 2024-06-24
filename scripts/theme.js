@@ -1,9 +1,12 @@
+// Get theme or default to `light` if NULL
 let theme = localStorage.getItem('theme') || 'dark';
 
 function applyTheme() {
+    // Toggle Moon
     document.getElementById("moon").classList.toggle('night', theme === 'dark');
     document.body.classList.toggle("dark-theme", theme === 'dark');
 
+    // Toggle Code Blocks
     let prismHref = theme === 'dark' ?
         'https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-okaidia.min.css' :
         'https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css';
@@ -15,19 +18,22 @@ function applyTheme() {
             'sha512-/mZ1FHPkg6EKcxo0fKXF51ak6Cr2ocgDi5ytaTBjsQZIH/RNs6GF6+oId/vPe3eJB836T36nXwVh/WBl/cWT4w==');
         prismElement.setAttribute('href', prismHref);
     }
-}
 
 applyTheme();
+localStorage.setItem('theme', theme);
 
+// Toggle Light/Dark upon click
 function toggleDark() {
     theme = theme === 'light' ? 'dark' : 'light';
-    localStorage.setItem('theme', theme);
     applyTheme();
+    localStorage.setItem('theme', theme);
 }
 
+// Check for changes in the theme when the storage event occurs
 window.addEventListener('storage', function(event) {
     if (event.key === 'theme') {
         theme = event.newValue || 'dark';
         applyTheme();
+        localStorage.setItem('theme', theme);
     }
 });

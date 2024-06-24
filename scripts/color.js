@@ -6,12 +6,14 @@ function changeColor(theme) {
 }
 
 // Initially update color
-let data = localStorage.getItem('theme');
+let data = localStorage.getItem('theme') || 'dark';
 changeColor(data);
 
 // Check for changes in the theme when the storage event occurs
 window.addEventListener('storage', function(event) {
   if (event.key === 'theme') {
+    theme = event.newValue || 'dark';
+    // localStorage.setItem('theme', theme);
     changeColor(event.newValue);
   }
 });
