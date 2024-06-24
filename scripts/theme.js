@@ -1,4 +1,4 @@
-let theme = localStorage.getItem('theme') || 'light';
+let theme = localStorage.getItem('theme') || 'dark';
 
 function applyTheme() {
     document.getElementById("moon").classList.toggle('night', theme === 'dark');
@@ -27,7 +27,7 @@ function toggleDark() {
 
 window.addEventListener('storage', function(event) {
     if (event.key === 'theme') {
-        theme = event.newValue || 'light'; // default to 'light' if null
+        theme = event.newValue || 'dark';
         applyTheme();
     }
 });
