@@ -77,11 +77,13 @@
         <div class="mainbar" id="headerContainer">
             <h>Introduction</h>
             <p>
-                Between 6th and 12th grade I maintained a composition notebook of modest observations and insights I stumbled across over the years. While these results are too small to warrant individual blogs, I packaged some of the more memorable results for reference.
+                Between 6th and 12th grade I maintained a composition notebook of modest observations and insights I stumbled across over the years. 
+                While these results are too small to warrant individual blogs, I packaged some of the more memorable results for reference.
             </p>
             <h>Rethinking the Quadratic Formula</h>
             <p>
-                Painless Algebra is a book written by former university professor <a href="https://en.wikipedia.org/wiki/Lynette_Long" target="_blank">Lynette Long</a>. Without proof, she states the quadratic formula as follows:
+                Painless Algebra is a book written by former university professor <a href="https://en.wikipedia.org/wiki/Lynette_Long" target="_blank">Lynette Long</a>. 
+                Without proof, she states the quadratic formula:
             </p>
             <blockquote>
                 <p>When you use the quadratic formula, you can solve quadratic equations without factoring. Just put the equation in standard form \( ax^{2} + bx + c = 0 \). Substitute the values for \( a \), \( b \) and \( c \) in this equation and simplify.
@@ -90,7 +92,9 @@
                 \]</p>
             </blockquote>
             <p>
-                Of course, the quadratic formula isn't all that hard to show. The standard approach essentially amounts to performing a technique called <a href="https://en.wikipedia.org/wiki/Completing_the_square" target="_blank">completing the square</a> in the general case. In fact, it is so straightforward, that I can safely copy a proof written by Open AIs flagship model <a href="https://openai.com/blog/chatgpt" target="_blank">ChatGPT</a>.
+                Of course, the quadratic formula isn't all that hard to show. 
+                The standard approach essentially amounts to performing a technique called <a href="https://en.wikipedia.org/wiki/Completing_the_square" target="_blank">completing the square</a> in the general case. 
+                In fact, it is so straightforward, that I can safely copy a proof written by Open AIs flagship model <a href="https://openai.com/blog/chatgpt" target="_blank">ChatGPT</a>.
             </p>
             <div class="proof">
                 <p><b>Standard Proof<b></p>
@@ -110,7 +114,8 @@
                 </p>
             </div>
             <p>
-                Here, our goal is to reformulate the Quadratic Formula by appealing to symmetry. We'll start by noting that Quadratic Functions are commonly expressed in three different ways:
+                Here, our goal is to reformulate the Quadratic Formula by appealing to symmetry. 
+                We'll start by noting that Quadratic Functions are commonly expressed in three different ways:
             </p>
                 <ol>
                     <li> Standard Form: \(q(x) = ax^{2} + bx + c \)
@@ -118,7 +123,8 @@
                     <li> Vertex Form: \( q(x) = a(x - h)^{2} + k \)
                 </ol>
             <p>
-                We impose conditions on these constants. In particular, \( a, b, c, h, k \in \mathbb{R} \) with \(a \ne 0 \) (to prevent degeneracy) and roots \( r_{1}, r_{2} \in \mathbb{C} \). The existence of these roots is guranteed by <a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra" target="_blank">The Fundamental Theorem of Algebra</a>.
+                We impose conditions on these constants. In particular, \( a, b, c, h, k \in \mathbb{R} \) with \(a \ne 0 \) (to prevent degeneracy) and roots \( r_{1}, r_{2} \in \mathbb{C} \). 
+                The existence of these roots is guranteed by <a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra" target="_blank">The Fundamental Theorem of Algebra</a>.
             </p>
             <p>
                 The high-level plan of attack is to find the vertex in terms of the coefficients. From there, we'll figure out how much to move to the right and left in order to reach the roots.
@@ -130,7 +136,13 @@
                 <figcaption>Horizontal Symmetry Persists Despite Vertical Offset by Constant \( c \)</figcaption>
             </figure>
             <p>
-                Since we're interested in the finding the vertex, we'll start by taking a look at the Vertex Form. Upon inspection, it is clear that quadratic functions are symmetric with respect to \( x = h \). We can use this symmetry to our advantage. In particular, we define \( q_{p} = ax^{2} + bx \) (shown in dashes) whose vertex notably shares the same \( x \)-coordinate. We directly compute the roots as \( q_{p} = x (ax + b) = 0 \) which implies \( x = 0, -\frac{b}{a} \) in general. From symmetry, we reason that the vertex lies between these two roots at \( x = -\frac{b}{2a} \) in both cases. Plugging this value, we find \( q \left ( -\frac{b}{2a}  \right ) = c - \frac{b^{2}}{4a} \) giving us the \( x \) and \( y \) coordinates of the vertex.
+                Since we're interested in the finding the vertex, we'll start by taking a look at the Vertex Form. 
+                Upon inspection, it is clear that quadratic functions are symmetric with respect to \( x = h \). 
+                We can use this symmetry to our advantage. 
+                In particular, we define \( q_{p} = ax^{2} + bx \) (shown in dashes) whose vertex notably shares the same \( x \)-coordinate. 
+                We directly compute the roots as \( q_{p} = x (ax + b) = 0 \) which implies \( x = 0, -\frac{b}{a} \) in general. 
+                From symmetry, we reason that the vertex lies between these two roots at \( x = -\frac{b}{2a} \) in both cases. 
+                Plugging this value, we find \( q \left ( -\frac{b}{2a}  \right ) = c - \frac{b^{2}}{4a} \) giving us the \( x \) and \( y \) coordinates of the vertex.
             </p>
             <p>
                 At this point, our task is to find \( \Delta \) such that \( q \left ( -\frac{b}{2a} \pm \Delta  \right ) = 0 \). Since this seems a bit cumbersome to compute directly, we'll take another look at the Vertex Form. Upon further inspection, we arrive at the following expansion: \( q(x) = ax^{2} - 2ahx + ah^{2} + k \). Comparing terms from Standard Form, we notice that \( b = -2ah \) and \( c = ah^{2} + k \) allowing us to arbitrarily tune both coefficients by changing the position of the vertex. In other words, \( b \) and \( c \) only influence the position of the vertex and not the overall shape of the graph! We now reason that moving \( \Delta \) units to the left or right of the vertex has the effect of moving up or down \( a \Delta^{2} \) units!
@@ -147,9 +159,11 @@
                 \]
                 This reformulation not only simplifies the algebra in favour of geometric insights, but it also allows us to attach an elegant interpretation to each component in this formula.
             </p>
-            <h>Mesolabe Compass</h>
+            <h>The Mesolabe Compass</h>
             <p>
-                Numberphile is an educational YouTube channel featuring videos that explore topics from a variety of fields of mathematics. Several years ago, one particular video (that has since been <a href="https://youtu.be/9VVPBS_flOI?si=9zU92bcDl0RAvSej" target="_blank">remastered</a>) caught my attention. Here, professor Johnny Ball discusses the Mesolabe Compass and its connection to square roots. I'll save you the trouble of watching the entire video and include the main figure here for reference.
+                Numberphile is an educational YouTube channel featuring videos that explore topics from a variety of fields of mathematics. Several years ago, one particular video (that has since been <a href="https://youtu.be/9VVPBS_flOI?si=9zU92bcDl0RAvSej" target="_blank">remastered</a>) caught my attention. 
+                Here, professor Johnny Ball discusses the Mesolabe Compass and its connection to square roots. 
+                I'll save you the trouble of watching the entire video and include the main figure for reference.
             </p>
             <figure>
                 <object type="image/svg+xml" data="../assets/notebook-images/compass.svg" width="100%" height="auto">
@@ -158,11 +172,16 @@
                 <figcaption>Key Figure from Numberphile Video on Mesolabe Compass</figcaption>
             </figure>
             <p>
-                The question, of course, is why the \( \sqrt{a} \) pops up here. As it so happens, this isn't too difficult to explain. From Thale's Theorem, we know \( \measuredangle ABC \) is a right angle. From here we determine that the two triangle created by dropping the altitude are similiar to each other since they share the same angles. Letting \( h \) stand for the altitude, we establish the following relation:
+                The question, of course, is why the \( \sqrt{a} \) pops up here. 
+                As it so happens, this isn't too difficult to explain. From Thale's Theorem, we know \( \measuredangle ABC \) is a right angle. From here we determine that the two triangle created by dropping the altitude are similiar to each other since they share the same angles. 
+                Letting \( h \) stand for the altitude, we establish the following relation:
                 \[
                     \frac{h}{a} = \frac{1}{h} \implies h = \sqrt{a}
                 \]
-                I suppose the second question that comes to mind is why Thale's Theorem holds. One approach that immediately surfaces is to apply the more general <a href="https://en.wikipedia.org/wiki/Inscribed_angle" target="_blank">Inscribed Angle Theorem</a> to a chord that happens to also be a diameter. Another approach, that I personally find interesting, is to consider the set of points such that the lines connecting \( (-r, 0) \) to \( (x, y) \) and \( (x, y) \) to \( (r, 0) \) are perpendicular to each other. Using point-slope form and enforcing that the slopes are perpendicular (negative reciprocals), we arrive at the following equations.
+                I suppose the second question that comes to mind is why Thale's Theorem holds. 
+                One approach that immediately surfaces is to apply the more general <a href="https://en.wikipedia.org/wiki/Inscribed_angle" target="_blank">Inscribed Angle Theorem</a> to a chord that happens to also be a diameter. 
+                Another approach, that I personally find interesting, is to consider the set of points such that the lines connecting \( (-r, 0) \) to \( (x, y) \) and \( (x, y) \) to \( (r, 0) \) are perpendicular to each other. 
+                Using point-slope form and enforcing that the slopes are perpendicular (negative reciprocals), we arrive at the following equations.
                 \[
                     y - 0 = m (x + r)
                     \hspace{0.5em} \text{and} \hspace{0.5em}
@@ -175,6 +194,81 @@
                     x^{2} + y^{2} = r^{2}
                 \]
                 Amazingly, it turns out that the only set of points that ensure the two lines are perpendicular are those belonging to a circle!
+            </p>
+            <h>A Curious Tangent</h>
+            <p>
+                Ron Larson and Bruce Edwards are the authors of an introductory Calculus text. Problem 6 under 1.1 Exercises asks the following:
+            </p>
+            <blockquote>
+                <p>Secant Lines. Consider the function \( f(x) = \sqrt{x} \) and the point \( (4, 2) \) on the graph of \( f \).
+                    <ol>
+                        <li>Graph \( f \) and the secant lines passing through \( (4, 2) \) and \( (x, f(x)) \) for x-values of 1, 3, and 5.</li>
+                        <li>Find the slope of each secant line.</li>
+                        <li>Use the results of part 2 to estimate the slope of the tangent line to the graph of \( f \) at \( (4, 2) \). Describe how to improve your approximation of the slope.</li>
+                    </ol>
+                </p>
+            </blockquote>
+            <p>
+                The problem itself is not difficult. Here, we will draw our attention to the very last question. When I was assigned this problem for a PSET, I wondered if there was a way to compute the exact tangent line without the machinery of derivatives. As it turns out, you can!
+            </p>
+            <p>
+                To find the tangent line, we will consider the properties of the tangent line and translate those properties into constraints. 
+                The first property is that the line should pass through \( (p, \sqrt{p}) \) for some choice of \( p \). 
+                The second property is that the tangent line should only intersect the curve at \( (p, \sqrt{p} ) \) and nowhere else. 
+                This relies on the fact that the root function is strictly monotonic.
+            </p>
+            <p>
+                The first constraint is easy enough to enforce via point-slope form.
+                \[ y - \sqrt{p} = m (x - p) \]
+                To consider the second constraint, we will set the tangent line equal to the curve \( y = \sqrt{x} \) and work out the appropriate choice of \( m \).
+                \[ \sqrt{x} = m (x - p) + \sqrt{p} \]
+                We need to choose \( m \) such that equation above is only satisfied for \( x = p \). 
+                Notice that this equation is quadratic in \( \sqrt{x} \). 
+                If there is only one solution to this equation, then the discriminant must be set to \( 0 \). 
+                \[ 1 - 4m( \sqrt{p} - mp ) = 0 \implies m = \frac{1}{2 \sqrt{p}} \]
+                Voila, we have computed the slope of the tangent line for any choice of \( p \). 
+                Unfortunately, the method is rather specific to this family of functions with mild transformations.
+            </p>
+            <h>Geometric Series</h>
+            <p>
+                In 7th grade, my mathematics teacher introduced a rather intriguing result. 
+                To my dismay, she declared that \( 0.\bar{9} = 1 \) and presented a variant of William Byer's <a href="https://en.wikipedia.org/wiki/0.999...#Algebraic_arguments" target="_blank">algebraic argument</a> for justification. 
+                The paradox would appear time and time again from the decay of radioactive isotopes to the (ideal) mechanics of a bouncing ball to any number of jokes about mathematicians entering a bar.
+                 All of these examples have one thing in common: they follow a geometric series. As it turns out, there is an explicit formula to compute the sum of a geometric series.
+            </p>
+            <div class="proof">
+                <p><b>Theorem 1<b></p>
+                <p>
+                    A geometric series with non-zero ratio \( r \) diverges when \( \lvert r \rvert \ge 1 \). Otherwise, the
+                    series converges.
+                    \[ \sum_{n = 0}^{\infty} \alpha r^{n} = \frac{\alpha}{1 - r} \]
+                </p>
+            </div>
+            <p>
+                In "Proof Without Words," Benjamin G. Klein and Irl C. visually derive the formula of a geometric series.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/notebook-images/prog.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Key Figure from Original Text</figcaption>
+            </figure>
+            <p>
+                If you are interested in a detailed explanation, I would recommend checking out Jan Rasmussen's <a href="https://janmr.com/blog/2008/10/nice-geometric-progression-proof/" target="_blank">blog post</a> on the topic.
+                While this particular visual pops up every now and then, I always felt it was rather unmotivated. 
+                That is to say, why would anyone come up with this particular construction?
+                After toying with the idea, I came up with a reasonable intuition.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/notebook-images/riemann.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Left Riemann Sum of Power Function</figcaption>
+            </figure>
+            <p>
+                The desired sum is given by the area of the blue rectangles. 
+                At the offset, it seems that this is difficult to compute because the rectangles stretch onward towards infinity.
+                The key insight is that by rotating the rectangles 90 degrees, we can "remove the infinity" and proceed.
             </p>
             <h>Comment Section</h>
             <div id="utterances-container"></div>
