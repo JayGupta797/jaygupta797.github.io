@@ -11,32 +11,21 @@
     <link rel="shortcut icon" href="../assets/favicon.svg" type="image/svg+xml">
 
     <!-- Custom Styles and Scripts-->
-    <link rel="stylesheet" href="../styles/styles.css"> 
-    <script src="../scripts/theme.js" defer></script> 
-    <script src="../scripts/table.js" defer></script>
-
-    <!-- Load Prism.js for code blocks -->
-    <link id="prism-theme" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-python.min.js" integrity="sha512-3qtI9+9JXi658yli19POddU1RouYtkTEhTHo6X5ilOvMiDfNvo6GIS6k2Ukrsx8MyaKSXeVrnIWeyH8G5EOyIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-QTYXYEniHb1m0ZKtSyfpmw40uH9vPfV07vxsv/plIRMEiON4yOp2qoZiv/FTqFIOym4bdQ4+p9RtHaCMC0ApRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="../styles/default-styles.css"> 
+    <link rel="stylesheet" href="../styles/table-styles.css"> 
+    <script defer src="../scripts/theme.js"></script> 
+    <script defer src="../scripts/table.js"></script>
 
     <!-- Load MathJax for LaTex -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
 
     <!-- Load Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-    <!-- see: https://stackoverflow.com/a/45762747 -->
     <div class="everything">
     <div class="masthead">
     <div class="masthead__inner-wrap">
@@ -64,9 +53,9 @@
         <div class="sidebar">
             <table id="headerTable">
                 <th>
-                    <svg class="toc" width="25px" height="25px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 7.00003H4M8 12H4M8 17H4M12 3V21M9.2 21H16.8C17.9201 21 18.4802 21 18.908 20.782C19.2843 20.5903 19.5903 20.2843 19.782 19.908C20 19.4802 20 18.9201 20 17.8V6.20003C20 5.07993 20 4.51987 19.782 4.09205C19.5903 3.71573 19.2843 3.40977 18.908 3.21802C18.4802 3.00003 17.9201 3.00003 16.8 3.00003H9.2C8.07989 3.00003 7.51984 3.00003 7.09202 3.21802C6.71569 3.40977 6.40973 3.71573 6.21799 4.09205C6 4.51987 6 5.07993 6 6.20003V17.8C6 18.9201 6 19.4802 6.21799 19.908C6.40973 20.2843 6.71569 20.5903 7.09202 20.782C7.51984 21 8.07989 21 9.2 21Z" stroke="#252a34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
+                        Your browser does not support SVG
+                    </object>
                     On This Page
                 </th>
                 <tbody id="tableBody">
@@ -86,10 +75,13 @@
                 Without proof, she states the quadratic formula:
             </p>
             <blockquote>
-                <p>When you use the quadratic formula, you can solve quadratic equations without factoring. Just put the equation in standard form \( ax^{2} + bx + c = 0 \). Substitute the values for \( a \), \( b \) and \( c \) in this equation and simplify.
-                \[
-                    x = \frac{{-b \pm \sqrt{{b^2-4ac}}}}{{2a}}
-                \]</p>
+                <p>
+                    When you use the quadratic formula, you can solve quadratic equations without factoring. 
+                    Just put the equation in standard form \( ax^{2} + bx + c = 0 \). Substitute the values for \( a \), \( b \) and \( c \) in this equation and simplify.
+                    \[
+                        x = \frac{{-b \pm \sqrt{{b^2-4ac}}}}{{2a}}
+                    \]
+                </p>
             </blockquote>
             <p>
                 Of course, the quadratic formula isn't all that hard to show. 
@@ -123,11 +115,13 @@
                     <li> Vertex Form: \( q(x) = a(x - h)^{2} + k \)
                 </ol>
             <p>
-                We impose conditions on these constants. In particular, \( a, b, c, h, k \in \mathbb{R} \) with \(a \ne 0 \) (to prevent degeneracy) and roots \( r_{1}, r_{2} \in \mathbb{C} \). 
+                We impose conditions on these constants. 
+                In particular, \( a, b, c, h, k \in \mathbb{R} \) with \(a \ne 0 \) (to prevent degeneracy) and roots \( r_{1}, r_{2} \in \mathbb{C} \). 
                 The existence of these roots is guranteed by <a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra" target="_blank">The Fundamental Theorem of Algebra</a>.
             </p>
             <p>
-                The high-level plan of attack is to find the vertex in terms of the coefficients. From there, we'll figure out how much to move to the right and left in order to reach the roots.
+                The high-level plan of attack is to find the vertex in terms of the coefficients. 
+                From there, we'll figure out how much to move to the right and left in order to reach the roots.
             </p>
             <figure>
                 <object type="image/svg+xml" data="../assets/notebook-images/parabola.svg" width="90%" height="auto">
@@ -145,7 +139,12 @@
                 Plugging this value, we find \( q \left ( -\frac{b}{2a}  \right ) = c - \frac{b^{2}}{4a} \) giving us the \( x \) and \( y \) coordinates of the vertex.
             </p>
             <p>
-                At this point, our task is to find \( \Delta \) such that \( q \left ( -\frac{b}{2a} \pm \Delta  \right ) = 0 \). Since this seems a bit cumbersome to compute directly, we'll take another look at the Vertex Form. Upon further inspection, we arrive at the following expansion: \( q(x) = ax^{2} - 2ahx + ah^{2} + k \). Comparing terms from Standard Form, we notice that \( b = -2ah \) and \( c = ah^{2} + k \) allowing us to arbitrarily tune both coefficients by changing the position of the vertex. In other words, \( b \) and \( c \) only influence the position of the vertex and not the overall shape of the graph! We now reason that moving \( \Delta \) units to the left or right of the vertex has the effect of moving up or down \( a \Delta^{2} \) units!
+                At this point, our task is to find \( \Delta \) such that \( q \left ( -\frac{b}{2a} \pm \Delta  \right ) = 0 \). 
+                Since this seems a bit cumbersome to compute directly, we'll take another look at the Vertex Form. 
+                Upon further inspection, we arrive at the following expansion: \( q(x) = ax^{2} - 2ahx + ah^{2} + k \). 
+                Comparing terms from Standard Form, we notice that \( b = -2ah \) and \( c = ah^{2} + k \) allowing us to arbitrarily tune both coefficients by changing the position of the vertex. 
+                In other words, \( b \) and \( c \) only influence the position of the vertex and not the overall shape of the graph! 
+                We now reason that moving \( \Delta \) units to the left or right of the vertex has the effect of moving up or down \( a \Delta^{2} \) units!
                 \[
                     a \Delta^{2} + \left ( c - \frac{b^{2}}{4a} \right ) = 0
                     \implies
@@ -173,7 +172,8 @@
             </figure>
             <p>
                 The question, of course, is why the \( \sqrt{a} \) pops up here. 
-                As it so happens, this isn't too difficult to explain. From Thale's Theorem, we know \( \measuredangle ABC \) is a right angle. From here we determine that the two triangle created by dropping the altitude are similiar to each other since they share the same angles. 
+                As it so happens, this isn't too difficult to explain. From Thale's Theorem, we know \( \measuredangle ABC \) is a right angle. 
+                From here we determine that the two triangle created by dropping the altitude are similiar to each other since they share the same angles. 
                 Letting \( h \) stand for the altitude, we establish the following relation:
                 \[
                     \frac{h}{a} = \frac{1}{h} \implies h = \sqrt{a}
@@ -197,7 +197,8 @@
             </p>
             <h>A Curious Tangent</h>
             <p>
-                Ron Larson and Bruce Edwards are the authors of an introductory Calculus text. Problem 6 under 1.1 Exercises asks the following:
+                Ron Larson and Bruce Edwards are the authors of an introductory Calculus text. 
+                Problem 6 under 1.1 Exercises asks the following:
             </p>
             <blockquote>
                 <p>Secant Lines. Consider the function \( f(x) = \sqrt{x} \) and the point \( (4, 2) \) on the graph of \( f \).
@@ -209,7 +210,9 @@
                 </p>
             </blockquote>
             <p>
-                The problem itself is not difficult. Here, we will draw our attention to the very last question. When I was assigned this problem for a PSET, I wondered if there was a way to compute the exact tangent line without the machinery of derivatives. As it turns out, you can!
+                The problem itself is not difficult. Here, we will draw our attention to the very last question. 
+                When I was assigned this problem for a PSET, I wondered if there was a way to compute the exact tangent line without the machinery of derivatives. 
+                As it turns out, you can!
             </p>
             <p>
                 To find the tangent line, we will consider the properties of the tangent line and translate those properties into constraints. 
@@ -234,7 +237,8 @@
                 In 7th grade, my mathematics teacher introduced a rather intriguing result. 
                 To my dismay, she declared that \( 0.\bar{9} = 1 \) and presented a variant of William Byer's <a href="https://en.wikipedia.org/wiki/0.999...#Algebraic_arguments" target="_blank">algebraic argument</a> for justification. 
                 The paradox would appear time and time again from the decay of radioactive isotopes to the (ideal) mechanics of a bouncing ball to any number of jokes about mathematicians entering a bar.
-                 All of these examples have one thing in common: they follow a geometric series. As it turns out, there is an explicit formula to compute the sum of a geometric series.
+                All of these examples have one thing in common: they follow a geometric series. 
+                As it turns out, there is an explicit formula to compute the sum of a geometric series.
             </p>
             <div class="proof">
                 <p><b>Theorem 1<b></p>
@@ -272,7 +276,7 @@
             </figure>
             <p>
                 The desired sum is given by the area of the blue rectangles. 
-                At the offset, it seems that this is difficult to compute because the rectangles stretch onward towards infinity.
+                At the offset, this seems difficult to compute because the rectangles stretch onward towards infinity.
                 The key insight is that by rotating the rectangles 90 degrees, we can "remove the infinity" and proceed.
             </p>
             <h>Comment Section</h>

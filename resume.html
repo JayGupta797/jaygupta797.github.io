@@ -11,8 +11,10 @@
     <link rel="shortcut icon" href="./assets/favicon.svg" type="image/svg+xml">
 
     <!-- Custom Styles and Scripts-->
-    <link rel="stylesheet" href="./styles/styles.css"> 
-    <script src="./scripts/theme.js" defer></script> 
+    <link rel="stylesheet" href="./styles/default-styles.css"> 
+    <link rel="stylesheet" href="./styles/bullet-styles.css"> 
+    <link rel="stylesheet" href="./styles/resume-styles.css"> 
+    <script defer src="./scripts/theme.js"></script> 
 
     <!-- Load Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,15 +23,14 @@
 </head>
 
 <!-- Define Some Re-Usable Svg Elements -->
-<!-- Figure this out at some point, right now I just modify the origin -->
-<!-- See: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use -->
+<!-- TODO: figure this out at some point, right now I just modify the origin -->
+<!-- Reference: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use -->
 
 <svg class="symbol" width="20px" height="20px" viewBox="0 0 20 20" fill="var(--primary-color)" xmlns="http://www.w3.org/2000/svg">
     <path id="tablet" d="M8 7.00003H4M8 12H4M8 17H4M12 3V21M9.2 21H16.8C17.9201 21 18.4802 21 18.908 20.782C19.2843 20.5903 19.5903 20.2843 19.782 19.908C20 19.4802 20 18.9201 20 17.8V6.20003C20 5.07993 20 4.51987 19.782 4.09205C19.5903 3.71573 19.2843 3.40977 18.908 3.21802C18.4802 3.00003 17.9201 3.00003 16.8 3.00003H9.2C8.07989 3.00003 7.51984 3.00003 7.09202 3.21802C6.71569 3.40977 6.40973 3.71573 6.21799 4.09205C6 4.51987 6 5.07993 6 6.20003V17.8C6 18.9201 6 19.4802 6.21799 19.908C6.40973 20.2843 6.71569 20.5903 7.09202 20.782C7.51984 21 8.07989 21 9.2 21Z" stroke="var(--secondary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>
 
 <body>
-    <!-- see: https://stackoverflow.com/a/45762747 -->
     <div class="everything">
     <div class="masthead">
     <div class="masthead__inner-wrap">
@@ -64,12 +65,18 @@
                         <div class="resume-item-names">
                             <h3 class="resume-position-name">Data Analyst</h3>
                             <div class="resume-company-name">Department of Vetern Affairs</div>
-                        </div><!--//row-->
+                        </div>
                         <div class="resume-position-time">2023 - Present</div>
-                    </div><!--//resume-timeline-item-header-->
+                    </div>
 
                     <div class="resume-timeline-item-desc">
-                        <p>The Department of Veteran Affair's Program Evaluation and Resource Center (PERC) provides program evaluation and technical assistance for mental health quality improvement efforts across the Veteran's Health Administration. Our objective is to develop an approach for categorizing narrative content about mental health concepts into operationally relevant categories. Given the <a href="https://www.whitehouse.gov/ondcp/briefing-room/2023/04/12/biden-harris-administration-designates-fentanyl-combined-with-xylazine-as-an-emerging-threat-to-the-united-states/" target="_blank">burgeoning threat</a> of xylazine-laced fentanyl, we used xylazine as a case example.</p>
+                        <p>
+                            The Department of Veteran Affair's Program Evaluation and Resource Center (PERC) provides program evaluation and technical assistance for mental health quality improvement efforts across the Veteran's Health Administration. 
+                            Our objective is to develop an approach for categorizing narrative content about mental health concepts into operationally relevant categories. 
+                            Given the 
+                            <a href="https://www.whitehouse.gov/ondcp/briefing-room/2023/04/12/biden-harris-administration-designates-fentanyl-combined-with-xylazine-as-an-emerging-threat-to-the-united-states/" target="_blank">burgeoning threat</a> 
+                            of xylazine-laced fentanyl, we used xylazine as a case example.
+                        </p>
                         <ul>
                             <li>Extracted snippets from Text Integrated Utility (TIU) Notes</li>
                             <li>Developed a custom tokenization procedure with built-in text repair processes</li>
@@ -95,7 +102,10 @@
                     </div><!--//resume-timeline-item-header-->
 
                     <div class="resume-timeline-item-desc">
-                        <p>CTL provides free subject tutoring with peers who are specially trained to help students develop the skills they need to be successful in their classes. As a Mathematics Appointment Tutor, I work with student peers taking MATH 19, 20, 21, 51, 52, and 53 to help them master the skills needed to succeed on their own by coaching rather than providing answers.</p>
+                        <p>
+                            CTL provides free subject tutoring with peers who are specially trained to help students develop the skills they need to be successful in their classes. 
+                            As a Mathematics Appointment Tutor, I work with student peers taking MATH 19, 20, 21, 51, 52, and 53 to help them master the skills needed to succeed on their own by coaching rather than providing answers.
+                        </p>
                     </div><!--//resume-timeline-item-desc-->
 
                     <div class="resume-timeline-item-header">
@@ -107,7 +117,10 @@
                     </div><!--//resume-timeline-item-header-->
 
                     <div class="resume-timeline-item-desc">
-                        <p>SUMO works with the Stanford math department to provide peer tutoring services for a number of introductory math classes, specifically MATH 19, 20, 21, 51, 52, 53, and 104. As a peer tutor, I answered any questions students had about the material and homework in these classes.</p>
+                        <p>
+                            SUMO works with the Stanford math department to provide peer tutoring services for a number of introductory math classes, specifically MATH 19, 20, 21, 51, 52, 53, and 104. 
+                            As a peer tutor, I answered any questions students had about the material and homework in these classes.
+                        </p>
                     </div><!--//resume-timeline-item-desc-->
 
                 </div>
@@ -121,8 +134,12 @@
                 </div><!--//row-->
                 <div class="resume-position-time">2020 - Present</div>
                 <div class="resume-project-item-desc">
-                        <p>Lyte Lectures is a YouTube channel that seeks to communicate complex ideas with an accessible and artful approach. Animations are programmatically generated using 3B1B's open source project <a href="https://www.manim.community/" target="_blank">Manim</a>. The channel currently boasts 1.36K subscribers.</p>
-                </div><!--//resume-project-item-desc-->
+                        <p>
+                            Lyte Lectures is a YouTube channel that seeks to communicate complex ideas with an accessible and artful approach. 
+                            Animations are programmatically generated using 3B1B's open source project <a href="https://www.manim.community/" target="_blank">Manim</a>. 
+                            The channel currently boasts 1.36K subscribers.
+                        </p>
+                </div>
 
                 <div class="resume-item-names">
                     <h3 class="resume-project-name">MH-BiTS</h3>
@@ -130,7 +147,10 @@
                 </div><!--//row-->
                 <div class="resume-position-time">2020 - 2022</div>
                 <div class="resume-project-item-desc">
-                        <p>MH-BiTS (Mental Health Bill Tracking System) is an interactive tool for exploring and visualizing the topical, temporal, and geospatial breakdown of mental health bills from 2010 to 2020. Data was taken from <a href="https://legiscan.com/" target="_blank">LegiScan</a>, an impartial legislative data web-service.</p>
+                        <p>
+                            MH-BiTS (Mental Health Bill Tracking System) is an interactive tool for exploring and visualizing the topical, temporal, and geospatial breakdown of mental health bills from 2010 to 2020. 
+                            Data was taken from <a href="https://legiscan.com/" target="_blank">LegiScan</a>, an impartial legislative data web-service.
+                        </p>
                 </div><!--//resume-project-item-desc-->
 
             </section>
@@ -221,8 +241,8 @@
                         <h3>CS 109 Challenge Winner</h3>
                         </li>
                         <p>
-                            The challenge involves creating a probability driven project of ones choosing that highlights concepts from the class and does something interesting. My 
-                            <a href="https://youtu.be/oV6Ug__Hcic?feature=shared">project</a> 
+                            The challenge involves creating a probability driven project of ones choosing that highlights concepts from the class and does something interesting. 
+                            My <a href="https://youtu.be/oV6Ug__Hcic?feature=shared">project</a> 
                             discusses the Hilbert Space of Random Variables.
                         </p>
 
@@ -233,7 +253,9 @@
                         </span>
                         <h3>PVSA Gold</h3>
                         </li>
-                        <p>This award honors individuals whose service positively impacts communities in every corner of the nation and inspires those around them to take action, too.</p>
+                        <p>
+                            This award honors individuals whose service positively impacts communities in every corner of the nation and inspires those around them to take action, too.
+                        </p>
                     </ul>
                 </div>
 
@@ -266,7 +288,7 @@
 
     <footer>
         <div class="mastfoot">
-            <p>&copy; 2024 Jay Gupta. Powered by vanilla HTML, CSS, and JS.</p>
+            <p>Designed with love by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</p>
         </div>
     </footer>
 

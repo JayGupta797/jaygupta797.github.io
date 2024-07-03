@@ -1,0 +1,225 @@
+/* General Setup */
+.symbol { display: none; }
+
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline-item {
+  display: inline-block;
+}
+
+.list-inline-item:not(:last-child) {
+  margin-right: 7px;
+  margin-bottom: 7px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 5px;
+  color: var(--primary-color);
+  background: var(--bright-accent);
+}
+
+/* Sections */
+.experience-section {
+  float: left;
+  width: 70%;
+  padding: 0em 1em 0em 1em;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  font-family: Fira Sans, sans-serif;
+}
+
+.skills-section {
+  float: right;
+  width: 30%;
+  padding: 0em 1em 0em 1em;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color); 
+  font-family: Fira Sans, sans-serif;
+}
+
+/* Section Headers */
+.resume-section-title {
+  margin: 25px 0px 25px 0px;
+  font-size: 36px;
+  position: relative;
+  color: var(--secondary-color)
+}
+
+.resume-section-title:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--secondary-color);
+}
+
+.resume-section-content {
+  border-left: solid 5px var(--bright-red);
+}
+
+.resume-item-names {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    /* Useful Debug */
+    /* border: 1px solid var(--secondary-color); */
+}
+
+
+/* TimeLine */
+.resume-timeline {
+  margin: 0px;
+  padding: 0px 0px 0px 25px;
+}
+
+.resume-timeline-item-header h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  position: relative;
+}
+
+.resume-timeline-item-header h3::before {
+  content: "";
+  position: absolute;
+  left: calc(-25px - 12.5px);
+  background-color: var(--bright-red);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  transform: translate(-2.5px, calc(12px - 12.5px));
+}
+
+.resume-timeline-item-header h3::after {
+  content: "";
+  position: absolute;
+  left: calc(-25px - 7.5px);
+  background-color: var(--primary-color);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  transform: translate(-2.5px, calc(12px - 7.5px));
+}
+
+.resume-timeline-item-header {
+    /* Useful Debug */
+    /* border: 1px solid var(--secondary-color); */
+}
+
+.resume-position-name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.resume-company-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.resume-position-time {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--dull-accent);
+}
+
+.resume-timeline-item-desc {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--dull-accent);
+}
+
+.resume-timeline-item-desc-heading {
+  margin: 0px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+/* Projects */
+.resume-project-name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.resume-project-link {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.resume-project-item-desc {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--dull-accent);
+}
+
+/* Education */
+.resume-education h3 {
+    margin: 25px 0px 5px 0px;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.resume-education ul {
+    margin: 0;
+    padding: 0;
+}
+
+.resume-education p {
+    margin: 0px 0px 5px 0px;
+}
+
+/* Awards */
+.resume-awards h3 {
+    margin: 0px 0px 0px 0px;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.resume-awards ul {
+    margin: 0;
+    padding: 0;
+}
+
+.resume-awards p {
+    margin: 0px 0px 15px 0px;
+}
+
+@media (max-width: 767.98px) {
+  .resume-wrapper {
+    padding-top: 0;
+  }
+  .resume-header {
+    height: auto;
+  }
+  .resume-header .picture {
+    width: 120px;
+    border-radius: 4px;
+  }
+}

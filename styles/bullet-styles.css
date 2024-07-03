@@ -1,0 +1,21 @@
+.custom-bullet {
+  display: flex;
+  /* Useful Debug */
+  /* border: 1px solid var(--secondary-color); */
+}
+
+.custom-bullet .svg-icon {
+  text-align: center;
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  /* Useful Debug */
+  /* border: 1px solid red; */
+}
+
+.custom-bullet .svg-icon svg {
+  height: 20px;
+  width: 20px;
+  /* Useful Debug */
+  /* border: 1px solid blue; */
+}

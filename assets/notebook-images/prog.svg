@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -20,7 +19,7 @@
    inkscape:export-filename="/home/jmr/sliksvn/blog/2008/Geometric Progression Proof/geoprog.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
-  <script type="text/ecmascript" href="../../scripts/color.js"/>
+  <script type="text/ecmascript" href="../../scripts/color-svg.js" />
   <title
      id="title4482">Sum of a geometric progression</title>
   <defs

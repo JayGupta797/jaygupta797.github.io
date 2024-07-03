@@ -1,4 +1,12 @@
-// Function to dynamically load the Utterances script based on theme
+/* 
+ * NAME: color-svg.js
+ * DESCRIPTION: This script is included in every svg that uses the page color set.
+ * Graphics loaded in via the <object> tag cannot reference CSS variables. Instead, we use
+ * this short script to detect what the current color set is, and name those colors.
+*/
+
+// Build the initial utterances script based on theme This approach was heavily drawn from the 
+// answer listed here: https://github.com/utterance/utterances/issues/549#issuecomment-913070158
 function loadUtterances(appearance) {
   const script = document.createElement('script');
   script.setAttribute('src', 'https://utteranc.es/client.js')

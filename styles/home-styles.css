@@ -1,0 +1,35 @@
+.author__avatar {
+    width: auto;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.author__avatar img {
+    border-radius: 50%;
+    padding: 0;
+    opacity: 1;
+    border: 1.5px solid var(--secondary-color);
+}
+
+.author__urls-wrapper a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.author__urls-wrapper a:hover{
+    /* Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-offset */
+    color: var(--bright-accent);
+    text-underline-offset: 3px;
+    text-decoration: underline;
+}
+
+/* Reset default list styles */
+.author__urls-icons {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.author__urls-icons li {
+    padding-left: 0;
+    margin-bottom: 10px;
+}

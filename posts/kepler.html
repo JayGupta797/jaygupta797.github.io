@@ -11,32 +11,27 @@
     <link rel="shortcut icon" href="../assets/favicon.svg" type="image/svg+xml">
 
     <!-- Custom Styles and Scripts-->
-    <link rel="stylesheet" href="../styles/styles.css"> 
-    <script src="../scripts/theme.js" defer></script> 
-    <script src="../scripts/table.js" defer></script>
+    <link rel="stylesheet" href="../styles/default-styles.css"> 
+    <link rel="stylesheet" href="../styles/table-styles.css"> 
+    <script defer src="../scripts/theme.js"></script> 
+    <script defer src="../scripts/table.js"></script>
 
     <!-- Load Prism.js for code blocks -->
     <link id="prism-theme" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-python.min.js" integrity="sha512-3qtI9+9JXi658yli19POddU1RouYtkTEhTHo6X5ilOvMiDfNvo6GIS6k2Ukrsx8MyaKSXeVrnIWeyH8G5EOyIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-QTYXYEniHb1m0ZKtSyfpmw40uH9vPfV07vxsv/plIRMEiON4yOp2qoZiv/FTqFIOym4bdQ4+p9RtHaCMC0ApRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Load MathJax for LaTex -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
 
     <!-- Load Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-    <!-- see: https://stackoverflow.com/a/45762747 -->
     <div class="everything">
     <div class="masthead">
     <div class="masthead__inner-wrap">
@@ -64,9 +59,9 @@
         <div class="sidebar">
             <table id="headerTable">
                 <th>
-                    <svg class="toc" width="25px" height="25px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 7.00003H4M8 12H4M8 17H4M12 3V21M9.2 21H16.8C17.9201 21 18.4802 21 18.908 20.782C19.2843 20.5903 19.5903 20.2843 19.782 19.908C20 19.4802 20 18.9201 20 17.8V6.20003C20 5.07993 20 4.51987 19.782 4.09205C19.5903 3.71573 19.2843 3.40977 18.908 3.21802C18.4802 3.00003 17.9201 3.00003 16.8 3.00003H9.2C8.07989 3.00003 7.51984 3.00003 7.09202 3.21802C6.71569 3.40977 6.40973 3.71573 6.21799 4.09205C6 4.51987 6 5.07993 6 6.20003V17.8C6 18.9201 6 19.4802 6.21799 19.908C6.40973 20.2843 6.71569 20.5903 7.09202 20.782C7.51984 21 8.07989 21 9.2 21Z" stroke="#252a34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
+                        Your browser does not support SVG
+                    </object>
                     On This Page
                 </th>
                 <tbody id="tableBody">
@@ -77,14 +72,22 @@
         <div class="mainbar" id="headerContainer">
             <h>The Kepler Bouwkamp Constant</h>
             <p>
-                I'm sure we're all familiar with the usual mathematical constants, but what the heck is the The Kepler Bouwkamp Constant? I'll save you the trouble of searching for the relevant Wikepedia Article and provide the first paragraph for reference.
+                I'm sure we're all familiar with the usual mathematical constants, but what the heck is the The Kepler Bouwkamp Constant? 
+                I'll save you the trouble of searching for the relevant Wikepedia Article and provide the first paragraph for reference.
             </p>
             <blockquote>
-                <p>In plane geometry, the Kepler–Bouwkamp constant (or polygon inscribing constant) is obtained as a limit of the following sequence. Take a circle of radius 1. Inscribe a regular triangle in this circle. Inscribe a circle in this triangle. Inscribe a square in it. Inscribe a circle, regular pentagon, circle, regular hexagon and so forth. The radius of the limiting circle is called the Kepler–Bouwkamp constant.</p>
+                <p>
+                    In plane geometry, the Kepler–Bouwkamp constant (or polygon inscribing constant) is obtained as a limit of the following sequence. 
+                    Take a circle of radius 1. Inscribe a regular triangle in this circle. Inscribe a circle in this triangle. 
+                    Inscribe a square in it. Inscribe a circle, regular pentagon, circle, regular hexagon and so forth. 
+                    The radius of the limiting circle is called the Kepler–Bouwkamp constant.
+                </p>
             </blockquote>
             <h>A Brief Computation</h>
             <p>
-                Here, we will re-discover the Kepler–Bouwkamp constant. We'll open by considering a \( k \)-regular polygon (in this particular case, an equilateral triangle) inscribed in a circle of radius \( r \). To keep the math nice and tidy, we'll center everything at the origin.
+                Here, we will re-discover the Kepler–Bouwkamp constant. 
+                We'll open by considering a \( k \)-regular polygon (in this particular case, an equilateral triangle) inscribed in a circle of radius \( r \). 
+                To keep the math nice and tidy, we'll center everything at the origin.
             </p>
             <figure>
                 <object type="image/svg+xml" data="../assets/kepler-images/diagram.svg" width="90%" height="auto">
@@ -93,7 +96,10 @@
                 <figcaption>Regular Polygon with Inradius in White</figcaption>
             </figure>
             <p>
-                Our task is to compute the <a href="https://mathworld.wolfram.com/Inradius.html" target="_blank">inradius</a> of a \( k \)-regular polygon. To do so, we'll notice that the radial line is a perpendicular bisector of the corresponding side. This property ensures the <a href="https://mathworld.wolfram.com/Incenter.html" target="_blank">incenter</a> is equidistant from each side of the polygon. To formalize this observation, we'll express the first two vertices in rectangular coordinates.
+                Our task is to compute the <a href="https://mathworld.wolfram.com/Inradius.html" target="_blank">inradius</a> of a \( k \)-regular polygon. 
+                To do so, we'll notice that the radial line is a perpendicular bisector of the corresponding side. 
+                This property ensures the <a href="https://mathworld.wolfram.com/Incenter.html" target="_blank">incenter</a> is equidistant from each side of the polygon. 
+                To formalize this observation, we'll express the first two vertices in rectangular coordinates.
                 \[ v_{\textcolor{var(--bright-accent)}{0}} = \left ( r \cos \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{0} \cdot 2\pi}{k} \right ), \hspace{0.5em} r \sin \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{0} \cdot 2\pi}{k} \right ) \right ) \]
                 \[ v_{\color{var(--bright-accent)}{1}} = \left ( r \cos \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{1} \cdot 2\pi}{k} \right ), \hspace{0.5em} r \sin \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{1} \cdot 2\pi}{k} \right ) \right ) \]
                 We now compute the midpoint.
@@ -102,7 +108,9 @@
                     \left ( \frac{r \cos \left ( \frac{\pi}{2} \right ) + r \cos \left ( \frac{\pi}{2} + \frac{2\pi}{k} \right )}{2},
                     \frac{r \sin \left ( \frac{\pi}{2} \right ) + r \sin \left ( \frac{\pi}{2} + \frac{2\pi}{k} \right )}{2} \right )
                 \]
-                Notice that by construction the incenter is the origin. In effect, overloading the notation for vectors and points, we find \( r_{\text{inner}} = \Vert v_{\text{mid}} \Vert_{2} \) or its \( 2 \)-norm. Working through that computation (using the Pythagorean and Periodicity Identities among other tools), we arrive at the following:
+                Notice that by construction the incenter is the origin. 
+                In effect, overloading the notation for vectors and points, we find \( r_{\text{inner}} = \Vert v_{\text{mid}} \Vert_{2} \) or its \( 2 \)-norm. 
+                Working through that computation (using the Pythagorean and Periodicity Identities among other tools), we arrive at the following:
                 \[
                     \Vert v_{\text{mid}} \Vert_{2} = 
                     \sqrt{\frac{r^{2} \left ( 1 + \cos \left ( \frac{2\pi}{k} \right ) \right )}{2} } = 
@@ -137,9 +145,9 @@ def get_inscribed_Ngram(circle, n):
 
     return polygon
             </code></pre>
-
-            <p>To get an inscribed circle, we can compute the radius using the formula derived above and center at the origin.</p>
-
+            <p>
+                To get an inscribed circle, we can compute the radius using the formula derived above and center at the origin.
+            </p>
             <pre class="line-numbers"><code class="language-python">
 def get_inscribed_circle(polygon):
 
@@ -157,9 +165,9 @@ def get_inscribed_circle(polygon):
 
     return circle
             </code></pre>
-
-            <p>We can now run the process an arbitrary number of iterations.</p>
-
+            <p>
+                We can now run the process an arbitrary number of iterations.
+            </p>
             <pre class="line-numbers"><code class="language-python">
 num_iterations = 5
 
@@ -170,9 +178,9 @@ for n in range(start = 3, stop = 3 + num_iterations):
     mobjects.append(polygon)
     mobjects.append(circle)
             </code></pre>
-
-            <p>Running through that workflow, I managed to create a 5th order depiction of the Kepler–Bouwkamp constant!</p>
-
+            <p>
+                Running through that workflow, I managed to create a 5th order depiction of the Kepler–Bouwkamp constant!
+            </p>
             <figure>
                 <object type="image/svg+xml" data="../assets/kepler-images/kepler.svg" width="75%" height="auto">
                 Your browser does not support SVG
@@ -182,7 +190,8 @@ for n in range(start = 3, stop = 3 + num_iterations):
             <h>Resources and References</h>
             <p>
                 If you're interested in further reading, I would recommend checking out Bouwkamp's
-                <a href="https://www.sciencedirect.com/science/article/pii/S1385725865500044" target="_blank">original paper</a> on the topic. While he does not prove the connection between the geometric construction and the infinite series (noting that it is "easy" to show), he does discuss alternative formulations involving the Zeta function.
+                <a href="https://www.sciencedirect.com/science/article/pii/S1385725865500044" target="_blank">original paper</a> on the topic. 
+                While he does not prove the connection between the geometric construction and the infinite series (noting that it is "easy" to show), he does discuss alternative formulations involving the Zeta function.
                 From there, you can move on to
                 <a href="https://cs.uwaterloo.ca/journals/JIS/VOL17/Doslic/doslic3.pdf" target="_blank">generalizations</a> of the underlying idea.
             </p>

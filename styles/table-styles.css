@@ -1,0 +1,86 @@
+/* Table of Contents */
+/* These styles were heavily drawn from https://unused-css.com/blog/css-rounded-table-corners/ */
+table {
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color);
+    overflow: hidden;
+    font-family: Fira Sans, sans-serif;
+    width: 100%;
+}
+
+table th {
+  background: var(--bright-accent);
+  font-weight: 400;
+  font-size: 20px;
+  text-align: left;
+  padding: 5px; 
+  display: flex;
+}
+
+table th .toc {
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
+    /* Useful Debug */
+    /* border: 1px solid var(--secondary-color); */
+}
+
+table tr {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+table td {
+    padding: 5px; 
+}
+
+table td.hd {
+    font-weight: 400;
+}
+
+table td.sb {
+    text-indent: 30px;
+}
+
+table td a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+table td a:hover{
+  /* see: https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-offset */
+  text-underline-offset: 3px;
+  text-decoration: underline;
+}
+
+/* Apply a border to the right of all but the last column */
+table th:not(:last-child),
+table td:not(:last-child) {
+    border-right: 1px solid var(--secondary-color);
+}
+
+/* Apply a border to the bottom of all but the last row */
+table>thead>tr:not(:last-child)>th,
+table>thead>tr:not(:last-child)>td,
+table>tbody>tr:not(:last-child)>th,
+table>tbody>tr:not(:last-child)>td,
+table>tfoot>tr:not(:last-child)>th,
+table>tfoot>tr:not(:last-child)>td,
+table>tr:not(:last-child)>td,
+table>tr:not(:last-child)>th,
+table>thead:not(:last-child),
+table>tbody:not(:last-child),
+table>tfoot:not(:last-child) {
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+/* In-Text Table */
+.textTable th {
+  display: table-cell;
+}

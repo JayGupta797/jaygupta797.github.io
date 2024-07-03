@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 425 425">
-    <script type="text/ecmascript" href="../../scripts/color.js"/>
+    <script type="text/ecmascript" href="../../scripts/color-svg.js"/>
     <path style="fill-rule:nonzero;fill:#58c4dd;fill-opacity:.25;stroke-width:.02;stroke-linecap:butt;stroke-linejoin:miter;stroke:#58c4dd;stroke-opacity:.25;stroke-miterlimit:10" d="M1.001 0c0 .262-.108.523-.293.708A1.013 1.013 0 0 1 0 1c-.262 0-.523-.108-.708-.293A1.013 1.013 0 0 1-1 0c0-.262.108-.523.293-.708C-.523-.893-.262-1 0-1c.262 0 .523.108.708.293C.893-.523 1-.262 1 0Zm0 0" transform="matrix(60 0 0 -60 211.5 211.5)"/>
     <path style="fill-rule:nonzero;fill:#fc6255;fill-opacity:.25;stroke-width:.02;stroke-linecap:butt;stroke-linejoin:miter;stroke:#fc6255;stroke-opacity:.25;stroke-miterlimit:10" d="M0 1.237-1.177.382-.727-1H.727l.45 1.383L0 1.237Zm0 0" transform="matrix(60 0 0 -60 211.5 211.5)"/>
     <path style="fill-rule:nonzero;fill:#58c4dd;fill-opacity:.25;stroke-width:.02;stroke-linecap:butt;stroke-linejoin:miter;stroke:#58c4dd;stroke-opacity:.25;stroke-miterlimit:10" d="M1.237 0c0 .324-.133.646-.362.875-.23.23-.551.362-.875.362-.324 0-.646-.133-.875-.362A1.252 1.252 0 0 1-1.237 0c0-.324.133-.646.362-.875.23-.23.551-.362.875-.362.324 0 .646.133.875.362.23.23.362.551.362.875Zm0 0" transform="matrix(60 0 0 -60 211.5 211.5)"/>

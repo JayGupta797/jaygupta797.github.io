@@ -2,30 +2,21 @@
 <html lang="en">
 <head>
     <!-- Some meta tags -->
+    <title>Jay Gupta - Movie Barcode Post</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jay Gupta - Movie Barcode Post</title>
 
     <!-- Favicon -->
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="shortcut icon" href="../assets/favicon.svg" type="image/svg+xml">
 
     <!-- Custom Styles and Scripts-->
-    <link rel="stylesheet" href="../styles/styles.css"> 
-    <script src="../scripts/theme.js" defer></script> 
-    <script src="../scripts/table.js" defer></script>
-
-    <!-- Load Prism.js for code blocks -->
-    <link id="prism-theme" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-python.min.js" integrity="sha512-3qtI9+9JXi658yli19POddU1RouYtkTEhTHo6X5ilOvMiDfNvo6GIS6k2Ukrsx8MyaKSXeVrnIWeyH8G5EOyIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-QTYXYEniHb1m0ZKtSyfpmw40uH9vPfV07vxsv/plIRMEiON4yOp2qoZiv/FTqFIOym4bdQ4+p9RtHaCMC0ApRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="../styles/default-styles.css"> 
+    <link rel="stylesheet" href="../styles/table-styles.css"> 
+    <script defer src="../scripts/theme.js"></script> 
+    <script defer src="../scripts/table.js"></script>
 
     <!-- Load MathJax for LaTex -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
 
     <!-- Load Google Font -->
@@ -35,7 +26,6 @@
 </head>
 
 <body>
-    <!-- see: https://stackoverflow.com/a/45762747 -->
     <div class="everything">
     <div class="masthead">
     <div class="masthead__inner-wrap">
@@ -63,9 +53,9 @@
         <div class="sidebar">
             <table id="headerTable">
                 <th>
-                    <svg class="toc" width="25px" height="25px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 7.00003H4M8 12H4M8 17H4M12 3V21M9.2 21H16.8C17.9201 21 18.4802 21 18.908 20.782C19.2843 20.5903 19.5903 20.2843 19.782 19.908C20 19.4802 20 18.9201 20 17.8V6.20003C20 5.07993 20 4.51987 19.782 4.09205C19.5903 3.71573 19.2843 3.40977 18.908 3.21802C18.4802 3.00003 17.9201 3.00003 16.8 3.00003H9.2C8.07989 3.00003 7.51984 3.00003 7.09202 3.21802C6.71569 3.40977 6.40973 3.71573 6.21799 4.09205C6 4.51987 6 5.07993 6 6.20003V17.8C6 18.9201 6 19.4802 6.21799 19.908C6.40973 20.2843 6.71569 20.5903 7.09202 20.782C7.51984 21 8.07989 21 9.2 21Z" stroke="#252a34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
+                        Your browser does not support SVG
+                    </object>
                     On This Page
                 </th>
                 <tbody id="tableBody">
@@ -79,13 +69,23 @@
                 <img src="../assets/barcode-images/frozen.jpg" alt="Trulli">
                 <figcaption>Disney Frozen 2013. Taken from <a href="https://www.reddit.com/r/Frozen/comments/eh0b0h/every_frame_of_frozen_2013_compressed_into_a/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" target="_blank">Reddit</a></figcaption>
             </figure>
-            <p>Recently, I stumbled upon a fascinating and visually captivating concept that lives at the intersection of film and cinematography: movie barcodes. Intrigued, I decided to create my very own movie barcode with a couple of personal flares to boot.</p>
+            <p>
+                Recently, I stumbled upon a fascinating and visually captivating concept that lives at the intersection of film and cinematography: movie barcodes. 
+                Intrigued, I decided to create my very own movie barcode with a couple of personal flares to boot.</p>
             <h>What is a Movie Barcode?</h>
-            <p>We're all familiar with plain vanilla barcodes, but what exactly is a movie barcode? To answer that, I'll defer to self-described engineer, space lover, and tea drinker Thomas Poulet.</p>
+            <p>
+                We're all familiar with plain vanilla barcodes, but what exactly is a movie barcode? 
+                To answer that, I'll defer to self-described engineer, space lover, and tea drinker Thomas Poulet.
+            </p>
             <blockquote>
-                <p>A Movie Barcode is the color identity card of the movie. For each frame you take the dominant color and create a stripe out of it. The result is an overview of the overall mood of the movie.</p>
+                <p>
+                    A Movie Barcode is the color identity card of the movie. 
+                    For each frame you take the dominant color and create a stripe out of it. 
+                    The result is an overview of the overall mood of the movie.</p>
             </blockquote>
-            <p>In essence, a movie barcode is a playful representation of the color palette used in a movie. Today, our task is to build our very own movie barcode and hopefully learn some things in the process!</p>
+            <p>
+                In essence, a movie barcode is a playful representation of the color palette used in a movie. 
+                Today, our task is to build our very own movie barcode and hopefully learn some things in the process!</p>
             <h>Tools and Software</h>
             <p>
                 This build will be implemented in Python 3.9.X and uses the following packages: 
@@ -97,7 +97,9 @@
                 a movie barcode, and this just happens to be the way I choose to do it.
             </p>
             <h>Making a Movie Barcode</h>
-            <p>Here, I outline the procedure to make a movie barcode. I'll also include possible customizations and optimizations.</p>
+            <p>
+                Here, I outline the procedure to make a movie barcode. 
+                I'll also include possible customizations and optimizations.</p>
             <h2>Vanilla Procedure</h2>
             <p>There are roughly four steps involved in creating a movie barcode.</p>
             <ol>
@@ -106,22 +108,33 @@
               <li>Average (Row-Wise)</li>
               <li>Merge</li>
             </ol>
-            <p>In plain English, we start off by reading each frame of the film in order. Once the frames are read, the next step is to chunk them into manageable sections. Following this, colors are averaged row-wise, allowing us to represent the entire chunk as a single bar. Finally, these bars are merged together to form the final movie barcode.</p>
+            <p>
+                In plain English, we start off by reading each frame of the film in order. 
+                Once the frames are read, the next step is to chunk them into manageable sections. 
+                Following this, colors are averaged row-wise, allowing us to represent the entire chunk as a single bar. 
+                Finally, these bars are merged together to form the final movie barcode.</p>
             <h2>Customization and Settings</h2>
             <p>
-                Customizing a movie barcode allows us to enhance its visual appeal and convey additional information. One change that immediately comes to mind is experimenting with different color spaces such as
+                Customizing a movie barcode allows us to enhance its visual appeal and convey additional information. 
+                One change that immediately comes to mind is experimenting with different color spaces such as
                 <a href="https://en.wikipedia.org/wiki/RGB_color_model" target="_blank">RGB</a>,
                 <a href="https://en.wikipedia.org/wiki/HSL_and_HSV" target="_blank">HSV</a>, or
                 <a href="https://en.wikipedia.org/wiki/CIELAB_color_space" target="_blank">LAB</a>.
                 Another intriguing customization involves scaling the bars, possibly achieved through an 
                 <a href="https://facelessuser.github.io/coloraide/interpolation/" target="_blank">interpolation method</a> 
-                of some sort, introducing a jagged comb-like effect. This scaling allows for a dynamic portrayal of certain aspects of the movie, adding a layer of complexity to the barcode. Moreover, transforming the barcode in post to fit alternative shapes opens up even more possibilities! In short, there is no dearth of creativity involved in creating movie barcodes.
+                of some sort, introducing a jagged comb-like effect. 
+                This scaling allows for a dynamic portrayal of certain aspects of the movie, adding a layer of complexity to the barcode. 
+                Moreover, transforming the barcode in post to fit alternative shapes opens up even more possibilities! 
+                In short, there is no dearth of creativity involved in creating movie barcodes.
             </p>
             <h2>Tips and Tricks</h2>
             <p>
-                When creating movie barcodes, a couple of key tips can significantly optimize the process. For time complexity, consider leveraging 
+                When creating movie barcodes, a couple of key tips can significantly optimize the process. 
+                For time complexity, consider leveraging 
                 <a href="https://en.wikipedia.org/wiki/Parallel_computing" target="_blank">parallel computing</a>
-                techniques. By distributing the workload across multiple processors or cores simultaneously, you can substantially accelerate the merging step. Here is a conceptual implementation:
+                techniques. 
+                By distributing the workload across multiple processors or cores simultaneously, you can substantially accelerate the merging step. 
+                Here is a conceptual implementation:
             </p>
                 <figure>
                     <object type="image/svg+xml" data="../assets/barcode-images/parallel.svg" width="100%" height="auto">
@@ -130,11 +143,15 @@
                     <figcaption>Frame Process (Parallel Computing Paradigm)</figcaption>
                 </figure>
             <p>
-                Additionally, paying attention to garbage collection is crucial for optimizing space complexity. Regularly clearing out unused memory and resources (i.e., frames) ensures that the procedure runs smoothly and doesn't get bogged down by unnecessary data.
+                Additionally, paying attention to garbage collection is crucial for optimizing space complexity. 
+                Regularly clearing out unused memory and resources (i.e., frames) ensures that the procedure runs smoothly and doesn't get bogged down by unnecessary data.
             </p>
             <h>Examples</h>
             <p>
-                The Legend of Zelda is a renowned action-adventure video game series created by Nintendo in 1986. It features the adventures of Link as he quests to rescue Princess Zelda and defeat Ganon. Known for its innovative game design and recurring themes of exploration and heroism, the series has become a flagship franchise for Nintendo. In honor of the release of
+                The Legend of Zelda is a renowned action-adventure video game series created by Nintendo in 1986. 
+                It features the adventures of Link as he quests to rescue Princess Zelda and defeat Ganon. 
+                Known for its innovative game design and recurring themes of exploration and heroism, the series has become a flagship franchise for Nintendo. 
+                In honor of the release of
                 <a href="https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild" target="_blank">Breath of the Wild</a>, 
                 I decided to make a barcode of all the
                 <a href="https://youtu.be/In3A1akIbks?feature=shared" target="_blank">cut scenes and game play</a>.
@@ -143,12 +160,15 @@
                 <img src="../assets/barcode-images/polar.png" alt="Trulli">
                 <figcaption>Movie Barcode for The Legend of Zelda: Tears of the Kingdom</figcaption>
             </figure>
-            <p>As you may have noticed, this particular barcode implements the customizations discussed above. The bars are linearly scaled depending on the average decibel output of the associated chunk.</p>
+            <p>
+                As you may have noticed, this particular barcode implements the customizations discussed above. 
+                The bars are linearly scaled depending on the average decibel output of the associated chunk.</p>
             <h>Resources and References</h>
             <p>
                 If you're interested in movie barcodes, I would definitely recommend checking out 
                 <a href="http://blog.thomaspoulet.fr/movie-barcode/" target="_blank">Thomas Poulet's post</a>
-                on movie barcodes. It is by far the prototypical source on the matter. I would also encourage you to support the good folks at 
+                on movie barcodes. It is by far the prototypical source on the matter. 
+                I would also encourage you to support the good folks at 
                 <a href="https://www.youtube.com/@BeardBear" target="_blank">BeardBear's YouTube Channel</a>
                 since they packaged all the TotK cut-scenes into a single, cohesive story line.
             </p>

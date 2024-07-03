@@ -11,32 +11,27 @@
     <link rel="shortcut icon" href="../assets/favicon.svg" type="image/svg+xml">
 
     <!-- Custom Styles and Scripts-->
-    <link rel="stylesheet" href="../styles/styles.css"> 
-    <script src="../scripts/theme.js" defer></script> 
-    <script src="../scripts/table.js" defer></script>
+    <link rel="stylesheet" href="../styles/default-styles.css"> 
+    <link rel="stylesheet" href="../styles/table-styles.css"> 
+    <script defer src="../scripts/theme.js"></script> 
+    <script defer src="../scripts/table.js"></script>
 
     <!-- Load Prism.js for code blocks -->
     <link id="prism-theme" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-python.min.js" integrity="sha512-3qtI9+9JXi658yli19POddU1RouYtkTEhTHo6X5ilOvMiDfNvo6GIS6k2Ukrsx8MyaKSXeVrnIWeyH8G5EOyIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-QTYXYEniHb1m0ZKtSyfpmw40uH9vPfV07vxsv/plIRMEiON4yOp2qoZiv/FTqFIOym4bdQ4+p9RtHaCMC0ApRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Load MathJax for LaTex -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
 
     <!-- Load Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-    <!-- see: https://stackoverflow.com/a/45762747 -->
     <div class="everything">
     <div class="masthead">
     <div class="masthead__inner-wrap">
@@ -64,9 +59,9 @@
         <div class="sidebar">
             <table id="headerTable">
                 <th>
-                    <svg class="toc" width="25px" height="25px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 7.00003H4M8 12H4M8 17H4M12 3V21M9.2 21H16.8C17.9201 21 18.4802 21 18.908 20.782C19.2843 20.5903 19.5903 20.2843 19.782 19.908C20 19.4802 20 18.9201 20 17.8V6.20003C20 5.07993 20 4.51987 19.782 4.09205C19.5903 3.71573 19.2843 3.40977 18.908 3.21802C18.4802 3.00003 17.9201 3.00003 16.8 3.00003H9.2C8.07989 3.00003 7.51984 3.00003 7.09202 3.21802C6.71569 3.40977 6.40973 3.71573 6.21799 4.09205C6 4.51987 6 5.07993 6 6.20003V17.8C6 18.9201 6 19.4802 6.21799 19.908C6.40973 20.2843 6.71569 20.5903 7.09202 20.782C7.51984 21 8.07989 21 9.2 21Z" stroke="#252a34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
+                        Your browser does not support SVG
+                    </object>
                     On This Page
                 </th>
                 <tbody id="tableBody">
@@ -77,19 +72,29 @@
         <div class="mainbar" id="headerContainer">
             <h>Introduction</h>
             <p>
-                The Summer of Math Exposition or SoMe is an annual competition hosted by Grant Sanderson over at 3blue1brown. In its own words, the compeititions seeks to foster the creation of excellent math content online. Last year, I had the pleasure of reviewing several SoMe submissions from content creators across the globe. One of those 
+                The Summer of Math Exposition or SoMe is an annual competition hosted by Grant Sanderson over at 3blue1brown. 
+                In its own words, the compeititions seeks to foster the creation of excellent math content online. 
+                Last year, I had the pleasure of reviewing several SoMe submissions from content creators across the globe. 
+                One of those 
                 <a href="https://youtu.be/4d6YrTKmjfE?si=AN7KcOq5FHt0qCNv" target="_blank">videos</a>
-                introduced a certain construction of tangential circles known as Ford Circles. Intrigued, I decided to take a deeper look.
+                introduced a certain construction of tangential circles known as Ford Circles. 
+                Intrigued, I decided to take a deeper look.
             </p>
             <h>What are Ford Circles?</h>
             <p>
                 I'll save you the trouble of searching for the relevant Wikepedia Article and provide the first paragraph for reference.
             </p>
             <blockquote>
-                <p>In mathematics, a Ford circle is a circle in the Euclidean plane, in a family of circles that are all tangent to the x-axis at rational points. For each rational number \( \frac{p}{q} \), expressed in lowest terms, there is a Ford circle whose center is at the point \( \left(\frac{p}{q}, \frac{1}{2q^2}\right) \) and whose radius is \( \frac{1}{2q^2} \). It is tangent to the x-axis at its bottom point, \( \left(\frac{p}{q}, 0\right) \). The two Ford circles for rational numbers \( \frac{p}{q} \) and \( \frac{r}{s} \) (both in lowest terms) are tangent circles when \( |ps - qr| = 1 \) and otherwise these two circles are disjoint.</p>
+                <p>
+                    In mathematics, a Ford circle is a circle in the Euclidean plane, in a family of circles that are all tangent to the x-axis at rational points. 
+                    For each rational number \( \frac{p}{q} \), expressed in lowest terms, there is a Ford circle whose center is at the point \( \left(\frac{p}{q}, \frac{1}{2q^2}\right) \) and whose radius is \( \frac{1}{2q^2} \). 
+                    It is tangent to the x-axis at its bottom point, \( \left(\frac{p}{q}, 0\right) \). The two Ford circles for rational numbers \( \frac{p}{q} \) and \( \frac{r}{s} \) (both in lowest terms) are tangent circles when \( |ps - qr| = 1 \) and otherwise these two circles are disjoint.
+                </p>
             </blockquote>
             <p>
-                If you're anything like me, you are probably wondering what exactly you just read. To answer that, I think a visual demonstration is in order. This particular graphic is interactive, so I encourage you to hover over the fractions to really get a feel for what is going on here.
+                If you're anything like me, you are probably wondering what exactly you just read. 
+                To answer that, I think a visual demonstration is in order. 
+                This particular graphic is interactive, so I encourage you to hover over the fractions to really get a feel for what is going on here.
             </p>
             <figure>
                 <object type="image/svg+xml" data="../assets/ford-images/Comparison_Ford_circles_Farey_diagram.svg" width="100%" height="auto">
@@ -102,9 +107,11 @@
             </p>
             <h>Connection to the Farey Sequence</h>
             <p>
-                For the mathematically inclined, I draw a connection between Ford Circles and the Farey Sequence. This demonstration was modestly adapted from 
+                For the mathematically inclined, I draw a connection between Ford Circles and the Farey Sequence. 
+                This demonstration was modestly adapted from 
                 <a href="https://youtu.be/hoB_Pjhinpk?feature=shared" target="_blank">Harvey Yau's</a>
-                presentation for The Archimedeans. We'll open with a key definition and a couple of lemmas.
+                presentation for The Archimedeans. 
+                We'll open with a key definition and a couple of lemmas.
             </p>
             <div class="proof">
                 <p><b>Definition 1<b></p>
@@ -112,21 +119,36 @@
             </div>
             <div class="proof">
                 <p><b>Lemma 1<b></p>
-                <p>Consider two circles \( C_1 \) and \( C_2 \) tangent to each other and to the x-axis. The distance between the two circles is given by \( \frac{1}{s_1 s_2} \) where \( s_1 \) and \( s_2 \) are the smallness of \( C_1 \) and \( C_2 \).</p>
+                <p>
+                    Consider two circles \( C_1 \) and \( C_2 \) tangent to each other and to the x-axis. 
+                    The distance between the two circles is given by \( \frac{1}{s_1 s_2} \) where \( s_1 \) and \( s_2 \) are the smallness of \( C_1 \) and \( C_2 \).
+                </p>
             </div>
             <div class="proof">
                 <p><b>Lemma 2<b></p>
-                <p>Consider two parent circles \( C_1 \) and \( C_2 \) tangent to each other and to the x-axis. There exists a unique child circle \( C_3 \) that is pairwise tangent to both circles and to the x-axis. Moreover, the smallness of \( C_3 \) is the sum of the smallness of \( C_1 \) and \( C_2 \).</p>
+                <p>
+                    Consider two parent circles \( C_1 \) and \( C_2 \) tangent to each other and to the x-axis. 
+                    There exists a unique child circle \( C_3 \) that is pairwise tangent to both circles and to the x-axis. 
+                    Moreover, the smallness of \( C_3 \) is the sum of the smallness of \( C_1 \) and \( C_2 \).
+                </p>
             </div>
             <p>
-                As it so happens, <a href="https://youtu.be/i0dZukEw1JY?si=GbnoC1ryUM9Di86L" target="_blank">Presh Talwalker</a> has a short video working through the relevant algebra for Lemma 1 and Lemma 2. To offer an alternative perspective, Lemma 2 may be seen as consequences of Descarte's Theorem (the connection to which is made clear by viewing the x-axis as an infinitely large circle) adapted to fit the language of smallness.
+                As it so happens, <a href="https://youtu.be/i0dZukEw1JY?si=GbnoC1ryUM9Di86L" target="_blank">Presh Talwalker</a> has a short video working through the relevant algebra for Lemma 1 and Lemma 2. 
+                To offer an alternative perspective, Lemma 2 may be seen as consequences of Descarte's Theorem (the connection to which is made clear by viewing the x-axis as an infinitely large circle) adapted to fit the language of smallness.
             </p>
             <p>Now our task is to prove the following statement.</p>
             <div class="proof">
                 <p><b>Theorem 1<b></p>
-                <p>Consider two parent circles \( C_1 \) and \( C_2 \) tangent to each other and to the x-axis. We further stipulate these circles are tangent to the x-axis at \( \frac{a}{b} \) and \( \frac{c}{d} \) with \( \frac{a}{b} <  \frac{c}{d} \) and have smallness \( b \) and \( d \). We need to show that the child circle \( C_3 \) is tangent to the x-axis at \( \frac{a + c}{b + d} \) (namely the mediant of its parents) and has smallness \( b + d \).</p>
+                <p>
+                    Consider two parent circles \( C_1 \) and \( C_2 \) tangent to each other and to the x-axis. 
+                    We further stipulate these circles are tangent to the x-axis at \( \frac{a}{b} \) and \( \frac{c}{d} \) with \( \frac{a}{b} < \frac{c}{d} \) and have smallness \( b \) and \( d \). 
+                    We need to show that the child circle \( C_3 \) is tangent to the x-axis at \( \frac{a + c}{b + d} \) (namely the mediant of its parents) and has smallness \( b + d \).
+                </p>
                 <p><b>Proof<b></p>
-                <p>The plan of attack is to use Lemmas to compute the distance between \( C_1 \) and \( C_3 \). From there, we'll add back the original position of \( C_1 \) and massage the sum into the desired result.</p>
+                <p>
+                    The plan of attack is to use Lemmas to compute the distance between \( C_1 \) and \( C_3 \). 
+                    From there, we'll add back the original position of \( C_1 \) and massage the sum into the desired result.
+                </p>
                 <ol>
                   <li>Lemma 2, \( s_3 = s_1 + s_2 = b + d \)</li>
                   <li>Lemma 1, the distance between \( C_1 \) and \( C_3 \) is \( \frac{1}{s_1 s_3} = \frac{1}{b(b + d)} \)</li>
@@ -136,7 +158,10 @@
                 </ol>
             </div>
             <p>
-                The key observation here is that so long as our parent circles have a smallness that aligns with denominator of their x-coordinate, then their child circle follows suit. In effect, we can repeteadly apply Theorem 1 to all child circles produced by the procedure. The Ford Circles are initiated by two circles of diameter 1 positioned at \( \frac{0}{1} \) and \( \frac{1}{1} \) satisfying the requirements of Theorem 1. We now consider the following sequence:
+                The key observation here is that so long as our parent circles have a smallness that aligns with denominator of their x-coordinate, then their child circle follows suit. 
+                In effect, we can repeteadly apply Theorem 1 to all child circles produced by the procedure. 
+                The Ford Circles are initiated by two circles of diameter 1 positioned at \( \frac{0}{1} \) and \( \frac{1}{1} \) satisfying the requirements of Theorem 1. 
+                We now consider the following sequence:
                 \[
                     \begin{align*}
                         & F_1 = \left\{ \frac{0}{1}, \frac{1}{1} \right\} \\
@@ -145,13 +170,20 @@
                         & F_4 = \left\{ \frac{0}{1}, \frac{1}{4}, \frac{1}{3}, \frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{1}{1} \right\} \\
                     \end{align*}
                 \]
-                This sequence of fractions is fancifully called the <a href="https://en.wikipedia.org/wiki/Farey_sequence" target="_blank">Farey Sequence</a> and is closely related to the <a href="https://en.wikipedia.org/wiki/Stern–Brocot_tree" target="_blank">Stern Brocot Tree</a>. It is well known that every rational number \( \frac{a}{b} \) with coprime integers \( a \) and \( b \) satisfying \( 0 \le a < b \) appears exactly once in the Stern Brocot Tree. While I won't delve into a full-blown proof of this fact, I will provide a curious result that builds intuition on how one might approach such a proof.
+                This sequence of fractions is fancifully called the <a href="https://en.wikipedia.org/wiki/Farey_sequence" target="_blank">Farey Sequence</a> and is closely related to the <a href="https://en.wikipedia.org/wiki/Stern–Brocot_tree" target="_blank">Stern Brocot Tree</a>. 
+                It is well known that every rational number \( \frac{a}{b} \) with coprime integers \( a \) and \( b \) satisfying \( 0 \le a < b \) appears exactly once in the Stern Brocot Tree. 
+                While I won't delve into a full-blown proof of this fact, I will provide a curious result that builds intuition on how one might approach such a proof.
             </p>
             <div class="proof">
                 <p><b>Theorem 2<b></p>
-                <p>The mediant of two fractions lies strictly between those two fractions. Explicitly, if \( 0 \le \frac{a}{b} < \frac{c}{d} \) then \( \frac{a}{b} < \frac{a + c}{b + d} < \frac{c}{d} \)</p>
+                <p>
+                    The mediant of two fractions lies strictly between those two fractions. 
+                    Explicitly, if \( 0 \le \frac{a}{b} < \frac{c}{d} \) then \( \frac{a}{b} < \frac{a + c}{b + d} < \frac{c}{d} \)
+                </p>
                 <p><b>Proof<b></p>
-                <p>The plan of attack is to directly compute \( \frac{a + c}{b + d} - \frac{a}{b} \) and \( \frac{c}{d} - \frac{a + c}{b + d} \) and use the fact that \( \frac{a}{b} < \frac{c}{d} \) to show that both differences are strictly poisitve.</p>
+                <p>
+                    The plan of attack is to directly compute \( \frac{a + c}{b + d} - \frac{a}{b} \) and \( \frac{c}{d} - \frac{a + c}{b + d} \) and use the fact that \( \frac{a}{b} < \frac{c}{d} \) to show that both differences are strictly poisitve.
+                </p>
                 <ol>
                   <li>\( \frac{a + c}{b + d} - \frac{a}{b} = \frac{bc - ad}{b(b + d)} = \frac{c}{b + d} - \frac{ad}{b(b + d)} = \frac{d}{b + d} \left ( \frac{c}{d} - \frac{a}{b} \right ) \)</li>
                   <li>\( \frac{c}{d} - \frac{a+c}{b+d} = \frac{bc - ad}{d(b+d)} = \frac{bc}{d(b + d)} - \frac{a}{b + d} = 
@@ -160,7 +192,8 @@
                 </ol>
             </div>
             <p>
-                Given Theorem 2, it is not hard to imagine that iteratively computing mediants essentially squeezes out all rational numbers between \( 0 \) and \( 1 \) in the limit. For a more rigorous treatment, I recommend checking out Theorem 4.4 of this <a href="https://arxiv.org/pdf/2011.06318.pdf" target="_blank">paper</a> on the topic.
+                Given Theorem 2, it is not hard to imagine that iteratively computing mediants essentially squeezes out all rational numbers between \( 0 \) and \( 1 \) in the limit. 
+                For a more rigorous treatment, I recommend checking out Theorem 4.4 of this <a href="https://arxiv.org/pdf/2011.06318.pdf" target="_blank">paper</a> on the topic.
             </p>
             <h>Creating An Apollonian Gasket</h>
             <p>
@@ -182,7 +215,9 @@ def drawApollonianCircle(parents):
             pair.append(apollonian)
             drawApollonianCircle(pair)
             </code></pre>
-            <p>Running through that workflow, I managed to create a 5th order Apollonian Gasket involving the Ford Circles!</p>
+            <p>
+                Running through that workflow, I managed to create a 5th order Apollonian Gasket involving the Ford Circles!
+            </p>
             <figure>
                 <object id="svgObject" type="image/svg+xml" data="../assets/ford-images/gasket-optimized.svg" width="100%" height="auto">
                 Your browser does not support SVG
@@ -191,7 +226,9 @@ def drawApollonianCircle(parents):
             </figure>
             <h>Addendum</h>
             <p>
-                As it so happens, actually getting the center coordinates and radius of a child circle given three pairwise tangent parent circles is somewhat tedious. Here, I sketch the procedure. We'll start by snagging three key equations from Wikepedia.
+                As it so happens, actually getting the center coordinates and radius of a child circle given three pairwise tangent parent circles is somewhat tedious. 
+                Here, I sketch the procedure. 
+                We'll start by snagging three key equations from Wikepedia.
                 \[ 
                     \begin{align*}
                         & k_{4} = k_{1} + k_{2} + k_{3} + 2\sqrt{k_{1}k_{2} + k_{2}k_{3} + k_{3}k_{1}} \\
@@ -199,13 +236,15 @@ def drawApollonianCircle(parents):
                         & z_{4}=\frac{z_{1}k_{1}+z_{2}k_{2}+z_{3}k_{3}+2\sqrt{k_{1}k_{2}z_{1}z_{2}+k_{2}k_{3}z_{2}z_{3}+k_{1}k_{3}z_{1}z_{3}}}{k_{4}}
                     \end{align*}
                 \]
-                To clarify, the signed curvature of a circle is defined as \( k = \pm \frac{1}{r} \) where \( r \) is its radius. In effect, the first equation allows us to directly compute the radius of a child circle given its three parents. To find the center coordinates, however, we'll need to rely on the second and third equations. The game plan is to split \( z_{4} \) into real and imaginary parts since the second equation tells us those correspond to the \( x \) and \( y \) coordinates of the child circle's center.
+                To clarify, the signed curvature of a circle is defined as \( k = \pm \frac{1}{r} \) where \( r \) is its radius. 
+                In effect, the first equation allows us to directly compute the radius of a child circle given its three parents. 
+                To find the center coordinates, however, we'll need to rely on the second and third equations. 
+                The game plan is to split \( z_{4} \) into real and imaginary parts since the second equation tells us those correspond to the \( x \) and \( y \) coordinates of the child circle's center.
             </p>
             <p>
                 We'll start by expressing the products under the radical in general.
                 \[ 
                     k_{a}k_{b}z_{a}z_{b} =
-                    <!-- k_{a}k_{b}\left(x_{a}+iy_{a}\right)\left(x_{b}+iy_{b}\right) = -->
                     k_{a}k_{b}\left(x_{a}x_{b}-y_{a}y_{b}\right)+k_{a}k_{b}i\left(x_{a}y_{b}+x_{b}y_{a}\right)
                 \]
                 Using this identity, we can write the expression under the radical as \( a + ib \) for \( a \) and \( b \) given below.
@@ -215,13 +254,18 @@ def drawApollonianCircle(parents):
                         & b = k_{1}k_{2}\left(x_{1}y_{2}+x_{2}y_{1}\right)+k_{2}k_{3}\left(x_{2}y_{3}+x_{3}y_{2}\right)+k_{1}k_{3}\left(x_{1}y_{3}+x_{3}y_{1}\right)
                     \end{align*}
                 \]
-                At the moment, the radical makes it difficult to split \( z_{4} \) into real and imaginary parts. Ideally, we'd get rid of the radical by writing the expression \( a + ib \) as \( (u + iv)^{2} \) for some choices of \( u \) and \( v \). Assuming that such choices exist, it follows \( a = u^{2} - v^{2} \) and \( b = 2uv \). Writing \( v \) in terms of \( u \), we are left with \( a = u^{2} - \left ( \frac{b}{2u} \right )^2 \) which, conveniently, is quadratic in \( u^{2} \). Applying the quadratic formula, we find \( u \) and \( v \).
+                At the moment, the radical makes it difficult to split \( z_{4} \) into real and imaginary parts. 
+                Ideally, we'd get rid of the radical by writing the expression \( a + ib \) as \( (u + iv)^{2} \) for some choices of \( u \) and \( v \). 
+                Assuming that such choices exist, it follows \( a = u^{2} - v^{2} \) and \( b = 2uv \). 
+                Writing \( v \) in terms of \( u \), we are left with \( a = u^{2} - \left ( \frac{b}{2u} \right )^2 \) which, conveniently, is quadratic in \( u^{2} \). 
+                Applying the quadratic formula, we find \( u \) and \( v \).
                 \[
                     |u| = \sqrt{\frac{4a \pm \sqrt{16a^{2}+16b^{2}}}{8}}
                     \hspace{0.5em}
                     |v| = \sqrt{\frac{4a \pm \sqrt{16a^{2}+16b^{2}}}{8}-a}
                 \]
-                At this point, we can directly split \( z_{4} \) into real and imaginary parts. The center coordinates are given below.
+                At this point, we can directly split \( z_{4} \) into real and imaginary parts. 
+                The center coordinates are given below.
                 \[
                     x_{c} = \frac{k_{1}x_{1}+k_{2}x_{2}+k_{3}x_{3}+2\cdot u}{k_{4}}
                     \hspace{0.5em}

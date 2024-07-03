@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 857 483" version="1.1">
-  <script type="text/ecmascript" href="../../scripts/color.js"/>
+  <script type="text/ecmascript" href="../../scripts/color-svg.js" />
   <g id="surface2">
   <path style="fill:none;stroke-width:0.04;stroke-linecap:butt;stroke-linejoin:miter;stroke:var(--secondary-color);stroke-opacity:1;stroke-miterlimit:10;" d="M 7.111131 4 C 2.370355 4 -2.370355 4 -7.111131 4 C -7.111131 1.333333 -7.111131 -1.333333 -7.111131 -4 C -2.370355 -4 2.370355 -4 7.111131 -4 C 7.111131 -1.333333 7.111131 1.333333 7.111131 4 Z M 7.111131 4 " transform="matrix(60.046711,0,0,-60,428.5,241.5)"/>
   <path style="fill:none;stroke-width:0.02;stroke-linecap:butt;stroke-linejoin:miter;stroke:var(--secondary-color);stroke-opacity:1;stroke-miterlimit:10;" d="M -7.111131 0 C -4.561098 0 -2.01113 0 0.538903 0 " transform="matrix(60.046711,0,0,-60,428.5,241.5)"/>
@@ -171,4 +171,3 @@
   <path style=" stroke:none;fill-rule:nonzero;fill:rgb(47.843137%,37.254902%,49.411765%);fill-opacity:1;" d="M 285.476562 145.011719 C 284.4375 145.011719 283.402344 145.011719 282.367188 145.011719 C 282.367188 145.386719 282.367188 145.765625 282.367188 146.140625 C 283.675781 146.140625 284.988281 146.140625 286.296875 146.140625 C 286.296875 129.714844 286.296875 113.285156 286.296875 96.859375 C 284.988281 96.859375 283.675781 96.859375 282.367188 96.859375 C 282.367188 97.234375 282.367188 97.613281 282.367188 97.988281 C 283.402344 97.988281 284.4375 97.988281 285.476562 97.988281 C 285.476562 113.664062 285.476562 129.335938 285.476562 145.011719 Z M 285.476562 145.011719 "/>
   </g>
 </svg>
-

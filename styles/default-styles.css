@@ -1,0 +1,419 @@
+/* Set Scroll Behavior */
+/* Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Default values for document root */
+:root {
+  --primary-color: white;
+  --secondary-color: #252a34;
+  --bright-accent: #70777C;
+  --dull-accent: #6F777D;
+  --dark-accent: #F2F3F3;
+  --bright-red: #fe4747;
+
+  --regular: #3E4144;
+  --github: #171516;
+  --linkedin: #3579B1;
+  --twitter: #6BAAE8;
+}
+
+/* Default values for dark-theme */
+.dark-theme {
+  --primary-color: #252a34;
+  --secondary-color: #eaeaea;
+  --bright-accent: #00adb5;
+  --dull-accent: #bbb;
+  --dark-accent: #1B1D23;
+  --bright-red: #fe4747;
+
+  --regular: #eaeaea;
+  --github: #eaeaea;
+  --linkedin: #3579B1;
+  --twitter: #6BAAE8;
+}
+
+.dark_toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    /* Useful Debug */
+    /* border: 1px solid var(--secondary-color); */
+}
+
+/* Page Background */
+body {
+  background: var(--primary-color);
+  margin:0;
+}
+
+/* Default Text Settings */
+#signature {
+    font-family:Qwitcher Grypen, 
+    sans-serif; font-size:72px; 
+    font-weight: 400; 
+    margin: 0px
+}
+
+h {
+    font-family: Fira Sans, sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: var(--secondary-color);
+}
+
+h1 {
+    font-family: Fira Sans, sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: var(--secondary-color);
+}
+
+h2 {
+    font-family: Fira Sans, sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--secondary-color);
+}
+
+p {
+    font-family: Fira Sans, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--secondary-color);
+}
+
+li {
+    font-family: Fira Sans, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--secondary-color);
+}
+
+a {
+    color: var(--bright-accent);
+    text-decoration: none;
+}
+
+/* Style masthead */
+a:hover{
+    /* Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-offset */
+    text-underline-offset: 3px;
+    text-decoration: underline;
+}
+
+.masthead {
+    position: relative;
+    border-bottom: 1px solid var(--dull-accent); 
+    z-index: 20
+}
+
+.masthead__inner-wrap {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    max-width: 100%;
+    display: flex;
+    font-family: Fira Sans, sans-serif;
+}
+
+.masthead__inner-wrap::after {
+    clear: both;
+    content: "";
+    display: table
+}
+
+@media (min-width: 80em) {
+    .masthead__inner-wrap {
+        max-width:1280px
+    }
+}
+
+.site-title {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.masthead__menu {
+    clear: both;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+
+.masthead__menu ul {
+    clear: both;
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+
+.masthead__menu-item {
+    font-size: 20px;
+    display: block;
+    list-style-type: none;
+    white-space: nowrap
+}
+
+.greedy-nav {
+    display: flex;
+    align-items: center;
+    min-height: 2em;
+}
+
+.greedy-nav a {
+    margin: 0 1rem;
+    color: var(--secondary-color);
+    text-decoration: none
+}
+
+.greedy-nav a:hover {
+    color: var(--dull-accent)
+}
+
+.greedy-nav a.site-title {
+    margin-left: 0
+}
+
+.greedy-nav .visible-links {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    overflow: hidden;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.greedy-nav .visible-links a {
+    position: relative
+}
+
+.greedy-nav .visible-links a:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1.5px;
+    background: var(--bright-accent);
+    width: 100%;
+    transition: transform 0.25s ease-out;
+    transform-origin: bottom right; 
+    transform: scaleX(0);
+}
+
+.greedy-nav .visible-links a:hover:before {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+/* Light Dark Toggle */
+#moon {
+  fill: var(--secondary-color);
+  transition:all 250ms linear;
+}
+
+#moon.night{
+  fill: var(--secondary-color);
+  cx: 65%;
+}
+
+#ring {
+  stroke: var(--secondary-color);
+  transition:all 250ms linear;
+}
+
+/* Default Page Layout */
+.initial-content {
+    flex: 1 0 auto;
+    /* Useful Debug */
+    /* border: 1px solid var(--secondary-color); */
+}
+
+#main {
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    max-width: 100%;
+    justify-content: space-between;
+    display: flex;
+    /* Useful Debug */
+    /* border: 1px solid var(--secondary-color); */
+}
+
+@media (min-width: 80em) {
+    #main {
+        max-width:1280px
+    }
+}
+
+.sidebar {
+  float: left;
+  width: 30%;
+  padding: 1em;
+  opacity: 0.75;
+  color: var(--secondary-color);
+  /* Useful Debug */
+  /* border: 1px solid var(--secondary-color); */
+}
+
+.sidebar:hover {
+    opacity: 1;
+    transition:all 250ms linear;
+}
+
+.sidebar {
+    align-self: flex-start;
+    position: sticky;
+    top: 0px;
+}
+
+.sidebar h1 {
+    font-family: Fira Sans, sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+.mainbar {
+  float: right;
+  width: 70%;
+  padding: 1em;
+  margin-right: 10%;
+  color: var(--secondary-color);
+  font-family: Fira Sans, sans-serif;
+  /* Useful Debug */
+  /* border: 1px solid var(--secondary-color); */
+}
+
+.mainbar h1 {
+    /*font-weight: 600;
+    font-size: 36px;*/
+    margin: 0px 0px 18px 0px;
+}
+
+.mainbar h2 {
+    /*font-weight: 600;
+    font-size: 28px;*/
+    margin: 20px 0px 0px 0px;
+}
+
+/* We'll reset the default paragraph text style for the mainbar */
+.mainbar p {
+    margin: 5px 0px 20px 0px;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+/* Reset the default list text style for the mainbar */
+.mainbar ol li {
+    margin: 5px 0px 0px 0px;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.mainbar span {
+    margin: 0;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.mainbar figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    max-width: 100%;
+}
+
+.mainbar figcaption {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.mainbar img {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+footer {
+    bottom:0;
+    background-color: var(--dark-accent);
+    max-width: 100%;
+    z-index: 20;
+    /* Useful Debug */
+    /* border: 1px solid var(--dull-accent); */
+}
+
+@media (min-width: 80em) {
+    .mastfoot {
+        max-width:1280px
+    }
+}
+
+.mastfoot {
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    font-family: Fira Sans, sans-serif;
+    color: var(--secondary-color);
+    /* Useful Debug */
+    /* border: 1px solid var(--dull-accent); */
+}
+
+.mastfoot::after {
+    clear: both;
+    content: "";
+    display: table
+}
+
+.everything {
+  /* Reference: https://stackoverflow.com/a/45762747 */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Block Quotes */
+blockquote {
+    border-radius: 10px;
+    border: 2px solid var(--bright-accent);
+    border-left: 10px solid var(--bright-accent);
+    padding: 10px;
+    margin: 20px 0;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+/* Style for paragraph text within the blockquote */
+/* Note that blockquote p, the css would override with the (more general) mainbar p styles */
+.mainbar blockquote p {
+    margin: 0;
+}
+
+/* For lack of better location, we'll keep the proof style here */
+.proof {
+    border: 2px solid var(--secondary-color);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+  }

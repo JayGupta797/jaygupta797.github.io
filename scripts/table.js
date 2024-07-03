@@ -1,3 +1,9 @@
+/* 
+ * NAME: table.js
+ * DESCRIPTION: This script searches the page for all Headers and Sub-Headers and 
+ * populates a table (with clickable links) in the side-bar.
+*/
+
 // Function to populate the table from headers
 function populateTable() {
     const headerContainer = document.getElementById("headerContainer");
