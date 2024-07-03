@@ -7,8 +7,7 @@ My interests are diverse, but recently I have grown fascinated by Natural Langua
 With that nugget of motivation out of the way, this site is intended to act as a digital diary---a record of my projects and interests over the years to come. I hope you enjoy reading as much as I enjoy writing!
 
 ## Attributions
-The overall design of this site was inspired by the [minimal mistakes](https://github.com/user/repo/blob/branch/other_file.md) Jekyll 
-Theme. The resume section builds off Xiaoying Riley's [template](https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap-resume-cv-template-for-developers-pillar/) though significant modifications were made.
+The overall design of this site was inspired by the [minimal mistakes](https://mademistakes.com/work/jekyll-themes/minimal-mistakes/) Jekyll Theme. The resume section builds off Xiaoying Riley's [template](https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap-resume-cv-template-for-developers-pillar/) though significant modifications were made.
 
 <!--
 **JayGupta797/jaygupta797** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

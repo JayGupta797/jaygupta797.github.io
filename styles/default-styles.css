@@ -257,6 +257,9 @@ a:hover{
   padding: 1em;
   opacity: 0.75;
   color: var(--secondary-color);
+  align-self: flex-start;
+  position: sticky;
+  top: 0px;
   /* Useful Debug */
   /* border: 1px solid var(--secondary-color); */
 }
@@ -264,12 +267,6 @@ a:hover{
 .sidebar:hover {
     opacity: 1;
     transition:all 250ms linear;
-}
-
-.sidebar {
-    align-self: flex-start;
-    position: sticky;
-    top: 0px;
 }
 
 .sidebar h1 {
@@ -294,25 +291,25 @@ a:hover{
 .mainbar h1 {
     /*font-weight: 600;
     font-size: 36px;*/
-    margin: 0px 0px 18px 0px;
+    margin: 0px 0px 18px;
 }
 
 .mainbar h2 {
     /*font-weight: 600;
     font-size: 28px;*/
-    margin: 20px 0px 0px 0px;
+    margin: 20px 0px 0px;
 }
 
 /* We'll reset the default paragraph text style for the mainbar */
 .mainbar p {
-    margin: 5px 0px 20px 0px;
+    margin: 5px 0px 20px;
     font-weight: 300;
     font-size: 24px;
 }
 
 /* Reset the default list text style for the mainbar */
 .mainbar ol li {
-    margin: 5px 0px 0px 0px;
+    margin: 5px 0px 0px;
     font-weight: 300;
     font-size: 24px;
 }

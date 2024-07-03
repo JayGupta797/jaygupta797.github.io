@@ -33,7 +33,7 @@
 .experience-section {
   float: left;
   width: 70%;
-  padding: 0em 1em 0em 1em;
+  padding: 0em 1em;
   color: var(--secondary-color);
   border: 1px solid var(--secondary-color);
   font-family: Fira Sans, sans-serif;
@@ -42,7 +42,7 @@
 .skills-section {
   float: right;
   width: 30%;
-  padding: 0em 1em 0em 1em;
+  padding: 0em 1em;
   color: var(--secondary-color);
   border: 1px solid var(--secondary-color); 
   font-family: Fira Sans, sans-serif;
@@ -50,7 +50,7 @@
 
 /* Section Headers */
 .resume-section-title {
-  margin: 25px 0px 25px 0px;
+  margin: 25px 0px;
   font-size: 36px;
   position: relative;
   color: var(--secondary-color)
@@ -179,7 +179,7 @@
 
 /* Education */
 .resume-education h3 {
-    margin: 25px 0px 5px 0px;
+    margin: 25px 0px 5px;
     padding: 0;
     font-size: 24px;
     font-weight: 600;
@@ -191,7 +191,7 @@
 }
 
 .resume-education p {
-    margin: 0px 0px 5px 0px;
+    margin: 0px 0px 5px;
 }
 
 /* Awards */
