@@ -9,9 +9,11 @@ With that nugget of motivation out of the way, this site is intended to act as a
 ## Attributions
 The overall design of this site was inspired by the [minimal mistakes](https://mademistakes.com/work/jekyll-themes/minimal-mistakes/) Jekyll Theme. The resume section builds off Xiaoying Riley's [template](https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap-resume-cv-template-for-developers-pillar/) though significant modifications were made.
 
-## Code Quality and Performance
+## Code Quality
 [![CodeFactor Grade](https://www.codefactor.io/repository/github/jaygupta797/jaygupta797.github.io/badge)](https://www.codefactor.io/repository/github/jaygupta797/jaygupta797.github.io) 
-It achieves reasonable scores on [pagespeed](https://pagespeed.web.dev) for performance.
+
+## Performance
+Pages achieve reasonable scores on [pagespeed](https://pagespeed.web.dev) for performance. The major bottleneck are 3rd party resources (i.e., MathJax, Prism.js, etc) that delay the page load for a few hundred miliseconds.
 
 <!--
 **JayGupta797/jaygupta797** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
