@@ -89,6 +89,7 @@ function applyTheme() {
     }
 
     // Toggle Comment Block
+    // Reference: https://github.com/utterance/utterances/issues/549#issuecomment-907606127
     const appearance = theme === 'dark' ? 'photon-dark' : 'github-light';
     if (document.querySelector('.utterances-frame')) {
         let message = {

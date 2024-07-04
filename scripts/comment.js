@@ -1,8 +1,8 @@
 /* 
- * NAME: color-svg.js
- * DESCRIPTION: This script is included in every svg that uses the page color set.
- * Graphics loaded in via the <object> tag cannot reference CSS variables. Instead, we use
- * this short script to detect what the current color set is, and name those colors.
+ * NAME: comment.js
+ * DESCRIPTION: This script is included in every page that allows users to comment.
+ * It essentially builds up the script (notably with the correct appearance) 
+ * referenced at https://utteranc.es/ without async loading.
 */
 
 // Build the initial utterances script based on theme This approach was heavily drawn from the 
