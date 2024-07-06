@@ -414,3 +414,20 @@ blockquote {
     margin: 10px 0;
     border-radius: 5px;
   }
+
+/* media query for responsive design */
+@media (max-width: 768px) {
+    #main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .mainbar {
+        padding: 0em;
+        width: 100%;
+        order: 2;
+    }
+}

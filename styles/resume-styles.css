@@ -115,10 +115,10 @@
   transform: translate(-2.5px, calc(12px - 7.5px));
 }
 
-.resume-timeline-item-header {
-    /* Useful Debug */
-    /* border: 1px solid var(--secondary-color); */
-}
+/* .resume-timeline-item-header {
+    Useful Debug */
+    /* border: 1px solid var(--secondary-color);
+} */
 
 .resume-position-name {
   margin: 0;
@@ -211,15 +211,17 @@
     margin: 0px 0px 15px;
 }
 
-@media (max-width: 767.98px) {
-  .resume-wrapper {
-    padding-top: 0;
-  }
-  .resume-header {
-    height: auto;
-  }
-  .resume-header .picture {
-    width: 120px;
-    border-radius: 4px;
-  }
+/* media query for responsive design */
+@media (max-width: 768px) {
+    .experience-section {
+      width: 90%;
+      margin: 0 auto;
+      float: none;
+    }
+
+    .skills-section {
+      width: 90%;
+      margin: 0 auto;
+      float: none;
+    }
 }
