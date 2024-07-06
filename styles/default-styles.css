@@ -430,4 +430,8 @@ blockquote {
         width: 100%;
         order: 2;
     }
+
+    #masthead__menu-photos {
+        display: none;
+    }
 }
