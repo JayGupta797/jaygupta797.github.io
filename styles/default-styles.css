@@ -407,6 +407,22 @@ blockquote {
     margin: 0;
 }
 
+/* For lack of better location, we'll keep the pdf style here */
+.pdf-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+}
+
+.pdf-container object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /* For lack of better location, we'll keep the proof style here */
 .proof {
     border: 2px solid var(--secondary-color);
