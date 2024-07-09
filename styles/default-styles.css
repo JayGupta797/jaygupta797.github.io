@@ -409,9 +409,10 @@ blockquote {
 
 /* For lack of better location, we'll keep the pdf style here */
 .pdf-container {
+    /* Reference: https://stackoverflow.com/a/22339941 */
     position: relative;
     width: 100%;
-    padding-top: 56.25%;
+    padding-bottom: 56.7%;
     overflow: hidden;
     border: 2px solid var(--secondary-color);
 }
