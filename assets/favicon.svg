@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="375pt" height="375pt" viewBox="0 0 375 375">
-<g clip-path="url(#clip_2)">
-<path transform="matrix(.75,0,0,.75,-.00000000000008526513,-.00000000000008526513)" d="M250.001 500C112.15 500 0 387.85 0 250.001 0 112.15 112.15 0 250.001 0 387.85 0 500 112.15 500 250.001 500 387.85 387.85 500 250.001 500ZM250.001 4.43C114.593 4.43 4.43 114.593 4.43 250.001 4.43 385.40803 114.593 495.56703 250.00099 495.56703 385.40699 495.56703 495.56599 385.40803 495.56599 250.00102 495.567 114.593 385.407 4.43 250.001 4.43Z" fill="#fff"/>
-</g>
-<g clip-path="url(#clip_3)">
-<text fill="#fff" xml:space="preserve" transform="matrix(1.401699 0 0 1.401699 32.658277 38.219057)" font-size="152.81" font-family="Cinzel"><tspan y="152" x="24.734375 74.2406">JG</tspan></text>
-</g>
-</svg>
+<svg width="1925" height="1925" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" overflow="hidden"><defs><linearGradient x1="2200" y1="2107" x2="2200" y2="368" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="fill0"><stop offset="0" stop-color="#FFC75F" stop-opacity="1"/><stop offset="0.33" stop-color="#FF9671" stop-opacity="1"/><stop offset="0.66" stop-color="#FF6F91" stop-opacity="1"/><stop offset="1" stop-color="#D65DB1" stop-opacity="1"/></linearGradient></defs><g transform="translate(-1237 -275)"><g><path d="M2200 947.667 2779 947.667 2779 1527.33C2779 1847.47 2519.77 2107 2200 2107 1880.23 2107 1621 1847.47 1621 1527.33L2200 1527.33ZM2779 368 2779 947.667 2200 947.667C2200 627.525 2459.23 368 2779 368Z" fill="url(#fill0)" fill-rule="evenodd"/></g></g></svg>
