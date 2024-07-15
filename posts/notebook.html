@@ -247,21 +247,21 @@
             <div class="proof">
                 <p><b>Theorem 1<b></p>
                 <p>
-                    A geometric series with non-zero ratio \( r \) diverges when \( \lvert r \rvert \ge 1 \). Otherwise, the
+                    A geometric series with non-zero common ratio \( r \) diverges when \( \lvert r \rvert \ge 1 \). Otherwise, the
                     series converges.
                     \[ \sum_{n = 0}^{\infty} \alpha r^{n} = \frac{\alpha}{1 - r} \]
                 </p>
                 <p><b>Proof<b></p>
                 <p>
                     Without justification, we subtract the desired sum \( S \) by \( rS \) and re-arrange the terms accordingly.
-                    \[ S - rS = \sum_{n = 0}^{\infty} \alpha \left ( r^{n} - r^{n + 1} \right ) = \alpha \implies S = \frac{\alpha}{1 - r} \]
+                    \[ S - rS = \alpha \sum_{n = 0}^{\infty} \left ( r^{n} - r^{n + 1} \right ) = \alpha \implies S = \frac{\alpha}{1 - r} \]
                 </p>
             </div>
             <p>
                 In "Proof Without Words," Benjamin G. Klein and Irl C. visually derive the formula proposed above.
             </p>
             <figure>
-                <object type="image/svg+xml" data="../assets/notebook-images/prog.svg" width="100%" height="auto">
+                <object type="image/svg+xml" data="../assets/notebook-images/series.svg" width="100%" height="auto">
                 Your browser does not support SVG
                 </object>
                 <figcaption>Key Figure from Original Text</figcaption>
@@ -272,16 +272,31 @@
                 That is to say, why would anyone come up with this particular construction?
                 After toying with the idea, I came up with a reasonable intuition.
             </p>
+            <p>
+                Consider the right riemann sum of \( f(x) = r^{x} \) from \( 0 \) to \( \infty \) with unit intervals. 
+                The desired sum is given by the area of the rectangles. 
+                At the offset, this seems difficult to compute because the rectangles stretch onward towards infinity.
+                The key insight is that by rotating the rectangles by 90 degrees, we can "remove the infinity" and proceed.
+            </p>
+            <p>
+                The visual proof presented above only applies to positive choices of \( r \) and is, thus, incomplete.
+                To account for the negative case, we can introduce a cobweb plot defined by the lines \( f(x) = x \) and \( g(x) = \alpha + rx \) where \( r \) is taken to be negative.
+            </p>
             <figure>
-                <object type="image/svg+xml" data="../assets/notebook-images/riemann.svg" width="100%" height="auto">
+                <object type="image/svg+xml" data="../assets/notebook-images/cobweb.svg" width="100%" height="auto">
                 Your browser does not support SVG
                 </object>
-                <figcaption>Left Riemann Sum of Power Function</figcaption>
+                <figcaption>Cobweb Plot depicting Alternating Geometric Series</figcaption>
             </figure>
             <p>
-                The desired sum is given by the area of the blue rectangles. 
-                At the offset, this seems difficult to compute because the rectangles stretch onward towards infinity.
-                The key insight is that by rotating the rectangles 90 degrees, we can "remove the infinity" and proceed.
+                I'll leave it as an exercise for the reader to verify the lengths noted above. 
+                As a hint, notice that the shaded triangle is isoceles because \( f(x) \) makes a \( 45^{\circ} \) angle with the \( x \)-axis.
+                As one might expect, the intersection of the two curves is yields the sum of the series. 
+                We can verify this briefly:
+                \[ 
+                    x = \alpha + rx \implies x = \frac{\alpha}{1 - r}
+                \]
+                Amazingly, we arrive at the exact same formula!
             </p>
             <h>Comment Section</h>
             <div id="utterances-container"></div>

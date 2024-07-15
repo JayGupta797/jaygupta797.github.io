@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 857 483" version="1.1">
-  <script type="text/ecmascript" href="../../scripts/color-svg.js" />
+  <script type="text/ecmascript" href="../../scripts/color-svg.js"/>
   <g>
   <g transform="scale(2)">
       <path fill="none" stroke="var(--secondary-color)" class="dcg-svg-axis-line" paint-order="fill stroke markers" d="M200 0v400" stroke-opacity=".9" stroke-miterlimit="10" stroke-width="1.5"/>

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-    <script type="text/ecmascript" href="../../scripts/color-svg.js" />
+    <script type="text/ecmascript" href="../../scripts/color-svg.js"/>
     <g transform="scale(1)">
         <path fill="none" stroke="var(--secondary-color)" class="dcg-svg-axis-line" paint-order="fill stroke markers" d="M200 0v400" stroke-opacity=".9" stroke-miterlimit="10" stroke-width="1.5"/>
     </g>

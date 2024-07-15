@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="656.25" height="206.25" viewBox="0 0 656.25 206.25">
+<script type="text/ecmascript" href="../../scripts/color-svg.js"/>
+<g>
+<path d="M28.777 28.227 178.934 65.594 178.793 28.227ZM28.777 28.227" fill="none"/>
+<path d="M28.906 178.164V28.164L628.906 178.164ZM28.906 178.164" fill="none" fill-rule="evenodd"/>
+<path stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" fill="none" stroke="var(--secondary-color)" d="M28.906 178.164V28.164L628.906 178.164ZM28.906 178.164"/>
+<path stroke-width="3" stroke-linecap="butt" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="var(--secondary-color)" d="M178.906 178.164V28.164H28.906"/>
+<path stroke-width="3" stroke-linecap="butt" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="var(--secondary-color)" d="M291.406 178.164V93.789"/>
+<path stroke-width="3" stroke-linecap="butt" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="var(--secondary-color)" d="M375.781 178.164V114.883"/>
+<path stroke-width="3" stroke-linecap="butt" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="var(--secondary-color)" d="M439.062 178.164V130.703"/>
+<path stroke-width=".75" stroke-linecap="butt" stroke-dasharray="4.5,4.5" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="var(--secondary-color)" d="M452.281 156.039 585.371 172.746"/>
+<text fill="var(--secondary-color)" xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="18" font-family="ArialMT"><tspan y="121.53584" x="165.18842">r</tspan><tspan y="194.09033" x="98.794139">1</tspan><tspan y="112.69597" x="15.741272">1</tspan><tspan y="194.05875" x="233.20981">r</tspan><tspan y="51.96443" x="153.1585 163.16649 169.16049">1-r</tspan><tspan y="137.49588" x="273.8383">r</tspan></text>
+<text fill="var(--secondary-color)" xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="9" font-family="ArialMT"><tspan y="130.59746" x="280.76335">2</tspan></text>
+<text fill="var(--secondary-color)" xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="18" font-family="ArialMT"><tspan y="150.30405" x="360.28404">r</tspan></text>
+<text fill="var(--secondary-color)" xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="9" font-family="ArialMT"><tspan y="144.1128" x="366.83946">3</tspan></text>
+<text fill="var(--secondary-color)" xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="18" font-family="ArialMT"><tspan y="193.79137" x="330.9733">r</tspan></text>
+<text fill="var(--secondary-color)" xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="9" font-family="ArialMT"><tspan y="186.89296" x="337.89836">2</tspan></text>
+<text fill="var(--secondary-color)" xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="18" font-family="ArialMT"><tspan y="193.97486" x="404.173">r</tspan></text>
+<text fill="var(--secondary-color)" xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="9" font-family="ArialMT"><tspan y="187.78359" x="410.72846">3</tspan></text>
+<text fill="var(--secondary-color)" xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="18" font-family="ArialMT"><tspan y="189.81674" x="15.516701">A</tspan><tspan y="191.96521" x="629.9783">C</tspan><tspan y="25.996125" x="18.202332">B</tspan><tspan y="195.18787" x="173.42905">D</tspan><tspan y="63.057176" x="183.63428">E</tspan><tspan y="27.07035" x="182.56005">F</tspan><tspan y="195.18796" x="284.6122">G</tspan><tspan y="89.37589" x="286.22358">H</tspan><tspan y="194.65073" x="370.01377">J</tspan><tspan y="109.24918" x="370.55088">K</tspan></text>
+</g>
+</svg>
