@@ -106,11 +106,12 @@
                 To formalize this observation, we'll express the first two vertices in rectangular coordinates.
                 \[ v_{\textcolor{var(--bright-accent)}{0}} = \left ( r \cos \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{0} \cdot 2\pi}{k} \right ), \hspace{0.5em} r \sin \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{0} \cdot 2\pi}{k} \right ) \right ) \]
                 \[ v_{\color{var(--bright-accent)}{1}} = \left ( r \cos \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{1} \cdot 2\pi}{k} \right ), \hspace{0.5em} r \sin \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{1} \cdot 2\pi}{k} \right ) \right ) \]
-                We now compute the midpoint.
+                We now compute the midpoint of these two vertices.
                 \[
                     v_{\text{mid}} = 
-                    \left ( \frac{r \cos \left ( \frac{\pi}{2} \right ) + r \cos \left ( \frac{\pi}{2} + \frac{2\pi}{k} \right )}{2},
-                    \frac{r \sin \left ( \frac{\pi}{2} \right ) + r \sin \left ( \frac{\pi}{2} + \frac{2\pi}{k} \right )}{2} \right )
+                    \frac{v_{0} + v_{1}}{2}
+                    <!-- \left ( \frac{r \cos \left ( \frac{\pi}{2} \right ) + r \cos \left ( \frac{\pi}{2} + \frac{2\pi}{k} \right )}{2},
+                    \frac{r \sin \left ( \frac{\pi}{2} \right ) + r \sin \left ( \frac{\pi}{2} + \frac{2\pi}{k} \right )}{2} \right ) -->
                 \]
                 Notice that by construction the incenter is the origin. 
                 In effect, overloading the notation for vectors and points, we find \( r_{\text{inner}} = \Vert v_{\text{mid}} \Vert_{2} \) or its \( 2 \)-norm. 
