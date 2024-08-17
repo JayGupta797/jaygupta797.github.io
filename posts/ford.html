@@ -23,11 +23,13 @@
     <script defer src="../scripts/theme.js"></script> 
 
     <!-- Load Prism.js for code blocks -->
-    <link id="prism-theme" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-python.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/line-numbers/prism-line-numbers.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+    <link id="prism-theme" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+
     <!-- Load MathJax for LaTex -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -209,18 +211,20 @@
                 <a href="https://en.wikipedia.org/wiki/Apollonian_gasket" target="_blank">Apollonian Gasket</a>
                 associated with the Ford Circles.
             </p>
-            <pre class="line-numbers"><code class="language-python">
-def drawApollonianCircle(parents):
-    if (parents[-1].recursionDepth == DEPTH): return;
-    else:
-        apollonian = getCircle(*parents)
-        self.add(apollonian)
-        pairs = list(combinations(parents, 2))
-        for pair in pairs:
-            pair = list(pair)
-            pair.append(apollonian)
-            drawApollonianCircle(pair)
-            </code></pre>
+            <pre class="line-numbers">
+                <code class="language-python">
+                    def drawApollonianCircle(parents):
+                        if (parents[-1].recursionDepth == DEPTH): return;
+                        else:
+                            apollonian = getCircle(*parents)
+                            self.add(apollonian)
+                            pairs = list(combinations(parents, 2))
+                            for pair in pairs:
+                                pair = list(pair)
+                                pair.append(apollonian)
+                                drawApollonianCircle(pair)
+                </code>
+            </pre>
             <p>
                 Running through that workflow, I managed to create a 5th order Apollonian Gasket involving the Ford Circles!
             </p>

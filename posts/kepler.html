@@ -21,11 +21,13 @@
     <script defer src="../scripts/theme.js"></script> 
 
     <!-- Load Prism.js for code blocks -->
-    <link id="prism-theme" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-python.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/line-numbers/prism-line-numbers.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <link id="prism-theme" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    
     <!-- Load MathJax for LaTex -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -152,35 +154,39 @@ def get_inscribed_Ngram(circle, n):
             <p>
                 To get an inscribed circle, we can compute the radius using the formula derived above and center at the origin.
             </p>
-            <pre class="line-numbers"><code class="language-python">
-def get_inscribed_circle(polygon):
-    # get a pair of vertices
-    vertices = polygon.get_vertices()
-    start = vertices[0]
-    stop = vertices[1]
+            <pre class="line-numbers">
+                <code class="language-python">
+                    def get_inscribed_circle(polygon):
+                        # get a pair of vertices
+                        vertices = polygon.get_vertices()
+                        start = vertices[0]
+                        stop = vertices[1]
 
-    # find midpoint and radius
-    midpoint = (start + stop)/2
-    radius = np.linalg.norm(midpoint)
+                        # find midpoint and radius
+                        midpoint = (start + stop)/2
+                        radius = np.linalg.norm(midpoint)
 
-    # make circle
-    circle = Circle(radius=radius)
+                        # make circle
+                        circle = Circle(radius=radius)
 
-    return circle
-            </code></pre>
+                        return circle
+                </code>
+            </pre>
             <p>
                 We can now run the process an arbitrary number of iterations.
             </p>
-            <pre class="line-numbers"><code class="language-python">
-num_iterations = 5
+            <pre class="line-numbers">
+                <code class="language-python">
+                    num_iterations = 5
 
-for n in range(start = 3, stop = 3 + num_iterations):
-    polygon = get_inscribed_Ngram(circle, n)
-    circle = get_inscribed_circle(polygon)
-    n = n + 1
-    mobjects.append(polygon)
-    mobjects.append(circle)
-            </code></pre>
+                    for n in range(start = 3, stop = 3 + num_iterations):
+                        polygon = get_inscribed_Ngram(circle, n)
+                        circle = get_inscribed_circle(polygon)
+                        n = n + 1
+                        mobjects.append(polygon)
+                        mobjects.append(circle)
+                </code>
+            </pre>
             <p>
                 Running through that workflow, I managed to create a 5th order depiction of the Kepler–Bouwkamp constant!
             </p>

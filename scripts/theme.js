@@ -78,7 +78,7 @@ function applyTheme() {
     // Toggle Code Blocks
     let prismHref = theme === 'dark' ?
         'https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-atom-dark.min.css' :
-        'https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css';
+        'https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism.min.css';
 
     let prismElement = document.getElementById("prism-theme");
     if (prismElement) {
