@@ -106,51 +106,77 @@
                 To do so, we'll notice that the radial line is a perpendicular bisector of the corresponding side. 
                 This property ensures the <a href="https://mathworld.wolfram.com/Incenter.html" target="_blank">incenter</a> is equidistant from each side of the polygon. 
                 To formalize this observation, we'll express the first two vertices in rectangular coordinates.
-                \[ v_{\textcolor{var(--bright-accent)}{0}} = \left ( r \cos \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{0} \cdot 2\pi}{k} \right ), \hspace{0.5em} r \sin \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{0} \cdot 2\pi}{k} \right ) \right ) \]
-                \[ v_{\color{var(--bright-accent)}{1}} = \left ( r \cos \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{1} \cdot 2\pi}{k} \right ), \hspace{0.5em} r \sin \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{1} \cdot 2\pi}{k} \right ) \right ) \]
+            </p>
+            <div class="display-math">
+                <p>
+                    \begin{align*}
+                        v_{\textcolor{var(--bright-accent)}{0}} = \left ( r \cos \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{0} \cdot 2\pi}{k} \right ), \hspace{0.5em} r \sin \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{0} \cdot 2\pi}{k} \right ) \right ) \\
+                        v_{\color{var(--bright-accent)}{1}} = \left ( r \cos \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{1} \cdot 2\pi}{k} \right ), \hspace{0.5em} r \sin \left ( \frac{\pi}{2} + \frac{\textcolor{var(--bright-accent)}{1} \cdot 2\pi}{k} \right ) \right )
+                    \end{align*}
+                </p>
+            </div>
+            <p>
                 We now compute the midpoint of these two vertices.
-                \[
-                    v_{\text{mid}} = 
-                    \frac{v_{0} + v_{1}}{2}
-                    <!-- \left ( \frac{r \cos \left ( \frac{\pi}{2} \right ) + r \cos \left ( \frac{\pi}{2} + \frac{2\pi}{k} \right )}{2},
-                    \frac{r \sin \left ( \frac{\pi}{2} \right ) + r \sin \left ( \frac{\pi}{2} + \frac{2\pi}{k} \right )}{2} \right ) -->
-                \]
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        v_{\text{mid}} = 
+                        \frac{v_{0} + v_{1}}{2}
+                    \]
+                </p>
+            </div>
+            <p>
                 Notice that by construction the incenter is the origin. 
                 In effect, overloading the notation for vectors and points, we find \( r_{\text{inner}} = \Vert v_{\text{mid}} \Vert_{2} \) or its \( 2 \)-norm. 
                 Working through that computation (using the Pythagorean and Periodicity Identities among other tools), we arrive at the following:
-                \[
-                    \Vert v_{\text{mid}} \Vert_{2} = 
-                    \sqrt{\frac{r^{2} \left ( 1 + \cos \left ( \frac{2\pi}{k} \right ) \right )}{2} } = 
-                    r \cos \left ( \frac{\pi}{k} \right )
-                \]
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        \Vert v_{\text{mid}} \Vert_{2} = 
+                        \sqrt{\frac{r^{2} \left ( 1 + \cos \left ( \frac{2\pi}{k} \right ) \right )}{2} } = 
+                        r \cos \left ( \frac{\pi}{k} \right )
+                    \]
+                </p>
+            </div>
+            <p>
                 Since the process above is initiated with a circle of radius \( 1 \), we may express the Kepler–Bouwkamp constant as the following product.
-                \[
-                    K' = \prod_{k=3}^{\infty} \cos \left( \frac{\pi}{k} \right) \approx 0.1149420448\dots
-                \]
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        K' = \prod_{k=3}^{\infty} \cos \left( \frac{\pi}{k} \right) \approx 0.1149420448\dots
+                    \]
+                </p>
+            </div>
+            <p>
                 This expression has no known closed form solution.
             </p>
             <h>Construction</h>
             <p>To get a visual feel for what is going on here, we can whip up two helper functions to find get an inscribed Ngram and polygon.</p>
             <p>To get an inscribed Ngram, we sample evenly spaced points on the circle.</p>
-                <pre class="line-numbers"><code class="language-python">
-def get_inscribed_Ngram(circle, n):
-    # get radius
-    radius = circle.radius
+            <pre class="line-numbers">
+                <code class="language-python">
+                    def get_inscribed_Ngram(circle, n):
+                        # get radius
+                        radius = circle.radius
 
-    # get evenly spaced angles starting at 90°
-    steps = np.linspace(start=PI/2, stop=5*PI/2, num=n+1)
-    
-    # make vertices
-    vertices = [
-        (radius * np.cos(step), radius * np.sin(step), 0) \
-        for step in steps[:-1]
-    ]
+                        # get evenly spaced angles starting at 90°
+                        steps = np.linspace(start=PI/2, stop=5*PI/2, num=n+1)
+                        
+                        # make vertices
+                        vertices = [
+                            (radius * np.cos(step), radius * np.sin(step), 0) \
+                            for step in steps[:-1]
+                        ]
 
-    # make polygon
-    polygon = Polygram(vertices)
+                        # make polygon
+                        polygon = Polygram(vertices)
 
-    return polygon
-            </code></pre>
+                        return polygon
+                </code>
+            </pre>
             <p>
                 To get an inscribed circle, we can compute the radius using the formula derived above and center at the origin.
             </p>

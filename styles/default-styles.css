@@ -431,11 +431,15 @@ blockquote {
 }
 
 /* For lack of better location, we'll keep the proof style here */
+.display-math,
+.proof {
+    overflow-x: auto;
+}
 .proof {
     border: 2px solid var(--secondary-color);
+    border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
-    border-radius: 5px;
   }
 
 /* media query for responsive design */

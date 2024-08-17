@@ -149,17 +149,29 @@
                 Comparing terms from Standard Form, we notice that \( b = -2ah \) and \( c = ah^{2} + k \) allowing us to arbitrarily tune both coefficients by changing the position of the vertex. 
                 In other words, \( b \) and \( c \) only influence the position of the vertex and not the overall shape of the graph! 
                 We now reason that moving \( \Delta \) units to the left or right of the vertex has the effect of moving up or down \( a \Delta^{2} \) units!
-                \[
-                    a \Delta^{2} + \left ( c - \frac{b^{2}}{4a} \right ) = 0
-                    \implies
-                    \Delta = \frac{\sqrt{b^2 - 4ac}}{2a}
-                \]
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        a \Delta^{2} + \left ( c - \frac{b^{2}}{4a} \right ) = 0
+                        \implies
+                        \Delta = \frac{\sqrt{b^2 - 4ac}}{2a}
+                    \]
+                </p>
+            </div>
+            <p>
                 Adding back the \( x \)-coordinate of the vertex and simplifying everything, we arrive at the quadratic formula.
-                \[
-                    x = 
-                    -\frac{b}{2a} \pm \Delta = 
-                    \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-                \]
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        x = 
+                        -\frac{b}{2a} \pm \Delta = 
+                        \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+                    \]
+                </p>
+            </div>
+            <p>
                 This reformulation not only simplifies the algebra in favour of geometric insights, but it also allows us to attach an elegant interpretation to each component in this formula.
             </p>
             <h>The Mesolabe Compass</h>
@@ -177,26 +189,44 @@
             <p>
                 The question, of course, is why the \( \sqrt{a} \) pops up here. 
                 As it so happens, this isn't too difficult to explain. From Thale's Theorem, we know \( \measuredangle ABC \) is a right angle. 
-                From here we determine that the two triangle created by dropping the altitude are similiar to each other since they share the same angles. 
+                From here we determine that the two triangles created by dropping the altitude are similar to each other since they share the same angles. 
                 Letting \( h \) stand for the altitude, we establish the following relation:
-                \[
-                    \frac{h}{a} = \frac{1}{h} \implies h = \sqrt{a}
-                \]
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        \frac{h}{a} = \frac{1}{h} \implies h = \sqrt{a}
+                    \]
+                </p>
+            </div>
+            <p>
                 I suppose the second question that comes to mind is why Thale's Theorem holds. 
                 One approach that immediately surfaces is to apply the more general <a href="https://en.wikipedia.org/wiki/Inscribed_angle" target="_blank">Inscribed Angle Theorem</a> to a chord that happens to also be a diameter. 
                 Another approach, that I personally find interesting, is to consider the set of points such that the lines connecting \( (-r, 0) \) to \( (x, y) \) and \( (x, y) \) to \( (r, 0) \) are perpendicular to each other. 
                 Using point-slope form and enforcing that the slopes are perpendicular (negative reciprocals), we arrive at the following equations.
-                \[
-                    y - 0 = m (x + r)
-                    \hspace{0.5em} \text{and} \hspace{0.5em}
-                    y - 0 = -\frac{1}{m} (x - r)
-                \]
-                Solving for \( m \) we rewrite this system.
-                \[
-                    m = \frac{y}{x + r} = - \frac{x - r}{y} 
-                    \implies
-                    x^{2} + y^{2} = r^{2}
-                \]
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        y - 0 = m (x + r)
+                        \hspace{0.5em} \text{and} \hspace{0.5em}
+                        y - 0 = -\frac{1}{m} (x - r)
+                    \]
+                </p>
+            </div>
+            <p>
+                Solving for \( m \), we rewrite this system.
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        m = \frac{y}{x + r} = - \frac{x - r}{y} 
+                        \implies
+                        x^{2} + y^{2} = r^{2}
+                    \]
+                </p>
+            </div>
+            <p>
                 Amazingly, it turns out that the only set of points that ensure the two lines are perpendicular are those belonging to a circle!
             </p>
             <h>A Curious Tangent</h>
@@ -226,13 +256,37 @@
             </p>
             <p>
                 The first constraint is easy enough to enforce via point-slope form.
-                \[ y - \sqrt{p} = m (x - p) \]
+            </p>
+            <div class="display-math">
+                <p>
+                    \[ 
+                        y - \sqrt{p} = m (x - p) 
+                    \]
+                </p>
+            </div>
+            <p>
                 To consider the second constraint, we will set the tangent line equal to the curve \( y = \sqrt{x} \) and work out the appropriate choice of \( m \).
-                \[ \sqrt{x} = m (x - p) + \sqrt{p} \]
-                We need to choose \( m \) such that equation above is only satisfied for \( x = p \). 
+            </p>
+            <div class="display-math">
+                <p>
+                    \[ 
+                        \sqrt{x} = m (x - p) + \sqrt{p} 
+                    \]
+                </p>
+            </div>
+            <p>
+                We need to choose \( m \) such that the equation above is only satisfied for \( x = p \). 
                 Notice that this equation is quadratic in \( \sqrt{x} \). 
-                If there is only one solution to this equation, then the discriminant must be set to \( 0 \). 
-                \[ 1 - 4m( \sqrt{p} - mp ) = 0 \implies m = \frac{1}{2 \sqrt{p}} \]
+                If there is only one solution to this equation, then the discriminant must be set to \( 0 \).
+            </p>
+            <div class="display-math">
+                <p>
+                    \[ 
+                        1 - 4m( \sqrt{p} - mp ) = 0 \implies m = \frac{1}{2 \sqrt{p}} 
+                    \]
+                </p>
+            </div>
+            <p>
                 Voila, we have computed the slope of the tangent line for any choice of \( p \). 
                 Unfortunately, the method is rather specific to this family of functions with mild transformations.
             </p>
@@ -290,12 +344,18 @@
             </figure>
             <p>
                 I'll leave it as an exercise for the reader to verify the lengths noted above. 
-                As a hint, notice that the shaded triangle is isoceles because \( f(x) \) makes a \( 45^{\circ} \) angle with the \( x \)-axis.
-                As one might expect, the intersection of the two curves is yields the sum of the series. 
+                As a hint, notice that the shaded triangle is isosceles because \( f(x) \) makes a \( 45^{\circ} \) angle with the \( x \)-axis.
+                As one might expect, the intersection of the two curves yields the sum of the series. 
                 We can verify this briefly:
-                \[ 
-                    x = \alpha + rx \implies x = \frac{\alpha}{1 - r}
-                \]
+            </p>
+            <div class="display-math">
+                <p>
+                    \[ 
+                        x = \alpha + rx \implies x = \frac{\alpha}{1 - r}
+                    \]
+                </p>
+            </div>
+            <p>
                 Amazingly, we arrive at the exact same formula!
             </p>
             <h>Comment Section</h>

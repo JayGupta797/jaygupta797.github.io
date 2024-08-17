@@ -170,14 +170,18 @@
                 In effect, we can repeteadly apply Theorem 1 to all child circles produced by the procedure. 
                 The Ford Circles are initiated by two circles of diameter 1 positioned at \( \frac{0}{1} \) and \( \frac{1}{1} \) satisfying the requirements of Theorem 1. 
                 We now consider the following sequence:
-                \[
+            </p>
+            <div class="display-math">
+                <p>
                     \begin{align*}
                         & F_1 = \left\{ \frac{0}{1}, \frac{1}{1} \right\} \\
                         & F_2 = \left\{ \frac{0}{1}, \frac{1}{2}, \frac{1}{1} \right\} \\
                         & F_3 = \left\{ \frac{0}{1}, \frac{1}{3}, \frac{1}{2}, \frac{2}{3}, \frac{1}{1} \right\} \\
                         & F_4 = \left\{ \frac{0}{1}, \frac{1}{4}, \frac{1}{3}, \frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{1}{1} \right\} \\
                     \end{align*}
-                \]
+                </p>
+            </div>
+            <p>
                 This sequence of fractions is fancifully called the <a href="https://en.wikipedia.org/wiki/Farey_sequence" target="_blank">Farey Sequence</a> and is closely related to the <a href="https://en.wikipedia.org/wiki/Stern–Brocot_tree" target="_blank">Stern Brocot Tree</a>. 
                 It is well known that every rational number \( \frac{a}{b} \) with coprime integers \( a \) and \( b \) satisfying \( 0 \le a < b \) appears exactly once in the Stern Brocot Tree. 
                 While I won't delve into a full-blown proof of this fact, I will provide a curious result that builds intuition on how one might approach such a proof.
@@ -236,52 +240,74 @@
             </figure>
             <h>Addendum</h>
             <p>
-                As it so happens, actually getting the center coordinates and radius of a child circle given three pairwise tangent parent circles is somewhat tedious. 
+                As it so happens, computing the center coordinates and radius of a child circle given three pairwise tangent parent circles is tedious. 
                 Here, I sketch the procedure. 
                 We'll start by snagging three key equations from Wikepedia.
-                \[ 
+            </p>
+            <div class="display-math">
+                <p>
                     \begin{align*}
                         & k_{4} = k_{1} + k_{2} + k_{3} + 2\sqrt{k_{1}k_{2} + k_{2}k_{3} + k_{3}k_{1}} \\
                         & z = x + iy \\
                         & z_{4}=\frac{z_{1}k_{1}+z_{2}k_{2}+z_{3}k_{3}+2\sqrt{k_{1}k_{2}z_{1}z_{2}+k_{2}k_{3}z_{2}z_{3}+k_{1}k_{3}z_{1}z_{3}}}{k_{4}}
                     \end{align*}
-                \]
+                </p>
+            </div>
+            <p>
                 To clarify, the signed curvature of a circle is defined as \( k = \pm \frac{1}{r} \) where \( r \) is its radius. 
                 In effect, the first equation allows us to directly compute the radius of a child circle given its three parents. 
                 To find the center coordinates, however, we'll need to rely on the second and third equations. 
                 The game plan is to split \( z_{4} \) into real and imaginary parts since the second equation tells us those correspond to the \( x \) and \( y \) coordinates of the child circle's center.
             </p>
+            <p>We'll start by expressing the products under the radical in general.</p>
+            <div class="display-math">
+                <p>
+                    \[
+                        k_{a}k_{b}z_{a}z_{b} =
+                        k_{a}k_{b}\left(x_{a}x_{b}-y_{a}y_{b}\right)+k_{a}k_{b}i\left(x_{a}y_{b}+x_{b}y_{a}\right)
+                    \]
+                </p>
+            </div>
             <p>
-                We'll start by expressing the products under the radical in general.
-                \[ 
-                    k_{a}k_{b}z_{a}z_{b} =
-                    k_{a}k_{b}\left(x_{a}x_{b}-y_{a}y_{b}\right)+k_{a}k_{b}i\left(x_{a}y_{b}+x_{b}y_{a}\right)
-                \]
                 Using this identity, we can write the expression under the radical as \( a + ib \) for \( a \) and \( b \) given below.
-                \[
+            </p>
+            <div class="display-math">
+                <p>
                     \begin{align*}
                         & a = k_{1}k_{2}\left(x_{1}x_{2}-y_{1}y_{2}\right)+k_{2}k_{3}\left(x_{2}x_{3}-y_{2}y_{3}\right)+k_{1}k_{3}\left(x_{1}x_{3}-y_{1}y_{3}\right) \\
                         & b = k_{1}k_{2}\left(x_{1}y_{2}+x_{2}y_{1}\right)+k_{2}k_{3}\left(x_{2}y_{3}+x_{3}y_{2}\right)+k_{1}k_{3}\left(x_{1}y_{3}+x_{3}y_{1}\right)
                     \end{align*}
-                \]
-                At the moment, the radical makes it difficult to split \( z_{4} \) into real and imaginary parts. 
-                Ideally, we'd get rid of the radical by writing the expression \( a + ib \) as \( (u + iv)^{2} \) for some choices of \( u \) and \( v \). 
-                Assuming that such choices exist, it follows \( a = u^{2} - v^{2} \) and \( b = 2uv \). 
-                Writing \( v \) in terms of \( u \), we are left with \( a = u^{2} - \left ( \frac{b}{2u} \right )^2 \) which, conveniently, is quadratic in \( u^{2} \). 
+                </p>
+            </div>
+            <p>
+                At the moment, the radical makes it difficult to split \( z_{4} \) into real and imaginary parts.
+                Ideally, we'd get rid of the radical by writing the expression \( a + ib \) as \( (u + iv)^{2} \) for some choices of \( u \) and \( v \).
+                Assuming that such choices exist, it follows \( a = u^{2} - v^{2} \) and \( b = 2uv \).
+                Writing \( v \) in terms of \( u \), we are left with \( a = u^{2} - \left ( \frac{b}{2u} \right )^2 \) which, conveniently, is quadratic in \( u^{2} \).
                 Applying the quadratic formula, we find \( u \) and \( v \).
-                \[
-                    |u| = \sqrt{\frac{4a \pm \sqrt{16a^{2}+16b^{2}}}{8}}
-                    \hspace{0.5em}
-                    |v| = \sqrt{\frac{4a \pm \sqrt{16a^{2}+16b^{2}}}{8}-a}
-                \]
-                At this point, we can directly split \( z_{4} \) into real and imaginary parts. 
-                The center coordinates are given below.
-                \[
-                    x_{c} = \frac{k_{1}x_{1}+k_{2}x_{2}+k_{3}x_{3}+2\cdot u}{k_{4}}
-                    \hspace{0.5em}
-                    y_{c}=\frac{k_{1}y_{1}+k_{2}y_{2}+k_{3}y_{3}+2\cdot v}{k_{4}}
-                \]
             </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        |u| = \sqrt{\frac{4a \pm \sqrt{16a^{2}+16b^{2}}}{8}}
+                        \hspace{0.5em}
+                        |v| = \sqrt{\frac{4a \pm \sqrt{16a^{2}+16b^{2}}}{8}-a}
+                    \]
+                </p>
+            </div>
+            <p>
+                At this point, we can directly split \( z_{4} \) into real and imaginary parts.
+                The center coordinates are given below.
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        x_{c} = \frac{k_{1}x_{1}+k_{2}x_{2}+k_{3}x_{3}+2\cdot u}{k_{4}}
+                        \hspace{0.5em}
+                        y_{c}=\frac{k_{1}y_{1}+k_{2}y_{2}+k_{3}y_{3}+2\cdot v}{k_{4}}
+                    \]
+                </p>
+            </div>
             <h>Comment Section</h>
             <div id="utterances-container"></div>
             <script defer src="../scripts/comment.js"></script>
