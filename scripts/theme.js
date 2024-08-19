@@ -90,8 +90,8 @@ function applyTheme() {
     const appearance = theme === 'dark' ? 'photon-dark' : 'github-light';
     if (document.querySelector('.utterances-frame')) {
         let message = {
-            type: 'set-theme',
-            theme: appearance
+        type: 'set-theme',
+        theme: appearance
         };
         const iframe = document.querySelector('.utterances-frame');
         iframe.contentWindow.postMessage(message, 'https://utteranc.es');
