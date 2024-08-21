@@ -72,10 +72,11 @@
             </figure>
             <p>
                 Recently, I stumbled upon a fascinating and visually captivating concept that lives at the intersection of film and cinematography: movie barcodes. 
-                Intrigued, I decided to create my very own movie barcode with a couple of personal flares to boot.</p>
+                Intrigued, I decided to create my very own movie barcode with a couple of personal flares to boot.
+            </p>
             <h>What is a Movie Barcode?</h>
             <p>
-                We're all familiar with plain vanilla barcodes, but what exactly is a movie barcode? 
+                We're all familiar with vanilla barcodes, but what is a movie barcode? 
                 To answer that, I'll defer to self-described engineer, space lover, and tea drinker Thomas Poulet.
             </p>
             <blockquote>
@@ -86,7 +87,8 @@
             </blockquote>
             <p>
                 In essence, a movie barcode is a playful representation of the color palette used in a movie. 
-                Today, our task is to build our very own movie barcode and hopefully learn some things in the process!</p>
+                Today, our task is to build our very own movie barcode and hopefully learn some things in the process!
+            </p>
             <h>Tools and Software</h>
             <p>
                 This build will be implemented in Python 3.9.X and uses the following packages: 
@@ -100,7 +102,8 @@
             <h>Making a Movie Barcode</h>
             <p>
                 Here, I outline the procedure to make a movie barcode. 
-                I'll also include possible customizations and optimizations.</p>
+                I'll also include possible customizations and optimizations.
+            </p>
             <h2>Vanilla Procedure</h2>
             <p>There are roughly four steps involved in creating a movie barcode.</p>
             <ol>
@@ -113,7 +116,8 @@
                 In plain English, we start off by reading each frame of the film in order. 
                 Once the frames are read, the next step is to chunk them into manageable sections. 
                 Following this, colors are averaged row-wise, allowing us to represent the entire chunk as a single bar. 
-                Finally, these bars are merged together to form the final movie barcode.</p>
+                Finally, these bars are merged together to form the final movie barcode.
+            </p>
             <h2>Customization and Settings</h2>
             <p>
                 Customizing a movie barcode allows us to enhance its visual appeal and convey additional information. 
@@ -135,7 +139,7 @@
                 <a href="https://en.wikipedia.org/wiki/Parallel_computing" target="_blank">parallel computing</a>
                 techniques. 
                 By distributing the workload across multiple processors or cores simultaneously, you can substantially accelerate the merging step. 
-                Here is a conceptual implementation:
+                Here is one possible implementation:
             </p>
                 <figure>
                     <object type="image/svg+xml" data="../assets/barcode-images/parallel.svg" width="100%" height="auto">
@@ -144,12 +148,12 @@
                     <figcaption>Frame Process (Parallel Computing Paradigm)</figcaption>
                 </figure>
             <p>
-                Additionally, paying attention to garbage collection is crucial for optimizing space complexity. 
+                For space complexity, pay attention to garbage collection. 
                 Regularly clearing out unused memory and resources (i.e., frames) ensures that the procedure runs smoothly and doesn't get bogged down by unnecessary data.
             </p>
             <h>Examples</h>
             <p>
-                The Legend of Zelda is a renowned action-adventure video game series created by Nintendo in 1986. 
+                The Legend of Zelda is an action-adventure video game series created by Nintendo in 1986. 
                 It features the adventures of Link as he quests to rescue Princess Zelda and defeat Ganon. 
                 Known for its innovative game design and recurring themes of exploration and heroism, the series has become a flagship franchise for Nintendo. 
                 In honor of the release of
@@ -158,12 +162,13 @@
                 <a href="https://youtu.be/In3A1akIbks?feature=shared" target="_blank">cut scenes and game play</a>.
             </p>
             <figure>
-                <img src="../assets/barcode-images/polar.png" alt="Trulli">
+                <img src="../assets/barcode-images/polar.webp" alt="Trulli">
                 <figcaption>Movie Barcode for The Legend of Zelda: Tears of the Kingdom</figcaption>
             </figure>
             <p>
                 As you may have noticed, this particular barcode implements the customizations discussed above. 
-                The bars are linearly scaled depending on the average decibel output of the associated chunk.</p>
+                The bars are linearly scaled depending on the average decibel output of the associated chunk.
+            </p>
             <h>Resources and References</h>
             <p>
                 If you're interested in movie barcodes, I would definitely recommend checking out 
