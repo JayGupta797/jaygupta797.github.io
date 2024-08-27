@@ -243,10 +243,11 @@
             </p>
             <p> I generalize this algorithm as follows: </p>
             <ol>
-                <li>Select \( d \) extreme points and built the initial Facet</li>
+                <li>Select \( d \) points and build the initial facet</li>
                 <li>Find the normal vector to this facet</li>
-                <li>Project points onto the normal to identify the Eye, S1, and S2</li>
-                <li>Repeat steps 2-3 with each non-shared subfacet</li>
+                <li>Project points onto the normal to identify the Eyes, S1, and S2</li>
+                <li>Build simplices by connecting the facet to the Eyes</li>
+                <li>Repeat steps 2-4 with each non-shared subfacet</li>
             </ol>
             <p>
                 Most of these steps are fairly vanilla.
@@ -264,7 +265,7 @@
                 </code>
             </pre>
             <p>
-                Satisfied, I decided to run my program on random inputs in 3D space and compare the output with SciPy.
+                Satisfied, I decided to run my program on random 3D inputs and compare the output with SciPy.
                 To my surprise, while the program ran smoothly in 2D, in 3D the outputs simply didn't match.
                 In fact, the hull included several extra points that should have been pruned out.
                 As I would soon find out, the ND case is more involved.
@@ -283,7 +284,7 @@
             </blockquote>
             <p>
                 The key issue with generalizing the 2D algorithm is that it no longer ensures that the reported hull is convex.
-                Intuitively, one might imagine we end up with a rugged surface composed entirely of simplices.
+                Intuitively, one might imagine we end up with a rugged surface composed of simplices.
             </p>
             <p>
                 Taking another look at the Wikepedia Article, I noticed a section detaling the procedure for the ND case.
