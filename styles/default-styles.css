@@ -331,6 +331,7 @@ a:hover{
 
 .mainbar figcaption {
   text-align: center;
+  margin-top: 15px;
   margin-bottom: 15px;
   font-weight: 300;
   font-size: 16px;

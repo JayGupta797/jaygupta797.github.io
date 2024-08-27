@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Some meta tags -->
+    <title>Jay Gupta - Kepler–Bouwkamp Post</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="I'm sure we're all familiar with the usual mathematical constants, but what the heck is the The Kepler Bouwkamp Constant?">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    
+    <!-- Custom Styles and Scripts-->
+    <link rel="stylesheet" href="../styles/default-styles.css"> 
+    <link rel="stylesheet" href="../styles/code-styles.css">
+    <link rel="stylesheet" href="../styles/table-styles.css"> 
+    <script defer src="../scripts/table.js"></script>
+    <script defer src="../scripts/theme.js"></script> 
+
+    <!-- Load Prism.js for code blocks -->
+    <link id="prism-theme" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    
+    <!-- Load MathJax for LaTex -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Load Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="everything">
+    <div class="masthead">
+    <div class="masthead__inner-wrap">
+        <div class="masthead__menu">
+            <nav class="greedy-nav">
+                <a class="site-title" href="../index.html">Jay Gupta</a>
+                <ul class="visible-links">
+                    <li class="masthead__menu-item" id="masthead__menu-photos"><a href="../pages/photos.html">Photos</a></li>
+                    <li class="masthead__menu-item" id="masthead__menu-posts"><a href="../pages/posts.html">Posts</a></li>
+                    <li class="masthead__menu-item" id="masthead__menu-resume"><a href="../pages/resume.html">Resume</a></li>
+                </ul>
+                <div class="dark_toggle" onclick="toggleDark()">
+                    <svg height=35px width=35px>
+                    <circle cx="50%" cy="50%" r="10px" fill="white" id="moon" />
+                    <circle cx="50%" cy="50%" r="15px" fill="none" stroke="white" stroke-width="2px" id="ring" />
+                    </svg>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </div>
+
+    <div class="initial-content">
+        <div id="main" role="main">
+        <div class="sidebar">
+            <table id="headerTable">
+                <th>
+                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
+                        Your browser does not support SVG
+                    </object>
+                    On This Page
+                </th>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mainbar" id="headerContainer">
+            <h>Introduction</h>
+            <p>
+                During my Junior year of highschool, I took AP CSA, an introductory computer science course taught in Java.
+                It was an enjoyable course and my first exposure to programming with the interface mind.
+            </p>
+            <p>
+                During one lecture, we reviewed the Object Oriented design paradigm.
+                To illustrate key concepts, the instructor drew up a simplified geometry program.
+                The objects this program supported included the Point, Line, and Polygon all setup with reasonable inheritance structures.
+            </p>
+            <p>
+                Now, at its core, a polygon is defined by a <i>set</i> of lines fancifully called a polygonal chain. 
+                To reflect this, the Polygon constructor was initialized by an <i>ordered array</i> of Point objects.
+                At this point, I asked myself whether we could infer the order of the points without having the user specify.
+                As it so happens, in 2 dimensions this a relatively straightforward task that involves sorting points by their angle relative to a reference inside the polygon.
+                The only subtle complication is 
+                <a href="https://stackoverflow.com/a/36252976/26666094" target="_blank">determining</a>
+                a suitable reference point.
+            </p>
+            <p>
+                At the time, I introduced a somewhat obtuse algorithm to produce the desired result.
+                I won't bother describing it in detail though I'll include a copy of the original concept I eagerly passed along to my instructor.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/convex-images/animation.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Original Concept for Convex Hull Algorithm</figcaption>
+            </figure>
+            <p>
+                This brief excersize, got me down the rabbit hole of Convex Hull Algorithms. 
+                Today, I'll be reviewing my attempt at implementing qhull, an algorithm that notably extends into arbitrary dimensions.
+            </p>
+            <h>Definitions</h>
+            <p>
+                We'll open with key definitions. 
+                First, a set \( S \) is convex if for <i>any</i> two points \( p \) and \( q \), the line segment \( \overline{pq} \subset S \).
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/convex-images/convex.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Concave vs Convex Polygon</figcaption>
+            </figure>
+            <p>
+                Now, consider a set \( P \) of \( n \) points fixed in \( d \) dimensional space.
+                The Convex Hull of \( P \) is the <i>largest</i> convex polytope whose vertices are drawn from the set.
+                Intuitively, it is what one arrives at upon sucking the air out of \( d \)-bubble containing the set.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/convex-images/hull.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Convex Hull in 2 Dimensions</figcaption>
+            </figure>
+            <p>
+                Our task is to produce an algorithm that takes in a set of points and yields the Convex Hull of that set.
+            </p>
+            <h>Algorithms</h>
+            <p>
+                Wikipedia
+                <a href="https://en.wikipedia.org/wiki/Convex_hull_algorithms#Algorithms" target="_blank">lists</a>
+                several Convex Hull Algorithms each with their own advantages and disadvantages.
+                We can introduce a theoritc lower bound on the time complexity by drawing an analogy to sorting.
+                Consider the following set of points:
+            </p>
+            <div class="display-math">
+                <p> \[ P = \left \{ (x_{1}, x^{2}_{1}), \dots, (x_{n}, x^{2}_{n}) \right \} \] </p>
+            </div>
+            <p>
+                Since these points lie on a parabola, a convex curve, the problem clearly reduces to sorting \( x_{i} \) completing the analogy.
+                Now, sorting a collection of objects is a well studied problem. 
+                As it so happens, we can prove that <i>any</i> comparison based algorithm must take \( \Omega(n \log{n}) \) time.
+                To show this, consider the decision tree for sorting \( abc \).
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/convex-images/decision.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Decision Tree Model for Sorting Objects</figcaption>
+            </figure>
+            <p>
+                In order to compute the number of computations needed to arrive at a leaf, we'll make three observations:
+            </p>
+            <ol>
+                <li>The number of computations is bounded by the number of layers.</li>
+                <li>Each decision (green) splits off into two branches.</li>
+                <li>Each leaf (blue) is associated with one of \( n! \) permutations.</li>
+              </ol>
+            <p>
+                We reason that the number of layers \( l = \log_{2}(n!) \).
+                Using
+                <a href="https://en.wikipedia.org/wiki/Stirling%27s_approximation " target="_blank">Stirling's Approximation</a>
+                that \( n! \approx \sqrt{2 \pi n} \left ( \frac{n}{e} \right )^{n} \) we find \( l = \Omega(n \log{n}) \) completing the proof.
+            </p>
+            <p>
+                And sure enough, every algorithm listed takes at least \( \Omega(n \log{n}) \) time in expectation.
+                To choose an algorithm to implement, my criteria extended from efficiency to generalizability.
+                As it so happens, qhull is the only well-known algorithm to compute the Convex Hull of a set points fixed in \( d \) dimensional space for \( d  > 2\).
+            </p>
+            <h>2D QuickHull</h>
+            <p>
+                The Wikepedia Article associated with qhull, 
+                includes 
+                <a href="https://en.wikipedia.org/wiki/Quickhull#Pseudocode_for_2D_set_of_points" target="_blank">includes</a>
+                pseudo-code for a possible implementation in 2D. 
+                I'll include a simplified version here for reference.
+            </p>
+            <pre class="line-numbers">
+                <code class="language-python">
+                    Input: A set S of n points
+                    function QuickHull(S):
+                        ConvexHull = {}  # Initialize the convex hull
+                        Find leftmost point A and rightmost point B
+                        Add A and B to ConvexHull
+                        Divide remaining points into two groups:
+                            S1: Points to the right of line AB
+                            S2: Points to the right of line BA
+                        FindHull(S1, A, B)
+                        FindHull(S2, B, A)
+                        return ConvexHull
+
+                    function FindHull(Sk, P, Q):
+                        if Sk is empty:
+                            return
+                        Find the farthest point C from line PQ
+                        Add C to ConvexHull between P and Q
+                        Divide points in Sk into three groups:
+                            S0: Points inside triangle PCQ
+                            S1: Points to the right of line PC
+                            S2: Points to the right of line CQ
+                        FindHull(S1, P, C)
+                        FindHull(S2, C, Q)
+                </code>
+            </pre>
+            <p>
+                The basic observation is that the farthest point from any (Dedekind)
+                <a href="https://en.wikipedia.org/wiki/Dedekind_cut#Generalizations" target="_blank">cut</a>
+                in 2D space lies on the Convex Hull.
+                With this in the mind, qhull initiates the process by greedily drawing a large cut through the points.
+                Then, it identifies points on the hull, draws more cuts, and recurses.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/convex-images/qhull2d.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Initiation (Left) and Recursion (Right)</figcaption>
+            </figure>
+            <p>
+                There are several implementations of the QuickHull Algorithm available online. 
+                The key drawback I noticed was that the computations used were restricted to 2D while the procedure extends cleanly to \( N \) dimensions.
+                To build a common vocabulary for the discussions that follow, I will visually introduce the following terms: Facet, SubFacet, and Simplex.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/convex-images/facet.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Facet and SubFacet for Simplices in 2D (Left) and 3D (Right)</figcaption>
+            </figure>
+            <p>
+                You may notice these objects go by more familiar names. 
+                In 2D, a simplex is a Triangle, a facet is an Edge, and a subfacet is a Point.
+                In 3D, a simplex is a Pyramid, a facet is a Plane, and a subfacet is an Edge.
+                It turns out these objects are fundamental in higher dimensional space (at least w.r.t QuickHull), so we name them accordingly.
+            </p>
+            <p> I generalize this algorithm as follows: </p>
+            <ol>
+                <li>Select \( d \) extreme points and built the initial Facet</li>
+                <li>Find the normal vector to this facet</li>
+                <li>Project points onto the normal to identify the Eye, S1, and S2</li>
+                <li>Repeat steps 2-3 with each non-shared subfacet</li>
+            </ol>
+            <p>
+                Most of these steps are fairly vanilla.
+                The only exception is computing the normal vectors to each Facet of a Simplex.
+                Browing through the Math StackExchange, I found an elegant
+                <a href="https://math.stackexchange.com/questions/3684875/finding-the-normal-of-a-simplex-facet-in-n-dimensions" target="_blank">solution</a>
+                and ultimately arrived at this hilariously compact function:
+            </p>
+            <pre class="line-numbers">
+                <code class="language-python">
+                def normal(simplex):
+                    M = np.hstack((simplex, np.ones((num, 1))))
+                    inv = np.linalg.inv(M)
+                    return -inv[:-1, :]
+                </code>
+            </pre>
+            <p>
+                Satisfied, I decided to run my program on random inputs in 3D space and compare the output with SciPy.
+                To my surprise, while the program ran smoothly in 2D, in 3D the outputs simply didn't match.
+                In fact, the hull included several extra points that should have been pruned out.
+                As I would soon find out, the ND case is more involved.
+            </p>
+            <h>ND QuickHull</h>
+            <p>
+                While searching for hints on StackExchange I 
+                <a href="https://stackoverflow.com/a/18418182" target="_blank">stumbled</a>
+                across a rather cute exchange in the comments of an answer. 
+                While Aditya believed that the ND case was a "simple generalization" of the 2D case, Joseph O'Rourke cautioned against this:
+            </p>
+            <blockquote>
+                <p>
+                    Having implemented both, I would judge them to be... well, in different dimensions!
+                </p>
+            </blockquote>
+            <p>
+                The key issue with generalizing the 2D algorithm is that it no longer ensures that the reported hull is convex.
+                Intuitively, one might imagine we end up with a rugged surface composed entirely of simplices.
+            </p>
+            <p>
+                Taking another look at the Wikepedia Article, I noticed a section detaling the procedure for the ND case.
+                While the initialization remains (roughly) the same, the algorithm is no longer recursive.
+                The basic idea is to compute the Horizon visible from the Eye and build facets (collectively called the Cone) by connecting them together.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/convex-images/horizon.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>State of the Convex Hull: Eye, Horizon, and Cone</figcaption>
+            </figure>
+            <p>
+                By iterating until there are no more to process, we ensure that the reported hull is both convex and maximal.
+            </p>
+            <h>Notes</h>
+            <p>
+                You can find my
+                <a href="https://github.com/JayGupta797/convex-hull" target="_blank">complete implementation</a>
+                on GitHub. 
+                Before diving straight in, there are a few notes worth clarifying. 
+                First, in my assessment, the key challenge of implementing QuickHull is to efficiently compute the Horizon.
+                This is typically done with a Depth First Search where subfacets are crossed until we identify the boundary.
+                The core logic is actually quite readable, so I'll include here:
+            </p>
+            <pre class="line-numbers">
+                <code class="language-python">
+                    def _recursive_horizon(self, eye, facet, horizon):
+                        # If the eye is visible from the facet...
+                        if np.dot(facet.normal, eye - facet.center) > 0:
+                            # Label the facet as visible and cross each edge
+                            horizon.facets.add(facet)
+                            for subfacet in facet.subfacets:
+                                neighbor = self.find(subfacet, {facet})[0]
+                                # If the neighbor is not visible, 
+                                # then the edge shared must be on the boundary
+                                if neighbor and neighbor not in horizon.facets:
+                                    if not self._recursive_horizon(eye, neighbor, horizon):
+                                        horizon.boundary.append(subfacet)
+                            return 1
+                        return 0
+                </code>
+            </pre>
+            <p>
+                As suggested above, it is helpful to maintain the neighbor associated with a given Facet and SubFacet so as to avoid repeated computation.
+                To do this correctly, we need set neighbors (1) when building the initial simplex and (2) when adding/removing facets.
+            </p>
+            <p>
+                The current implementation essentially performs a brute-force search on all pairs of facets in the Cone.
+                However, if we restrict ourselves to the 3D Case, it is possible to improve this significantly by performing DFS in CW or CCW order.
+                By doing so, the horizon will be ordered such that consecutive edges will be neighbors.
+                Unfortunately, this does not extend beyond 3D.
+                I experimented with 
+                <a href="https://en.wikipedia.org/wiki/Hamiltonian_path" target="_blank">Hamiltonian Paths</a>
+                but the computational cost is equally prohibitive.
+            </p>
+            <p>
+                I will also add that the current implementation is <i>not</i> robust.
+                It will likely suffer numerical imprecision issues arising from coplanar facets.
+                To remedy this, one must ensure the hull is healthy at each state.
+            </p>
+            <h>Resources and References</h>
+            <p>
+                If you're interested in further reading, I would recommend checking out the 
+                <a href="https://dpd.cs.princeton.edu/Papers/BarberDobkinHuhdanpaa.pdf" target="_blank">original quickhull paper</a>
+                by Barber, Dobkin, and Huhdanpaa.
+                For implementation details, Dirk Gregorius's
+                <a href="https://media.steampowered.com/apps/valve/2014/DirkGregorius_ImplementingQuickHull.pdf" target="_blank">slide deck</a>
+                and Jordan Smith's 
+                <a href="https://algolist.ru/maths/geom/convhull/qhull3d.php" target="_blank">notes</a>
+                are very helpful.
+            </p>
+            <h>Comment Section</h>
+            <div id="utterances-container"></div>
+            <script defer src="../scripts/comment.js"></script>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <main></main>
+
+    <footer>
+        <div class="mastfoot">
+            <p>&copy; 2024 Jay Gupta. Powered by vanilla HTML, CSS, and JS.</p>
+        </div>
+    </footer>
+
+</body>

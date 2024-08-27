@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 654 258">
+    <script type="text/ecmascript" href="../../scripts/color.js"/>
+    <path d="M1.4 103.05 168.445 2.164l100.228 145.434-100.228 108.747-31.022-134.952-96.648 86.474L1.4 103.05Z" fill="none" fill-rule="evenodd"/>
+    <path stroke-width="1.524" stroke-miterlimit="8" fill="none" stroke="var(--secondary-color)" d="M1.4 103.05 168.445 2.164l100.228 145.433-100.228 108.748-31.022-134.952-96.648 86.474L1.4 103.05Z"/>
+    <path d="m372.964 80.803 168.818-62.93 110.89 105.16-52.134 133.312-133.235-33.949-94.34-141.593Z" fill="none" fill-rule="evenodd"/>
+    <path stroke-width="1.524" stroke-miterlimit="8" fill="none" stroke="var(--secondary-color)" d="m372.964 80.803 168.818-62.93 110.89 105.16-52.134 133.312-133.235-33.949-94.34-141.593Z"/>
+    <path d="M55.618 148.564a3.6 3.6 0 1 1 7.2 0 3.6 3.6 0 0 1-7.2 0ZM173.436 180.855a3.6 3.6 0 1 1 7.2 0 3.6 3.6 0 0 1-7.2 0Z" fill="var(--secondary-color)" fill-rule="evenodd"/>
+    <path stroke-width="1.524" stroke-miterlimit="8" fill="var(--secondary-color)" stroke="var(--secondary-color)" d="m59.218 148.564 117.943 32.314"/>
+    <text xml:space="preserve" transform="translate(53.96 394.69) scale(.21818)" font-size="83" font-family="Arial" fill="var(--secondary-color)">
+        <tspan y="-1182" x="0">p</tspan>
+    </text>
+    <text xml:space="preserve" transform="translate(172.092 428.727) scale(.21818)" font-size="83" font-family="Arial" fill="var(--secondary-color)">
+        <tspan y="-1182" x="0">q</tspan>
+    </text>
+</svg>
