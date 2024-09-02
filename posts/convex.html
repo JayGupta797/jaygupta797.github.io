@@ -87,10 +87,10 @@
                 The objects this program supported included the Point, Line, and Polygon all setup with reasonable inheritance structures.
             </p>
             <p>
-                Now, at its core, a polygon is defined by a <i>set</i> of lines fancifully called a polygonal chain. 
+                Now, at its core, a polygon is defined by a <i>list</i> of lines fancifully called a polygonal chain. 
                 To reflect this, the Polygon constructor was initialized by an <i>ordered array</i> of Point objects.
                 At this point, I asked myself whether we could infer the order of the points without having the user specify.
-                As it so happens, in 2 dimensions this a relatively straightforward task that involves sorting points by their angle relative to a reference inside the polygon.
+                As it so happens, in 2D this a relatively straightforward task that involves sorting points by their angle relative to a reference inside the polygon.
                 The only subtle complication is 
                 <a href="https://stackoverflow.com/a/36252976/26666094" target="_blank">determining</a>
                 a suitable reference point.
@@ -107,7 +107,7 @@
             </figure>
             <p>
                 This brief excersize, got me down the rabbit hole of Convex Hull Algorithms. 
-                Today, I'll be reviewing my attempt at implementing qhull, an algorithm that notably extends into arbitrary dimensions.
+                Here, I'll be reviewing my attempt at implementing qhull, an algorithm that notably extends into arbitrary dimensions.
             </p>
             <h>Definitions</h>
             <p>
@@ -123,7 +123,7 @@
             <p>
                 Now, consider a set \( P \) of \( n \) points fixed in \( d \) dimensional space.
                 The Convex Hull of \( P \) is the <i>largest</i> convex polytope whose vertices are drawn from the set.
-                Intuitively, it is what one arrives at upon sucking the air out of \( d \)-bubble containing the set.
+                Intuitively, it is what one arrives at upon stretching a rubber band around the boundary.
             </p>
             <figure>
                 <object type="image/svg+xml" data="../assets/convex-images/hull.svg" width="100%" height="auto">
@@ -318,7 +318,7 @@
                             # Label the facet as visible and cross each edge
                             horizon.facets.add(facet)
                             for subfacet in facet.subfacets:
-                                neighbor = self.find(subfacet, {facet})[0]
+                                neighbor = (self.neighbors[subfacet] - {facet}).pop()
                                 # If the neighbor is not visible, 
                                 # then the edge shared must be on the boundary
                                 if neighbor and neighbor not in horizon.facets:
@@ -329,17 +329,20 @@
                 </code>
             </pre>
             <p>
-                As suggested above, it is helpful to maintain the neighbor associated with a given Facet and SubFacet so as to avoid repeated computation.
+                As suggested above, maintaining the neighbors associated with a given SubFacet helps avoid repeated computation.
+                This is a 
+                <a href="https://en.wikipedia.org/wiki/Doubly_connected_edge_list" target="_blank">standard ingredient</a>
+                in computational geometry known as a half-edge data structure.
                 To do this correctly, we need set neighbors (1) when building the initial simplex and (2) when adding/removing facets.
             </p>
             <p>
-                The current implementation essentially performs a brute-force search on all pairs of facets in the Cone.
-                However, if we restrict ourselves to the 3D Case, it is possible to improve this significantly by performing DFS in CW or CCW order.
-                By doing so, the horizon will be ordered such that consecutive edges will be neighbors.
-                Unfortunately, this does not extend beyond 3D.
+                The current implementation iterates through every SubFacet in the Cone.
+                However, if we restrict ourselves to the 3D Case, it is possible to improve this by performing DFS in CW or CCW order.
+                Upon doing so, the horizon will be ordered such that consecutive edges will be neighbors.
+                Unfortunately, this does not generalize beyond 3D.
                 I experimented with 
                 <a href="https://en.wikipedia.org/wiki/Hamiltonian_path" target="_blank">Hamiltonian Paths</a>
-                but the computational cost is equally prohibitive.
+                but the computational cost is prohibitive.
             </p>
             <p>
                 I will also add that the current implementation is <i>not</i> robust.
