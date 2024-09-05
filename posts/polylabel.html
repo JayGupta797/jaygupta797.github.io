@@ -158,7 +158,7 @@
                 <figcaption>Generalized Voronoi Diagram</figcaption>
             </figure>
             <p>
-                With the Voronoi Diagram on hand, we search through every node (intersection of three cells) and record the best solution.
+                With the Voronoi Diagram on hand, we search through every node (intersection of three cells) and record the best so far.
                 This is guranteed to yield the optimal solution.
             </p>
             <h>PolyLabel</h>
@@ -178,14 +178,15 @@
             </p>
             <h2>Proof</h2>
             <p>
-                Consider a Cell \( C \) with distance \( d \) from the Polygon and half-side \( h \).
+                Consider a Polygon \( P \) and Cell \( C \) with center \( c \) and half-side \( h \).
+                Let \( d \) be a function that yields the minimum distance from a Point to a Polygon.
                 We make a key observation:
-                the maximum potential distance \( p \) of <i>any</i> point in a square cell to the polygon is bounded by \( p \le d + h \sqrt{2} \).
+                the maximum potential distance of <i>any</i> point \( x \in C \) is bounded by \( d(P, x) \le d(P, c) + h \sqrt{2} \).
                 The algorithm may then be understood as follows:
             </p>
             <ol>
                 <li>Cover the polygon with cells. The pole must be in a Cell.</li>
-                <li>If the maximum potential distance of a Cell exceeds the current best distance, it is promising. We should subdivide.</li>
+                <li>If the maximum potential distance of a Cell exceeds the current best distance, it is promising and we should subdivide.</li>
             </ol>
             <p>
                 By continually subdividing, we eventually hone in on the optimal solution. 
@@ -193,15 +194,15 @@
             </p>
             <h2>Implementation</h2>
             <p>
-                To implement this, I created a Polygon and Cell Class. 
+                To implement this algorithm, I created a Polygon and Cell Class. 
                 The Polygon Class precomputes data (e.g., centroid, boundary, etc) and provides a member function to compute the signed distance from the Polygon.
                 If the sign is positive, the Point is inside. 
                 If the sign is negative, the Point is outside.
-                The Cell Class maintains the center, side, and potential.
+                The Cell Class maintains the center, half-side, and potential.
                 Direct comparison between Cells is supported.
             </p>
             <p>
-                Upon profiling, it became clear that the key optimization for this algorithm is computing the distance from a given Point.
+                Upon profiling, it became clear that the key optimization for this algorithm is efficiently computing the distance from a given Point.
                 A vectorized solution is shared below:
             </p>
             <pre class="line-numbers">
@@ -241,8 +242,14 @@
                 on the Vroni Project.
             </p>
             <h>Comment Section</h>
-            <div id="utterances-container"></div>
-            <script defer src="../scripts/comment.js"></script>
+            <div id="utterances-container">
+                <script src="https://utteranc.es/client.js"
+                        repo="jaygupta797/jaygupta797.github.io"
+                        issue-term="pathname"
+                        crossorigin="anonymous"
+                        >
+                </script>
+            </div>
         </div>
         </div>
     </div>

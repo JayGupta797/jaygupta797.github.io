@@ -9,7 +9,7 @@ let theme = localStorage.getItem('theme') || 'dark';
 localStorage.setItem('theme', theme);
 
 /*
- * loadSVGColors()
+ * toggleSVGColors()
  * ---------------
  * This function iterates through all svg objects (conveniently flagged under the svgObject class)
  * and updates the content accordingly. This approach was heavily drawn from the SE answer listed
@@ -88,13 +88,15 @@ function applyTheme() {
     // Toggle Comment Block
     // Reference: https://github.com/utterance/utterances/issues/549#issuecomment-907606127
     const appearance = theme === 'dark' ? 'photon-dark' : 'github-light';
-    if (document.querySelector('.utterances-frame')) {
-        let message = {
-        type: 'set-theme',
-        theme: appearance
-        };
-        const iframe = document.querySelector('.utterances-frame');
-        iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    const iframe = document.querySelector('.utterances-frame');
+    const message = { type: 'set-theme', theme: appearance };
+    if (iframe) {
+        iframeLoaded 
+            ? iframe.contentWindow.postMessage(message, 'https://utteranc.es') 
+            : iframe.addEventListener('load', () => {
+                iframeLoaded = true;
+                iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+            });
     }
 
     // TODO: check if this approach is preferable
@@ -102,6 +104,7 @@ function applyTheme() {
 }
 
 // Apply the default theme
+iframeLoaded = false;
 applyTheme();
 
 // Toggle theme upon click
