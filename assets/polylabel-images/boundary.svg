@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="770" height="435" viewBox="0 0 770 435">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 770 435">
   <script type="text/ecmascript" href="../../scripts/color.js"/>
   <path transform="matrix(.00007874016,0,0,.00007874016,1.109052,.7817993)" stroke-width="19050" stroke-linecap="butt" stroke-miterlimit="8" stroke-linejoin="miter" fill="none" stroke="var(--secondary-color)" d="M0 0H9753600V5503026H0Z"/>
   <path transform="matrix(.00007874016,0,0,.00007874016,41.69094,37.4364)" stroke-width="19050" stroke-linecap="butt" stroke-dasharray="57150,19050" stroke-miterlimit="8" stroke-linejoin="miter" fill="none" stroke="var(--secondary-color)" d="M0 385156.5C0 172440.4 171819.9 0 383770.5 0 595721.1 0 767541 172440.4 767541 385156.5 767541 597872.5 595721.1 770313 383770.5 770313 171819.9 770313 0 597872.5 0 385156.5Z"/>
