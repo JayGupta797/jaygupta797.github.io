@@ -201,23 +201,11 @@
                 Direct comparison between Cells is supported.
             </p>
             <p>
-                The key optimization for this algorithm is computing the distance from a given Point.
+                Upon profiling, it became clear that the key optimization for this algorithm is computing the distance from a given Point.
                 A vectorized solution is shared below:
             </p>
             <pre class="line-numbers">
                 <code class="language-python">
-                    def inside(self, point):
-                        """Check if a point is inside the polygon."""
-                        # Views
-                        px, py = point
-                        x, y = self.start[:, 0], self.start[:, 1]
-                        xr, yr = self.stop[:, 0], self.stop[:, 1]
-                        
-                        # Count Crossings (enforce short-circuit)
-                        c = (y > py) != (yr > py)
-                        c = px < x[c] + (py - y[c]) * (xr[c] - x[c]) / (yr[c] - y[c])
-                        return np.sum(c) % 2 == 1
-                        
                     def compute_distance(self, point):
                         """Compute the distance from a point to the polygon."""
                         scalars = np.einsum("ij,ij->i", self.norm, point - self.start)
@@ -232,12 +220,16 @@
                 </code>
             </pre>
             <p>
-                Checking whether a point is inside a polygon is done via Ray-Casting.
-                The boundary is defined by start, stop, and diff vectors.
+                The boundary of the Polygon is defined by start, stop, and diff vectors.
                 The distance computation has two parts.
                 First, we compute the projection of the point onto each edge and clip the result to lie on the edge.
                 This scalar tells us how far to move in the direction of diff.
                 Then, we compute the distance from each edge to the point and return the minimum.
+                Checking whether a point is inside a polygon is done via 
+                <a href="https://en.wikipedia.org/wiki/Point_in_polygon#Ray_casting_algorithm" target="_blank">Ray-Casting</a>.
+                You can find the 
+                <a href="https://github.com/JayGupta797/polylabel" target="_blank">complete implementation</a>
+                on GitHub.
             </p>
             <h>Resources and References</h>
             <p>
