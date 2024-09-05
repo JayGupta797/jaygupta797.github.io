@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Some meta tags -->
+    <title>Jay Gupta - PolyLabel Post</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="A brief excersize, got me down the rabbit hole of Convex Hull Algorithms. Here, I review my attempt at QuickHull, an algorithm that notably extends into arbitrary dimensions.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    
+    <!-- Custom Styles and Scripts-->
+    <link rel="stylesheet" href="../styles/default-styles.css"> 
+    <link rel="stylesheet" href="../styles/code-styles.css">
+    <link rel="stylesheet" href="../styles/table-styles.css"> 
+    <script defer src="../scripts/table.js"></script>
+    <script defer src="../scripts/theme.js"></script> 
+
+    <!-- Load Prism.js for code blocks -->
+    <link id="prism-theme" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    
+    <!-- Load MathJax for LaTex -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Load Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="everything">
+    <div class="masthead">
+    <div class="masthead__inner-wrap">
+        <div class="masthead__menu">
+            <nav class="greedy-nav">
+                <a class="site-title" href="../index.html">Jay Gupta</a>
+                <ul class="visible-links">
+                    <li class="masthead__menu-item" id="masthead__menu-photos"><a href="../pages/photos.html">Photos</a></li>
+                    <li class="masthead__menu-item" id="masthead__menu-posts"><a href="../pages/posts.html">Posts</a></li>
+                    <li class="masthead__menu-item" id="masthead__menu-resume"><a href="../pages/resume.html">Resume</a></li>
+                </ul>
+                <div class="dark_toggle" onclick="toggleDark()">
+                    <svg height=35px width=35px>
+                    <circle cx="50%" cy="50%" r="10px" fill="white" id="moon" />
+                    <circle cx="50%" cy="50%" r="15px" fill="none" stroke="white" stroke-width="2px" id="ring" />
+                    </svg>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </div>
+
+    <div class="initial-content">
+        <div id="main" role="main">
+        <div class="sidebar">
+            <table id="headerTable">
+                <th>
+                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
+                        Your browser does not support SVG
+                    </object>
+                    On This Page
+                </th>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mainbar" id="headerContainer">
+            <h>The Explorer</h>
+            <p>
+                Human fascination with exploring the unknown has persisted across time and space.
+                From ancient texts like 
+                <a href="https://en.wikipedia.org/wiki/Epic_of_Gilgamesh" target="_blank">The Epic of Gilgamesh</a>
+                to childhood classics like 
+                <a href="https://en.wikipedia.org/wiki/Dora_the_Explorer" target="_blank">Dora The Explorer</a>, 
+                the archetype is firmly rooted in human experience.
+            </p>
+            <p>
+                Our history is rife with individuals embodying the explorer ethos to 
+                <a href="https://en.wikipedia.org/wiki/William_Walker_(filibuster)" target="_blank">extraordinary</a> 
+                degree.
+                In fact, my DBQ for AP US History concerned itself with this exact topic.
+                I'll include a lightly adapted snippet from the introduction for reference.
+            </p>
+            <blockquote>
+                <p>
+                    ...After securing independence from Britain, the United States began looking westward. 
+                    Under the Articles of Confederation, the US established a system of creating new states that could join the union under the Land Ordinances of 1785 and 1787. 
+                    Improved relationships with foreign powers led to deals such as Jay's Treaty, the Louisiana Purchase, and the Treaty of 1818, which fueled America's westward expansion.
+                    Despite the rise of sectionalist tensions that would drive the United States down a path of disunion, it is clear that Manifest Destiny played a key role in making the United States stretch from coast to coast. 
+                </p>
+            </blockquote>
+            <p>
+                Interested in the archetype, I eventually found myself at Point Nemo.
+            </p>
+            <h>Point Nemo</h>
+            <p>
+                I want you to imagine that you are an explorer.
+                Cast amongst the ranks of those legendary icons from history, your task is to sail atop the <i>farthest</i> point from land.
+                A 
+                <a href="https://oceanservice.noaa.gov/facts/nemo.html" target="_blank">brief search</a> 
+                on the National Ocean Service lands you at 48° 52.6′S, 123° 23.6′W better known as Point Nemo.
+                A staggering 2,688 miles from Dunice Island, it is the most inaccessible point in the ocean.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/polylabel-images/nemo.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Point Nemo and the Surrounding Area</figcaption>
+            </figure>
+            <p>
+                The natural question, of course, is how one might go about finding Point Nemo for themselves.
+            </p>
+            <h>Theory</h>
+            <p>
+                At this point, we are going to take a brief sidestep into theory.
+                Our first task to define what we are looking for.
+            </p>
+            <p>
+                Consider a set of points in a metric space.
+                The set divides the space it lives in into three other sets: the Interior, Exterior, and Boundary.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/polylabel-images/boundary.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>The Interior, Exterior, and Boundary</figcaption>
+            </figure>
+            <p>
+                A polygon \( P \) is a set of points whose boundary forms a sequence of edges called a polygonal chain.
+                We define the <i>pole of inaccessiblility</i> as the point within the polygon that is farthest from any of its edges.
+            </p>
+            <div class="display-math">
+                <p>
+                    \[ p = \arg\max_{x \in P} \left( \min_{e \in \text{edges}} d(x, e) \right) \]
+                </p>
+            </div>
+            <p>
+                Solving this optimization problem is not easy in general.
+                One approach starts by partitioning the plane into regions closest to each vertex.
+                This tesselation is called a Voronoi Diagram and may be constructed in \( O(n \log{n}) \) time via 
+                <a href="https://en.wikipedia.org/wiki/Fortune%27s_algorithm" target="_blank">Fortune's Algorithm</a>.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/polylabel-images/voronoi.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Generalized Voronoi Diagram</figcaption>
+            </figure>
+            <p>
+                With the Voronoi Diagram on hand, we search through every node (intersection of three cells) and record the best solution.
+                This is guranteed to yield the optimal solution.
+            </p>
+            <h>PolyLabel</h>
+            <p>
+                While the procedure above produces the pole, we might ask ourselves if we can trade precision for speed?
+                As it so happens, we can!
+            </p>
+            <h2>Description</h2>
+            <p>
+                PolyLabel is an iterative grid-based algorithm, which starts by covering the polygon with square cells and iteratively subdividing them in the order of the most promising ones. 
+                The procedure applies to any complex polygon (e.g., with holes) and is guranteed to produce the optimal solution to a given precision.
+            </p>
+            <p>
+                I'll leave it as an excersize for the motivated reader to 
+                <a href="https://github.com/mapbox/polylabel" target="_blank">check out</a>
+                the MapBox README for detail.
+            </p>
+            <h2>Proof</h2>
+            <p>
+                Consider a Cell \( C \) with distance \( d \) from the Polygon and half-side \( h \).
+                We make a key observation:
+                the maximum potential distance \( p \) of <i>any</i> point in a square cell to the polygon is bounded by \( p \le d + h \sqrt{2} \).
+                The algorithm may then be understood as follows:
+            </p>
+            <ol>
+                <li>Cover the polygon with cells. The pole must be in a Cell.</li>
+                <li>If the maximum potential distance of a Cell exceeds the current best distance, it is promising. We should subdivide.</li>
+            </ol>
+            <p>
+                By continually subdividing, we eventually hone in on the optimal solution. 
+                The only wrinkle is that this process will continue indefinitely unless we specify a tolerance.
+            </p>
+            <h2>Implementation</h2>
+            <p>
+                To implement this, I created a Polygon and Cell Class. 
+                The Polygon Class precomputes data (e.g., centroid, boundary, etc) and provides a member function to compute the signed distance from the Polygon.
+                If the sign is positive, the Point is inside. 
+                If the sign is negative, the Point is outside.
+                The Cell Class maintains the center, side, and potential.
+                Direct comparison between Cells is supported.
+            </p>
+            <p>
+                The key optimization for this algorithm is computing the distance from a given Point.
+                A vectorized solution is shared below:
+            </p>
+            <pre class="line-numbers">
+                <code class="language-python">
+                    def inside(self, point):
+                        """Check if a point is inside the polygon."""
+                        # Views
+                        px, py = point
+                        x, y = self.start[:, 0], self.start[:, 1]
+                        xr, yr = self.stop[:, 0], self.stop[:, 1]
+                        
+                        # Count Crossings (enforce short-circuit)
+                        c = (y > py) != (yr > py)
+                        c = px < x[c] + (py - y[c]) * (xr[c] - x[c]) / (yr[c] - y[c])
+                        return np.sum(c) % 2 == 1
+                        
+                    def compute_distance(self, point):
+                        """Compute the distance from a point to the polygon."""
+                        scalars = np.einsum("ij,ij->i", self.norm, point - self.start)
+                        clips = np.clip(scalars, 0, 1).reshape(-1, 1)
+                        d = np.min(
+                            np.norm(
+                                self.start + self.diff * clips - point, 
+                                axis=1
+                            )
+                        )
+                        return d if self.inside(point) else -d
+                </code>
+            </pre>
+            <p>
+                Checking whether a point is inside a polygon is done via Ray-Casting.
+                The boundary is defined by start, stop, and diff vectors.
+                The distance computation has two parts.
+                First, we compute the projection of the point onto each edge and clip the result to lie on the edge.
+                This scalar tells us how far to move in the direction of diff.
+                Then, we compute the distance from each edge to the point and return the minimum.
+            </p>
+            <h>Resources and References</h>
+            <p>
+                If you are interested in further reading, I recommend checking out Paul Bourke's 
+                <a href="https://paulbourke.net/geometry/polygonmesh/" target="_blank">notes</a>
+                on Polygons and Meshes and
+                Stefan Huber 
+                <a href="https://www.sthu.org/research/publications/files/mscthesis.pdf" target="_blank">disertation</a>
+                on the Vroni Project.
+            </p>
+            <h>Comment Section</h>
+            <div id="utterances-container"></div>
+            <script defer src="../scripts/comment.js"></script>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <main></main>
+
+    <footer>
+        <div class="mastfoot">
+            <p>&copy; 2024 Jay Gupta. Powered by vanilla HTML, CSS, and JS.</p>
+        </div>
+    </footer>
+
+</body>

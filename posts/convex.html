@@ -78,16 +78,16 @@
         <div class="mainbar" id="headerContainer">
             <h>Introduction</h>
             <p>
-                During my Junior year of highschool, I took AP CSA, an introductory computer science course taught in Java.
-                It was an enjoyable course and my first exposure to programming with the interface mind.
+                In my junior year of highschool, I took AP CSA, an introductory computer science course taught in Java.
+                It was an enjoyable course and likely my first exposure to programming with the interface mind.
             </p>
             <p>
                 During one lecture, we reviewed the Object Oriented design paradigm.
-                To illustrate key concepts, the instructor drew up a simplified geometry program.
-                The objects this program supported included the Point, Line, and Polygon all setup with reasonable inheritance structures.
+                To illustrate key concepts, the instructor drew up a simplified geometry class.
+                The objects this class supported included the Point, Line, and Polygon all setup with reasonable inheritance structures.
             </p>
             <p>
-                Now, at its core, a polygon is defined by a <i>list</i> of lines fancifully called a polygonal chain. 
+                Now, a polygon is defined by a <i>sequence</i> of lines called a polygonal chain. 
                 To reflect this, the Polygon constructor was initialized by an <i>ordered array</i> of Point objects.
                 At this point, I asked myself whether we could infer the order of the points without having the user specify.
                 As it so happens, in 2D this a relatively straightforward task that involves sorting points by their angle relative to a reference inside the polygon.
@@ -100,7 +100,7 @@
                 I won't bother describing it in detail though I'll include a copy of the original concept I eagerly passed along to my instructor.
             </p>
             <figure>
-                <object type="image/svg+xml" data="../assets/convex-images/animation.svg" width="100%" height="auto">
+                <object type="image/svg+xml" data="../assets/convex-images/concept.svg" width="100%" height="auto">
                 Your browser does not support SVG
                 </object>
                 <figcaption>Original Concept for Convex Hull Algorithm</figcaption>
@@ -219,7 +219,7 @@
                 Then, it identifies points on the hull, draws more cuts, and recurses.
             </p>
             <figure>
-                <object type="image/svg+xml" data="../assets/convex-images/qhull2d.svg" width="100%" height="auto">
+                <object type="image/svg+xml" data="../assets/convex-images/qhull.svg" width="100%" height="auto">
                 Your browser does not support SVG
                 </object>
                 <figcaption>Initiation (Left) and Recursion (Right)</figcaption>
