@@ -137,12 +137,12 @@
                 <figcaption>The Interior, Exterior, and Boundary</figcaption>
             </figure>
             <p>
-                A polygon \( P \) is a set of points whose boundary forms a sequence of edges called a polygonal chain.
-                We define the <i>pole of inaccessiblility</i> as the point within the polygon that is farthest from any of its edges.
+                A polygon \( P \) is a set of points whose boundary forms a sequence of edges \( E \).
+                We define the <i>pole of inaccessiblility</i> as the point within the polygon that is farthest from its edges.
             </p>
             <div class="display-math">
                 <p>
-                    \[ p = \arg\max_{x \in P} \left( \min_{e \in \text{edges}} d(x, e) \right) \]
+                    \[ \text{pole} = \arg\max_{p \in P} \left( \min_{e \in E} \mathrm{d}(p, e) \right) \]
                 </p>
             </div>
             <p>
@@ -179,13 +179,13 @@
             <h2>Proof</h2>
             <p>
                 Consider a Polygon \( P \) and Cell \( C \) with center \( c \) and half-side \( h \).
-                Let \( d \) be a function that yields the minimum distance from a Point to a Polygon.
-                We make the following claim: the maximum distance \( m \) from <i>any</i> point \( p \in C \) to \( P \) is bounded by \( d(P, p) \le d(P, c) + h \sqrt{2} \).
+                Let \( \mathrm{d} \) be a function that yields the minimum distance from a Point to a Polygon.
+                We make the following claim: the maximum distance \( m \) from <i>any</i> point \( p \in C \) to \( P \) is bounded by \( \mathrm{d}(P, p) \le \mathrm{d}(P, c) + h \sqrt{2} \).
                 We justify this claim by way of contradiction.
             </p>
             <p>
-                Assume, for the sake of contradiction, that there exists a point \( p \in C \) such that \( d(P, p) > m \).
-                The distance from \( p \) to the edge closest to \( c \) must be greater than than \( m \) because \( d(P, p) \) is the minimum distance.
+                Assume, for the sake of contradiction, that there exists a point \( p \in C \) such that \( \mathrm{d}(P, p) > m \).
+                The distance from \( p \) to the edge closest to \( c \) must be greater than than \( m \) because \( \mathrm{d}(P, p) \) is the minimum distance.
                 This implies that \( p \) lies outside of \( C \).
                 This contradicts the assumption that \( p \in C \). 
                 Therefore, we reject the premise that \( p \) exists.
