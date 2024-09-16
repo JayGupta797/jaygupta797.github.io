@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3534 2196">
+  <script type="text/ecmascript" href="../../scripts/color.js"/>
+  <path fill="none" stroke="var(--secondary-color)" stroke-miterlimit="8" stroke-width="6.875" d="M5.5 6.5h3520v1980H5.5z"/>
+  <path fill="none" fill-rule="evenodd" stroke="var(--secondary-color)" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="7.188" d="m430.222 616.23-190.748 631.498 343.651 480.447 460.032 49.634 345.623-280.888 339.41 30.308 580.56 244.724 349.51 30.642 222.59-332.614 406.62-50.508-107.53-498.394 77.29-437.769-384.79-234.38-765.29-35.53-373.83 476.23-318.16 153.434-135.22-73.724 50.23-380.76-353.862-196.99-546.086 424.63"/>
+  <path fill-opacity=".251" stroke="var(--secondary-color)" stroke-dasharray="27.5 20.625" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="6.875" d="M1475.46 1489.108c0-386.328-313.41-699.508-700.008-699.508-386.595 0-699.994 313.18-699.994 699.497 0 386.327 313.399 699.5 699.994 699.5 386.608 0 700.008-313.184 700.008-699.5"/>
+  <path fill-rule="evenodd" fill="var(--secondary-color)" stroke-miterlimit="8" stroke-width="6.875" d="M870.5 1175.5c0-8.28 6.49-15 14.5-15s14.5 6.72 14.5 15c0 8.28-6.49 15-14.5 15s-14.5-6.72-14.5-15ZM760.5 1490c0-8.01 6.72-14.5 15-14.5 8.28 0 15 6.49 15 14.5s-6.72 14.5-15 14.5c-8.28 0-15-6.49-15-14.5Z"/>
+  <path fill="none" stroke="var(--secondary-color)" stroke-miterlimit="8" stroke-width="6.875" d="m775.5 1489.63 494.742-494.126M775.6 1486.5l-23.1 260.979"/>
+  <text font-family="Arial,Arial_MSFontService,sans-serif" font-size="83" font-weight="400" transform="translate(807.79 1647)" fill="var(--secondary-color)">d</text>
+  <path d="M285.307 1950.06H783.03v6.88H285.307Zm25.767 22.45-32.59-19.01 32.59-19.01c1.64-.96 3.745-.4 4.702 1.24a3.437 3.437 0 0 1-1.238 4.7l-27.5 16.04v-5.94l27.5 16.04a3.437 3.437 0 0 1 1.238 4.7 3.436 3.436 0 0 1-4.702 1.24Zm446.196-38.02 32.59 19.01-32.59 19.01c-1.64.96-3.75.4-4.71-1.24-.95-1.64-.4-3.74 1.24-4.7l27.5-16.04v5.94l-27.5-16.04a3.443 3.443 0 0 1-1.24-4.7c.96-1.64 3.07-2.2 4.71-1.24Z" fill="var(--secondary-color)"/>
+  <text font-family="Arial,Arial_MSFontService,sans-serif" font-size="83" font-weight="400" transform="translate(510.692 1917)" fill="var(--secondary-color)">h</text>
+  <text font-family="Arial,Arial_MSFontService,sans-serif" font-size="83" font-weight="400" transform="translate(1043.05 1348)" fill="var(--secondary-color)">h</text>
+  <path fill-rule="evenodd" d="M1137.92 1274.79h10.34v.35h40.79v5h-40.79v.04h-7.34l-21.8 74.49h-3.93l-16.78-36.07-6.85 3.04-1.26-3.04 13.3-6.07 14.3 31.44Z" fill="var(--secondary-color)"/>
+  <text font-family="Cambria Math,Cambria Math_MSFontService,sans-serif" font-size="83" font-weight="400" transform="translate(1143.06 1348)" fill="var(--secondary-color)">2</text>
+  <path fill="none" stroke="var(--secondary-color)" stroke-miterlimit="8" stroke-width="6.875" d="M1270.5 6.5h990v990h-990zM1270.5 996.5h990v990h-990zM2260.5 996.5h990v990h-990zM2260.5 6.5h990v990h-990zM280.5 996.5h990v990h-990zM280.5 6.5h990v990h-990zM5.5 996.5h3520.04"/>
+  <text font-family="Arial,Arial_MSFontService,sans-serif" font-size="83" font-weight="400" transform="translate(752.95 1436)" fill="var(--secondary-color)">c</text>
+</svg>

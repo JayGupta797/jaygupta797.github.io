@@ -113,7 +113,7 @@
                 A staggering 2,688 miles from Dunice Island, it is the most inaccessible point in the ocean.
             </p>
             <figure>
-                <object type="image/svg+xml" data="../assets/polylabel-images/nemo.svg" width="100%" height="auto">
+                <object type="image/svg+xml" data="../assets/polylabel-images/nemo.svg" width="75%" height="auto">
                 Your browser does not support SVG
                 </object>
                 <figcaption>Point Nemo and the Surrounding Area</figcaption>
@@ -180,13 +180,26 @@
             <p>
                 Consider a Polygon \( P \) and Cell \( C \) with center \( c \) and half-side \( h \).
                 Let \( d \) be a function that yields the minimum distance from a Point to a Polygon.
-                We make a key observation:
-                the maximum potential distance of <i>any</i> point \( x \in C \) is bounded by \( d(P, x) \le d(P, c) + h \sqrt{2} \).
-                The algorithm may then be understood as follows:
+                We make the following claim: the maximum distance \( m \) from <i>any</i> point \( p \in C \) to \( P \) is bounded by \( d(P, p) \le d(P, c) + h \sqrt{2} \).
+                We justify this claim by way of contradiction.
             </p>
+            <p>
+                Assume, for the sake of contradiction, that there exists a point \( p \in C \) such that \( d(P, p) > m \).
+                The distance from \( p \) to the edge closest to \( c \) must be greater than than \( m \) because \( d(P, p) \) is the minimum distance.
+                This implies that \( p \) lies outside of \( C \).
+                This contradicts the assumption that \( p \in C \). 
+                Therefore, we reject the premise that \( p \) exists.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/polylabel-images/cell.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Complex Polygon Covered by a Grid of Cells</figcaption>
+            </figure>
+            <p>The algorithm may now be understood as follows:</p>
             <ol>
-                <li>Cover the polygon with cells. The pole must be in a Cell.</li>
-                <li>If the maximum potential distance of a Cell exceeds the current best distance, it is promising and we should subdivide.</li>
+                <li>Cover the polygon with Cells. The pole must be in a Cell.</li>
+                <li>If the maximum distance of a Cell exceeds the current best distance, it is promising and we should subdivide.</li>
             </ol>
             <p>
                 By continually subdividing, we eventually hone in on the optimal solution. 
