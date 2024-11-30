@@ -91,18 +91,18 @@
             </p>
             <h>Tools and Software</h>
             <p>
-                This build will be implemented in Python 3.9.X and uses the following packages: 
+                This build is implemented in C++ and uses the following packages: 
                 <a href="https://opencv.org" target="_blank">OpenCV</a>,
-                <a href="https://numpy.org" target="_blank">NumPy</a>,
+                <a href="https://www.boost.org/doc/libs/1_70_0/boost/asio/thread_pool.hpp" target="_blank">Boost</a>,
                 and
-                <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.io.wavfile.read.html" target="_blank">SciPy</a>.
+                <a href="https://github.com/gabime/spdlog" target="_blank">spdlog</a>.
                 Of course, the implementation details are just that: details. There are several other ways one might go about creating
                 a movie barcode, and this just happens to be the way I choose to do it.
             </p>
             <h>Making a Movie Barcode</h>
             <p>
                 Here, I outline the procedure to make a movie barcode. 
-                I'll also include possible customizations and optimizations.
+                I'll also include customizations and optimizations.
             </p>
             <h2>Vanilla Procedure</h2>
             <p>There are roughly four steps involved in creating a movie barcode.</p>
@@ -120,16 +120,15 @@
             </p>
             <h2>Customization and Settings</h2>
             <p>
-                Customizing a movie barcode allows us to enhance its visual appeal and convey additional information. 
+                Customizing a movie barcode allows us to enhance its visual appeal. 
                 One change that immediately comes to mind is experimenting with different color spaces such as
                 <a href="https://en.wikipedia.org/wiki/RGB_color_model" target="_blank">RGB</a>,
                 <a href="https://en.wikipedia.org/wiki/HSL_and_HSV" target="_blank">HSV</a>, or
                 <a href="https://en.wikipedia.org/wiki/CIELAB_color_space" target="_blank">LAB</a>.
-                Another intriguing customization involves scaling the bars, possibly achieved through an 
-                <a href="https://facelessuser.github.io/coloraide/interpolation/" target="_blank">interpolation method</a> 
-                of some sort, introducing a jagged comb-like effect. 
-                This scaling allows for a dynamic portrayal of certain aspects of the movie, adding a layer of complexity to the barcode. 
-                Moreover, transforming the barcode in post to fit alternative shapes opens up even more possibilities! 
+                Another customization involves scaling the bars, possibly achieved through 
+                <a href="https://facelessuser.github.io/coloraide/interpolation/" target="_blank">interpolation</a>, 
+                introducing a jagged comb-like effect. 
+                Transforming the barcode in post opens up even more possibilities! 
                 In short, there is no dearth of creativity involved in creating movie barcodes.
             </p>
             <h2>Tips and Tricks</h2>
@@ -159,7 +158,8 @@
                 In honor of the release of
                 <a href="https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild" target="_blank">Breath of the Wild</a>, 
                 I decided to make a barcode of all the
-                <a href="https://youtu.be/In3A1akIbks?feature=shared" target="_blank">cut scenes and game play</a>.
+                <a href="https://youtu.be/In3A1akIbks?feature=shared" target="_blank">cut scenes</a>
+                from the game play.
             </p>
             <figure>
                 <img src="../assets/barcode-images/polar.webp" alt="Trulli">
