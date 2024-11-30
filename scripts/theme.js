@@ -4,8 +4,15 @@
  * between pages, or toggles the button on the upper right, the background and assets are updated.
 */
 
-// get theme or default to `dark` mode if NULL
+// Setup Constants and Defaults
+const PRISM_HREF = {
+    dark: 'https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-atom-dark.min.css',
+    light: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism.min.css'
+};
+let iframeLoaded = false;
 let theme = localStorage.getItem('theme') || 'dark';
+
+// Set Theme
 localStorage.setItem('theme', theme);
 
 /*
@@ -14,7 +21,6 @@ localStorage.setItem('theme', theme);
  * This function iterates through all svg objects (conveniently flagged under the svgObject class)
  * and updates the content accordingly. This approach was heavily drawn from the SE answer listed
  * here: https://stackoverflow.com/a/69860310
- * 
 */
 function toggleSVGColors() {
     // collect colors
@@ -76,13 +82,9 @@ function applyTheme() {
     document.body.classList.toggle("dark-theme", theme === 'dark');
 
     // Toggle Code Blocks
-    let prismHref = theme === 'dark' ?
-        'https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-atom-dark.min.css' :
-        'https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism.min.css';
-
     let prismElement = document.getElementById("prism-theme");
     if (prismElement) {
-        prismElement.setAttribute('href', prismHref);
+        prismElement.setAttribute('href', PRISM_HREF[theme]);
     }
 
     // Toggle Comment Block
@@ -104,7 +106,6 @@ function applyTheme() {
 }
 
 // Apply the default theme
-iframeLoaded = false;
 applyTheme();
 
 // Toggle theme upon click
