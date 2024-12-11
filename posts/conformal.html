@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Some meta tags -->
+    <title>Jay Gupta - Conformal Prediction in GNNs</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="While wandering through MathOverflow posts, I stumbled upon a rather peculiar result discovered by Simon Plouffe between 1974 and 1979.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+    <!-- Custom Styles and Scripts-->
+    <link rel="stylesheet" href="../styles/default-styles.css"> 
+    <link rel="stylesheet" href="../styles/code-styles.css"> 
+    <link rel="stylesheet" href="../styles/table-styles.css"> 
+    <script defer src="../scripts/table.js"></script>
+    <script defer src="../scripts/theme.js"></script> 
+
+    <!-- Load Prism.js for code blocks -->
+    <link id="prism-theme" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    
+    <!-- Load MathJax for LaTex -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Load Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="everything">
+    <div class="masthead">
+    <div class="masthead__inner-wrap">
+        <div class="masthead__menu">
+            <nav class="greedy-nav">
+                <a class="site-title" href="../index.html">Jay Gupta</a>
+                <ul class="visible-links">
+                    <li class="masthead__menu-item" id="masthead__menu-photos"><a href="../pages/photos.html">Photos</a></li>
+                    <li class="masthead__menu-item" id="masthead__menu-posts"><a href="../pages/posts.html">Posts</a></li>
+                    <li class="masthead__menu-item" id="masthead__menu-resume"><a href="../pages/resume.html">Resume</a></li>
+                </ul>
+                <div class="dark_toggle" onclick="toggleDark()">
+                    <svg height=35px width=35px>
+                    <circle cx="50%" cy="50%" r="10px" fill="white" id="moon" />
+                    <circle cx="50%" cy="50%" r="15px" fill="none" stroke="white" stroke-width="2px" id="ring" />
+                    </svg>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </div>
+
+    <div class="initial-content">
+        <div id="main" role="main">
+        <div class="sidebar">
+            <table id="headerTable">
+                <th>
+                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
+                        Your browser does not support SVG
+                    </object>
+                    On This Page
+                </th>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mainbar" id="headerContainer">
+            <h>Introduction</h>
+            <p>
+                Graph Neural Networks (GNNs) are powerful machine learning algorithms over graph-structured data. 
+                These models have seen success across several domains from Polypharmacy to Recommender Systems.
+                However, GNNs lack rigorous uncertainty estimates, limiting their deployment in high-stake settings.
+            </p>
+            <p>
+                Huang et al's 
+                <a href="https://arxiv.org/abs/2305.14535">Uncertainty Quantification over Conformalized GNNs</a>
+                demonstrates, both theoretically and empirically, the validity of Conformal Prediction in the context of GNNs. 
+                We implement conformalized GNNs in the experimental version of the PyG Library as a general-purpose algorithm for classification and regression problems. 
+                This addresses the need for uncertainty estimates.
+            </p>
+            <h>Conformal Prediction</h>
+            <p>
+                Conformal prediction is a modern framework designed to quantify uncertainty 
+                by constructing prediction sets that contain the true outcome with a specified probability.
+            </p>
+            <p>
+                For concreteness, let \( (X_{i}, Y_{i}) \sim P \) be a feature and response pair 
+                from a distribution \( P \) over the Cartesian Product \( {X} \times \mathcal{Y} \). 
+                Let \( \alpha \in (0, 1) \) denote the miscoverage rate.
+                Our task is to find a prediction set \( C \) such that the probability of a observing 
+                a new feature and response pair in the band is bounded by the miscoverage rate.
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        \mathbb{P} \left ( Y_{n + 1} \in \hat{C_{n}}(X_{n + 1}) \ge 1 - \alpha \right )
+                    \]
+                </p>
+            </div>
+            <p>
+                Remarkably, this is achievable under mild conditions!
+                We build intuition in the discussion that follows.
+            </p>
+            <h2>A Toy Example</h2>
+            <p>
+                Consider an ordered list of integers spanning \( 1 \) through \( n \).
+                Now pick a new number and insert it in the list.
+                To produce a set of numbers such that the new number is in the set with a specified coverage, we pick the \( \lceil(n + 1)(1 - \alpha) \rceil \) smallest.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/conformal-images/fraction.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Prediction Set in Discrete Setting</figcaption>
+            </figure>
+            <p>
+                At this point, you might think we cheated.
+                In particular, we added \( n + 1 \) to the list before constructing our set!
+                The insight is that we didn't need to know the new point so long as it was equally likely to be placed anywhere.
+                This condition, fancifully called exchangeability, is the only requirement for Conformal Prediction.
+                In general, we define the quantile below.
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        \hat{q} = \lceil (n + 1)(1 - \alpha) \rceil \hspace{0.5em} \text{lowest}
+                    \]
+                </p>
+            </div>
+            <p>
+                With this quantile on hand, we reason that the prediction set meets coverage with finite sample correction.
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        \mathbb{P} \left ( 
+                            Y_{n + 1} \le \hat{q}
+                        \right )
+                        \in 
+                        \left [ 1 - \alpha, 1 - \alpha + \frac{1}{n + 1} \right ]
+                    \]
+                </p>
+            </div>
+            <p>
+                While trivial, this example showcases the power of rank (order) statistics.
+                If we can introduce an <it>order</it> to our observations, we can construct prediction sets with arbitrary coverage.
+            </p>
+            <h2>Regression</h2>
+            <p>
+                We extend these ideas to regression.
+                Consider a dataset \( D \) partitioned into a disjoint training set \( D_{1} \) and calibration set \( D_{2} \).
+                Let \( \hat{f}_{n} \) be a point-predictor trained on \( D_{1} \).
+                We compute the residuals.
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        R_{i} = \lvert \hat{f}_{n}(x_{i} - y_{i}) \rvert 
+                        \hspace{0.5em} \text{for} \hspace{0.5em}
+                        i \in D_{2}
+                    \]
+                </p>
+            </div>
+            <p>
+                The residuals are an order statistic.
+                As before we compute \( \hat{q}_{n_{2}} \) as the lowest among \( R_{i} \).
+                The prediction set \( f_{n_{1}} (x_{i}) \pm \hat{q}_{n_{2}} \) has guaranteed coverage on \( D_{1} \) despite being calibrated on different data.
+            </p>
+            <p>
+                To flesh this out, we will construct a simple example.
+                Consider a cubic spline \( f(x) \).
+                For a collection of input, output pairs we will add Gaussian Noise drawn from \( \mathcal{N}(\mu, \sigma) \) for \( \mu = 0 \) and \( \sigma = 0.3 \).
+                Running the algorithm above, yields the following plot.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/conformal-images/bands.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Conformal Prediction on Cubic Spline</figcaption>
+            </figure>
+            <p>
+                Since our predictor is perfect (by construction) we expect the quantiles to capture the Gaussian Noise.
+                In particular, to have coverage \( 1 - \alpha \) we would expect <tt>normalcdf</tt>\( (-\hat{q}, \hat{q}) \approx 1 - \alpha \) in general.
+                We tabulate the expected and empirical quantiles below.
+            </p>
+            <figure>
+                <table class="textTable">
+                    <tr>
+                        <th>Miscoverage</th>
+                        <th>Estimated</th>
+                        <th>Empirical</th>
+                    </tr>
+                    <tr>
+                        <td>\( 0.10 \)</td>
+                        <td>\( 0.461 \)</td>
+                        <td>\( 0.384 \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 0.20 \)</td>
+                        <td>\( 0.366 \)</td>
+                        <td>\( 0.252 \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 0.30 \)</td>
+                        <td>\( 0.291 \)</td>
+                        <td>\( 0.157 \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 0.40 \)</td>
+                        <td>\( 0.222 \)</td>
+                        <td>\( 0.076 \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 0.50 \)</td>
+                        <td>\( 0.163 \)</td>
+                        <td>\( 0.000 \)</td>
+                    </tr>
+                </table>
+                <figcaption>Comparison of Quantiles</figcaption>
+            </figure>
+            <p>
+                The table confirms our expectation: as the miscoverage decreases the prediction set (interval) grows larger.
+            </p>
+            <h2>A General Approach</h2>
+            <p>
+                A popular tutorial on Conformal Prediction summarizes the steps.
+            </p>
+            <blockquote>
+                <ol>
+                    <li>Identify an uncertainty heuristic using the pre-trained model.</li>
+                    <li>Define the score function \( s(x, y) \in \mathbb{R} \)</li>
+                    <li>Compute \( \hat{q} \) as the \( \frac{\lceil(n + 1)(1 - \alpha) \rceil}{n} \) quantile of calibration scores</li>
+                    <li>Form prediction sets \( \mathcal{C}(X) = \{y : s(x, y) \le \hat{q} \} \)</li>
+                </ol>
+            </blockquote>
+            <p>
+                While any score function can guarantee coverage, improving it reduces the length of the prediction set.
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        \text{len} = \int \int_{C} \mathrm{d}\mu(y) \mathrm{d}(P_{X})
+                        \hspace{0.5em} \text{and} \hspace{0.5em}
+                        \text{cov} = \int \int_{C} \mathrm{d}P_{Y \vert X} \mathrm{d}(P_{X})
+                    \]
+                </p>
+            </div>
+            <p>
+                If we increase the probability of a response given a feature, namely \( P_{Y \vert X} \),
+                then we can meet coverage without inflating the length.
+                The argument is due to Tibshirani.
+            </p>
+            <p>
+                In our assessment, the key challenge of conformal prediction is computing a reasonable score function.
+                The next sections overview the two main approaches.
+            </p>
+            <h2>Prediction Strategy</h2>
+            <p>
+                A prediction strategy leverages the pre-trained heuristic to score uncertainty.
+                The strategy depends on the task at hand.
+            </p>
+            <!-- <p>
+                In a classification setting, you might define \( s(x, y) = 1 - \hat{f}(x)[y] \) where \( \hat{f}(x)[y] \) yields the softmax probability of the correct class.
+                After all, a good heuristic approximates the probability of not being in the true class.
+                The downside is that we undercover hard examples and overcover easy examples because there is no way to differentiate!
+            </p> -->
+            <p>
+                Adaptive Prediction Sets (APS) is prediction strategy for the classification problems.
+                We define the following score function where \( \pi \) is the permutation that ranks the classes from most to least likely.
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        s(x, y) = \sum_{j = 1}^{k} \hat{f}(x)_{\pi_j(x)} \quad \text{where} \quad y = \pi_k(x)
+                    \]
+                </p>
+            </div>
+            <p>
+                Intuitively, we want to include top-rank classes until the cumlative sum of their probabilities meets the desired coverage.
+                By greedily doing this from most likely to least likely, we ensure the prediction set is minimal.
+                For this reason, the prediction sets are feature adaptive.
+            </p>
+            <p>
+                Conformal Quantile Regression (CQR) is a prediction strategy for regression problems.
+                We introduce learned functions \( \hat{t}_{\alpha/2}(x) \) and \( \hat{t}_{1 - \alpha/2}(x) \) that estimate the upper and lower bound. 
+                They are trained on the following objective known as the Quantile (Pinball) Loss:
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        L_{\tau}(\hat{t}, y) = 
+                        \begin{cases} 
+                        (y - \hat{t}) \tau & \text{if } y > \hat{t}, \\
+                        (\hat{t} - y)(1 - \tau) & \text{if } y \leq \hat{t}.
+                        \end{cases}
+                    \]
+                </p>
+            </div>
+            <p>
+                With these functions on hand, we construct the score function.
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        s(x, y) = 
+                        \max \left( \hat{t}_{\alpha/2}(x) - y, \; y - \hat{t}_{1 - \alpha/2}(x) \right)
+                    \]
+                </p>
+            </div>
+            <p>
+                Intuitively, we want to center our prediction sets on the known label and move up and down such that the desired coverage is met. 
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        \mathcal{C}(x) = 
+                        \left[ \hat{t}_{\alpha/2}(x) - \hat{q}, \; \hat{t}_{1 - \alpha/2}(x) + \hat{q} \right].
+                    \]
+                </p>
+            </div>
+            </p>
+            <h2>Calibration Strategy</h2>
+            <p>
+                A calibration strategy modifies the score function by adjusting the heuristic itself.
+                There are several approaches.
+            </p>
+            <h2>Limitation</h2>
+            <p>
+                A notable limitation of Conformal Prediction is that it does guarantee conditional coverage.
+                On average, you would expect the desired coverage.
+                However, upon conditioning on a particular class, we might find the coverage must lower (or higher) than expected.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/conformal-images/conditional.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Marginal vs Condional Coverage</figcaption>
+            </figure>
+            <p>
+                The figure above, slightly adapted from the popular tutorial, visually summarizes the salient idea.
+            </p>
+            <h>Walkthrough</h>
+            <p>
+                This is some vanilla text.
+                I describe things.
+            </p>
+            <h>Future Directions</h>
+            <p>
+                Future PRs should add the following features.
+                A Graph Attention calibration layer could sample the local neighborhood to improve the score function.
+                A clean interface to directly optimizing for efficiency and conditional coverage among other desirable properties.
+                Weighted Conformal Prediction to hold exchangeability under covariate shift. 
+            </p>
+            <h>Comment Section</h>
+            <div id="utterances-container">
+                <script src="https://utteranc.es/client.js"
+                        repo="jaygupta797/jaygupta797.github.io"
+                        issue-term="pathname"
+                        crossorigin="anonymous"
+                        >
+                </script>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <main></main>
+
+    <footer>
+        <div class="mastfoot">
+            <p>&copy; 2024 Jay Gupta. Powered by vanilla HTML, CSS, and JS.</p>
+        </div>
+    </footer>
+
+</body>
