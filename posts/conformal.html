@@ -76,7 +76,7 @@
         </div>
 
         <div class="mainbar" id="headerContainer">
-            <h>Introduction</h>
+            <h>Motivation</h>
             <p>
                 Graph Neural Networks (GNNs) are powerful machine learning algorithms over graph-structured data. 
                 These models have seen success across several domains from Polypharmacy to Recommender Systems.
@@ -112,7 +112,7 @@
                 Remarkably, this is achievable under mild conditions!
                 We build intuition in the discussion that follows.
             </p>
-            <h2>A Toy Example</h2>
+            <h2>Toy Example</h2>
             <p>
                 Consider an ordered list of integers spanning \( 1 \) through \( n \).
                 Now pick a new number and insert it in the list.
@@ -156,7 +156,6 @@
                 While trivial, this example showcases the power of rank (order) statistics.
                 If we can introduce an <it>order</it> to our observations, we can construct prediction sets with arbitrary coverage.
             </p>
-            <h2>Regression</h2>
             <p>
                 We extend these ideas to regression.
                 Consider a dataset \( D \) partitioned into a disjoint training set \( D_{1} \) and calibration set \( D_{2} \).
@@ -192,47 +191,48 @@
             <p>
                 Since our predictor is perfect (by construction) we expect the quantiles to capture the Gaussian Noise.
                 In particular, to have coverage \( 1 - \alpha \) we would expect <tt>normalcdf</tt>\( (-\hat{q}, \hat{q}) \approx 1 - \alpha \) in general.
-                We tabulate the expected and empirical quantiles below.
+                We tabulate the empirical and expected quantiles below.
             </p>
             <figure>
                 <table class="textTable">
                     <tr>
                         <th>Miscoverage</th>
-                        <th>Estimated</th>
                         <th>Empirical</th>
+                        <th>Expected</th>
                     </tr>
                     <tr>
                         <td>\( 0.10 \)</td>
                         <td>\( 0.461 \)</td>
-                        <td>\( 0.384 \)</td>
+                        <td>\( 0.493 \)</td>
                     </tr>
                     <tr>
                         <td>\( 0.20 \)</td>
                         <td>\( 0.366 \)</td>
-                        <td>\( 0.252 \)</td>
+                        <td>\( 0.384 \)</td>
                     </tr>
                     <tr>
                         <td>\( 0.30 \)</td>
                         <td>\( 0.291 \)</td>
-                        <td>\( 0.157 \)</td>
+                        <td>\( 0.311 \)</td>
                     </tr>
                     <tr>
                         <td>\( 0.40 \)</td>
                         <td>\( 0.222 \)</td>
-                        <td>\( 0.076 \)</td>
+                        <td>\( 0.252 \)</td>
                     </tr>
                     <tr>
                         <td>\( 0.50 \)</td>
                         <td>\( 0.163 \)</td>
-                        <td>\( 0.000 \)</td>
+                        <td>\( 0.202 \)</td>
                     </tr>
                 </table>
                 <figcaption>Comparison of Quantiles</figcaption>
             </figure>
             <p>
-                The table confirms our expectation: as the miscoverage decreases the prediction set (interval) grows larger.
+                The table confirms our expectation.
+                It is worth pointing out that as the miscoverage decreases the prediction set grows larger to accommdate.
             </p>
-            <h2>A General Approach</h2>
+            <h2>General Approach</h2>
             <p>
                 A popular tutorial on Conformal Prediction summarizes the steps.
             </p>
@@ -263,7 +263,7 @@
             </p>
             <p>
                 In our assessment, the key challenge of conformal prediction is computing a reasonable score function.
-                The next sections overview the two main approaches.
+                The next sections overview two approaches.
             </p>
             <h2>Prediction Strategy</h2>
             <p>
@@ -294,7 +294,7 @@
             <p>
                 Conformal Quantile Regression (CQR) is a prediction strategy for regression problems.
                 We introduce learned functions \( \hat{t}_{\alpha/2}(x) \) and \( \hat{t}_{1 - \alpha/2}(x) \) that estimate the upper and lower bound. 
-                They are trained on the following objective known as the Quantile (Pinball) Loss:
+                They are trained on the following objective known as the Quantile (Pinball) Loss.
             </p>
             <div class="display-math">
                 <p>
@@ -309,6 +309,7 @@
             </div>
             <p>
                 With these functions on hand, we construct the score function.
+                Intuitively, we want to center our prediction sets on the known label and move up and down such that the desired coverage is met. 
             </p>
             <div class="display-math">
                 <p>
@@ -319,7 +320,7 @@
                 </p>
             </div>
             <p>
-                Intuitively, we want to center our prediction sets on the known label and move up and down such that the desired coverage is met. 
+                Computing \( \hat{q} \) as before, we arrive at the following prediction band.
             </p>
             <div class="display-math">
                 <p>
@@ -333,13 +334,58 @@
             <h2>Calibration Strategy</h2>
             <p>
                 A calibration strategy modifies the score function by adjusting the heuristic itself.
-                There are several approaches.
+                We introduce four calibration strategies.
             </p>
+            <p>
+                Temperature Scaling (TS) scales the logits \( z \) by a learned temperature.
+                The (negative) log-likelihood is minimized.
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        \min_T \, -\frac{1}{N} \sum_{i=1}^N \log p_{y_i}^{(T)}
+                        \hspace{0.5em} \text{for} \hspace{0.5em}
+                        p_{y_i}^{(T)} = \text{softmax} \left( \frac{z_i}{T} \right)_{y_i}
+                    \]
+                </p>
+            </div>
+            <p>
+                There is clear intuition.
+                A temperature greater than \( 1 \) smooths the probabilities, reudicing overconfidence.
+                A temperature less than \( 1 \) sharpens the probabilities, reducing underconfidence.
+            </p>
+            <p>
+                There are variants.
+                Vector Scaling (VS) generalizes temperature scaling with a temperature for each class and a bias term.
+                Ensemble Temperature Scaling (ETS) solves a constrained optimization problem that weights the contributions of different scales.
+            </p>
+            <p>
+                While the methods above are useful, they omit the underlying graph structure.
+                Huang et al introduce a Calibration Attention Layer to account for this.
+                Taking the original setup and drawing on GATConv along with some tweaks, we compute a node temperature.
+            </p>
+            <div class="display-math">
+                <p>
+                    \[
+                        T_i = \text{ReLU}(\mathbf{W} \cdot \text{GATConv}_{\theta}(\mathcal{G})_i + b)
+                    \]
+                </p>
+            </div>
+            <p>
+                By incorporating information from neighboring nodes, with attention weights for each contribution, we can improve performance.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/conformal-images/graph.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Message Passing under Graph Attention Scheme</figcaption>
+            </figure>
             <h2>Limitation</h2>
             <p>
-                A notable limitation of Conformal Prediction is that it does guarantee conditional coverage.
+                Despite the Ad-Hoc fixes listed above, Conformal Prediction has its limitations.
+                For one, Conformal Prediction does not guarantee conditional coverage.
                 On average, you would expect the desired coverage.
-                However, upon conditioning on a particular class, we might find the coverage must lower (or higher) than expected.
+                However, upon conditioning on a particular class, you might find that the coverage is much lower (or higher) than expected.
             </p>
             <figure>
                 <object type="image/svg+xml" data="../assets/conformal-images/conditional.svg" width="100%" height="auto">
@@ -348,7 +394,105 @@
                 <figcaption>Marginal vs Condional Coverage</figcaption>
             </figure>
             <p>
-                The figure above, slightly adapted from the popular tutorial, visually summarizes the salient idea.
+                The figure above, adapted from a popular tutorial, visually summarizes the salient idea.
+                This bias may be unacceptable in certain settings.
+            </p>
+            <p>
+                For another, we demand exchangeability.
+                That said, Weighted Conformal Prediction is an active and promising direction that accounts for covariate shift.
+            </p>
+            <h>Implementation</h>
+            <p>
+                Our implementation of the ideas above was designed with ease-of-use and integration with PyG in mind.
+                We introduce an <tt>Uncertain</tt> layer under <tt>Torch.NN</tt> with three files.
+                Each file maps directly to a step in the Conformal Prediction pipeline.
+            </p>
+            <figure>
+                <object type="image/svg+xml" data="../assets/conformal-images/directory.svg" width="100%" height="auto">
+                Your browser does not support SVG
+                </object>
+                <figcaption>Directory Structure of Conformal</figcaption>
+            </figure>
+            <p>
+                We took care to include existing PyG functionality where applicable.
+                Notably, we use <tt>GATConv</tt> to build the Calibration Attention Layer.
+            </p>
+            <h2>Interface</h2>
+            <p>
+                The interface allows users to rapidly apply Conformal Prediction to an existing model.
+                Borrowing from <tt>sklearn</tt> we use a fit and predict pattern for familarity and convenience.
+            </p>
+            <pre class="line-numbers">
+                <code class="language-python">
+                    from uncertain import Conformal
+
+                    # Create conformal instance
+                    conformal = Conformal(
+                        model=model,
+                        prediction='APS', # APS, RAPS, TPS
+                        calibration='TS', # TS, VS, ETS, GATS
+                    )
+
+                    # Call Fit and Predict on instance
+                    conformal.fit()
+                    conformal.predict()
+                </code>
+            </pre>
+            <p>
+                The fit step sets up initial state and optionally fits the specified calibrator.
+                The predict step runs conformal prediction and returns a <tt>ConformalPrediction</tt> object.
+                This object contains the prediction sets along with useful statistics that the user can inspect.
+            </p>
+            <p>
+                There are a couple "gotchas" that should be explicitly mentioned.
+                First, the task is inferred from the prediction method.
+                Second, the user must specify any train, test, and validation data.
+                Handling the split properly is essential for statistically guaranteed coverage as noted above.
+            </p>
+            <h2>Features</h2>
+            <p>
+                We provide the user with several ready-made prediction and calibration strategies.
+                The full list is shared in the interface.
+            </p>
+            <p>
+                The prediction strategies are generally compact and readable.
+                We include simplified snippet that captures the essence of APS.
+                This is consistent with the description above.
+            </p>
+            <pre class="line-numbers">
+                <code class="language-python">
+                    def aps(smx, labels, n, alpha):
+                        # Sort scores descending order
+                        pi = smx.argsort(1)[:, ::-1]
+                        srt = np.take_along_axis(smx, pi, axis=1).cumsum(axis=1)
+                        
+                        # Get cumulative probability up to true label
+                        scores = np.take_along_axis(srt, pi.argsort(axis=1), axis=1)
+                        scores = scores[range(n), labels]
+                        
+                        # Find threshold for coverage
+                        qhat = np.quantile(
+                            scores, 
+                            np.ceil((n + 1) * (1 - alpha)) / n, 
+                            interpolation="higher"
+                        )
+                </code>
+            </pre>
+            <p>
+                The calibration strategies are standard.
+                We include the forward pass of TS that scales the logits by the temperature.
+                This is consistent with the description above.
+            </p>
+            <pre class="line-numbers">
+                <code class="language-python">
+                    def forward(self, x, edge_index):
+                        logits = self.model(x, edge_index)
+                        return logits / self.temperature.expand(logits.size())
+                </code>
+            </pre>
+            <p>
+                These implementations are housed in the prediction and calibration files respectively.
+                The conformal file defines the wrapper which applies the specified methods.
             </p>
             <h>Walkthrough</h>
             <p>
@@ -358,8 +502,7 @@
             <h>Future Directions</h>
             <p>
                 Future PRs should add the following features.
-                A Graph Attention calibration layer could sample the local neighborhood to improve the score function.
-                A clean interface to directly optimizing for efficiency and conditional coverage among other desirable properties.
+                Functions to directly optimize desirable properties such as efficiency or conditional coverage.
                 Weighted Conformal Prediction to hold exchangeability under covariate shift. 
             </p>
             <h>Comment Section</h>
