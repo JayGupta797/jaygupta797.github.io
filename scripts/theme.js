@@ -100,7 +100,6 @@ function applyTheme() {
             const utterances = document.querySelector('.utterances');
             if (utterances && utterances.style.height && utterances.style.height !== "") {
                 clearInterval(pollInterval);
-                console.log("utterances Load OK");
                 if (iframe.contentWindow) {
                     iframe.contentWindow.postMessage(message, 'https://utteranc.es');
                 }
