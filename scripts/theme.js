@@ -89,16 +89,23 @@ function applyTheme() {
 
     // Toggle Comment Block
     // Reference: https://github.com/utterance/utterances/issues/549#issuecomment-907606127
+    // Reference: https://github.com/utterance/utterances/issues/657
     const appearance = theme === 'dark' ? 'photon-dark' : 'github-light';
     const iframe = document.querySelector('.utterances-frame');
     const message = { type: 'set-theme', theme: appearance };
+
     if (iframe) {
-        iframeLoaded 
-            ? iframe.contentWindow.postMessage(message, 'https://utteranc.es') 
-            : iframe.addEventListener('load', () => {
-                iframeLoaded = true;
-                iframe.contentWindow.postMessage(message, 'https://utteranc.es');
-            });
+        // Use setInterval to poll until Utterances is loaded (non-empty height)
+        let pollInterval = setInterval(() => {
+            const utterances = document.querySelector('.utterances');
+            if (utterances && utterances.style.height && utterances.style.height !== "") {
+                clearInterval(pollInterval);
+                console.log("utterances Load OK");
+                if (iframe.contentWindow) {
+                    iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+                }
+            }
+        }, 50);
     }
 
     // TODO: check if this approach is preferable
