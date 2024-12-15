@@ -98,7 +98,7 @@
                 For concreteness, let \( (X_{i}, Y_{i}) \sim P \) be a feature and response pair 
                 from a distribution \( P \) over the Cartesian Product \( {X} \times \mathcal{Y} \). 
                 Let \( \alpha \in (0, 1) \) denote the miscoverage rate.
-                Our task is to find a prediction set \( C \) such that the probability of a observing 
+                Our task is to find a prediction set \( C \) such that the probability of observing 
                 a new feature and response pair in the band is bounded by the miscoverage rate.
             </p>
             <div class="display-math">
@@ -276,7 +276,7 @@
                 The downside is that we undercover hard examples and overcover easy examples because there is no way to differentiate!
             </p> -->
             <p>
-                Adaptive Prediction Sets (APS) is prediction strategy for the classification problems.
+                Adaptive Prediction Sets (APS) is a prediction strategy for the classification problems.
                 We define the following score function where \( \pi \) is the permutation that ranks the classes from most to least likely.
             </p>
             <div class="display-math">
@@ -287,7 +287,7 @@
                 </p>
             </div>
             <p>
-                Intuitively, we want to include top-rank classes until the cumlative sum of their probabilities meets the desired coverage.
+                Intuitively, we want to include top-rank classes until the cumulative sum of their probabilities meets the desired coverage.
                 By greedily doing this from most likely to least likely, we ensure the prediction set is minimal.
                 For this reason, the prediction sets are feature adaptive.
             </p>
@@ -351,7 +351,7 @@
             </div>
             <p>
                 There is clear intuition.
-                A temperature greater than \( 1 \) smooths the probabilities, reudicing overconfidence.
+                A temperature greater than \( 1 \) smooths the probabilities, reducing overconfidence.
                 A temperature less than \( 1 \) sharpens the probabilities, reducing underconfidence.
             </p>
             <p>
@@ -362,7 +362,7 @@
             <p>
                 While the methods above are useful, they omit the underlying graph structure.
                 Huang et al introduce a Calibration Attention Layer to account for this.
-                Taking the original setup and drawing on GATConv along with some tweaks, we compute a node temperature.
+                Taking the original setup and drawing on <tt>GATConv</tt> along with some tweaks, we compute a node temperature.
             </p>
             <div class="display-math">
                 <p>
@@ -382,7 +382,7 @@
             </figure>
             <h2>Limitation</h2>
             <p>
-                Despite the Ad-Hoc fixes listed above, Conformal Prediction has its limitations.
+                Despite the ad-hoc fixes listed above, Conformal Prediction has its limitations.
                 For one, Conformal Prediction does not guarantee conditional coverage.
                 On average, you would expect the desired coverage.
                 However, upon conditioning on a particular class, you might find that the coverage is much lower (or higher) than expected.
@@ -404,7 +404,7 @@
             <h>Implementation</h>
             <p>
                 Our implementation of the ideas above was designed with ease-of-use and integration with PyG in mind.
-                We introduce an <tt>Uncertain</tt> layer under <tt>Torch.NN</tt> with three files.
+                We introduce an <tt>Uncertain</tt> layer under <tt>torch.NN</tt> with three files.
                 Each file maps directly to a step in the Conformal Prediction pipeline.
             </p>
             <figure>
@@ -456,7 +456,7 @@
             </p>
             <p>
                 The prediction strategies are generally compact and readable.
-                We include simplified snippet that captures the essence of APS.
+                We include a simplified snippet that captures the essence of APS.
                 This is consistent with the description above.
             </p>
             <pre class="line-numbers">
