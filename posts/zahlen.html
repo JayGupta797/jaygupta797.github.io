@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Some meta tags -->
+    <title>Jay Gupta - Sample Post</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="While wandering through MathOverflow posts, I stumbled upon a rather peculiar result discovered by Simon Plouffe between 1974 and 1979.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+    <!-- Custom Styles and Scripts-->
+    <link rel="stylesheet" href="../styles/default-styles.css"> 
+    <link rel="stylesheet" href="../styles/table-styles.css"> 
+    <script defer src="../scripts/table.js"></script>
+    <script defer src="../scripts/theme.js"></script> 
+    
+    <!-- Load MathJax for LaTex -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Load Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="everything">
+    <div class="masthead">
+    <div class="masthead__inner-wrap">
+        <div class="masthead__menu">
+            <nav class="greedy-nav">
+                <a class="site-title" href="../index.html">Jay Gupta</a>
+                <ul class="visible-links">
+                    <li class="masthead__menu-item" id="masthead__menu-photos"><a href="../pages/photos.html">Photos</a></li>
+                    <li class="masthead__menu-item" id="masthead__menu-posts"><a href="../pages/posts.html">Posts</a></li>
+                    <li class="masthead__menu-item" id="masthead__menu-resume"><a href="../pages/resume.html">Resume</a></li>
+                </ul>
+                <div class="dark_toggle" onclick="toggleDark()">
+                    <svg height=35px width=35px>
+                    <circle cx="50%" cy="50%" r="10px" fill="white" id="moon" />
+                    <circle cx="50%" cy="50%" r="15px" fill="none" stroke="white" stroke-width="2px" id="ring" />
+                    </svg>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </div>
+
+    <div class="initial-content">
+        <div id="main" role="main">
+        <div class="sidebar">
+            <table id="headerTable">
+                <th>
+                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
+                        Your browser does not support SVG
+                    </object>
+                    On This Page
+                </th>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+        <div class="mainbar" id="headerContainer">
+            <h>Einführung</h>
+            <p>
+                Willkommen zur ersten Lektion. Heute legen wir die Grundlage für die Aufnahmeprüfung. 
+                Die Rechenregeln, die wir hier lernen, sind die Basis für die Mathematik. 
+                Wenn du diese verstehst, kannst du schwierige Themen besser lernen.
+            </p>
+        
+            <h>Zahlen und Rechenarten</h>
+            <p>
+                Eine Zahl \( a \in \mathbb{R} \) steht für eine Menge – zum Beispiel 2 Äpfel oder 2,72 Euro. 
+                Mit Zahlen können wir rechnen. 
+                Heute schauen wir uns Addition \( + \) und Multiplikation \( \times \) an.
+            </p>
+            <blockquote>
+                <p>
+                    Hinweis: 
+                    Manchmal siehst du \( \times \) oder \( \cdot \) für die Multiplikation. 
+                    Beide bedeuten dasselbe bei normalen Zahlen.
+                </p>
+            </blockquote>
+        
+            <h>Kommutativgesetz</h>
+            <p>
+                Das Kommutativgesetz sagt: Wir dürfen die Reihenfolge tauschen, das Ergebnis bleibt gleich.
+            </p>
+        
+            <div class="display-math">
+                <p>
+                    \begin{align*}
+                        a + b &= b + a \\
+                        a \times b &= b \times a
+                    \end{align*}
+                </p>
+            </div>
+            <p>
+                Kommutative Rechenarten sind reihenfolge-unabhängig.
+            </p>
+        
+            <h>Assoziativgesetz</h>
+            <p>
+                Das Assoziativgesetz sagt: Wir dürfen anders gruppieren, das Ergebnis bleibt gleich.
+            </p>
+            <div class="display-math">
+                <p>
+                    \begin{align*}
+                        (a + b) + c &= a + (b + c) \\
+                        (a \times b) \times c &= a \times (b \times c)
+                    \end{align*}
+                </p>
+            </div>
+            <p>
+                Solche Rechenarten können in Schritten ausgeführt werden.
+                Beispiel: Etwas aus dem Kühlschrank holen.
+                Drei Schritte:
+            </p>
+            <ol>
+                <li>Kühlschrank öffnen</li>
+                <li>Das Produkt finden</li>
+                <li>Es herausnehmen</li>
+            </ol>
+            <figure>
+                <object type="image/svg+xml" data="../assets/zahlen-images/fridge.svg" width="100%" height="auto">
+                    Dein Browser unterstützt kein SVG
+                </object>
+                <figcaption>Die Schritte beim Öffnen eines Kühlschranks</figcaption>
+            </figure>
+            <p>
+                Egal wie wir die Schritte gruppieren, am Ende bekommen wir das Produkt.
+            </p>
+            <blockquote>
+                <p>
+                    Hinweis:
+                    In der Algebra nennt man eine Menge mit einer assoziativen Operation eine <em>Halbgruppe</em>. 
+                    Mit Identität und Umkehrung nennt man sie eine <em>Gruppe</em>. 
+                    Ist sie zusätzlich kommutativ, heißt sie <em>abelsche Gruppe</em>.
+                </p>
+            </blockquote>
+        
+            <h>Distributivgesetz</h>
+            <p>
+                Das Distributivgesetz sagt: Multiplikation verteilt sich über Addition.
+            </p>
+        
+            <div class="display-math">
+                <p>
+                    \[ a \times (b + c) = (a \times b) + (a \times c) \]
+                </p>
+            </div>
+        
+            <h>Reihenfolge der Rechenarten</h>
+            <p>
+                Normalerweise rechnet man zuerst in Klammern, dann mal, dann plus. 
+                Beispiel: \( 1 \times 2 + (3 + 4) = 1 \times 2 + 7 = 2 + 7 = 9 \). 
+                Klammern helfen, Klarheit zu schaffen.
+            </p>
+        
+            <h>Fehlerhafter Beweis</h>
+            <p>
+                Es sei \( \star \) eine kommutative Operation. 
+                Wir schreiben: \( a \star b \star c = (a \star b) \star c \).
+                Wir behaupten, sie ist assoziativ.
+            </p>
+            <div class="display-math">
+                <p>
+                    \begin{align*}
+                        a \star b \star c 
+                        &= (a \star b) \star c \\
+                        &= (b \star a) \star c \\
+                        &= c \star (b \star a) \\
+                        &= c \star b \star a \\
+                        &= (c \star b) \star a
+                    \end{align*}
+                </p>
+            </div>
+            <p>
+                Der Fehler ist im letzten Schritt. 
+                Er ignoriert die Notation und macht eine falsche Annahme. 
+                Lektion: Kommutativ bedeutet nicht automatisch auch assoziativ.
+            </p>
+            <p>
+                Aufgabe: Zwei Operationen:
+                Erstens: Aneinanderhängen z.B. \( 1 \mathbin \Vert 2 = 12 \), \( 2 \mathbin \Vert 1 = 21 \). 
+                Zweitens: Gewinner bei „Schere, Stein, Papier“. 
+                Überlege, welche Eigenschaften erfüllt sind.
+            </p>
+        
+            <h>Beispiele</h>
+            <p>
+                Praktische Beispiele einfügen.
+            </p>
+        
+            <h>Kommentare</h>
+            <div id="utterances-container">
+                <script src="https://utteranc.es/client.js"
+                        repo="jaygupta797/jaygupta797.github.io"
+                        issue-term="pathname"
+                        crossorigin="anonymous">
+                </script>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <main></main>
+
+    <footer>
+        <div class="mastfoot">
+            <p>&copy; 2024 Jay Gupta. Powered by vanilla HTML, CSS, and JS.</p>
+        </div>
+    </footer>
+
+</body>
