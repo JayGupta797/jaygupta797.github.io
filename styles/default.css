@@ -20,7 +20,7 @@ html {
 }
 
 /* Default values for dark-theme */
-.dark-theme {
+html.dark-theme {
   --primary-color: #252a34;
   --secondary-color: #eaeaea;
   --bright-accent: #00adb5;
@@ -59,35 +59,35 @@ body {
 }
 
 h {
-    font-family: Fira Sans, sans-serif;
+    font-family: Roboto, sans-serif;
     font-weight: 600;
     font-size: 36px;
     color: var(--secondary-color);
 }
 
 h1 {
-    font-family: Fira Sans, sans-serif;
+    font-family: Roboto, sans-serif;
     font-weight: 600;
     font-size: 36px;
     color: var(--secondary-color);
 }
 
 h2 {
-    font-family: Fira Sans, sans-serif;
+    font-family: Roboto, sans-serif;
     font-weight: 600;
     font-size: 28px;
     color: var(--secondary-color);
 }
 
 p {
-    font-family: Fira Sans, sans-serif;
+    font-family: Roboto, sans-serif;
     font-weight: 300;
     font-size: 18px;
     color: var(--secondary-color);
 }
 
 li {
-    font-family: Fira Sans, sans-serif;
+    font-family: Roboto, sans-serif;
     font-weight: 300;
     font-size: 18px;
     color: var(--secondary-color);
@@ -117,7 +117,7 @@ a:hover{
     padding: 1em;
     max-width: 100%;
     display: flex;
-    font-family: Fira Sans, sans-serif;
+    font-family: Roboto, sans-serif;
 }
 
 .masthead__inner-wrap::after {
@@ -270,7 +270,7 @@ a:hover{
 }
 
 .sidebar h1 {
-    font-family: Fira Sans, sans-serif;
+    font-family: Roboto, sans-serif;
     font-weight: 600;
     font-size: 36px;
     color: var(--secondary-color);
@@ -283,7 +283,7 @@ a:hover{
   padding: 1em;
   margin-right: 10%;
   color: var(--secondary-color);
-  font-family: Fira Sans, sans-serif;
+  font-family: Roboto, sans-serif;
   /* Useful Debug */
   /* border: 1px solid var(--secondary-color); */
 }
@@ -368,7 +368,7 @@ footer {
     padding: 1em;
     display: flex;
     justify-content: space-between;
-    font-family: Fira Sans, sans-serif;
+    font-family: Roboto, sans-serif;
     color: var(--secondary-color);
     /* Useful Debug */
     /* border: 1px solid var(--dull-accent); */

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>    
     <!-- Some meta tags -->
-    <title>Jay Gupta - Movie Barcode Post</title>
+    <title>Jay Gupta - Movie Barcode</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
@@ -12,18 +12,18 @@
 
     <!-- Favicon -->
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/page/favicon.svg" type="image/svg+xml">
 
     <!-- Custom Styles and Scripts-->
-    <link rel="stylesheet" href="../styles/default-styles.css"> 
-    <link rel="stylesheet" href="../styles/table-styles.css"> 
+    <link rel="stylesheet" href="../styles/default.css"> 
+    <link rel="stylesheet" href="../styles/table.css"> 
     <script defer src="../scripts/table.js"></script>
     <script defer src="../scripts/theme.js"></script> 
 
     <!-- Load Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -38,7 +38,7 @@
                     <li class="masthead__menu-item" id="masthead__menu-posts"><a href="../pages/posts.html">Posts</a></li>
                     <li class="masthead__menu-item" id="masthead__menu-resume"><a href="../pages/resume.html">Resume</a></li>
                 </ul>
-                <div class="dark_toggle" onclick="toggleDark()">
+                <div class="dark_toggle" onclick="toggle()">
                     <svg height=35px width=35px>
                     <circle cx="50%" cy="50%" r="10px" fill="white" id="moon" />
                     <circle cx="50%" cy="50%" r="15px" fill="none" stroke="white" stroke-width="2px" id="ring" />
@@ -54,7 +54,7 @@
         <div class="sidebar">
             <table id="headerTable">
                 <th>
-                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
+                    <object class="toc" type="image/svg+xml" data="../assets/page/toc.svg">
                         Your browser does not support SVG
                     </object>
                     On This Page
@@ -67,31 +67,32 @@
         <div class="mainbar" id="headerContainer">
             <h>Introduction</h>
             <figure>
-                <img src="../assets/barcode-images/frozen.jpg" alt="Trulli">
+                <img src="../assets/barcode/frozen.jpg" alt="Trulli">
                 <figcaption>Disney Frozen 2013. Taken from <a href="https://www.reddit.com/r/Frozen/comments/eh0b0h/every_frame_of_frozen_2013_compressed_into_a/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" target="_blank">Reddit</a></figcaption>
             </figure>
             <p>
-                Recently, I stumbled upon a fascinating and visually captivating concept that lives at the intersection of film and cinematography: movie barcodes. 
+                Recently, I stumbled upon a visually captivating concept that lives at the intersection of film and cinematography: movie barcodes.
                 Intrigued, I decided to create my very own movie barcode with a couple of personal flares to boot.
             </p>
             <h>What is a Movie Barcode?</h>
             <p>
-                We're all familiar with vanilla barcodes, but what is a movie barcode? 
+                We're all familiar with vanilla barcodes, but what is a movie barcode?
                 To answer that, I'll defer to self-described engineer, space lover, and tea drinker Thomas Poulet.
             </p>
             <blockquote>
                 <p>
-                    A Movie Barcode is the color identity card of the movie. 
-                    For each frame you take the dominant color and create a stripe out of it. 
-                    The result is an overview of the overall mood of the movie.</p>
+                    A Movie Barcode is the color identity card of the movie.
+                    For each frame you take the dominant color and create a stripe out of it.
+                    The result is an overview of the overall mood of the movie.
+                </p>
             </blockquote>
             <p>
-                In essence, a movie barcode is a playful representation of the color palette used in a movie. 
+                In essence, a movie barcode is a playful representation of the color palette used in a movie.
                 Today, our task is to build our very own movie barcode and hopefully learn some things in the process!
             </p>
             <h>Tools and Software</h>
             <p>
-                This build is implemented in C++ and uses the following packages: 
+                This build is implemented in C++ and uses the following packages:
                 <a href="https://opencv.org" target="_blank">OpenCV</a>,
                 <a href="https://www.boost.org/doc/libs/1_70_0/boost/asio/thread_pool.hpp" target="_blank">Boost</a>,
                 and
@@ -99,11 +100,11 @@
             </p>
             <h>Making a Movie Barcode</h>
             <p>
-                Here, I outline the procedure to make a movie barcode. 
+                Here, I sketch the procedure.
                 I'll also include customizations and optimizations.
             </p>
             <h2>Vanilla Procedure</h2>
-            <p>There are roughly four steps involved in creating a movie barcode.</p>
+            <p>There are four steps involved in creating a movie barcode.</p>
             <ol>
               <li>Read Frames</li>
               <li>Chunk</li>
@@ -111,47 +112,47 @@
               <li>Merge</li>
             </ol>
             <p>
-                In plain English, we start off by reading each frame of the film in order. 
-                Once the frames are read, the next step is to chunk them into manageable sections. 
-                Following this, colors are averaged row-wise, allowing us to represent the entire chunk as a single bar. 
+                In plain English, we start off by reading each frame of the film in order.
+                Once the frames are read, the next step is to chunk them into manageable sections.
+                Following this, colors are averaged row-wise, allowing us to represent the entire chunk as a single bar.
                 Finally, these bars are merged together to form the final movie barcode.
             </p>
             <h2>Customization and Settings</h2>
             <p>
-                Customizing a movie barcode allows us to enhance its visual appeal. 
+                Customizing a movie barcode enhances its visual appeal.
                 One change that immediately comes to mind is experimenting with different color spaces such as
                 <a href="https://en.wikipedia.org/wiki/RGB_color_model" target="_blank">RGB</a>,
                 <a href="https://en.wikipedia.org/wiki/HSL_and_HSV" target="_blank">HSV</a>, or
                 <a href="https://en.wikipedia.org/wiki/CIELAB_color_space" target="_blank">LAB</a>.
-                Another customization involves scaling the bars, possibly achieved through 
-                <a href="https://facelessuser.github.io/coloraide/interpolation/" target="_blank">interpolation</a>, 
-                introducing a jagged comb-like effect. 
-                Transforming the barcode in post opens up even more possibilities! 
+                Another customization involves scaling the bars, possibly achieved through
+                <a href="https://facelessuser.github.io/coloraide/interpolation/" target="_blank">interpolation</a>,
+                introducing a jagged comb-like effect.
+                Transforming the barcode opens up even more possibilities!
                 In short, there is no dearth of creativity involved in creating movie barcodes.
             </p>
             <h2>Tips and Tricks</h2>
             <p>
-                When creating movie barcodes, a couple of key tips can significantly optimize the process. 
-                For time complexity, consider leveraging 
+                When creating movie barcodes, a couple of key tips can significantly optimize the process.
+                For time complexity, consider leveraging
                 <a href="https://en.wikipedia.org/wiki/Parallel_computing" target="_blank">parallel computing</a>
-                techniques. 
-                By distributing the workload across multiple processors, you can substantially accelerate the merging step. 
+                techniques.
+                By distributing the workload across multiple processors, you can substantially accelerate the merging step.
                 Here is one possible implementation:
             </p>
                 <figure>
-                    <object type="image/svg+xml" data="../assets/barcode-images/parallel.svg" width="100%" height="auto">
+                    <object type="image/svg+xml" data="../assets/barcode/parallel.svg" width="100%" height="auto">
                     Your browser does not support SVG
                     </object>
                     <figcaption>Frame Process (Parallel Computing Paradigm)</figcaption>
                 </figure>
             <p>
-                For space complexity, pay attention to garbage collection. 
-                Regularly clearing out unused memory and resources (i.e., frames) ensures that the procedure runs smoothly and doesn't get bogged down by unnecessary data.
+                For space complexity, pay attention to garbage collection.
+                Regularly clearing out unused memory and resources (i.e., frames) helps the program avoid getting bogged down by unnecessary data.
             </p>
             <h>Examples</h>
             <p>
-                The Legend of Zelda is an action-adventure video game series created by Nintendo in 1986. 
-                It features the adventures of Link as he quests to rescue Princess Zelda and defeat Ganon. 
+                The Legend of Zelda is an action-adventure video game series created by Nintendo in 1986.
+                It features the adventures of Link as he quests to rescue Princess Zelda and defeat Ganon.
                 Known for its innovative game design and recurring themes of exploration and heroism, the series has become a flagship franchise for Nintendo. 
                 In honor of the release of
                 <a href="https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild" target="_blank">Breath of the Wild</a>, 
@@ -160,19 +161,19 @@
                 from the game play.
             </p>
             <figure>
-                <img src="../assets/barcode-images/polar.webp" alt="Trulli">
+                <img src="../assets/barcode/polar.webp" alt="Trulli">
                 <figcaption>Movie Barcode for The Legend of Zelda: Tears of the Kingdom</figcaption>
             </figure>
             <p>
-                As you may have noticed, this particular barcode implements the customizations discussed above. 
+                As you may have noticed, this particular barcode implements the customizations discussed above.
                 The bars are linearly scaled depending on the average decibel output of the associated chunk.
             </p>
             <h>Resources and References</h>
             <p>
-                If you're interested in movie barcodes, I would definitely recommend checking out 
+                If you're interested in movie barcodes, I would definitely recommend checking out
                 <a href="http://blog.thomaspoulet.fr/movie-barcode/" target="_blank">Thomas Poulet's post</a>
-                on movie barcodes. It is by far the prototypical source on the matter. 
-                I would also encourage you to support the good folks at 
+                on movie barcodes. It is by far the prototypical source on the matter.
+                I would also encourage you to support the good folks at
                 <a href="https://www.youtube.com/@BeardBear" target="_blank">BeardBear's YouTube Channel</a>
                 since they packaged all the TotK cut-scenes into a single, cohesive story line.
             </p>

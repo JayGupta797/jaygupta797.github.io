@@ -1,5 +1,5 @@
 /* 
- * NAME: color-svg.js
+ * NAME: color.js
  * DESCRIPTION: This script is included in every svg that uses the page color set.
  * Graphics loaded in via the <object> tag cannot reference CSS variables. Instead, we use
  * this short script to detect what the current color set is, and name those colors.

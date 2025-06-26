@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>    
     <!-- Some meta tags -->
+    <title>Jay Gupta - Concept</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jay Gupta - Photos</title>
+    <meta
+        name="description"
+        content="generic">
 
     <!-- Favicon -->
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
@@ -12,15 +15,11 @@
 
     <!-- Custom Styles and Scripts-->
     <link rel="stylesheet" href="../styles/default.css"> 
-    <link rel="stylesheet" href="../styles/photo.css"> 
+    <link rel="stylesheet" href="../styles/table.css">
+    <link rel="stylesheet" href="../styles/footnote.css"> 
+    <script defer src="../scripts/table.js"></script>
     <script defer src="../scripts/theme.js"></script> 
-
-    <!-- Add jQuery 1.8 or later to your page, 33 KB -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-    <!-- Get Fotorama from CDNJS, 19 KB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+    <script defer src="../scripts/footnote.js"></script>
 
     <!-- Load Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +28,7 @@
 </head>
 
 <body>
-    <!-- see: https://stackoverflow.com/a/45762747 -->
+    <div id="footnote-tooltip"></div>
     <div class="everything">
     <div class="masthead">
     <div class="masthead__inner-wrap">
@@ -37,9 +36,9 @@
             <nav class="greedy-nav">
                 <a class="site-title" href="../index.html">Jay Gupta</a>
                 <ul class="visible-links">
-                    <li class="masthead__menu-item" id="masthead__menu-photos"><a href="./photos.html">Photos</a></li>
-                    <li class="masthead__menu-item" id="masthead__menu-posts"><a href="./posts.html">Posts</a></li>
-                    <li class="masthead__menu-item" id="masthead__menu-resume"><a href="./resume.html">Resume</a></li>
+                    <li class="masthead__menu-item" id="masthead__menu-photos"><a href="../pages/photos.html">Photos</a></li>
+                    <li class="masthead__menu-item" id="masthead__menu-posts"><a href="../pages/posts.html">Posts</a></li>
+                    <li class="masthead__menu-item" id="masthead__menu-resume"><a href="../pages/resume.html">Resume</a></li>
                 </ul>
                 <div class="dark_toggle" onclick="toggle()">
                     <svg height=35px width=35px>
@@ -54,19 +53,27 @@
 
     <div class="initial-content">
         <div id="main" role="main">
-            <div class="landscape">
-            <p>"Never go too long without watching a sunset"</p>
-            <div class="fotorama"
-                 data-allowfullscreen="native"
-                 data-width="100%"
-                 data-ratio="1.75"
-                 data-fit="cover"
-                 data-nav="thumbs">
-                <img src="https://ucarecdn.com/484f1be5-475b-43a3-8be2-f695bbd7c404/-/format/auto/-/quality/smart/" data-caption="Beachside Igloos along Hotel del Coronado">
-                <img src="https://ucarecdn.com/9b1d3339-8ab5-4670-8935-eb420b7d01ee/-/format/auto/-/quality/smart/" data-caption="Golden Hour">
-                <img src="https://ucarecdn.com/7f6e667b-f15a-4e17-a8ba-0f2e80d46398/-/format/auto/-/quality/smart/" data-caption="S'mores">
-            </div>
-            </div>
+        <div class="sidebar">
+            <table id="headerTable">
+                <th>
+                    <object class="toc" type="image/svg+xml" data="../assets/page/toc.svg">
+                        Your browser does not support SVG
+                    </object>
+                    On This Page
+                </th>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mainbar" id="headerContainer">
+            <h>Header</h>
+            <p>
+                This is a placeholder for a concept post.
+                <span class="footnote" data-content="This is a footnote!"></span>
+                <span class="footnote" data-content="This is another footnote!"></span>
+            </p>
+        </div>
         </div>
     </div>
     </div>

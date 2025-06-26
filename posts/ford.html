@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Some meta tags -->
-    <title>Jay Gupta - Ford Circles Post</title>
+    <title>Jay Gupta - Ford Circles</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
@@ -13,14 +13,14 @@
 
     <!-- Favicon -->
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/page/favicon.svg" type="image/svg+xml">
 
     <!-- Custom Styles and Scripts-->
-    <link rel="stylesheet" href="../styles/default-styles.css"> 
-    <link rel="stylesheet" href="../styles/code-styles.css"> 
-    <link rel="stylesheet" href="../styles/table-styles.css"> 
+    <link rel="stylesheet" href="../styles/default.css"> 
+    <link rel="stylesheet" href="../styles/code.css"> 
+    <link rel="stylesheet" href="../styles/table.css"> 
     <script defer src="../scripts/table.js"></script>
-    <script defer src="../scripts/theme.js"></script> 
+    <script defer src="../scripts/theme.js"></script>
 
     <!-- Load Prism.js for code blocks -->
     <link id="prism-theme" rel="stylesheet"/>
@@ -36,7 +36,7 @@
     <!-- Load Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -51,7 +51,7 @@
                     <li class="masthead__menu-item" id="masthead__menu-posts"><a href="../pages/posts.html">Posts</a></li>
                     <li class="masthead__menu-item" id="masthead__menu-resume"><a href="../pages/resume.html">Resume</a></li>
                 </ul>
-                <div class="dark_toggle" onclick="toggleDark()">
+                <div class="dark_toggle" onclick="toggle()">
                     <svg height=35px width=35px>
                     <circle cx="50%" cy="50%" r="10px" fill="white" id="moon" />
                     <circle cx="50%" cy="50%" r="15px" fill="none" stroke="white" stroke-width="2px" id="ring" />
@@ -67,7 +67,7 @@
         <div class="sidebar">
             <table id="headerTable">
                 <th>
-                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
+                    <object class="toc" type="image/svg+xml" data="../assets/page/toc.svg">
                         Your browser does not support SVG
                     </object>
                     On This Page
@@ -105,7 +105,7 @@
                 This particular graphic is interactive, so I encourage you to hover over the fractions to really get a feel for what is going on here.
             </p>
             <figure>
-                <object type="image/svg+xml" data="../assets/ford-images/Comparison_Ford_circles_Farey_diagram.svg" width="100%" height="auto">
+                <object type="image/svg+xml" data="../assets/ford/Comparison_Ford_circles_Farey_diagram.svg" width="100%" height="auto">
                 Your browser does not support SVG
                 </object>
                 <figcaption>Interactive Ford Circle Graphic (Taken from Wikepedia)</figcaption>
@@ -233,7 +233,7 @@
                 Running through that workflow, I managed to create a 5th order Apollonian Gasket involving the Ford Circles!
             </p>
             <figure>
-                <object id="svgObject" type="image/svg+xml" data="../assets/ford-images/gasket-optimized.svg" width="100%" height="auto">
+                <object id="svgObject" type="image/svg+xml" data="../assets/ford/gasket-optimized.svg" width="100%" height="auto">
                 Your browser does not support SVG
                 </object>
                 <figcaption>5th Order Apollonian Gasket with Farey Lines Superimposed</figcaption>

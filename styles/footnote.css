@@ -1,0 +1,50 @@
+/* Footnote Component */
+body {
+  counter-reset: footnote-counter;
+}
+
+/* Footnote */
+.footnote {
+  counter-increment: footnote-counter;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 1.2em;
+  height: 1.2em;
+  font-size: 0.5em;
+  line-height: 1;
+  background: var(--dark-accent);
+  color: var(--secondary-color);
+  border: 0.5px solid var(--dull-accent);
+  border-radius: 5px;
+  margin: 0 3px;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background 0.2s ease;
+}
+
+.footnote::after {
+  content: counter(footnote-counter);
+}
+
+.footnote:hover {
+  background: var(--bright-accent);
+}
+
+/* Tooltip box */
+#footnote-tooltip {
+  position: fixed;
+  background: var(--dark-accent);
+  color: var(--secondary-color);
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  font-size: 0.85em;
+  font-family: Roboto, sans-serif;
+  max-width: 250px;
+  z-index: 999;
+  display: none;
+  pointer-events: none;
+  white-space: pre-line;
+} 

@@ -8,18 +8,19 @@
 
     <!-- Favicon -->
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/page/favicon.svg" type="image/svg+xml">
 
     <!-- Custom Styles and Scripts-->
-    <link rel="stylesheet" href="../styles/default-styles.css"> 
-    <link rel="stylesheet" href="../styles/table-styles.css"> 
+    <link rel="stylesheet" href="../styles/default.css"> 
+    <link rel="stylesheet" href="../styles/bullet.css"> 
+    <link rel="stylesheet" href="../styles/table.css">
     <script defer src="../scripts/table.js"></script>
-    <script defer src="../scripts/theme.js"></script> 
+    <script defer src="../scripts/theme.js"></script>
 
     <!-- Load Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -35,7 +36,7 @@
                     <li class="masthead__menu-item" id="masthead__menu-posts"><a href="./posts.html">Posts</a></li>
                     <li class="masthead__menu-item" id="masthead__menu-resume"><a href="./resume.html">Resume</a></li>
                 </ul>
-                <div class="dark_toggle" onclick="toggleDark()">
+                <div class="dark_toggle" onclick="toggle()">
                     <svg height=35px width=35px>
                     <circle cx="50%" cy="50%" r="10px" fill="white" id="moon" />
                     <circle cx="50%" cy="50%" r="15px" fill="none" stroke="white" stroke-width="2px" id="ring" />
@@ -63,7 +64,7 @@
 
         <div class="mainbar" id="headerContainer">
             <h>Posts By Year</h>
-            <p>Welcome to my blog! My name is Jay Gupta and I am an undergraduate student at Stanford working towards a Bachelors of Computer Science.</p>
+            <p>Welcome to my blog! My name is Jay Gupta and I am an undergraduate student at Stanford working towards a Bachelors of Data Science.</p>
             <h>2024</h>
             <hr>
             <h2><a href="../posts/conformal.html">Conformal Prediction</a></h2>

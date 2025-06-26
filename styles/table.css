@@ -6,7 +6,7 @@ table {
     border-radius: 5px;
     border: 1px solid var(--secondary-color);
     overflow: hidden;
-    font-family: Fira Sans, sans-serif;
+    font-family: Roboto, sans-serif;
     width: 100%;
 }
 

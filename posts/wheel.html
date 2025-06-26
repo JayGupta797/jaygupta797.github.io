@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Some meta tags -->
-    <title>Jay Gupta - Color Wheel Post</title>
+    <title>Jay Gupta - Color Wheel</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
@@ -12,18 +12,18 @@
 
     <!-- Favicon -->
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/page/favicon.svg" type="image/svg+xml">
 
     <!-- Custom Styles and Scripts-->
-    <link rel="stylesheet" href="../styles/default-styles.css"> 
-    <link rel="stylesheet" href="../styles/table-styles.css"> 
+    <link rel="stylesheet" href="../styles/default.css"> 
+    <link rel="stylesheet" href="../styles/table.css"> 
     <script defer src="../scripts/table.js"></script>
     <script defer src="../scripts/theme.js"></script> 
 
     <!-- Load Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -38,7 +38,7 @@
                     <li class="masthead__menu-item" id="masthead__menu-posts"><a href="../pages/posts.html">Posts</a></li>
                     <li class="masthead__menu-item" id="masthead__menu-resume"><a href="../pages/resume.html">Resume</a></li>
                 </ul>
-                <div class="dark_toggle" onclick="toggleDark()">
+                <div class="dark_toggle" onclick="toggle()">
                     <svg height=35px width=35px>
                     <circle cx="50%" cy="50%" r="10px" fill="white" id="moon" />
                     <circle cx="50%" cy="50%" r="15px" fill="none" stroke="white" stroke-width="2px" id="ring" />
@@ -54,7 +54,7 @@
         <div class="sidebar">
             <table id="headerTable">
                 <th>
-                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
+                    <object class="toc" type="image/svg+xml" data="../assets/page/toc.svg">
                         Your browser does not support SVG
                     </object>
                     On This Page
@@ -124,7 +124,7 @@
             </p>
             <figure>
                 <div class="pdf-container">
-                    <object data="../assets/wheel-images/wedding.pdf" type="application/pdf">
+                    <object data="../assets/wheel/wedding.pdf" type="application/pdf">
                         <p>Unable to display PDF file</p>
                     </object>
                 </div>

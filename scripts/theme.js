@@ -79,7 +79,7 @@ function toggleSVGColors() {
 function applyTheme() {
     // Toggle Moon
     document.getElementById("moon").classList.toggle('night', theme === 'dark');
-    document.body.classList.toggle("dark-theme", theme === 'dark');
+    document.documentElement.classList.toggle("dark-theme", theme === 'dark');
 
     // Toggle Code Blocks
     let prismElement = document.getElementById("prism-theme");
@@ -115,7 +115,7 @@ function applyTheme() {
 applyTheme();
 
 // Toggle theme upon click
-function toggleDark() {
+function toggle() {
     theme = theme === 'light' ? 'dark' : 'light';
     localStorage.setItem('theme', theme);
     applyTheme();

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Some meta tags -->
-    <title>Jay Gupta - PolyLabel Post</title>
+    <title>Jay Gupta - PolyLabel</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
@@ -11,14 +11,14 @@
 
     <!-- Favicon -->
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/page/favicon.svg" type="image/svg+xml">
     
     <!-- Custom Styles and Scripts-->
-    <link rel="stylesheet" href="../styles/default-styles.css"> 
-    <link rel="stylesheet" href="../styles/code-styles.css">
-    <link rel="stylesheet" href="../styles/table-styles.css"> 
+    <link rel="stylesheet" href="../styles/default.css"> 
+    <link rel="stylesheet" href="../styles/code.css"> 
+    <link rel="stylesheet" href="../styles/table.css"> 
     <script defer src="../scripts/table.js"></script>
-    <script defer src="../scripts/theme.js"></script> 
+    <script defer src="../scripts/theme.js"></script>
 
     <!-- Load Prism.js for code blocks -->
     <link id="prism-theme" rel="stylesheet"/>
@@ -34,7 +34,7 @@
     <!-- Load Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -49,7 +49,7 @@
                     <li class="masthead__menu-item" id="masthead__menu-posts"><a href="../pages/posts.html">Posts</a></li>
                     <li class="masthead__menu-item" id="masthead__menu-resume"><a href="../pages/resume.html">Resume</a></li>
                 </ul>
-                <div class="dark_toggle" onclick="toggleDark()">
+                <div class="dark_toggle" onclick="toggle()">
                     <svg height=35px width=35px>
                     <circle cx="50%" cy="50%" r="10px" fill="white" id="moon" />
                     <circle cx="50%" cy="50%" r="15px" fill="none" stroke="white" stroke-width="2px" id="ring" />
@@ -65,7 +65,7 @@
         <div class="sidebar">
             <table id="headerTable">
                 <th>
-                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
+                    <object class="toc" type="image/svg+xml" data="../assets/page/toc.svg">
                         Your browser does not support SVG
                     </object>
                     On This Page
@@ -113,7 +113,7 @@
                 A staggering 2,688 miles from Dunice Island, it is the most inaccessible point in the ocean.
             </p>
             <figure>
-                <object type="image/svg+xml" data="../assets/polylabel-images/nemo.svg" width="75%" height="auto">
+                <object type="image/svg+xml" data="../assets/polylabel/nemo.svg" width="75%" height="auto">
                 Your browser does not support SVG
                 </object>
                 <figcaption>Point Nemo and the Surrounding Area</figcaption>
@@ -131,7 +131,7 @@
                 The set divides the space it lives in into three other sets: the Interior, Exterior, and Boundary.
             </p>
             <figure>
-                <object type="image/svg+xml" data="../assets/polylabel-images/boundary.svg" width="100%" height="auto">
+                <object type="image/svg+xml" data="../assets/polylabel/boundary.svg" width="100%" height="auto">
                 Your browser does not support SVG
                 </object>
                 <figcaption>The Interior, Exterior, and Boundary</figcaption>
@@ -152,7 +152,7 @@
                 <a href="https://en.wikipedia.org/wiki/Fortune%27s_algorithm" target="_blank">Fortune's Algorithm</a>.
             </p>
             <figure>
-                <object type="image/svg+xml" data="../assets/polylabel-images/voronoi.svg" width="100%" height="auto">
+                <object type="image/svg+xml" data="../assets/polylabel/voronoi.svg" width="100%" height="auto">
                 Your browser does not support SVG
                 </object>
                 <figcaption>Generalized Voronoi Diagram</figcaption>
@@ -191,7 +191,7 @@
                 Therefore, we reject the premise that \( p \) exists.
             </p>
             <figure>
-                <object type="image/svg+xml" data="../assets/polylabel-images/cell.svg" width="100%" height="auto">
+                <object type="image/svg+xml" data="../assets/polylabel/cell.svg" width="100%" height="auto">
                 Your browser does not support SVG
                 </object>
                 <figcaption>Complex Polygon Covered by a Grid of Cells</figcaption>

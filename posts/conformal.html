@@ -11,14 +11,14 @@
 
     <!-- Favicon -->
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/page/favicon.svg" type="image/svg+xml">
 
     <!-- Custom Styles and Scripts-->
-    <link rel="stylesheet" href="../styles/default-styles.css"> 
-    <link rel="stylesheet" href="../styles/code-styles.css"> 
-    <link rel="stylesheet" href="../styles/table-styles.css"> 
+    <link rel="stylesheet" href="../styles/default.css"> 
+    <link rel="stylesheet" href="../styles/code.css"> 
+    <link rel="stylesheet" href="../styles/table.css"> 
     <script defer src="../scripts/table.js"></script>
-    <script defer src="../scripts/theme.js"></script> 
+    <script defer src="../scripts/theme.js"></script>
 
     <!-- Load Prism.js for code blocks -->
     <link id="prism-theme" rel="stylesheet"/>
@@ -34,7 +34,7 @@
     <!-- Load Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -49,7 +49,7 @@
                     <li class="masthead__menu-item" id="masthead__menu-posts"><a href="../pages/posts.html">Posts</a></li>
                     <li class="masthead__menu-item" id="masthead__menu-resume"><a href="../pages/resume.html">Resume</a></li>
                 </ul>
-                <div class="dark_toggle" onclick="toggleDark()">
+                <div class="dark_toggle" onclick="toggle()">
                     <svg height=35px width=35px>
                     <circle cx="50%" cy="50%" r="10px" fill="white" id="moon" />
                     <circle cx="50%" cy="50%" r="15px" fill="none" stroke="white" stroke-width="2px" id="ring" />
@@ -65,7 +65,7 @@
         <div class="sidebar">
             <table id="headerTable">
                 <th>
-                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
+                    <object class="toc" type="image/svg+xml" data="../assets/page/toc.svg">
                         Your browser does not support SVG
                     </object>
                     On This Page
@@ -78,7 +78,7 @@
         <div class="mainbar" id="headerContainer">
             <h>Motivation</h>
             <p>
-                Graph Neural Networks (GNNs) are powerful machine learning algorithms over graph-structured data. 
+                Graph Neural Networks (GNNs) are powerful machine learning algorithms over graph-structured data.
                 These models have seen success across several domains from Polypharmacy to Recommender Systems.
                 However, GNNs lack rigorous uncertainty estimates, limiting their deployment in high-stake settings.
             </p>
@@ -119,7 +119,7 @@
                 To produce a set of numbers such that the new number is in the set with a specified coverage, we pick the \( \lceil(n + 1)(1 - \alpha) \rceil \) smallest.
             </p>
             <figure>
-                <object type="image/svg+xml" data="../assets/conformal-images/fraction.svg" width="100%" height="auto">
+                <object type="image/svg+xml" data="../assets/conformal/fraction.svg" width="100%" height="auto">
                 Your browser does not support SVG
                 </object>
                 <figcaption>Prediction Set in Discrete Setting</figcaption>
@@ -183,7 +183,7 @@
                 Running the algorithm above, yields the following plot.
             </p>
             <figure>
-                <object type="image/svg+xml" data="../assets/conformal-images/bands.svg" width="100%" height="auto">
+                <object type="image/svg+xml" data="../assets/conformal/bands.svg" width="100%" height="auto">
                 Your browser does not support SVG
                 </object>
                 <figcaption>Conformal Prediction on Cubic Spline</figcaption>
@@ -375,7 +375,7 @@
                 By incorporating information from neighboring nodes, with attention weights for each contribution, we can improve performance.
             </p>
             <figure>
-                <object type="image/svg+xml" data="../assets/conformal-images/graph.svg" width="100%" height="auto">
+                <object type="image/svg+xml" data="../assets/conformal/graph.svg" width="100%" height="auto">
                 Your browser does not support SVG
                 </object>
                 <figcaption>Message Passing under Graph Attention Scheme</figcaption>
@@ -388,7 +388,7 @@
                 However, upon conditioning on a particular class, you might find that the coverage is much lower (or higher) than expected.
             </p>
             <figure>
-                <object type="image/svg+xml" data="../assets/conformal-images/conditional.svg" width="100%" height="auto">
+                <object type="image/svg+xml" data="../assets/conformal/conditional.svg" width="100%" height="auto">
                 Your browser does not support SVG
                 </object>
                 <figcaption>Marginal vs Condional Coverage</figcaption>
@@ -408,7 +408,7 @@
                 Each file maps directly to a step in the Conformal Prediction pipeline.
             </p>
             <figure>
-                <object type="image/svg+xml" data="../assets/conformal-images/directory.svg" width="100%" height="auto">
+                <object type="image/svg+xml" data="../assets/conformal/directory.svg" width="100%" height="auto">
                 Your browser does not support SVG
                 </object>
                 <figcaption>Directory Structure of Conformal</figcaption>
