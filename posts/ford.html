@@ -13,7 +13,7 @@
 
     <!-- Favicon -->
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../assets/page/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 
     <!-- Custom Styles and Scripts-->
     <link rel="stylesheet" href="../styles/default.css"> 
@@ -67,7 +67,7 @@
         <div class="sidebar">
             <table id="headerTable">
                 <th>
-                    <object class="toc" type="image/svg+xml" data="../assets/page/toc.svg">
+                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
                         Your browser does not support SVG
                     </object>
                     On This Page
@@ -80,17 +80,17 @@
         <div class="mainbar" id="headerContainer">
             <h>Introduction</h>
             <p>
-                The Summer of Math Exposition or SoMe is an annual competition hosted by Grant Sanderson over at 3blue1brown. 
-                In its own words, the compeititions seeks to foster the creation of excellent math content online. 
-                Last year, I had the pleasure of reviewing several SoMe submissions from content creators across the globe. 
-                One of those 
+                The Summer of Math Exposition or SoMe is an annual competition hosted by Grant Sanderson over at 3blue1brown.
+                In its own words, the competition seeks to foster the creation of excellent math content online.
+                Last year, I had the pleasure of reviewing several SoMe submissions from content creators across the globe.
+                One of those
                 <a href="https://youtu.be/4d6YrTKmjfE?si=AN7KcOq5FHt0qCNv" target="_blank">videos</a>
-                introduced a certain construction of tangential circles known as Ford Circles. 
+                introduced a certain construction of tangential circles known as Ford Circles.
                 Intrigued, I decided to take a deeper look.
             </p>
             <h>What are Ford Circles?</h>
             <p>
-                I'll save you the trouble of searching for the relevant Wikepedia Article and provide the first paragraph for reference.
+                I'll save you the trouble of searching for the relevant Wikipedia Article and provide the first paragraph for reference.
             </p>
             <blockquote>
                 <p>
@@ -141,8 +141,8 @@
                 </p>
             </div>
             <p>
-                As it so happens, <a href="https://youtu.be/i0dZukEw1JY?si=GbnoC1ryUM9Di86L" target="_blank">Presh Talwalker</a> has a short video working through the relevant algebra for Lemma 1 and Lemma 2. 
-                To offer an alternative perspective, Lemma 2 may be seen as consequences of Descarte's Theorem (the connection to which is made clear by viewing the x-axis as an infinitely large circle) adapted to fit the language of smallness.
+                As it so happens, <a href="https://youtu.be/i0dZukEw1JY?si=GbnoC1ryUM9Di86L" target="_blank">Presh Talwalker</a> has a short video working through the relevant algebra for Lemma 1 and Lemma 2.
+                To offer an alternative perspective, Lemma 2 may be seen as a consequence of Descartes' Theorem (the connection to which is made clear by viewing the x-axis as an infinitely large circle) adapted to fit the language of smallness.
             </p>
             <p>Now our task is to prove the following statement.</p>
             <div class="proof">
@@ -166,9 +166,9 @@
                 </ol>
             </div>
             <p>
-                The key observation here is that so long as our parent circles have a smallness that aligns with denominator of their x-coordinate, then their child circle follows suit. 
-                In effect, we can repeteadly apply Theorem 1 to all child circles produced by the procedure. 
-                The Ford Circles are initiated by two circles of diameter 1 positioned at \( \frac{0}{1} \) and \( \frac{1}{1} \) satisfying the requirements of Theorem 1. 
+                The key observation here is that so long as our parent circles have a smallness that aligns with denominator of their x-coordinate, then their child circle follows suit.
+                In effect, we can repeatedly apply Theorem 1 to all child circles produced by the procedure.
+                The Ford Circles are initiated by two circles of diameter 1 positioned at \( \frac{0}{1} \) and \( \frac{1}{1} \) satisfying the requirements of Theorem 1.
                 We now consider the following sequence:
             </p>
             <div class="display-math">
@@ -182,8 +182,8 @@
                 </p>
             </div>
             <p>
-                This sequence of fractions is fancifully called the <a href="https://en.wikipedia.org/wiki/Farey_sequence" target="_blank">Farey Sequence</a> and is closely related to the <a href="https://en.wikipedia.org/wiki/Stern–Brocot_tree" target="_blank">Stern Brocot Tree</a>. 
-                It is well known that every rational number \( \frac{a}{b} \) with coprime integers \( a \) and \( b \) satisfying \( 0 \le a < b \) appears exactly once in the Stern Brocot Tree. 
+                This sequence of fractions is called the <a href="https://en.wikipedia.org/wiki/Farey_sequence" target="_blank">Farey Sequence</a> and is closely related to the <a href="https://en.wikipedia.org/wiki/Stern–Brocot_tree" target="_blank">Stern Brocot Tree</a>.
+                It is well known that every rational number \( \frac{a}{b} \) with coprime integers \( a \) and \( b \) satisfying \( 0 \le a < b \) appears exactly once in the Stern Brocot Tree.
                 While I won't delve into a full-blown proof of this fact, I will provide a curious result that builds intuition on how one might approach such a proof.
             </p>
             <div class="proof">
@@ -194,7 +194,7 @@
                 </p>
                 <p><b>Proof<b></p>
                 <p>
-                    The plan of attack is to directly compute \( \frac{a + c}{b + d} - \frac{a}{b} \) and \( \frac{c}{d} - \frac{a + c}{b + d} \) and use the fact that \( \frac{a}{b} < \frac{c}{d} \) to show that both differences are strictly poisitve.
+                    The plan of attack is to directly compute \( \frac{a + c}{b + d} - \frac{a}{b} \) and \( \frac{c}{d} - \frac{a + c}{b + d} \) and use the fact that \( \frac{a}{b} < \frac{c}{d} \) to show that both differences are strictly positive.
                 </p>
                 <ol>
                   <li>\( \frac{a + c}{b + d} - \frac{a}{b} = \frac{bc - ad}{b(b + d)} = \frac{c}{b + d} - \frac{ad}{b(b + d)} = \frac{d}{b + d} \left ( \frac{c}{d} - \frac{a}{b} \right ) \)</li>
@@ -209,10 +209,10 @@
             </p>
             <h>Creating An Apollonian Gasket</h>
             <p>
-                Taking inspiration from this 
+                Taking inspiration from this
                 <a href="https://codegolf.stackexchange.com/q/38450" target="_blank">Code Golf</a>
-                we can whipp up some pseudo-code that draws an
-                <a href="https://en.wikipedia.org/wiki/Apollonian_gasket" target="_blank">Apollonian Gasket</a>
+                we can whip up some pseudo-code that draws an
+                <a href="https://en.wikipedia.org/wiki/Apollonian_gasket" target="_blank">Apollonian gasket</a>
                 associated with the Ford Circles.
             </p>
             <pre class="line-numbers">

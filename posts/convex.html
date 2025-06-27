@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
         name="description"
-        content="A brief excersize, got me down the rabbit hole of Convex Hull Algorithms. Here, I review my attempt at QuickHull, an algorithm that notably extends into arbitrary dimensions.">
+        content="A brief exercise led me down the rabbit hole of convex hull algorithms. Here, I review my attempt at QuickHull, an algorithm that notably extends into arbitrary dimensions.">
 
     <!-- Favicon -->
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../assets/page/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     
     <!-- Custom Styles and Scripts-->
     <link rel="stylesheet" href="../styles/default.css"> 
@@ -65,7 +65,7 @@
         <div class="sidebar">
             <table id="headerTable">
                 <th>
-                    <object class="toc" type="image/svg+xml" data="../assets/page/toc.svg">
+                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
                         Your browser does not support SVG
                     </object>
                     On This Page
@@ -78,11 +78,11 @@
         <div class="mainbar" id="headerContainer">
             <h>Introduction</h>
             <p>
-                In my junior year of highschool, I took AP CSA, an introductory computer science course taught in Java.
+                In my junior year of high school, I took AP CSA, an introductory computer science course taught in Java.
                 It was an enjoyable course and likely my first exposure to programming with the interface mind.
             </p>
             <p>
-                During one lecture, we reviewed the Object Oriented design paradigm.
+                During one lecture, we reviewed the object-oriented design paradigm.
                 To illustrate key concepts, the instructor drew up a simplified geometry class.
                 The objects this class supported included the Point, Line, and Polygon all setup with reasonable inheritance structures.
             </p>
@@ -96,7 +96,7 @@
                 a suitable reference point.
             </p>
             <p>
-                At the time, I introduced a somewhat obtuse algorithm to produce the desired result.
+                At the time, I introduced a somewhat obscure algorithm to produce the desired result.
                 I won't bother describing it in detail though I'll include a copy of the original concept I eagerly passed along to my instructor.
             </p>
             <figure>
@@ -106,8 +106,8 @@
                 <figcaption>Original Concept for Convex Hull Algorithm</figcaption>
             </figure>
             <p>
-                This brief excersize, got me down the rabbit hole of Convex Hull Algorithms. 
-                Here, I'll be reviewing my attempt at implementing qhull, an algorithm that notably extends into arbitrary dimensions.
+                This brief exercise led me down the rabbit hole of convex hull algorithms.
+                Here, I'll be reviewing my attempt at implementing QuickHull, an algorithm that notably extends into arbitrary dimensions.
             </p>
             <h>Definitions</h>
             <p>
@@ -139,7 +139,7 @@
                 Wikipedia
                 <a href="https://en.wikipedia.org/wiki/Convex_hull_algorithms#Algorithms" target="_blank">lists</a>
                 several Convex Hull Algorithms each with their own advantages and disadvantages.
-                We can introduce a theoritc lower bound on the time complexity by drawing an analogy to sorting.
+                We can introduce a theoretical lower bound on the time complexity by drawing an analogy to sorting.
                 Consider the following set of points:
             </p>
             <div class="display-math">
@@ -178,7 +178,7 @@
             </p>
             <h>2D QuickHull</h>
             <p>
-                The Wikepedia Article associated with qhull,
+                The Wikipedia Article associated with qhull,
                 <a href="https://en.wikipedia.org/wiki/Quickhull#Pseudocode_for_2D_set_of_points" target="_blank">includes</a>
                 pseudo-code for a possible implementation in 2D. 
                 I'll include a simplified version here for reference.
@@ -251,9 +251,9 @@
             <p>
                 Most of these steps are fairly vanilla.
                 The only exception is computing the normal vectors to each Facet of a Simplex.
-                Browing through the Math StackExchange, I found an elegant
+                Browsing through the Math StackExchange, I found an elegant
                 <a href="https://math.stackexchange.com/questions/3684875/finding-the-normal-of-a-simplex-facet-in-n-dimensions" target="_blank">solution</a>
-                and ultimately arrived at this hilariously compact function:
+                and ultimately arrived at this remarkably compact function:
             </p>
             <pre class="line-numbers">
                 <code class="language-python">
@@ -286,7 +286,7 @@
                 Intuitively, one might imagine we end up with a rugged surface composed of simplices.
             </p>
             <p>
-                Taking another look at the Wikepedia Article, I noticed a section detaling the procedure for the ND case.
+                Taking another look at the Wikipedia Article, I noticed a section detaling the procedure for the ND case.
                 While the initialization remains (roughly) the same, the algorithm is no longer recursive.
                 The basic idea is to compute the Horizon visible from the Eye and build facets (collectively called the Cone) by connecting them together.
             </p>

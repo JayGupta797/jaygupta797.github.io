@@ -11,7 +11,7 @@
 
     <!-- Favicon -->
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../assets/page/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     
     <!-- Custom Styles and Scripts-->
     <link rel="stylesheet" href="../styles/default.css"> 
@@ -65,7 +65,7 @@
         <div class="sidebar">
             <table id="headerTable">
                 <th>
-                    <object class="toc" type="image/svg+xml" data="../assets/page/toc.svg">
+                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
                         Your browser does not support SVG
                     </object>
                     On This Page
@@ -78,8 +78,8 @@
         <div class="mainbar" id="headerContainer">
             <h>The Kepler Bouwkamp Constant</h>
             <p>
-                I'm sure we're all familiar with the usual mathematical constants, but what the heck is the The Kepler Bouwkamp Constant? 
-                I'll save you the trouble of searching for the relevant Wikepedia Article and provide the first paragraph for reference.
+                I'm sure we're all familiar with the usual mathematical constants, but what the heck is the Kepler Bouwkamp Constant?
+                I'll save you the trouble of searching for the relevant Wikipedia Article and provide the first paragraph for reference.
             </p>
             <blockquote>
                 <p>
@@ -154,8 +154,8 @@
                 This expression has no known closed form solution.
             </p>
             <h>Construction</h>
-            <p>To get a visual feel for what is going on here, we can whip up two helper functions to find get an inscribed Ngram and polygon.</p>
-            <p>To get an inscribed Ngram, we sample evenly spaced points on the circle.</p>
+            <p>To get a visual feel for what is going on here, we can create two helper functions to get an inscribed polygon and circle.</p>
+            <p>To get an inscribed polygon, we sample evenly spaced points on the circle.</p>
             <pre class="line-numbers">
                 <code class="language-python">
                     def get_inscribed_Ngram(circle, n):
