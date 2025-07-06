@@ -35,7 +35,7 @@
   width: 70%;
   padding: 0em 1em;
   color: var(--secondary-color);
-  border: 1px solid var(--secondary-color);
+  /* border: 1px solid var(--secondary-color); */
   font-family: Roboto, sans-serif;
 }
 
@@ -44,7 +44,7 @@
   width: 30%;
   padding: 0em 1em;
   color: var(--secondary-color);
-  border: 1px solid var(--secondary-color); 
+  /* border: 1px solid var(--secondary-color);  */
   font-family: Roboto, sans-serif;
 }
 

@@ -7,13 +7,13 @@ html {
 /* Default values for document root */
 :root {
   --primary-color: white;
-  --secondary-color: #252a34;
-  --bright-accent: #70777C;
+  --secondary-color: #1a202c;
+  --bright-accent: #3182ce;
   --dull-accent: #6F777D;
-  --dark-accent: #F2F3F3;
+  --dark-accent: #f7fafc;
   --bright-red: #fe4747;
 
-  --regular: #3E4144;
+  --regular: #2d3748;
   --github: #171516;
   --linkedin: #3579B1;
   --twitter: #6BAAE8;
@@ -21,17 +21,17 @@ html {
 
 /* Default values for dark-theme */
 html.dark-theme {
-  --primary-color: #252a34;
-  --secondary-color: #eaeaea;
+  --primary-color: #1a202c;
+  --secondary-color: #f7fafc;
   --bright-accent: #00adb5;
   --dull-accent: #bbb;
-  --dark-accent: #1B1D23;
+  --dark-accent: #2d3748;
   --bright-red: #fe4747;
 
-  --regular: #eaeaea;
-  --github: #eaeaea;
-  --linkedin: #3579B1;
-  --twitter: #6BAAE8;
+  --regular: #f7fafc;
+  --github: #f7fafc;
+  --linkedin: #63b3ed;
+  --twitter: #7cc7f0;
 }
 
 .dark_toggle {
@@ -172,7 +172,7 @@ a:hover{
 }
 
 .greedy-nav a:hover {
-    color: var(--dull-accent)
+    color: var(--dull-accent);
 }
 
 .greedy-nav a.site-title {
@@ -396,10 +396,9 @@ blockquote {
     border-radius: 10px;
     border: 2px solid var(--bright-accent);
     border-left: 10px solid var(--bright-accent);
-    padding: 10px;
+    padding: 15px;
     margin: 20px 0;
     color: var(--secondary-color);
-    background-color: var(--primary-color);
 }
 
 /* Style for paragraph text within the blockquote */
