@@ -326,23 +326,32 @@ class ColorWheel {
         // Set up brush dimensions - make it responsive
         const container = document.querySelector('.date-brush-container');
         const containerWidth = container.offsetWidth;
-        const brushWidth = containerWidth - 50;
-        const brushHeight = 60;
+
+        // Account for container padding
+        const containerStyle = window.getComputedStyle(container);
+        const paddingLeft   = parseFloat(containerStyle.paddingLeft)  || 0;
+        const paddingRight  = parseFloat(containerStyle.paddingRight) || 0;
+        const cardContentWidth = containerWidth - paddingLeft - paddingRight;
+
         const margin = { top: 10, right: 10, bottom: 10, left: 10 };
+
+        // Width of the drawable area (excluding outer margins)
+        const brushWidth = cardContentWidth - margin.left - margin.right;
+        const brushHeight = 60;
         
-        // Create brush SVG
+        // Create brush SVG sized to the card content width
         const brushSvg = d3.select("#date-brush")
-            .attr("width", brushWidth)
+            .attr("width", cardContentWidth)
             .attr("height", brushHeight + margin.top + margin.bottom);
             
         // Create scales
         this.xScale = d3.scaleTime()
             .domain(dateExtent)
-            .range([margin.left, brushWidth - margin.right]);
+            .range([margin.left, cardContentWidth - margin.right]);
             
         // Create brush
         this.brush = d3.brushX()
-            .extent([[margin.left, margin.top], [brushWidth - margin.right, brushHeight - margin.top]])
+            .extent([[margin.left, margin.top], [cardContentWidth - margin.right, brushHeight - margin.top]])
             .on("brush end", (event) => this.onBrush(event));
             
         // Add brush to SVG
@@ -351,7 +360,7 @@ class ColorWheel {
             .call(this.brush);
             
         // Add x-axis with responsive tick count
-        const tickCount = brushWidth < 400 ? 4 : 6;
+        const tickCount = cardContentWidth < 400 ? 4 : 6;
         const xAxis = d3.axisBottom(this.xScale)
             .tickFormat(d3.timeFormat("%b %d"))
             .ticks(tickCount);
