@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Wheel</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="material-icons">palette</span>
+            </div>
+            <div class="title-group">
+                <h1>Berlin Color Explorer</h1>
+                <p class="subtitle">Discover Berlin through colors</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="controls">
+            <button class="control-btn active" data-view="wheel">
+                <span class="material-icons">radio_button_checked</span>
+                Color Wheel
+            </button>
+            <button class="control-btn" data-view="grid">
+                <span class="material-icons">grid_view</span>
+                Grid View
+            </button>
+        </div>
+
+        <div class="visualization-section">
+            <div class="left-panel">
+                <div class="svg-container card">
+                    <svg id="color-wheel"></svg>
+                    <div class="tooltip"></div>
+                </div>
+                <div class="date-brush-container card">
+                    <div class="brush-header">
+                        <h3>Date Range</h3>
+                        <button class="reset-btn" title="Reset date range">
+                            <span class="material-icons">refresh</span>
+                        </button>
+                    </div>
+                    <svg id="date-brush"></svg>
+                    <div class="date-info">
+                        <span class="date-range"></span>
+                        <span class="point-count"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div id="image-container" class="card">
+                    <div class="image-placeholder">
+                        <span class="material-icons">travel_explore</span>
+                        <span class="placeholder-text">Select a location to view details</span>
+                    </div>
+                    <img id="displayed-image" alt="Selected Location Image">
+                    <div class="image-overlay">
+                        <h3 class="location-title"></h3>
+                    </div>
+                </div>
+                <div class="info-panel card">
+                    <div class="info-header">
+                        <h2>Selected Location</h2>
+                        <span class="material-icons info-icon">info</span>
+                    </div>
+                    <div id="location-details">
+                        <p class="no-selection">Click any point on the color wheel to explore locations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Created with <span class="material-icons heart">favorite</span> using D3.js</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
