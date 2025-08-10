@@ -91,26 +91,24 @@
                 </p>
             </blockquote>
             <p>
-                So what are those so-called intricate patterns? 
+                So what are those intricate patterns? 
                 Well, defying all expectation, it turns out that these graphs trace out cardioids!
             </p>
-            <h>Creating a Multiplication Graph</h>
+            <h>Multiplication Graph</h>
             <p>
                 Once you get all the graphical boilerplate taken care of, we can draw up a Modular Arithmetic Graph using the following pseudo-code!
             </p>
             <pre class="line-numbers"><code class="language-python">
-# These uniquely define the graph
-N = 40
-M = 139
+                # These uniquely define the graph
+                N = 40
+                M = 139
 
-# Let's start off with some labels
-labels = range(M)
-
-# Add lines
-for num1 in labels:
-    for num2 in labels:
-        if (num1 * N) % M == (num2) % M: draw(sym1, sym2)
-        else: continue
+                # Draw congruent lines
+                for start in range(M):
+                    for stop in range(M):
+                        congruent = (start * N) % M == (stop) % M
+                        if congruent: draw(start, stop)
+                        else: continue
             </code></pre>
             <p></p>
             <p>
@@ -124,8 +122,8 @@ for num1 in labels:
             </figure>
             <h>Resources and References</h>
             <p>
-                If you're interested in the math underlying these Modular Multiplication Graphs, I would definitely recommend checking out this fun
-                <a href="https://youtu.be/qhbuKbxJsk8?si=GVCxId4n-VvqI7yf" target="_blank">Mathologer video</a>.
+                If you're interested in the math behind these Modular Multiplication Graphs, I recommend checking out a fun
+                <a href="https://youtu.be/qhbuKbxJsk8?si=GVCxId4n-VvqI7yf" target="_blank">Mathologer video</a> on the topic.
                 From there, you can work your way up to Simon Plouffe's 
                 <a href="http://xahlee.info/SpecialPlaneCurves_dir/Cardioid_dir/_p/LightsRaysReflections.pdf" target="_blank">original paper</a> along with his 
                 <a href="http://plouffe.fr" target="_blank">other</a> 
