@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>    
+<head>
     <!-- Some meta tags -->
-    <title>Jay Gupta - Concept</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta
-        name="description"
-        content="generic">
+    <title>Jay Gupta - Notes</title>
 
     <!-- Favicon -->
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
@@ -15,11 +12,10 @@
 
     <!-- Custom Styles and Scripts-->
     <link rel="stylesheet" href="../styles/default.css"> 
+    <link rel="stylesheet" href="../styles/bullet.css"> 
     <link rel="stylesheet" href="../styles/table.css">
-    <link rel="stylesheet" href="../styles/footnote.css"> 
     <script defer src="../scripts/table.js"></script>
-    <script defer src="../scripts/theme.js"></script> 
-    <script defer src="../scripts/footnote.js"></script>
+    <script defer src="../scripts/theme.js"></script>
 
     <!-- Load Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +24,7 @@
 </head>
 
 <body>
-    <div id="footnote-tooltip"></div>
+    <!-- Reference: https://stackoverflow.com/a/45762747 -->
     <div class="everything">
     <div class="masthead">
     <div class="masthead__inner-wrap">
@@ -36,9 +32,9 @@
             <nav class="greedy-nav">
                 <a class="site-title" href="../index.html">Jay Gupta</a>
                 <ul class="visible-links">
-                    <li class="masthead__menu-item" id="masthead__menu-notes"><a href="../pages/notes.html">Notes</a></li>
-                    <li class="masthead__menu-item" id="masthead__menu-posts"><a href="../pages/posts.html">Posts</a></li>
-                    <li class="masthead__menu-item" id="masthead__menu-resume"><a href="../pages/resume.html">Resume</a></li>
+                    <li class="masthead__menu-item" id="masthead__menu-notes"><a href="./notes.html">Notes</a></li>
+                    <li class="masthead__menu-item" id="masthead__menu-posts"><a href="./posts.html">Posts</a></li>
+                    <li class="masthead__menu-item" id="masthead__menu-resume"><a href="./resume.html">Resume</a></li>
                 </ul>
                 <div class="dark_toggle" onclick="toggle()">
                     <svg height=35px width=35px>
@@ -56,9 +52,9 @@
         <div class="sidebar">
             <table id="headerTable">
                 <th>
-                    <object class="toc" type="image/svg+xml" data="../assets/toc.svg">
-                        Your browser does not support SVG
-                    </object>
+                    <svg class="toc" width="25px" height="25px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 7.00003H4M8 12H4M8 17H4M12 3V21M9.2 21H16.8C17.9201 21 18.4802 21 18.908 20.782C19.2843 20.5903 19.5903 20.2843 19.782 19.908C20 19.4802 20 18.9201 20 17.8V6.20003C20 5.07993 20 4.51987 19.782 4.09205C19.5903 3.71573 19.2843 3.40977 18.908 3.21802C18.4802 3.00003 17.9201 3.00003 16.8 3.00003H9.2C8.07989 3.00003 7.51984 3.00003 7.09202 3.21802C6.71569 3.40977 6.40973 3.71573 6.21799 4.09205C6 4.51987 6 5.07993 6 6.20003V17.8C6 18.9201 6 19.4802 6.21799 19.908C6.40973 20.2843 6.71569 20.5903 7.09202 20.782C7.51984 21 8.07989 21 9.2 21Z" stroke="#252a34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                     On This Page
                 </th>
                 <tbody id="tableBody">
@@ -67,11 +63,13 @@
         </div>
 
         <div class="mainbar" id="headerContainer">
-            <h>Header</h>
+            <h>Notes By Topic</h>
+            <p>A collection of thoughts on random topics.</p>
+            <h>Learning</h>
+            <hr>
+            <h2><a href="../notes/singular.html">SLT</a></h2>
             <p>
-                This is a placeholder for a concept post.
-                <span class="footnote" data-content="This is a footnote!"></span>
-                <span class="footnote" data-content="This is another footnote!"></span>
+                A brief introduction to singular learning theory.
             </p>
         </div>
         </div>

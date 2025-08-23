@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 600 600">
+<script type="text/ecmascript" href="../../../scripts/color.js"/>
+<g>
+<path stroke-width="2.25" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="var(--secondary-color)" stroke-opacity=".9" d="M6 0V600"/>
+<path stroke-width="2.25" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="var(--secondary-color)" stroke-opacity=".9" d="M0 600H600"/>
+<path stroke-width="3.75" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="var(--secondary-color)" d="M0 43.445 600 413.137"/>
+<path d="M5.609 600V46.902H454.445L5.609 600" fill="var(--secondary-color)" fill-opacity=".25"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="var(--secondary-color)" d="M5.609 600V46.902H454.445L5.609 600"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="var(--secondary-color)" d="M37.348 560.891 34.219 557.383 30.84 554.254 27.48 551.699 23.953 549.52 20.281 547.73 16.5 546.344 12.633 545.371 8.992 544.848 5.609 544.691"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="var(--secondary-color)" d="M409.559 46.902 409.852 53.203 410.438 57.781 411.312 62.207 412.48 66.531 413.941 70.738 415.84 75.121 418.031 79.242 420.66 83.32 422.707 86.012"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="var(--secondary-color)" d="M0 606.914 499.199-8.25"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="#c74440" d="M5.609 46.902H454.445"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="#c74440" d="M454.445 323.453H230.027"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="#c74440" d="M230.027 185.176H342.234"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="#c74440" d="M342.234 254.312H286.133"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="#c74440" d="M286.133 219.746H314.184"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="#c74440" d="M314.184 237.031H300.156"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="#c74440" d="M300.156 228.387H307.172"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="#2d70b3" d="M5.609 600V46.902"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="#2d70b3" d="M454.445 46.902V323.453"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="#2d70b3" d="M230.027 323.453V185.176"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="#2d70b3" d="M342.234 185.176V254.312"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="#2d70b3" d="M286.133 254.312V219.746"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="#2d70b3" d="M314.184 219.746V237.031"/>
+<path stroke-width="3.75" stroke-linecap="square" stroke-linejoin="square" fill="none" stroke="#2d70b3" d="M300.156 237.031V228.387"/>
+<path stroke-width="11.25" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="var(--secondary-color)" d="M5.461 323.301V323.602H5.762V323.301"/>
+<path stroke-width="11.25" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="var(--secondary-color)" d="M229.875 46.754V47.051H230.176V46.754"/>
+<path stroke-width="11.25" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="var(--secondary-color)" d="M454.293 185.027V185.328H454.594V185.027"/>
+<path stroke-width="11.25" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="var(--secondary-color)" d="M342.086 323.301V323.602H342.387V323.301"/>
+<path stroke-width="11.25" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="var(--secondary-color)" d="M229.875 254.164V254.465H230.176V254.164"/>
+<path stroke-width="11.25" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="var(--secondary-color)" d="M285.98 185.027V185.328H286.281V185.027"/>
+<text xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="26.564999" font-family="arial, sans-serif" font-style="italic" fill="var(--secondary-color)"><tspan y="330.69319" x="24">&#x03b1;</tspan></text>
+<text xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="26.564999" font-family="arial, sans-serif" font-style="italic" fill="var(--secondary-color)"><tspan y="191.19318" x="472.5">&#x03b1;</tspan></text>
+<text xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="26.564999" font-family="arial, sans-serif" font-style="italic" fill="var(--secondary-color)"><tspan y="191.19318" x="486.42008">r</tspan></text>
+<text xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="26.564999" font-family="arial, sans-serif" font-style="italic" fill="var(--secondary-color)"><tspan y="304.44319" x="330">&#x03b1;</tspan></text>
+<text xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="26.564999" font-family="arial, sans-serif" font-style="italic" fill="var(--secondary-color)"><tspan y="304.44319" x="343.92008">r</tspan></text>
+<text xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="26.564999" font-family="arial, sans-serif" font-style="italic" fill="var(--secondary-color)"><tspan y="266.94319" x="174">&#x03b1;</tspan></text>
+<text xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="26.564999" font-family="arial, sans-serif" font-style="italic" fill="var(--secondary-color)"><tspan y="266.94319" x="187.92006">r</tspan></text>
+<text xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="23.908499" font-family="arial, sans-serif" fill="var(--secondary-color)"><tspan y="254.04886" x="198.49219">2</tspan></text>
+<text xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="26.564999" font-family="arial, sans-serif" font-style="italic" fill="var(--secondary-color)"><tspan y="164.94318" x="267.75">&#x03b1;</tspan></text>
+<text xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="26.564999" font-family="arial, sans-serif" font-style="italic" fill="var(--secondary-color)"><tspan y="164.94318" x="281.67008">r</tspan></text>
+<text xml:space="preserve" transform="matrix(1 0 0 1 0 0)" font-size="23.908499" font-family="arial, sans-serif" fill="var(--secondary-color)"><tspan y="152.04886" x="292.2422">2</tspan></text>
+</g>
+</svg>
