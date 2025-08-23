@@ -440,7 +440,7 @@ blockquote {
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
-  }
+}
 
 /* media query for responsive design */
 @media (max-width: 768px) {
@@ -458,7 +458,7 @@ blockquote {
         order: 2;
     }
 
-    #masthead__menu-photos {
+    #masthead__menu-notes {
         display: none;
     }
 }

@@ -451,11 +451,25 @@ label.margin-toggle:not(.sidenote-number) {
 }
 
 /* Custom Environments */
+.display-math {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 55%;
+    width: 55%;
+}
+
+/* Math inside proof and proposition environments should use full available width */
+.proposition .display-math,
+.proof .display-math {
+    max-width: 100%;
+    width: 100%;
+}
+
 .proposition {
-    margin: 1.5em 0 0.5em 0;
-    padding: 0.8em 1em;
+    padding: 0 1em;
     background-color: rgba(0, 0, 0, 0.03);
     border-left: 2px solid #333;
+    border-radius: 0 5px 5px 0;
     max-width: 55%;
     width: auto;
 }
@@ -473,14 +487,6 @@ label.margin-toggle:not(.sidenote-number) {
     margin: 0.5em 0;
 }
 
-.proof p:first-child {
-    margin-top: 0;
-}
-
-.proof p:last-child {
-    margin-bottom: 0;
-}
-
 @media (prefers-color-scheme: dark) {
     .proposition {
         background-color: rgba(255, 255, 255, 0.05);
@@ -493,6 +499,11 @@ label.margin-toggle:not(.sidenote-number) {
 }
 
 @media (max-width: 760px) {
+    .display-math {
+        max-width: 100%;
+        width: 100%;
+    }
+    
     .proposition, .proof {
         max-width: 100%;
         margin-left: 0;

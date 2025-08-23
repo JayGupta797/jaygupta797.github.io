@@ -3,9 +3,8 @@
   <head>
     <meta charset="utf-8"/>
     <title>Singular Learning Theory</title>
-    <link rel="stylesheet" href="../styles/tufte.css"> 
+    <link rel="stylesheet" href="../styles/tufte.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
       window.MathJax = {
@@ -35,11 +34,13 @@
         <h2 id="bayesian-setup">Bayesian Setup</h2>
         <p>We are given a set of input and output pairs drawn i.i.d from unknown \(q(x, y)\).</p>
         
-        <p>
-          \[
-            D_n = \{ (X_i, Y_i) \} \quad \text{for} \quad X_i \in \R^{N} \quad \text{and} \quad Y_i \in \R^{M}
-          \]
-        </p>
+        <div class="display-math">
+          <p>
+            \[
+              D_n = \{ (X_i, Y_i) \} \quad \text{for} \quad X_i \in \R^{N} \quad \text{and} \quad Y_i \in \R^{M}
+            \]
+          </p>
+        </div>
         
         <p>
           Our goal is to find parameters \(w\) s.t. a model \(p(y \mid x \, ; w)\) approximates the truth.
@@ -54,38 +55,44 @@
           Often, it is easier to work with the <em>negative log-likelihood</em> which preserves the <code>argmax</code> by monotonicity.
         </p>
         
-        <p>
+                <div class="display-math">
+          <p>
             \[
               L_n(w) = \prod_{i = 1}^{n} p(y_i \mid x_i \, ; w) 
               \quad \text{and} \quad 
               \ell_{n}(w) = -\frac{1}{n} \sum_{i = 1}^{n} \log p(y_i \mid x_i ; w)
             \]
-        </p>
+          </p>
+        </div>
         
         <p>
           MAP chooses the most likely \(w\) given the data.
           We apply <em>Bayes Rule</em> and rename terms to study the posterior.
         </p>
         
-        <p>
-          \[
-            p(w \mid D_n) = 
-            \frac{p(D_n \mid w) p(w)}{p(D_n)} = 
-            \frac{e^{-n \ell_n(w)} \psi(w)}{Z_n}
-          \]
-        </p>
+        <div class="display-math">
+          <p>
+            \[
+              p(w \mid D_n) = 
+              \frac{p(D_n \mid w) p(w)}{p(D_n)} = 
+              \frac{e^{-n \ell_n(w)} \psi(w)}{Z_n}
+            \]
+          </p>
+        </div>
         
         <p>
           We obtain the evidence \(Z_n\) by applying the <em>Law of Total Probability</em> and jointly define the free energy \(F_n\) of the system.
         </p>
         
-        <p>
-          \[
-            Z_n = \int_{W} e^{-n \ell_n(w)} \psi(w) \, \mathrm{d}w
-            \quad \text{and} \quad 
-            F_n = - \log(Z_n)
-          \]
-        </p>
+        <div class="display-math">
+          <p>
+            \[
+              Z_n = \int_{W} e^{-n \ell_n(w)} \psi(w) \, \mathrm{d}w
+              \quad \text{and} \quad 
+              F_n = - \log(Z_n)
+            \]
+          </p>
+        </div>
         
         <p>
           Intuitively, \(Z_n\) measures the posterior mass in low loss<label for="sn-low-loss" class="margin-toggle sidenote-number"></label>
@@ -114,38 +121,44 @@
           to approximate the evidence.
         </p>
         
-        <p>
-          \[
-            L_n(w) \approx
-            L_n(\hat{w}) + \frac{1}{2} (w - \hat{w})^{\top} \mathrm{H} (w - \hat{w})
-            \quad \text{for} \quad 
-            \mathrm{H} = \nabla^{2} L_n
-          \]
-        </p>
+        <div class="display-math">
+          <p>
+            \[
+              L_n(w) \approx
+              L_n(\hat{w}) + \frac{1}{2} (w - \hat{w})^{\top} \mathrm{H} (w - \hat{w})
+              \quad \text{for} \quad 
+              \mathrm{H} = \nabla^{2} L_n
+            \]
+          </p>
+        </div>
         
         <p>
           The solution form is directly given to us.
         </p>
         
-        <p>
-          \[
-            Z_n \approx \psi(\hat{w}) e^{-n \ell_n(\hat{w})} \cdot \left ( \frac{(2 \pi)^d}{n^d \det \mathrm{H}} \right )^{1/2}
-          \]
-        </p>
+        <div class="display-math">
+          <p>
+            \[
+              Z_n \approx \psi(\hat{w}) e^{-n \ell_n(\hat{w})} \cdot \left ( \frac{(2 \pi)^d}{n^d \det \mathrm{H}} \right )^{1/2}
+            \]
+          </p>
+        </div>
         
         <p>
           We arrive at a 2nd order expression of free energy.
         </p>
         
-        <p>
-          begin{align}
-            F_n 
-            &= -\log Z_n \\
-            &= 
-            \underbrace{n\ell_n(\hat{w}) + \frac{d}{2} \log n}_{\texttt{BIC}} -
-            \underbrace{\log \phi(\hat{w}) - \frac{d}{2} \log 2\pi + \frac{1}{2} \log \det \mathrm{H} (\hat{w})}_{\texttt{O(1)}}
-          \end{align}
-        </p>
+        <div class="display-math">
+          <p>
+            \begin{align}
+              F_n 
+              &= -\log Z_n \\
+              &= 
+              \underbrace{n\ell_n(\hat{w}) + \frac{d}{2} \log n}_{\texttt{BIC}} -
+              \underbrace{\log \phi(\hat{w}) - \frac{d}{2} \log 2\pi + \frac{1}{2} \log \det \mathrm{H} (\hat{w})}_{\texttt{O(1)}}
+            \end{align}
+          </p>
+        </div>
         
         <p>
           Dropping lower order e.g., <code>O(1)</code> terms, we obtain the Bayesian Information Criterion.
@@ -166,33 +179,39 @@
           (KL) between the truth and model.
         </p>
         
-        <p>
-          \[
-            K_n(w) = \frac{1}{n} \sum_{i = 1}^{n} \log \left ( \frac{q(y_i \mid x_i)}{p(y_i \mid x_i \, ; w)} \right ) = \ell_n(w) - S_n(w)
-          \]
-        </p>
+        <div class="display-math">
+          <p>
+            \[
+              K_n(w) = \frac{1}{n} \sum_{i = 1}^{n} \log \left ( \frac{q(y_i \mid x_i)}{p(y_i \mid x_i \, ; w)} \right ) = \ell_n(w) - S_n(w)
+            \]
+          </p>
+        </div>
         
         <p>
           Informally, this the loss landscape.
           We define the the set of true parameters as the choice(s) of \(w\) where KL vanishes.
         </p>
         
-        <p>
-          \[
-            W_{0} = \{ w \in W \mid K(w) = 0 \}
-          \]
-        </p>
+        <div class="display-math">
+          <p>
+            \[
+              W_{0} = \{ w \in W \mid K(w) = 0 \}
+            \]
+          </p>
+        </div>
         
         <p>
           The Fisher Information Matrix is an object with useful properties.
           The remainder of this section will prove key results.
         </p>
         
-        <p>
-          \[
-            \mathcal{I}_{j,k}(w) = \E \left [ \left( \frac{\partial}{\partial w_j} \log p(y \mid x, w) \right) \left( \frac{\partial}{\partial w_k} \log p(y \mid x, w) \right) \right ]
-          \]
-        </p>
+        <div class="display-math">
+          <p>
+            \[
+              \mathcal{I}_{j,k}(w) = \E \left [ \left( \frac{\partial}{\partial w_j} \log p(y \mid x, w) \right) \left( \frac{\partial}{\partial w_k} \log p(y \mid x, w) \right) \right ]
+            \]
+          </p>
+        </div>
         
         <div class="proposition">
           <p>
@@ -206,21 +225,25 @@
             Notice \(\mathcal{I}(w)\) is the expectation of the score's outer product with itself.
           </p>
           
-          <p>
-            \[
-              \mathcal{I}(w) = \E \left ( s(w) s(w)^\top \right )
-            \]
-          </p>
+          <div class="display-math">
+            <p>
+              \[
+                \mathcal{I}(w) = \E \left ( s(w) s(w)^\top \right )
+              \]
+            </p>
+          </div>
           
           <p>
             For any \(v \in \mathbb{R}^d\) the quadratic form is non-negative, so \(\mathcal{I}(w)\) is positive semi-definite.
           </p>
           
-          <p>
-            \[
-              v^\top \mathcal{I}(w) v = \mathbb{E} \left[ (v^\top s(w))^2 \right] \geq 0
-            \]
-          </p>
+          <div class="display-math">
+            <p>
+              \[
+                v^\top \mathcal{I}(w) v = \mathbb{E} \left[ (v^\top s(w))^2 \right] \geq 0
+              \]
+            </p>
+          </div>
         </div>
         
                 <div class="proposition">
@@ -243,26 +266,30 @@
             <em>Proof.</em> Under regularity conditions, for a fixed parameter \(w' \in w\), the expectation of its partial vanishes.
           </p>
           
-          <p>
-            \begin{align}
-              \frac{\partial}{\partial w'} \E \left [ \log p(X \mid w) \right ]
-              &= \frac{\partial}{\partial w'} \int \log p(X \mid w) \, p(X \mid w)\, \mathrm{d}x \\
-              &= \frac{\partial}{\partial w'} \int p(X \mid w) \, \mathrm{d}x \\
-              &= 0
-            \end{align}
-          </p>
+          <div class="display-math">
+            <p>
+              \begin{align}
+                \frac{\partial}{\partial w'} \E \left [ \log p(X \mid w) \right ]
+                &= \frac{\partial}{\partial w'} \int \log p(X \mid w) \, p(X \mid w)\, \mathrm{d}x \\
+                &= \frac{\partial}{\partial w'} \int p(X \mid w) \, \mathrm{d}x \\
+                &= 0
+              \end{align}
+            </p>
+          </div>
           
           <p>
             We expand the covariance of \(i\)-th and \(j\)-th component of the score and recover the corresponding entry.
           </p>
           
-          <p>
-            \[
-              \mathrm{Cov}(S_i S_j) = 
-              \E \left [ S_i S_j \right ] - \E[S_i] \E[S_j] = 
-              \mathcal{I}_{i,j}
-            \]
-          </p>
+          <div class="display-math">
+            <p>
+              \[
+                \mathrm{Cov}(S_i S_j) = 
+                \E \left [ S_i S_j \right ] - \E[S_i] \E[S_j] = 
+                \mathcal{I}_{i,j}
+              \]
+            </p>
+          </div>
           
           <p>
             In other words, the Fisher is the variance of the score e.g., \(\mathrm{Var}(s(w))\) and thus measures its sensitivity.
@@ -281,20 +308,22 @@
             The strategy is to take the partial w.r.t. \(w_j\) on both sides and massage the result.
           </p>
           
-          <p>
-            \begin{align}
-              0 
-              &= \E \left [ \frac{\partial \log p(x)}{\partial w_i} \right ] \\
-              &= \frac{\partial}{\partial w_j} \E \left [ \left ( \frac{\partial \log p(x)}{\partial w_i} \right ) \right ] \\
-              &= \int \frac{\partial}{\partial w_j} \left ( \frac{\partial \log p(x)}{\partial w_i} \right ) p(x) \, \mathrm{d}x \\
-              &= 
-              \int \frac{\partial^2 \log p(x)}{\partial w_j w_i} p(x) \, \mathrm{d}x + 
-              \int \frac{\partial \log p(x)}{\partial w_i} \frac{\partial p(x)}{\partial w_j} \, \mathrm{d}x \\
-              &= 
-              \E \left [ \frac{\partial^2 \log p(x)}{\partial w_j w_i} \right ] + 
-              \E \left [ \frac{\partial \log p(x)}{\partial w_i} \frac{\partial \log p(x)}{\partial w_j} \right ]
-            \end{align}
-          </p>
+          <div class="display-math">
+            <p>
+              \begin{align}
+                0 
+                &= \E \left [ \frac{\partial \log p(x)}{\partial w_i} \right ] \\
+                &= \frac{\partial}{\partial w_j} \E \left [ \left ( \frac{\partial \log p(x)}{\partial w_i} \right ) \right ] \\
+                &= \int \frac{\partial}{\partial w_j} \left ( \frac{\partial \log p(x)}{\partial w_i} \right ) p(x) \, \mathrm{d}x \\
+                &= 
+                \int \frac{\partial^2 \log p(x)}{\partial w_j w_i} p(x) \, \mathrm{d}x + 
+                \int \frac{\partial \log p(x)}{\partial w_i} \frac{\partial p(x)}{\partial w_j} \, \mathrm{d}x \\
+                &= 
+                \E \left [ \frac{\partial^2 \log p(x)}{\partial w_j w_i} \right ] + 
+                \E \left [ \frac{\partial \log p(x)}{\partial w_i} \frac{\partial \log p(x)}{\partial w_j} \right ]
+              \end{align}
+            </p>
+          </div>
           
           <p>
             Re-arranging, we obtain the desired result.
@@ -313,14 +342,16 @@
           This problematizes the BIC since the Hessian is asymptotically the Fisher.
         </p>
         
-        <p>
-          \[
-            \mathrm{H}(\hat{w}) = 
-            \frac{\partial^2 \ell_n(w)}{\partial w \, \partial w^T} = 
-            \frac{\partial^2 \left( K_n(w) + S_n \right)}{\partial w \, \partial w^T} \approx
-            \mathcal{I}(\hat{w})
-          \]
-        </p>
+        <div class="display-math">
+          <p>
+            \[
+              \mathrm{H}(\hat{w}) = 
+              \frac{\partial^2 \ell_n(w)}{\partial w \, \partial w^T} = 
+              \frac{\partial^2 \left( K_n(w) + S_n \right)}{\partial w \, \partial w^T} \approx
+              \mathcal{I}(\hat{w})
+            \]
+          </p>
+        </div>
         
         <p>
           <strong>Key Lesson:</strong> when a model class is singular, the complexity of a parameter \(w\) in parameter space \(W \subseteq \R^{d}\) needs a new interpretation.
@@ -334,23 +365,27 @@
           To fix this, we re-frame dimensionality in terms of a scaling exponent of the volume of "nearly" true parameters.
         </p>
         
-        <p>
-          \[
-            W_\varepsilon = \left\{ w \in W \;\middle|\; K(w) < \varepsilon \right\}
-            \quad \text{and} \quad 
-            V(\varepsilon) = \int_{W_\varepsilon} \varphi(w) \, dw
-          \]
-        </p>
+        <div class="display-math">
+          <p>
+            \[
+              W_\varepsilon = \left\{ w \in W \;\middle|\; K(w) < \varepsilon \right\}
+              \quad \text{and} \quad 
+              V(\varepsilon) = \int_{W_\varepsilon} \varphi(w) \, dw
+            \]
+          </p>
+        </div>
         
         <p>
           In general, for any singular model defined by \(\hat{w}\), the volume integral resolves to the following form.
         </p>
         
-        <p>
-          \[
-            V(\varepsilon) = c \varepsilon^\lambda + o(\varepsilon^\lambda)
-          \]
-        </p>
+        <div class="display-math">
+          <p>
+            \[
+              V(\varepsilon) = c \varepsilon^\lambda + o(\varepsilon^\lambda)
+            \]
+          </p>
+        </div>
         
         <p>
           The quantity \(\lambda\) generalizes the dimensionality of a singularity.
