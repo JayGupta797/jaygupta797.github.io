@@ -88,15 +88,13 @@
                         <p>
                             I was a CURIS fellow for Stanford 2025.
                             I worked with Chen Shani and Dan Jurafski to trace concepts in language models.
-                            A simple strategy to recover concept from a language model is to aggregate embeddings at layer \( \ell \) and apply a linear probe with concept weight \( \mathbf{w} \) and bias \( \mathbf{b} \) to a stimulus.
+                            A strategy to recover concept from a language model is to aggregate embeddings and apply a linear probe with concept weight \( \mathbf{w} \) and bias \( \mathbf{b} \) to a stimulus.
                             \[ 
                                 \mathbb{P}(s \in C) = \sigma(\mathbf{w}_{c}^{\top} \mathbf{h}_s + \mathbf{b})
-                                \hspace{0.5em} \text{where} \hspace{0.5em}
-                                \mathbf{h}_s = \frac{1}{n} \sum_{i = 1}^{n} h_{\ell, t}
                             \]
                             This defines a curve over context e.g., each prefix is associated with a mixture of concepts.
                             We can decompose the average as an incremental update and view it as a discretized differential equation.
-                            This lets us study fixed points, bifurcation, etc. in concept space. 
+                            This lets us study fixed points, bifurcation, etc. in concept space.
                         </p>
                     </div>
 
