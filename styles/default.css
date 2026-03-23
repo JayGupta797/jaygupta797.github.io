@@ -16,7 +16,7 @@ html {
   --regular: #2d3748;
   --github: #171516;
   --linkedin: #3579B1;
-  --twitter: #6BAAE8;
+  --twitter: #000000;
 }
 
 /* Default values for dark-theme */
@@ -31,17 +31,25 @@ html.dark-theme {
   --regular: #f7fafc;
   --github: #f7fafc;
   --linkedin: #63b3ed;
-  --twitter: #7cc7f0;
+  --twitter: #ffffff;
 }
 
 .dark_toggle {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 35px;
-    width: 35px;
+    height: 28px;
+    width: 28px;
+    margin-left: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: opacity 0.2s ease;
     /* Useful Debug */
     /* border: 1px solid var(--secondary-color); */
+}
+
+.dark_toggle:hover {
+    opacity: 0.7;
 }
 
 /* Page Background */
@@ -211,19 +219,35 @@ a:hover{
 }
 
 /* Light Dark Toggle */
-#moon {
-  fill: var(--secondary-color);
-  transition:all 250ms linear;
+.dark_toggle svg {
+    position: relative;
 }
 
-#moon.night{
-  fill: var(--secondary-color);
-  cx: 65%;
+.theme-icon {
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
 }
 
-#ring {
-  stroke: var(--secondary-color);
-  transition:all 250ms linear;
+#sun-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+#moon-icon {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.3);
+}
+
+/* Dark theme state */
+.dark-theme #sun-icon {
+    opacity: 0;
+    transform: rotate(180deg) scale(0.3);
+}
+
+.dark-theme #moon-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
 }
 
 /* Default Page Layout */

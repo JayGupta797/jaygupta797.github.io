@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="../styles/resume.css"> 
     <script defer src="../scripts/theme.js"></script> 
 
+    <!-- Load MathJax for LaTex -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <!-- Load Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,9 +46,21 @@
                     <li class="masthead__menu-item" id="masthead__menu-resume"><a href="./resume.html">Resume</a></li>
                 </ul>
                 <div class="dark_toggle" onclick="toggle()">
-                    <svg height=35px width=35px>
-                    <circle cx="50%" cy="50%" r="10px" fill="white" id="moon" />
-                    <circle cx="50%" cy="50%" r="15px" fill="none" stroke="white" stroke-width="2px" id="ring" />
+                    <svg height="28px" width="28px" viewBox="0 0 24 24">
+                        <defs>
+                            <g id="sun-shape">
+                                <circle cx="12" cy="12" r="4" fill="var(--secondary-color)"/>
+                                <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" 
+                                      stroke="var(--secondary-color)" stroke-width="2" stroke-linecap="round"/>
+                            </g>
+                            <g id="moon-shape">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" 
+                                      fill="var(--secondary-color)"/>
+                            </g>
+                        </defs>
+                        
+                        <use href="#sun-shape" id="sun-icon" class="theme-icon"/>
+                        <use href="#moon-shape" id="moon-icon" class="theme-icon"/>
                     </svg>
                 </div>
             </nav>
@@ -60,6 +75,30 @@
             <h2 class="resume-section-title">Work Experience</h2>
             <div class="resume-section-content">
                 <div class="resume-timeline">
+
+                    <div class="resume-timeline-item-header">
+                        <div class="resume-item-names">
+                            <h3 class="resume-position-name">CURIS Fellow</h3>
+                            <div class="resume-company-name">Stanford CS</div>
+                        </div>
+                        <div class="resume-position-time">2025</div>
+                    </div>
+
+                    <div class="resume-timeline-item-desc">
+                        <p>
+                            I was a CURIS fellow for Stanford 2025.
+                            I worked with Chen Shani and Dan Jurafski to trace concepts in language models.
+                            A simple strategy to recover concept from a language model is to aggregate embeddings at layer \( \ell \) and apply a linear probe with concept weight \( \mathbf{w} \) and bias \( \mathbf{b} \) to a stimulus.
+                            \[ 
+                                \mathbb{P}(s \in C) = \sigma(\mathbf{w}_{c}^{\top} \mathbf{h}_s + \mathbf{b})
+                                \hspace{0.5em} \text{where} \hspace{0.5em}
+                                \mathbf{h}_s = \frac{1}{n} \sum_{i = 1}^{n} h_{\ell, t}
+                            \]
+                            This defines a curve over context e.g., each prefix is associated with a mixture of concepts.
+                            We can decompose the average as an incremental update and view it as a discretized differential equation.
+                            This lets us study fixed points, bifurcation, etc. in concept space. 
+                        </p>
+                    </div>
 
                     <div class="resume-timeline-item-header">
                         <div class="resume-item-names">
@@ -257,6 +296,16 @@
 
                         <li class="custom-bullet">
                         <span class="svg-icon"><svg><use href="#tablet" x="-2.5" y="-2" fill="var(--primary-color)" stroke="var(--secondary-color)"/></svg></span>
+                        <p><a href="https://explorecourses.stanford.edu/search?q=CS238" target="_blank">CS 238:</a> Decision Making<p>
+                        </li>
+
+                        <li class="custom-bullet">
+                        <span class="svg-icon"><svg><use href="#tablet" x="-2.5" y="-2" fill="var(--primary-color)" stroke="var(--secondary-color)"/></svg></span>
+                        <p><a href="https://explorecourses.stanford.edu/search?q=CS329H" target="_blank">CS 329H:</a> Preference Learning<p>
+                        </li>
+
+                        <li class="custom-bullet">
+                        <span class="svg-icon"><svg><use href="#tablet" x="-2.5" y="-2" fill="var(--primary-color)" stroke="var(--secondary-color)"/></svg></span>
                         <p><a href="https://explorecourses.stanford.edu/search?q=DATASCI112" target="_blank">DATASCI 112:</a> Data Science<p>
                         </li>
 
@@ -298,6 +347,16 @@
                         <li class="custom-bullet">
                         <span class="svg-icon"><svg><use href="#tablet" x="-2.5" y="-2" fill="var(--primary-color)" stroke="var(--secondary-color)"/></svg></span>
                         <p><a href="https://explorecourses.stanford.edu/search?q=STATS200" target="_blank">STATS 200:</a> Theoretical Statistics<p>
+                        </li>
+
+                        <li class="custom-bullet">
+                        <span class="svg-icon"><svg><use href="#tablet" x="-2.5" y="-2" fill="var(--primary-color)" stroke="var(--secondary-color)"/></svg></span>
+                        <p><a href="https://explorecourses.stanford.edu/search?q=STATS217" target="_blank">STATS 217:</a> Stochastic Processes<p>
+                        </li>
+
+                        <li class="custom-bullet">
+                        <span class="svg-icon"><svg><use href="#tablet" x="-2.5" y="-2" fill="var(--primary-color)" stroke="var(--secondary-color)"/></svg></span>
+                        <p><a href="https://explorecourses.stanford.edu/search?q=STATS315A" target="_blank">STATS 315A:</a> Learning Theory<p>
                         </li>
                     </ul>
                 </div>
@@ -356,8 +415,7 @@
                 <h2 class="resume-section-title">Communication</h2>
                 <p>
                     At heart, I am an explainer and entertainer.
-                    I have posted hundreds of solutions on r/LearnMath under a burner account.
-                    I have composed essays on a variety of topics ranging from AI powered disinformation to religious architecture.
+                    I have posted hundreds of solutions on r/LearnMath.
                     I have blogged about my projects and interests over the years.
                     I run 
                     <a href="https://www.youtube.com/@lytelectures1206" target="_blank">Lyte Lectures</a>,

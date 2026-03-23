@@ -77,8 +77,7 @@ function toggleSVGColors() {
  * This function applies the current theme to the page by toggling all relevant assets.
 */
 function applyTheme() {
-    // Toggle Moon
-    document.getElementById("moon").classList.toggle('night', theme === 'dark');
+    // Toggle Theme Icons
     document.documentElement.classList.toggle("dark-theme", theme === 'dark');
 
     // Toggle Code Blocks
