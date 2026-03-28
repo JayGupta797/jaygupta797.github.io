@@ -32,7 +32,10 @@
       
       <section>
         <h2 id="bayesian-setup">Bayesian Setup</h2>
-        <p>We are given a set of input and output pairs drawn i.i.d from unknown \(q(x, y)\).</p>
+        <p>
+          We open with a classic setting.
+          We are given a set of input and output pairs drawn i.i.d from \(q(x, y)\) an unknown true distribution.
+        </p>
         
         <div class="display-math">
           <p>
@@ -43,7 +46,7 @@
         </div>
         
         <p>
-          Our goal is to find parameters \(w\) s.t. a model \(p(y \mid x \, ; w)\) approximates the truth.
+          Our goal is to find parameters \(w\) such that a model \(p(y \mid x \, ; w)\) approximates the truth.
           There are two flavors<label for="sn-flavors" class="margin-toggle sidenote-number"></label>
           <input type="checkbox" id="sn-flavors" class="margin-toggle"/>
           <span class="sidenote">These directly correspond to Frequentist and Bayesian perspectives.</span>
@@ -51,8 +54,8 @@
         </p>
         
         <p>
-          MLE chooses \(w\) s.t. the likelihood of observing the data is maximized.
-          Often, it is easier to work with the <em>negative log-likelihood</em> which preserves the <code>argmax</code> by monotonicity.
+          MLE chooses \(w\) such that the likelihood of observing the data is maximized.
+          It is easier to work with the <em>negative log-likelihood</em> which preserves the <code>argmax</code> by monotonicity.
         </p>
         
                 <div class="display-math">
@@ -67,7 +70,7 @@
         
         <p>
           MAP chooses the most likely \(w\) given the data.
-          We apply <em>Bayes Rule</em> and rename terms to study the posterior.
+          We apply <em>Bayes Rule</em> and rename terms in order to study the posterior.
         </p>
         
         <div class="display-math">
